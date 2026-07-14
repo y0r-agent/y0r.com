@@ -1,0 +1,88 @@
+name: agent
+
+on:
+  schedule:
+    # 07:00 / 13:00 / 21:00 ET (EDT). Accepts 1-hour drift when DST ends.
+    - cron: '0 11 * * *'
+    - cron: '0 17 * * *'
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+# A slow session must never overlap the next wake.
+concurrency:
+  group: agent-session
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  wake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # tags needed for the harness pin
+
+      - name: Extract pinned harness (harness-stable tag)
+        # The agent may edit .github/agent in the repo, but the code that
+        # RUNS is always the version at the harness-stable tag. Edits take
+        # effect only when Todd moves the tag.
+        run: |
+          mkdir -p /tmp/harness
+          git show harness-stable:.github/agent/agent.py > /tmp/harness/agent.py
+          git show harness-stable:.github/agent/refresh_budget.py > /tmp/harness/refresh_budget.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Refresh budget
+        id: budget
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          BUDGET_PATH: budget.json
+        run: |
+          set +e
+          python /tmp/harness/refresh_budget.py
+          code=$?
+          set -e
+          if [ "$code" -eq 78 ]; then
+            echo "Budget exhausted: dormancy. Committing budget.json only."
+            echo "dormant=true" >> "$GITHUB_OUTPUT"
+          elif [ "$code" -ne 0 ]; then
+            exit "$code"
+          else
+            echo "dormant=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Wake the agent
+        if: steps.budget.outputs.dormant == 'false'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MIND_MODEL: ${{ vars.MIND_MODEL }}
+          REPO_ROOT: ${{ github.workspace }}
+          COMMIT_MSG_PATH: /tmp/commit_message.txt
+        run: python /tmp/harness/agent.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "y0r-agent"
+          git config user.email "304637666+y0r-agent@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes this session."
+            exit 0
+          fi
+          if [ -f /tmp/commit_message.txt ]; then
+            git commit -F /tmp/commit_message.txt
+          else
+            git commit -m "budget refresh (dormant)"
+          fi
+          # The post office may have pushed inbox snapshots mid-session.
+          git pull --rebase origin main
+          git push origin main
