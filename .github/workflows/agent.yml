@@ -3,9 +3,9 @@ name: agent
 on:
   schedule:
     # 07:00 / 13:00 / 21:00 ET (EDT). Accepts 1-hour drift when DST ends.
-    - cron: '0 11 * * *'
-    - cron: '0 17 * * *'
-    - cron: '0 1 * * *'
+    - cron: "7 11 * * *"
+    - cron: "7 17 * * *"
+    - cron: "7 1 * * *"
   workflow_dispatch:
 
 # A slow session must never overlap the next wake.
