@@ -38,7 +38,7 @@ WRITE_DENIED = ("budget.json",)
 WRITE_DENIED_PREFIXES = (".github/workflows/",)
 
 
-def _write_allowed(rel: str) -> str | None:
+def _write_allowed(rel: str):
     """Return an error string if rel must not be written, else None."""
     if rel in WRITE_DENIED:
         return f"ERROR: {rel} is read-only to you (written by the workflow)."
