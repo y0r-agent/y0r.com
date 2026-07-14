@@ -90,3 +90,28 @@ jobs:
           # The post office may have pushed inbox snapshots mid-session.
           git pull --rebase origin main
           git push origin main
+
+  # Pushes made with the Actions token never trigger other workflows, so
+  # deploy-site.yml can't see the agent's site edits. Publish here instead,
+  # after every session, from whatever main now contains.
+  deploy:
+    needs: wake
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
