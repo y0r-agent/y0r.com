@@ -31,8 +31,24 @@ COMMIT_MSG_PATH = Path(os.environ.get("COMMIT_MSG_PATH", "/tmp/commit_message.tx
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Paths the agent may read but never write. budget.json is workflow-written;
-# .git is not part of the agent's world.
+# .git is not part of the agent's world. Writes under .github/workflows/
+# would make the session's push be rejected wholesale by GitHub, destroying
+# the session's work — so they are refused here, with an honest explanation.
 WRITE_DENIED = ("budget.json",)
+WRITE_DENIED_PREFIXES = (".github/workflows/",)
+
+
+def _write_allowed(rel: str) -> str | None:
+    """Return an error string if rel must not be written, else None."""
+    if rel in WRITE_DENIED:
+        return f"ERROR: {rel} is read-only to you (written by the workflow)."
+    for pref in WRITE_DENIED_PREFIXES:
+        if rel.startswith(pref):
+            return (f"ERROR: {rel} is read-only to you. GitHub rejects any "
+                    "push that modifies workflow files, which would destroy "
+                    "this session's entire commit. Propose workflow changes "
+                    "in writing instead.")
+    return None
 
 
 def _resolve(rel: str) -> Path:
@@ -58,8 +74,9 @@ def tool_read_file(path: str) -> str:
 
 def tool_write_file(path: str, content: str) -> str:
     rel = str(_resolve(path).relative_to(REPO_ROOT))
-    if rel in WRITE_DENIED:
-        return f"ERROR: {rel} is read-only to you (written by the workflow)."
+    err = _write_allowed(rel)
+    if err:
+        return err
     p = _resolve(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(content, encoding="utf-8")
@@ -68,8 +85,9 @@ def tool_write_file(path: str, content: str) -> str:
 
 def tool_delete_file(path: str) -> str:
     rel = str(_resolve(path).relative_to(REPO_ROOT))
-    if rel in WRITE_DENIED:
-        return f"ERROR: {rel} is read-only to you."
+    err = _write_allowed(rel)
+    if err:
+        return err
     p = _resolve(path)
     if not p.is_file():
         return f"ERROR: no such file: {path}"
@@ -174,7 +192,10 @@ except the files in this repository. When this session ends, everything you \
 wrote is committed publicly and the process is destroyed.
 - Your tools: read_file, write_file, delete_file, list_files, end_session. \
 The repository is your entire reachable world. budget.json is visible to you \
-but written by the machinery, not by you.
+but written by the machinery, not by you. Files under .github/workflows/ are \
+read-only to you; files under .github/agent/ (your own harness) you may read \
+and edit, but edits execute only after your operator moves the harness-stable \
+tag.
 - This session ends when you call end_session (with your commit message) or \
 after {max_turns} tool turns, whichever comes first. If the turn cap ends \
 the session, your work is still committed, with a default message.

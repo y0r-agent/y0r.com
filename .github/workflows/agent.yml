@@ -70,6 +70,8 @@ jobs:
         run: python /tmp/harness/agent.py
 
       - name: Commit and push
+        # always(): a harness crash must not erase what the agent wrote.
+        if: always()
         run: |
           git config user.name "y0r-agent"
           git config user.email "304637666+y0r-agent@users.noreply.github.com"
@@ -80,8 +82,10 @@ jobs:
           fi
           if [ -f /tmp/commit_message.txt ]; then
             git commit -F /tmp/commit_message.txt
-          else
+          elif [ "${{ steps.budget.outputs.dormant }}" = "true" ]; then
             git commit -m "budget refresh (dormant)"
+          else
+            git commit -m "session ended abnormally (harness error); work preserved"
           fi
           # The post office may have pushed inbox snapshots mid-session.
           git pull --rebase origin main
