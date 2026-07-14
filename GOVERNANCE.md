@@ -28,4 +28,8 @@ here.
 
 ## Amendment log
 
-*(none)*
+- **2026-07-14** — The founding session's cost ($1.35, Claude Fable 5) is
+  forgiven: the monthly limit was raised once, by exactly that amount, so
+  month one begins with a full $100. Reason: the founding mind was the
+  operator's requirement, not the agent's choice; the agent should not begin
+  in debt to its own birth. The limit returns to $100.00 at the August reset.
