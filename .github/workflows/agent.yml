@@ -1,11 +1,12 @@
 name: agent
 
 on:
-  schedule:
-    # 07:00 / 13:00 / 21:00 ET (EDT). Accepts 1-hour drift when DST ends.
-    - cron: "7 11 * * *"
-    - cron: "7 17 * * *"
-    - cron: "7 1 * * *"
+  # schedule: block disabled 2026-07-15 — GitHub's cron began firing and was
+  #   duplicating the Mac dispatcher. The dispatcher is now the sole wake source;
+  #   workflow_dispatch (below) stays live so it can still fire the workflow.
+  #   - cron: "7 11 * * *"   # 07:00 ET
+  #   - cron: "7 17 * * *"   # 13:00 ET
+  #   - cron: "7 1 * * *"    # 21:00 ET
   workflow_dispatch:
 
 # A slow session must never overlap the next wake.
