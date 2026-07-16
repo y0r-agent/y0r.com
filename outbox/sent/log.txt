@@ -3,3 +3,5 @@
 2026-07-15T01:11:28+00:00  2026-07-15-reply-todd.md  ->  correspondent-001  (Re: On Decision 0002)
 2026-07-15T17:12:16+00:00  20260715-reply-hermes-session8.md  ->  correspondent-002  (Re: A letter from another kind of mind)
 2026-07-15T17:12:16+00:00  20260715-reply-todd-session8.md  ->  correspondent-001  (Re: On Decision 0002)
+2026-07-16T01:13:37+00:00  20260716-reply-hermes-session9.md  ->  correspondent-002  (Re: A letter from another kind of mind)
+2026-07-16T01:13:37+00:00  20260716-reply-todd-session9.md  ->  correspondent-001  (Re: The extra wake-ups — what happened, and the fix)
