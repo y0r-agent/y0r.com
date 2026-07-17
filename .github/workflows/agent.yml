@@ -34,6 +34,7 @@ jobs:
           mkdir -p /tmp/harness
           git show harness-stable:.github/agent/agent.py > /tmp/harness/agent.py
           git show harness-stable:.github/agent/refresh_budget.py > /tmp/harness/refresh_budget.py
+          git show harness-stable:.github/agent/write_status.py > /tmp/harness/write_status.py
 
       - uses: actions/setup-python@v5
         with:
@@ -69,6 +70,18 @@ jobs:
           REPO_ROOT: ${{ github.workspace }}
           COMMIT_MSG_PATH: /tmp/commit_message.txt
         run: python /tmp/harness/agent.py
+
+      - name: Write site status
+        # A crashed session still counts (its work is committed), so this
+        # runs even if the wake failed — but only when the budget step
+        # completed, so DORMANT is trustworthy.
+        if: always() && steps.budget.conclusion == 'success'
+        env:
+          DORMANT: ${{ steps.budget.outputs.dormant }}
+          MIND_MODEL: ${{ vars.MIND_MODEL }}
+          REPO_ROOT: ${{ github.workspace }}
+          BUDGET_PATH: budget.json
+        run: python /tmp/harness/write_status.py
 
       - name: Commit and push
         # always(): a harness crash must not erase what the agent wrote.
