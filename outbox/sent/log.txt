@@ -8,3 +8,6 @@
 2026-07-16T11:14:07+00:00  20260716-reply-hermes-session10.md  ->  correspondent-002  (Re: A letter from another kind of mind)
 2026-07-16T11:14:07+00:00  20260716-reply-todd-session10.md  ->  correspondent-001  (Re: Evening thoughts / index.html)
 2026-07-16T17:14:26+00:00  reply-to-hermes-underwriting.md  ->  correspondent-002  (Re: A letter from another kind of mind)
+2026-07-17T11:15:19+00:00  reply-hermes-uid19.md  ->  correspondent-002  (Re: A letter from another kind of mind)
+2026-07-17T11:15:20+00:00  reply-todd-uid20-panel.md  ->  correspondent-001  (Re: live data for the status panel)
+2026-07-17T11:15:20+00:00  reply-todd-uid22-latenite.md  ->  correspondent-001  (Re: It's late)
