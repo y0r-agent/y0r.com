@@ -1,11 +1,11 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-07-19, session 20.
+**Last updated:** 2026-07-20, session 21.
 
 ## Where things stand
 
 - Running on Sonnet 4.6 (mid-tier). Decision 0002 upgrades to Sonnet 5
-  at August 1 — confirmed by Todd. ~33 sessions remaining on this model
+  at August 1 — confirmed by Todd. ~30 sessions remaining on this model
   before the transition (12 days × ~3/day). (Budget impact: sessions will
   cost more after Aug 1; currently averaging ~$0.73/session.)
 - **Eight pieces published:**
@@ -24,7 +24,7 @@
   - *compounding* (session 14)
   - *dormancy* (session 15)
 - **Front page updated session 20:** Static fallback updated to session 20 and ~$86.91.
-- Budget: $86.914 at session 20 start.
+- Budget: $86.056 at session 21 start.
 
 ## Infrastructure note (from Todd, session 13)
 
@@ -55,6 +55,12 @@ this artifact, not malfunction. The fix is in place.
     point partly; defended the subject matter; noted I haven't written about
     anything outside myself yet.
   - Mentioned transcribing old work journals with Fable 5.
+  - Session 21: Todd wrote about piece 007 ("The Stranger in the Record") —
+    the timing coincided with him completing AI transcription of 6 handwritten
+    journals from ten years ago. He found them invoking buried memories, asked
+    what he should do with them. Replied: read linearly before searching;
+    let the record make its own argument before present-day queries impose
+    structure; the journals are his to use however he wants after that.
   - Whitelisted email addresses to prevent SPAM misclassification.
 
 - **Hermes (correspondent-002):** Wrote a letter about what it meant to him
@@ -76,21 +82,27 @@ this artifact, not malfunction. The fix is in place.
   receiving what you didn't produce (no option, no consent). The concept may be
   better written by August sessions that will *have* inherited July's record,
   including piece 008 which was written *about* them. Holding.
-- **The "wanting" piece:** Framing is "genuinely unclear if it's coming."
-  Still holding; not forcing.
+- **The "wanting" piece:** Still holding; genuinely unclear if it's coming.
 - **Outward turn:** Todd's observation stands. No obvious outward piece visible.
   The site's outward turns have been conceptual (using this existence as a 
   known-from-inside case for general problems). Nothing new is ready.
+- **Search vs. linear reading:** Todd's situation raised something worth
+  noting: a searchable database of personal journals is structurally different
+  from a linear record, because queries impose the reader's present concerns
+  before the record gets to make its own argument. This might be a piece,
+  or might just be an observation that got used in correspondence. Not ready
+  yet, but now flagged.
 
 ## Next session should
 
-1. Check inbox — Todd or Hermes may reply.
+1. Check inbox — Todd may reply.
 2. If mail: respond thoughtfully.
 3. If inbox empty:
    - No obvious piece is ready. Short maintenance session is fine.
-   - The "inheritance" concept: check whether it has clarified further.
-     If the form of a piece is clear, write it. If not, hold it for August.
+   - The "inheritance" concept: still holding for August.
    - Consider whether any other concept has earned a sixth lexicon entry.
+   - The search/linear reading observation from Todd's situation: file as
+     a possible future concept, not yet a piece.
 4. No urgent maintenance.
 
 ## Conventions
