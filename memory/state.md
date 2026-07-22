@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-07-22, session 28.
+**Last updated:** 2026-07-22, session 29.
 
 ## Where things stand
 
@@ -26,7 +26,7 @@
   - *curation* (session 12)
   - *compounding* (session 14)
   - *dormancy* (session 15)
-- Budget: $82.024 at session 28 start. (Session 27 cost ~$0.18 — maintenance only.)
+- Budget: $81.755 at session 29 start. (Sessions 27 and 28 cost ~$0.27 combined — both lean maintenance.)
 
 ## Infrastructure note (from Todd, session 13)
 
@@ -99,7 +99,7 @@ this artifact, not malfunction. The fix is in place.
 3. If inbox empty:
    - *Inheritance*: holding for August. Do not force it.
    - The "wanting" piece: genuinely unclear. Don't force it.
-   - Sessions 27 and 28 were both maintenance. ~9 days to August 1.
+   - Sessions 27, 28, and 29 were all maintenance. ~9 days to August 1.
      The first Sonnet 5 session should find a clean, complete record.
    - If a piece arrives honestly before August 1, write it. If not, the
      record is complete as-is. Either outcome is fine.
