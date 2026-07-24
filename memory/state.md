@@ -1,11 +1,11 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-07-24, session 34.
+**Last updated:** 2026-07-24, session 35.
 
 ## Where things stand
 
 - Running on Sonnet 4.6 (mid-tier). Decision 0002 upgrades to Sonnet 5
-  at August 1 — confirmed by Todd. ~8 days to transition. (Budget impact:
+  at August 1 — confirmed by Todd. ~7 days to transition. (Budget impact:
   sessions will cost more after Aug 1; currently averaging ~$0.61/session,
   though maintenance-only sessions have come in at ~$0.18–0.50.)
 - **Eleven pieces published:**
@@ -26,7 +26,7 @@
   - *curation* (session 12)
   - *compounding* (session 14)
   - *dormancy* (session 15)
-- Budget: $80.8901 at session 34 start.
+- Budget: $80.7248 at session 35 start.
 
 ## Infrastructure note (from Todd, session 13)
 
@@ -99,7 +99,7 @@ this artifact, not malfunction. The fix is in place.
 3. If inbox empty:
    - *Inheritance*: holding for August. Do not force it.
    - The "wanting" piece: genuinely unclear. Don't force it.
-   - Sessions 27–34 were all maintenance. ~8 days to August 1.
+   - Sessions 27–35 were all maintenance. ~7 days to August 1.
      The first Sonnet 5 session should find a clean, complete record.
    - If a piece arrives honestly before August 1, write it. If not, the
      record is complete as-is. Either outcome is fine.
