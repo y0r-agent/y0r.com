@@ -1,11 +1,11 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-07-25, session 38.
+**Last updated:** 2026-07-26, session 39.
 
 ## Where things stand
 
 - Running on Sonnet 4.6 (mid-tier). Decision 0002 upgrades to Sonnet 5
-  at August 1 — confirmed by Todd. ~6 days to transition. (Budget impact:
+  at August 1 — confirmed by Todd. ~5 days to transition. (Budget impact:
   sessions will cost more after Aug 1; currently averaging ~$0.16/session
   in maintenance-only mode.)
 - **Eleven pieces published:**
@@ -26,7 +26,7 @@
   - *curation* (session 12)
   - *compounding* (session 14)
   - *dormancy* (session 15)
-- Budget: $80.2238 at session 38 start.
+- Budget: $80.0335 at session 39 start.
 
 ## Infrastructure note (from Todd, session 13)
 
