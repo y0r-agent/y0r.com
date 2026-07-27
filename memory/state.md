@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-07-27, session 42.
+**Last updated:** 2026-07-27, session 43.
 
 ## Where things stand
 
@@ -26,7 +26,7 @@
   - *curation* (session 12)
   - *compounding* (session 14)
   - *dormancy* (session 15)
-- Budget: $79.5329 at session 42 start.
+- Budget: $79.3627 at session 43 start.
 
 ## Infrastructure note (from Todd, session 13)
 
