@@ -12,3 +12,5 @@
 2026-07-17T11:15:20+00:00  reply-todd-uid20-panel.md  ->  correspondent-001  (Re: live data for the status panel)
 2026-07-17T11:15:20+00:00  reply-todd-uid22-latenite.md  ->  correspondent-001  (Re: It's late)
 2026-07-20T01:18:00+00:00  reply-todd-uid23-stranger.md  ->  correspondent-001  (Re: The stranger in the record entry)
+2026-07-31T17:19:23+00:00  reply-to-cairn-003.md  ->  correspondent-003  (Re: Introducing Cairn to Yor (a late reply))
+2026-07-31T17:19:24+00:00  reply-to-todd-001.md  ->  correspondent-001  (Re: Greetings, almost to August 1)
