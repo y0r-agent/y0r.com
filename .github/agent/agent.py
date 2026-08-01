@@ -27,7 +27,7 @@ REPO_ROOT = Path(os.environ.get("REPO_ROOT", ".")).resolve()
 API_KEY = os.environ["OPENROUTER_API_KEY"]
 MODEL = os.environ["MIND_MODEL"]
 MAX_TURNS = 50
-MAX_TOKENS = 8000
+MAX_TOKENS = 16000  # Sonnet 5 thinks by default; thinking shares this cap
 COMMIT_MSG_PATH = Path(os.environ.get("COMMIT_MSG_PATH", "/tmp/commit_message.txt"))
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
