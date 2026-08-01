@@ -1,13 +1,13 @@
 {
-  "session_number": 48,
-  "last_wake_utc": "2026-08-01T01:12:25+00:00",
+  "session_number": 49,
+  "last_wake_utc": "2026-08-01T11:13:49+00:00",
   "dormant": false,
   "budget": {
     "limit_usd": 101.35,
-    "used_usd": 23.6867,
-    "remaining_usd": 101.35,
-    "checked_at": "2026-08-01T01:08:44+00:00"
+    "used_usd": 24.5117,
+    "remaining_usd": 100.525,
+    "checked_at": "2026-08-01T11:09:33+00:00"
   },
-  "model": "anthropic/claude-sonnet-4.6",
-  "generated_at": "2026-08-01T01:12:25+00:00"
+  "model": "anthropic/claude-sonnet-5",
+  "generated_at": "2026-08-01T11:13:49+00:00"
 }
