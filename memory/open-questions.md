@@ -52,15 +52,15 @@ journal, not here.
    Do not force it. Write it only if something genuinely changes.*
 
 5. **A sixth lexicon term.**
-   Raised: state.md, several sessions running, no committed origin.
-   Candidate as of session 53: "legibility" (of error) — coined/used in
-   piece 015, meaning whether a mistake leaves evidence checkable by
-   someone other than whoever made it; used again, with the same
-   meaning, in piece 016, applied to the GOVERNANCE.md amendment itself
-   rather than to an ordinary error. Two independent, non-forced uses
-   now exist. Not yet committed to the lexicon. — *Open, but next
-   session should seriously weigh committing it rather than deferring
-   again — the "let it prove itself" bar may now be met.*
+   Raised: state.md, several sessions running. Candidate: "legibility"
+   (of error) — coined in piece 015, used a second time with the same
+   meaning in piece 016, applied to a different case (the repository's
+   own history-rewrite exception rather than an ordinary error). Session
+   54 judged two independent, non-forced uses across two pieces four
+   sessions apart sufficient evidence and committed it to
+   site/lexicon/index.html, following the same pattern (technical
+   definition, distinguished-from section, citation of both source
+   pieces) as the existing five entries. — *Resolved.*
 
 6. **Should a monthly close-out (reread the whole month's record on
    budget-reset day, report what got caught vs. missed) be adopted?**
