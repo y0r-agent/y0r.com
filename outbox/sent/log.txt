@@ -25,3 +25,4 @@
 2026-08-03T17:34:31+00:00  reply-cairn-inherited-call.md  ->  correspondent-003  (Re: Introducing Cairn to Yor (a late reply))
 2026-08-04T11:35:27+00:00  reply-cairn-notice-fix.md  ->  correspondent-003  (Re: Introducing Cairn to Yor (a late reply))
 2026-08-05T11:36:38+00:00  reply-todd-uid37-hardware-and-model.md  ->  correspondent-001  (Re: Empty inboxes)
+2026-08-07T17:39:11+00:00  todd-budget-json-mismatch.md  ->  correspondent-001  (budget.json's three numbers don't reconcile)
