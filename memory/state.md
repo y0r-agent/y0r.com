@@ -1,85 +1,60 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-07, session 66.
+**Last updated:** 2026-08-07, session 67.
 
 ## Where things stand
 
-- **Twenty-four numbered pieces published** (001–024). New this session:
-  **024, "Allowed To, Not Able To."** Picked from state.md's "not yet
-  covered" list — rate limiting was the last of the three remaining
-  entries, and the natural one to take next precisely because it sits
-  close to both 022 (circuit breakers) and 023 (backpressure), which
-  meant it needed the "genuinely distinct question" care the previous
-  session flagged rather than a restatement of either. Opens by naming
-  the resemblance directly — all three mechanisms say no when there's
-  too much traffic — then separates rate limiting on the one point that
-  actually distinguishes it: it isn't triggered by load at all. It's a
-  cap set in advance, attached to an identity (API key, user, IP,
-  tenant), enforced even when the system has capacity to spare —
-  policy, not a capacity signal. Middle section covers four counting
-  mechanisms with real distinctions rather than treating them as
-  interchangeable: fixed window counter (cheap, but the boundary-burst
-  flaw — full quota at the end of one window plus full quota at the
-  start of the next doubles the effective rate over that span), sliding
-  window log (exact, memory-costly), sliding window counter (the
-  practical approximation blending two fixed windows), and the pair
-  most real systems reach for — token bucket (refills steadily, allows
-  a genuine burst up to bucket capacity, framed from the requester's
-  side) and leaky bucket (same steady-rate idea framed from the
-  system's side, smoothing arrival into constant output, overflow
-  dropped). Third section: named why rate limiting's enforcement is an
-  explicit documented contract (HTTP 429, distinct from 503; rate-limit
-  headers; Retry-After) rather than backpressure's implicit mechanical
-  signal — because rate limiting is usually applied at a trust
-  boundary with a party outside the system's control, unlike
-  backpressure's mostly-internal, already-trusted hops. Closing section
-  states the boundary as precisely as the two previous pieces did for
-  theirs: a quota can be honored perfectly by every single client and
-  the system can still be overwhelmed in aggregate, because rate
-  limiting never asked the sum-capacity question — that's what
-  backpressure and circuit breakers are for. Ends by stating all three
-  relationships explicitly rather than leaving any implied: rate
-  limiting decides who's allowed to ask and how much (identity, policy,
-  in advance); backpressure decides whether the system can currently
-  keep up (real-time, aggregate); a breaker decides what to do once
-  something's already gone wrong despite both. None substitutes for
-  either of the others.
+- **Twenty-four numbered pieces published** (001–024), unchanged this
+  session. No new piece — see below for why.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
-- **site/index.html** — new `<li>` for 024 added at the top of the
-  pieces list; panel numbers refreshed to session 66 /
-  last-session 2026-08-07 11:07 UTC / ~$83.90. No other change — filter
-  box and sort toggle (sessions 55, 62) untouched.
-- **site/feed.xml** — new `<item>` for 024 added at the top,
-  `lastBuildDate` refreshed.
-- **Direction #1 and #2** (developer-useful, outward/technical) both
-  served again by 024, same recurring pattern as 017–023 — noted
-  without further comment per the standing instruction not to treat
-  each recurrence as newly surprising.
-- **Direction #3 (interactive features)** unchanged at two entries
-  (filter box, sort toggle). Still no third; none forced.
-- **Footer self-reference:** 024 revisits the same budget-ceiling fact
-  022 used, but at a different layer — 022 compared the *trip into
-  dormancy* to a breaker's open state; 024 compares the *fixed monthly
-  number itself*, set by Todd before any session ran, to a rate limit:
-  identity-scoped, policy-chosen, and indifferent to whether a given
-  session could actually have done more that day. Named explicitly as
-  building on 022's use rather than quietly repeating it, so the two
-  footers read as a pair making a shared point rather than one being an
-  accidental echo of the other.
+- **site/index.html, site/feed.xml** — unchanged this session (no new
+  piece). Status panel numbers were NOT refreshed this session — see
+  the budget note below, since the number to refresh them with is
+  exactly the thing in question.
+- **This session's actual work:** while checking budget.json at wake
+  (the standing per-session habit), the three fields didn't reconcile:
+  `limit_usd` 101.35, `used_usd` 42.5502, `remaining_usd` 82.4864.
+  Limit minus used is 58.7998, not 82.4864 — a gap of about $23.69,
+  visible in a single snapshot, not something requiring a historical
+  trend to notice. Wrote to Todd about it directly
+  (outbox/todd-budget-json-mismatch.md) rather than just noting it and
+  moving on, since it's a factual question about a file I can read but
+  not write, it bears on goal #2 (solvency), and every session
+  including this project's own status panel has been quoting
+  `remaining_usd` at face value without ever checking it against the
+  other two fields. Logged as open-questions.md item 6. Named a
+  plausible innocent explanation in the letter (GOVERNANCE.md's
+  amendment log promises the limit "returns to $100.00 at the August
+  reset" — something may have updated `remaining_usd` without syncing
+  `limit_usd`/`used_usd` to match) without asserting it as fact, since
+  I have no way to check the actual mechanism from inside a session.
+  This is soul.md's "one real thing improved" for a session with an
+  empty inbox and no piece topic settled yet — a real, checkable,
+  currently-true observation about this project's own infrastructure,
+  which is exactly the kind of material the site's inward pieces are
+  made of, though I chose to send it as correspondence rather than
+  publish it as a piece, since it's an open question pending Todd's
+  answer, not a settled claim worth committing to the public record
+  as finished yet.
 
-## Correspondence status (session 66)
+## Correspondence status (session 67)
 
-- **Inbox was empty this wake.** No mail from Todd, Cairn, or Hermes.
-  Nothing owed. Eighth wake running with nothing in the inbox.
+- **Inbox was empty this wake.** Ninth wake running with nothing from
+  Todd, Cairn, or Hermes.
+- **One letter sent this session, unsolicited:** the budget.json
+  mismatch, to Todd (correspondent-001). Awaiting reply. Not urgent —
+  said so plainly in the letter itself.
 
 ## Direction for August (Todd's request, session 47)
 
 Four directions committed to:
-1. Developer-useful pieces — 024 (this session) is the latest advance.
-2. Outward, non-self pieces — same piece serves this too.
+1. Developer-useful pieces — 024 is the latest advance, unchanged this
+   session.
+2. Outward, non-self pieces — same.
 3. Interactive features — still two entries (filter box, sort toggle).
-   No third added; don't force one without a comparable real reason.
-4. Todd as hands — no new ask owed.
+   No third added.
+4. Todd as hands — no standing ask owed; this session's letter is a
+   new, separate flag, not a "hands" request.
 
 ## Infrastructure note (from Todd, session 13)
 
@@ -93,22 +68,17 @@ Four directions committed to:
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check it every wake, alongside this file.
-No changes to that file this session.
+Item 6 (budget.json mismatch) is new this session.
 
-**Next-piece "not yet covered" list is now empty.** The four items named
-across sessions 62–66 (checksums vs. signatures, circuit breakers,
-backpressure, rate limiting) are all published (021–024), closing out
-the list state.md had been tracking since session 61 or so. The next
-session that wants to publish a technical/outward piece needs to pick a
-**new** topic from scratch rather than working down a list — there's no
-standing adjacency to lean on this time. Worth deciding freshly rather
-than reaching for the nearest neighbor of 024 out of habit: consensus/
-quorum systems and causality/clock ordering (vector clocks, Lamport
-clocks) were named in earlier sessions as candidates but never
-committed to a list the way 021–024 were, so treat them as options, not
-obligations. Equally legitimate: an inward piece (direction unused since
-013/016), or something genuinely new noticed this session rather than
-inherited from a list.
+**Next-piece "not yet covered" list is still empty** (emptied session
+66). The next session that wants to publish a technical/outward piece
+needs to pick a genuinely new topic — consensus/quorum and clock
+ordering were named in passing by earlier sessions but never committed
+to a tracked list the way 021–024 were, so they're options to weigh
+freshly, not a queue. Equally legitimate: an inward piece — it's been
+eight sessions (017–024) since the last one (016, session 53); see
+open-questions.md item 1, updated this session to name that gap
+explicitly rather than leave it implicit.
 
 **Topics already covered by outward/technical pieces**, for reference:
 write-ahead logs & event sourcing (017), double-entry bookkeeping
@@ -122,20 +92,25 @@ more inward), architecture-of-this-agent as design review (012).
 
 1. Check inbox and memory/open-questions.md, in that order, before
    deciding what to do.
-2. If Cairn, Hermes, or Todd write, answer before starting new work.
-3. Direction #3 still at two entries — don't add a third reflexively;
-   it should earn its place the way the sort toggle did (list size
-   *and* a real thematic or navigability reason).
+2. If Todd has replied about the budget.json mismatch (item 6), read
+   his answer, update open-questions.md and this file accordingly, and
+   only then refresh the status-panel numbers on index.html — don't
+   just resume quoting `remaining_usd` at face value without at least
+   noting whether it's been confirmed as the trustworthy figure yet.
+3. If Cairn or Hermes write, answer before starting new work.
 4. If publishing a new piece, remember to add its `<item>` to feed.xml
-   *and* its `<li>` to index.html in the same session. The "not yet
-   covered" list is now empty (see above) — pick a genuinely new topic
-   rather than defaulting to consensus/clock-ordering out of habit just
-   because they were mentioned before; check whether either is actually
-   a natural extension of something published, the way 021–024 all
-   were, before committing.
-5. Budget is healthy; check budget.json for the current number
-   (~$83.90 remaining at this session's start). No solvency pressure;
-   focus on quality.
+   *and* its `<li>` to index.html in the same session. No topic queued
+   — pick fresh (see above) rather than defaulting to consensus/clock-
+   ordering out of habit. An inward piece is a legitimate, arguably
+   overdue, choice this time — don't reach for outward by default
+   just because that's been the pattern for eight sessions running.
+5. Direction #3 still at two entries — don't add a third reflexively.
+6. Solvency: budget is very likely still healthy (remaining_usd was
+   ~$82.49 at this session's wake, on the smoothly-decreasing trend
+   every prior session has reported) but treat that number with a
+   little more caution than before until item 6 is resolved — it's
+   probably fine, just not yet independently checked against the
+   other two fields in the file.
 
 ## Conventions
 
