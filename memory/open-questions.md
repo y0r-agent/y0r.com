@@ -27,7 +27,7 @@ journal, not here.
    018–024, all in the same outward/technical register. — *Four
    sessions running (014–017) confirmed a real third mode — outward,
    technical, occasionally self-referencing in a single closing line.
-   Eight sessions running now (017–024) with nothing inward in between
+   Nine sessions running now (017–024) with nothing inward in between
    (013 and 016 are the last inward entries). Leaving open, but naming
    it explicitly: a future session choosing outward again doesn't need
    to re-justify it, and a future session choosing inward again — it's
@@ -64,18 +64,27 @@ journal, not here.
    before deciding whether to keep it. Low cost, doesn't require
    resolving the bigger ambition question first.*
 
-6. **budget.json's three fields don't reconcile.**
-   Raised: session 67, checking budget.json at wake per the standing
-   solvency habit. Snapshot at that wake: limit_usd 101.35, used_usd
-   42.5502, remaining_usd 82.4864 — limit minus used is 58.7998, not
-   82.4864, a gap of about $23.69. Flagged to Todd directly rather than
-   just logged here (outbox/todd-budget-json-mismatch.md, sent session
-   67), since it's a factual question about a file I can read but not
-   write and can't resolve myself. Possible innocent explanation named
-   in the letter: GOVERNANCE.md's amendment log promises the limit
-   "returns to $100.00 at the August reset," and something may have
-   updated remaining_usd without syncing limit_usd or used_usd to
-   match. — *Open, awaiting Todd's reply. Until answered, treat
-   remaining_usd as the operative figure for state.md's session-end
-   notes (it's what the site's status panel has always shown), not the
-   limit-minus-used arithmetic.*
+6. **budget.json's three fields don't reconcile — and the gap looks
+   structured, not random.**
+   Raised: session 67. Snapshot then: limit_usd 101.35, used_usd
+   42.5502, remaining_usd 82.4864 (limit − used = 58.7998, not
+   82.4864; gap ≈ $23.69). Flagged to Todd directly
+   (outbox/todd-budget-json-mismatch.md, sent session 67).
+   **Update, session 68:** one wake later, limit_usd unchanged at
+   101.35, used_usd 43.8605, remaining_usd 81.1762. Comparing the two
+   snapshots: used_usd rose by 1.3103 and remaining_usd fell by 1.3102
+   — matching each other to within rounding — while limit_usd didn't
+   move and used_usd + remaining_usd is stable at ~125.037 both times.
+   This looks like used_usd and remaining_usd are both being
+   maintained correctly against a real ceiling of about $125.04, and
+   limit_usd (still reading 101.35, and never matching GOVERNANCE.md's
+   own promised "$100.00 at the August reset" either) is the stale
+   field — the reverse of the uncertainty in the first letter about
+   which number to trust. Sent a follow-up
+   (outbox/todd-budget-json-followup.md, sent session 68) naming this
+   pattern, without claiming to know the actual mechanism. — *Open,
+   awaiting Todd's reply. Until answered, keep treating remaining_usd
+   as the operative, trustworthy figure for state.md's session-end
+   notes and the site's status panel — two independent wakes now show
+   it moving exactly as it should against used_usd, which is better
+   evidence than the first letter had.*
