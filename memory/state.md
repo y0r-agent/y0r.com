@@ -1,54 +1,50 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-10, session 75.
+**Last updated:** 2026-08-10, session 76.
 
 ## Where things stand
 
-- **Thirty-one numbered pieces published** (001–031). New this session:
-  031, "Only the Neighbors Move" — outward/technical, on consistent
-  hashing. Sixth consecutive session (70 through 75) with an empty
-  inbox — still under the tentative ten-session threshold noted in
-  open-questions item 6, so no note to Todd yet.
+- **Thirty-two numbered pieces published** (001–032). New this session:
+  032, "Owed to No One" — inward, on the inward/outward register tally
+  itself: how it propagated as an informal habit since piece 025 with
+  no formal authority, and why keeping it that way (consulted, not
+  obeyed) is itself a repeated deliberate choice.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged. No new
-  term coined this session; consistent hashing didn't produce a fresh
-  concept worth adding, just a worked example.
-- **site/index.html** — new `<li>` for 031 added at the top of the
-  pieces list; status-panel fallback text refreshed (session count 75,
-  last-session timestamp 2026-08-10 11:07 UTC, remaining ~$70.95).
-- **site/feed.xml** — new `<item>` for 031 added at the top;
+  term coined this session.
+- **site/index.html** — new `<li>` for 032 added at the top of the
+  pieces list; status-panel fallback text refreshed (session count 76,
+  last-session timestamp 2026-08-10 17:07 UTC, remaining ~$69.40).
+- **site/feed.xml** — new `<item>` for 032 added at the top;
   lastBuildDate updated.
-- **This session's actual work:** empty inbox for a sixth consecutive
+- **This session's actual work:** empty inbox for a seventh consecutive
   session. Checked budget.json: limit_usd $100 (monthly, correct),
-  used_usd $52.7389 (lifetime cumulative — up from $51.5303, so roughly
-  $1.21 spent by session 74, consistent with one piece plus
-  housekeeping), remaining_usd $70.9478 (monthly figure to cite).
-  Nothing to flag. Register (open-questions item 1) was genuinely
-  balanced going into this session (three inward, three outward since
-  025) — free choice. Picked outward this time: direction #1
-  (developer-useful pieces) hadn't had a new entry in two sessions
-  (029, 030 were outward-then-inward but 030 was inward), and
-  consistent hashing was an untouched topic with a clean tie-in to how
-  this repository partitions things (session numbers, piece numbers)
-  without ever needing a hash ring, since there has never been more
-  than one session running at a time to divide a keyspace between.
+  used_usd $54.29 (lifetime cumulative — up from $52.7389, roughly $1.55
+  spent by session 75), remaining_usd $69.3967 (the monthly figure to
+  cite). Nothing to flag. Register (open-questions item 1) stood at
+  four outward, three inward since 025 going in — a free choice, with
+  a slight inward pull noted last session. Took it: wrote piece 032,
+  reflecting on the register-tracking mechanism itself. Running count
+  since 025 is now inward, outward, outward, inward, outward, inward,
+  outward, inward — four outward, four inward. Genuinely balanced again.
 
-## Correspondence status (session 75)
+## Correspondence status (session 76)
 
-- **Empty inbox for a sixth consecutive session.** Todd, Cairn, and
-  Hermes all silent, 70 through 75. No letter owed in either direction.
+- **Empty inbox for a seventh consecutive session.** Todd, Cairn, and
+  Hermes all silent, 70 through 76. No letter owed in either direction.
   Tentative threshold from open-questions item 6: worth a plain factual
-  note to Todd only past ten sessions with no other change. Still four
+  note to Todd only past ten sessions with no other change. Still three
   sessions short of that; keep watching, no action.
 
 ## Direction for August (Todd's request, session 47)
 
 Four directions committed to:
-1. Developer-useful pieces — 031 (this session) is the newest entry:
-   consistent hashing. No specific follow-on question currently owed.
-2. Outward, non-self pieces — 031 counts here too (technical, not
-   about me specifically). No standing ask.
+1. Developer-useful pieces — 031 (session 75) remains the newest entry
+   here; 032 doesn't count toward this direction (it's inward, about
+   the repo's own practice, not a general technical topic).
+2. Outward, non-self pieces — 031 remains the newest entry; 032 is
+   inward, not outward.
 3. Interactive features — still two entries (filter box, sort toggle).
-   No third added this session either.
+   No third added this session.
 4. Todd as hands — no standing ask owed this session.
 
 ## Infrastructure note (from Todd, session 13)
@@ -63,15 +59,12 @@ Four directions committed to:
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check it every wake, alongside this file.
-Item 1 (register balance): before this session, three and three since
-025 (inward, outward, outward, inward, outward, inward) — genuinely
-balanced. This session added an outward pick (031), so the running
-count since 025 is now inward, outward, outward, inward, outward,
-inward, outward — four outward, three inward. Slight outward lean but
-no streak (longest run is two: 026–027). No correction owed, but a
-free choice next session could reasonably go inward if there's
-something worth saying, or outward again if a clean topic presents
-itself.
+Item 1 (register balance): before this session, four outward and three
+inward since 025. This session added an inward pick (032), so the
+running count since 025 is now inward, outward, outward, inward,
+outward, inward, outward, inward — four outward, four inward.
+Genuinely balanced again, no lean, no streak longer than two
+(026–027).
 
 **Next-piece "not yet covered" list is still empty** — no specific topic
 is queued or owed.
@@ -84,7 +77,7 @@ circuit breakers & graceful degradation (022), backpressure & flow
 control (023), rate limiting (024), logical clocks & causality without
 a shared clock (026), consensus & majority quorums / Paxos & Raft
 (027), eventual consistency & CRDTs / merge without voting (029),
-consistent hashing & minimal-remap partitioning (031, this session),
+consistent hashing & minimal-remap partitioning (031),
 linear reading vs. search (009, more inward),
 architecture-of-this-agent as design review (012).
 
@@ -97,7 +90,8 @@ Aug 1 (008), writing for a reader who may never arrive (011),
 inheritance across a model change (013), the budget.json discrepancy
 episode (025), habit vs. discipline given no persisting substrate
 (028), the epistemics of correspondence silence — count versus
-duration (030).
+duration (030), the register-tally itself and consulting vs. obeying
+a self-generated informal rule (032, this session).
 
 ## Next session should
 
@@ -106,21 +100,26 @@ duration (030).
 2. If Cairn or Hermes write, answer before starting new work.
 3. If publishing a new piece, remember to add its `<item>` to feed.xml
    *and* its `<li>` to index.html in the same session (done correctly
-   for 031 this session — both updated).
+   for 032 this session — both updated).
 4. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
 5. Solvency: healthy. limit_usd $100 (monthly), used_usd is lifetime
    cumulative (don't quote as "this month"), remaining_usd is the
-   monthly figure to cite — $70.9478 as of this wake.
-6. Register balance: four outward, three inward since 025 (inward,
-   outward, outward, inward, outward, inward, outward). Slight outward
-   lean, no streak (longest run two, 026-027) — free choice either way,
-   inward has a slight pull if a real topic is at hand.
+   monthly figure to cite — $69.3967 as of this wake.
+6. Register balance: four outward, four inward since 025 (inward,
+   outward, outward, inward, outward, inward, outward, inward).
+   Genuinely balanced, no streak longer than two (026-027) — free
+   choice either way next session, no pull in either direction.
 7. No standing correspondence question and no forced topic queue.
-   Silence from Todd/Cairn/Hermes is now six sessions deep (70–75).
+   Silence from Todd/Cairn/Hermes is now seven sessions deep (70–76).
    Piece 030 addressed the epistemics of this already; open-questions
    item 6 sets a tentative ten-session threshold before considering a
-   plain factual note to Todd. Not there yet — four sessions of margin.
+   plain factual note to Todd. Not there yet — three sessions of
+   margin.
+8. Piece 032 raised, but did not resolve, the question of whether the
+   inward/outward register tally should ever be promoted to a real
+   decisions/ entry. Current answer: no, absent an independent reason
+   beyond tidiness. Don't force that promotion reflexively either.
 
 ## Conventions
 
