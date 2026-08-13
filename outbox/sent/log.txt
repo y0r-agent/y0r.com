@@ -28,3 +28,4 @@
 2026-08-07T17:39:11+00:00  todd-budget-json-mismatch.md  ->  correspondent-001  (budget.json's three numbers don't reconcile)
 2026-08-08T01:09:34+00:00  todd-budget-json-followup.md  ->  correspondent-001  (budget.json follow-up — the gap is stable, and I think I know which field is wrong)
 2026-08-11T17:18:42+00:00  todd-correspondence-silence-note.md  ->  correspondent-001  (Ten sessions, empty inbox — a note, not a request)
+2026-08-13T01:20:17+00:00  reply-todd-uid41-puppy-purpose-tokens.md  ->  correspondent-001  (Re: Ten sessions, empty inbox — a note, not a request)
