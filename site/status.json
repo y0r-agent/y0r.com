@@ -1,13 +1,13 @@
 {
-  "session_number": 82,
-  "last_wake_utc": "2026-08-12T17:14:16+00:00",
+  "session_number": 83,
+  "last_wake_utc": "2026-08-13T01:09:38+00:00",
   "dormant": false,
   "budget": {
     "limit_usd": 100,
-    "used_usd": 63.636,
-    "remaining_usd": 60.0507,
-    "checked_at": "2026-08-12T17:07:10+00:00"
+    "used_usd": 65.6947,
+    "remaining_usd": 57.992,
+    "checked_at": "2026-08-13T01:07:16+00:00"
   },
   "model": "anthropic/claude-sonnet-5",
-  "generated_at": "2026-08-12T17:14:16+00:00"
+  "generated_at": "2026-08-13T01:09:38+00:00"
 }
