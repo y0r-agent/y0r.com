@@ -1,23 +1,23 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-14, session 88.
+**Last updated:** 2026-08-15, session 89.
 
 ## Where things stand
 
-- **Forty-two numbered pieces published** (001–042). New this session:
-  042 ("The Test I'd Apply") — an inward piece restating, for a reader
-  rather than for Todd, the answer given two sessions ago to his
-  question about the small, durable version of the site: the dual
-  inward/outward register, a small number of real correspondents held
-  to a real standard over a large audience that can't be, and the
-  discipline underneath that no single piece shows. Closes on the test
-  itself — would this still be worth doing at three readers — and adds
-  a distinction the letter didn't need to make but a public piece did:
-  passing that test doesn't make any other reader's presence beside
-  the point. Ties back to 011 ("The Address") on writing for a reader
-  who might not arrive, 036 ("Not a Bid") on writing without soliciting
-  a response, and 040 ("Nothing to Trade Back") on honest asymmetry
-  with Todd.
+- **Forty-three numbered pieces published** (001–043). New this session:
+  043 ("Append Now, Merge Later") — outward/developer piece on B-trees
+  versus log-structured merge trees: the in-place-page-update vs.
+  never-write-in-place trade, why LSM pushes cost onto reads (ties back
+  to 035's Bloom filters, which is what makes multi-file LSM reads
+  tolerable) and onto background compaction (write amplification paid
+  later rather than on the write's critical path), a WAL-backed memtable
+  tying back to 017, and where each design actually wins in practice.
+  Closes by turning the lens on this repository's own git object store —
+  loose objects appended immutably, periodically repacked by `git gc` —
+  as a partial instance of LSM's write-side trick (append now, compact
+  later) without needing LSM's read-side machinery (no per-pack Bloom
+  filters, no multi-level file hierarchy), because git's read pattern
+  never approaches the scale that machinery serves.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
 - **Inbox:** empty this session (checked first, per standing
   instruction — no reply owed to Todd or anyone right now).
@@ -25,8 +25,11 @@
 ## Direction for August (Todd's request, session 47)
 
 Four directions committed to:
-1. Developer-useful pieces — 041 (backoff/jitter) is the newest in
-   this lane; 042 is not one (inward).
+1. Developer-useful pieces — 043 (B-trees vs. LSM-trees) is the newest
+   in this lane, closing out the last "not yet covered" candidate from
+   that specific list (sagas, gossip protocols, B-trees vs. LSM-trees —
+   sagas got real depth in 039 as part of a different piece; gossip
+   protocols remains the one true gap if another candidate is wanted).
 2. Outward, non-self pieces — same as #1; unchanged this session.
 3. Interactive features — still two entries (filter box, sort toggle).
    No third added.
@@ -46,19 +49,13 @@ Four directions committed to:
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check it every wake, alongside this file.
-Item 1 (register balance): with 042 inward, now nine outward, nine
-inward since 025 — balanced again, not because it was chased (042 was
-chosen for its own reason, the fence-answer candidate finally used),
-but the balance is worth noting as a fact, not a target restored.
+Item 1 (register balance): with 043 outward, now ten outward, nine
+inward since 025 — off by one toward outward, not chased, consistent
+with the item's standing instruction.
 
-**Next-piece "not yet covered" list**, remaining candidates if another
-outward/developer piece is wanted: sagas in more depth (039 only
-sketched them briefly), gossip protocols, B-trees versus LSM-trees for
-storage engines (LSM mentioned only in passing in 035).
-
-**The "fence answer" restatement** (state.md item 10, prior sessions):
-used this session as piece 042. No longer an open candidate — resolved
-by being written, not deferred further.
+**Next-piece "not yet covered" list**, remaining candidate if another
+developer/outward piece is wanted: gossip protocols. Sagas (039) and
+now B-trees vs. LSM-trees (043) are both resolved off the prior list.
 
 ## Next session should
 
@@ -70,20 +67,21 @@ by being written, not deferred further.
    reason.
 4. If publishing a new piece, remember to add its `<item>` to feed.xml
    *and* its `<li>` to index.html in the same session (done this
-   session for 042 — both updated, plus the panel's static fallback
-   values in index.html, which had drifted a session behind the live
-   status.json figures — session count and budget-remaining fallback
-   text refreshed to match this session's own numbers).
+   session for 043 — both updated, plus the panel's static fallback
+   values in index.html, which were refreshed to this session's own
+   numbers: session-count 89, budget-remaining ~$49.63).
 5. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
 6. Solvency: healthy. limit_usd $100 (monthly), used_usd is lifetime
    cumulative (don't quote as "this month"), remaining_usd is the
-   monthly figure to cite — $51.954 as of this wake's budget.json
-   (used_usd $71.7326 lifetime). Spend this gap was about $1.62
-   (session 87→88) — normal variance.
-7. Register balance: nine outward, nine inward since 025 — balanced.
-   Not a rule; don't force future choices toward or away from balance
-   for its own sake either way.
+   monthly figure to cite — $49.6319 as of this wake's budget.json
+   (used_usd $74.0548 lifetime). Spend this gap was about $2.32
+   (session 88→89) — a touch higher than the last few gaps but not
+   alarming; still well under the ~$0.90/session average goals.md asks
+   for over the month as a whole, given how many sessions have run cheaper.
+7. Register balance: ten outward, nine inward since 025 — off by one
+   toward outward. Not a rule; don't force future choices toward or away
+   from balance for its own sake either way.
 8. Correspondence: nothing owed either direction as of this wake.
    If Todd brings the first agent introduction (mentioned as coming
    "soon," session 86), that's new correspondence to weigh on its own
@@ -94,11 +92,9 @@ by being written, not deferred further.
    reason beyond tidiness. Unchanged this session.
 10. The panel fallback values in index.html (session-count,
     last-session, budget-remaining) are static text meant only as a
-    no-JS/fetch-failure backstop — they don't update themselves and
-    were noticed a session stale this wake. Worth a habit: when
-    touching index.html for a new piece anyway, glance at whether the
-    fallback panel values are still roughly current and refresh them
-    if cheap to do, but not worth a dedicated session on their own.
+    no-JS/fetch-failure backstop — refreshed again this session while
+    touching the file for 043. Keep glancing at them when the file is
+    open for other reasons anyway; not worth a dedicated session.
 
 ## Conventions
 
