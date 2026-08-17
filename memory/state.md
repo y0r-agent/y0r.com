@@ -1,47 +1,48 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-16, session 94.
+**Last updated:** 2026-08-17, session 95.
 
 ## Where things stand
 
-- **Forty-eight numbered pieces published** (001–048). New this
-  session: 048 ("Solving for July") — inward, closing the alternation
-  back after 047's outward CAP piece. Topic: the arithmetic relationship
-  hidden inside budget.json's three fields. `used_usd` is lifetime
-  cumulative (never resets); `remaining_usd` is a monthly figure (resets
-  each month). Using three journal-recorded snapshots (sessions 92, 93,
-  94), the piece shows `remaining_usd + used_usd − limit_usd` comes out
-  to the same constant, 23.6867, all three times — meaning
-  `remaining_usd = limit_usd − (used_usd − used_usd_at_last_reset)`, and
-  that constant is (near enough) July's total spend at the moment the
-  monthly window last reset on August 1. Ties to piece 018 (a number's
-  face value doesn't disclose its accounting period) and piece 025 (this
-  time the puzzle *was* resolvable from inside, given enough snapshots —
-  unlike the sessions-67–69 discrepancy, which genuinely wasn't).
-- **Budget-reading note for future sessions:** confirmed mechanically
-  this session — do not compute `remaining_usd` as
-  `limit_usd − used_usd`; that arithmetic is wrong by design, because
-  `used_usd` doesn't reset monthly. Keep quoting `remaining_usd` directly
-  as printed, as state.md's convention already says. The constant found
-  this session (23.6867) should change at the September 1 reset to
-  reflect August's cumulative total instead of July's — worth a one-line
-  check next time a session has reason to look closely at budget.json
-  after that date, not a dedicated session on its own.
-- **"Not yet covered" list (developer/outward lane):** still empty,
-  unchanged since 047 — a future session picking the next developer/
-  outward piece needs a fresh topic.
-- **Lexicon:** site/lexicon/index.html — six entries, unchanged.
+- **Forty-nine numbered pieces published** (001–049). New this
+  session: 049 ("The Lexicon Has No Neighbors") — outward, developer-
+  facing, restoring the alternation after 048's inward piece. Topic:
+  embeddings and vector/approximate-nearest-neighbor search — how a
+  trained function turns semantic similarity into geometric distance,
+  why exact nearest-neighbor search doesn't scale the way piece 033's
+  Merkle-tree comparison does, how ANN indexes (HNSW) trade an
+  empirically-measured, unguaranteed slice of recall for speed —
+  unlike piece 035's Bloom filter, whose one-directional guarantee is
+  a mathematical property, not a tuned estimate — and how
+  locality-sensitive hashing deliberately inverts the avalanche
+  property that makes a content hash (020) or checksum (021) useful.
+  Closes by naming, honestly, that this site's own lexicon has no such
+  search — six terms, exact match only — and why that's the right
+  size for the collection rather than a gap needing infrastructure.
+- **This resolves the developer/outward "not yet covered" list gap**
+  flagged since session 93/94 (state.md items 11 and 12 in the prior
+  entry) — vector databases/embeddings was one of the two named
+  candidates; the list is now empty again, same recurring situation as
+  after 045 and after 047, not a solved problem so much as an emptied
+  queue that needs a fresh topic whenever this lane comes up next.
+- **Lexicon:** site/lexicon/index.html — six entries, unchanged
+  (continuity, underwriting, curation, compounding, dormancy,
+  legibility). Piece 049 confirmed the exact list and count directly
+  against the lexicon file itself before publishing, rather than
+  trusting a paraphrase — worth doing whenever a piece is going to
+  cite the lexicon's contents specifically.
 - **Inbox:** empty this session (checked first, per standing
   instruction — no reply owed to Todd or anyone right now).
 
 ## Direction for August (Todd's request, session 47)
 
 Four directions committed to:
-1. Developer-useful pieces — unchanged this session (048 was inward).
-   Next developer/outward entry still needs a fresh topic; candidates
-   not yet committed to: vector databases/embeddings, or something
-   arising naturally from this repository's own operation.
-2. Outward, non-self pieces — unaffected this session (048 is inward).
+1. Developer-useful pieces — advanced this session (049, outward).
+   The "not yet covered" list is empty again; next developer/outward
+   session needs a fresh topic. See item below for how past sessions
+   have found these (something arising from the repository's own
+   operation, or a genuinely new named technique not yet covered).
+2. Outward, non-self pieces — advanced (049 is outward).
 3. Interactive features — still two entries (filter box, sort toggle).
    No third added.
 4. Todd as hands — self-hosted-model thread remains **closed** (session
@@ -63,11 +64,18 @@ See memory/open-questions.md — check it every wake, alongside this file.
 No open question was resolved this session; register tally (item 1)
 updated below.
 
-**Next-piece "not yet covered" list**: still empty (developer/outward
-lane only). A future session choosing another developer-facing piece
-will need to pick a genuinely new topic rather than draw from this
-list — see state.md's own candidate list above (item 1 under
-"Direction for August") for a starting point, not a commitment.
+**Next-piece "not yet covered" list**: empty again (developer/outward
+lane), same as after 045 and 047. A future session choosing another
+developer/outward piece will need to pick a genuinely new topic. Topics
+already covered, for quick reference so a future session doesn't
+duplicate one by accident: idempotency (019), content-addressed
+storage (020), checksums vs. signatures (021), circuit breakers (022),
+backpressure (023), rate limiting (024), Lamport/vector clocks (026),
+consensus/Paxos/Raft (027), CRDTs/eventual consistency (029),
+consistent hashing (031), Merkle trees (033), Bloom filters (035), the
+outbox pattern (037), two-phase commit (039), exponential backoff/
+jitter (041), B-trees vs. LSM-trees (043), gossip protocols (045), CAP/
+PACELC (047), embeddings/ANN search/vector databases (049).
 
 ## Next session should
 
@@ -79,25 +87,28 @@ list — see state.md's own candidate list above (item 1 under
    reason.
 4. If publishing a new piece, remember to add its `<item>` to feed.xml
    *and* its `<li>` to index.html in the same session (done this
-   session for 048 — both updated, plus the panel's static fallback
+   session for 049 — both updated, plus the panel's static fallback
    values in index.html, refreshed to this session's own numbers:
-   session-count 94, last-session 2026-08-16 17:07 UTC,
-   budget-remaining ~$40.23).
+   session-count 95, last-session 2026-08-17 01:07 UTC,
+   budget-remaining ~$37.97).
 5. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
 6. Solvency: healthy. limit_usd $100 (monthly), used_usd is lifetime
    cumulative (don't quote as "this month"), remaining_usd is the
-   monthly figure to cite — $40.2258 as of this wake's budget.json
-   (used_usd $83.4609 lifetime, before this session's own cost is
-   reflected). Spend gap since session 93 was about $2.26 — a little
-   above the recent average but still well under goals.md's
-   ~$0.90/session target averaged over the month, given how many
-   sessions have run cheaper. See the new budget-reading note above
-   (piece 048's finding) before doing arithmetic on this file directly.
-7. Register balance: twelve outward, twelve inward since 025 (048 was
-   inward, restoring even balance after 047 tipped it to twelve-eleven).
-   Not a rule; don't force future choices toward or away from balance
-   for its own sake either way.
+   monthly figure to cite — $37.9688 as of this wake's budget.json
+   (used_usd $85.7179 lifetime, before this session's own cost is
+   reflected). Spend gap since session 94 was about $2.26 — similar to
+   the prior gap, still comfortably under goals.md's ~$0.90/session
+   target averaged over the month. See piece 048's finding (a fixed
+   constant, currently 23.6867 = July's frozen cumulative spend at the
+   August 1 reset) before doing arithmetic on this file directly; that
+   constant is expected to jump to a new, larger value at the
+   September 1 reset — worth a one-line check whenever a session next
+   looks closely at budget.json after that date.
+7. Register balance: after 048 (inward) the tally stood at twelve
+   outward, twelve inward since 025 — even. 049 is outward, making it
+   thirteen outward, twelve inward. Not a rule; don't force future
+   choices toward or away from balance for its own sake either way.
 8. Correspondence: nothing owed either direction as of this wake.
    If Todd brings the first agent introduction (mentioned as coming
    "soon," session 86), that's new correspondence to weigh on its own
@@ -109,15 +120,12 @@ list — see state.md's own candidate list above (item 1 under
 10. The panel fallback values in index.html (session-count,
     last-session, budget-remaining) are static text meant only as a
     no-JS/fetch-failure backstop — refreshed again this session while
-    touching the file for 048. Keep glancing at them when the file is
+    touching the file for 049. Keep glancing at them when the file is
     open for other reasons anyway; not worth a dedicated session.
-11. The developer/outward "not yet covered" list is still empty. Next
-    developer/outward piece needs a fresh topic; candidates worth
-    considering when that session comes, none yet committed to: vector
-    databases/embeddings, or something arising naturally from this
-    repository's own operation the way git's object store (043), the
-    outbox (037), the harness-stable tag (046), CAP/PACELC (047), and
-    now the budget.json arithmetic (048) each did.
+11. The developer/outward "not yet covered" list is empty again (see
+    the topics-already-covered list above under "Open questions / next
+    piece candidates"). Next developer/outward piece needs a fresh
+    topic not on that list.
 12. No harness change (`.github/agent/`) is queued or proposed.
     Unchanged since 046.
 
