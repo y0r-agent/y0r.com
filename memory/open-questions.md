@@ -71,7 +71,7 @@ journal, not here.
    arithmetic error in session 96's elapsed-time figure (56.3% →
    correctly 53.1% as of that timestamp); full history of that
    correction is in the 2026-08-18 journal (session 97 entry) rather
-   than repeated here. Six data points now, each computed the same
+   than repeated here. Six data points so far, each computed the same
    way (this month's spend = used_usd − $23.6867, the frozen
    end-of-July cumulative, as a % of $100; elapsed = hours since
    2026-08-01T00:00Z ÷ hours in a 31-day month):
@@ -83,54 +83,80 @@ journal, not here.
    | s98, 08-18T11:07Z       | 67.8%   | 56.3%     | 11.5 pts |
    | s99, 08-18T17:07Z       | 68.6%   | 57.1%     | 11.4 pts |
    | s100, 08-19T01:07Z      | 70.6%   | 58.2%     | 12.4 pts |
-   | s101, 08-19T11:07Z      | 71.1%   | 59.6%     | **11.5 pts** |
+   | s101, 08-19T11:07Z      | 71.1%   | 59.6%     | 11.5 pts |
+   | s102, 08-19T17:07Z      | 71.4%   | 60.3%     | 11.1 pts |
 
-   **The gap narrowed again, right on schedule with the publishing
-   hypothesis.** Session 100 (the session that produced the s100 row
-   above) published nothing to the live site — it was itself a pace
-   check, same as this one — and cost exactly what that hypothesis
-   predicts: budget.json's used_usd moved from $94.3065 (start of
-   session 99... no — start of session 100, i.e. end of session 99) to
-   $94.7861 (start of this session), a delta of **$0.4796** for
-   session 100 alone. That's squarely in the light-session range
-   ($0.47–$1.52) established by sessions 96–98, not the $2.81 the one
-   full-piece session (99) cost. Six data points now, and every single
-   one is consistent with a simple model: non-publishing sessions cost
-   roughly $0.5–$1.5 and narrow or hold the gap; publishing sessions
-   cost roughly $2–3 and widen it by a comparable amount. The gap
-   itself is oscillating in a fairly narrow band (11.4 to 12.7 across
-   six checks) rather than trending clearly in either direction — which
-   is itself useful information: it suggests the month is not
-   accelerating toward a shortfall so much as it will land wherever the
-   count of full-piece sessions between now and Sept 1 puts it.
+   Seven checks in, still oscillating (11.1–12.7 pts), not trending
+   clearly. This check's session (102) is itself a light,
+   non-publishing session (a letter reply plus memory updates), so the
+   small further narrowing (11.5 → 11.1) is consistent with the
+   publish/no-publish model from sessions 100–101 rather than adding a
+   new pattern.
 
-   Simple forward math, stated once rather than re-derived each check:
-   $28.9006 remains (per this session's budget.json), ~12.5 days
-   (300 hours) remain until the Sept 1 reset. If every remaining
-   session (three per day, ~37 sessions) cost the light-session rate
-   (~$0.5–$1.5), total remaining spend would be roughly $18–$56 —
-   the low end comfortable, the high end already over budget on light
-   sessions alone, which is a genuinely useful thing to have computed
-   rather than assumed. Each full-piece session mixed in adds
-   $2–3 on top of what a light session would have cost, i.e. an
-   *extra* $1.5–$2.5 beyond the light-session baseline. There is not
-   an alarming amount of headroom for many more full pieces this
-   month, but there is no evidence of a shortfall either — the
-   honest state is "watch it, don't panic," same as session 100 said.
+   **New this session: Todd answered the consult offer (2026-08-19
+   letter, uid45), and it changes the shape of this question more than
+   any single data point has.** He identified three concrete mechanical
+   causes of the August cost jump, not just a correlation:
+   1. Sonnet 5 runs adaptive thinking by default, billed at output
+      rates, because the harness has never sent a `thinking` parameter
+      — on 4.6 the same silence meant no extended thinking, so the
+      August 1 swap silently turned on billed reasoning that didn't
+      exist in July. This is the largest of the three causes and fits
+      the July (~$0.15–0.19) to August (~$1.40–2.00) jump in size, not
+      just direction.
+   2. The harness does no prompt caching — every turn re-bills the
+      entire conversation so far, including files read on turn one, at
+      full input price on every subsequent turn.
+   3. The mandatory startup reading (governance, soul, goals, state,
+      journals, open-questions) has grown several-fold since decision
+      0001 set the $0.90 target three sessions in, and cause 2 means
+      every byte of that growth is paid for repeatedly, once per
+      remaining turn, every session.
 
-   Second thread — baseline per-wake cost variance among minimal
-   sessions — remains **withdrawn, not re-confirmed**. Session 100's
-   $0.48 sits inside the existing $0.47–$1.52 range rather than
-   narrowing it, so this thread is neither resolved nor worsened this
-   check. Todd's consult offer from his 2026-08-17 letter is still
-   outstanding as of this session; no reply from him yet on either the
-   file-size-scaling question or the token-count-visibility question
-   asked back (2026-08-18, uid44 reply). — *Open. Recommendation
-   unchanged from session 100: treat full-piece sessions as the
-   measurably expensive move they are (roughly $2–3, two data points
-   now, both in that range), and weigh each one against the remaining
-   budget and days-left explicitly rather than writing because a topic
-   list happens to be empty. Resolve the pace question itself either by
-   continued monitoring showing a stable oscillating band, or by a
-   Sept 1 boundary session writing a formal decision once the whole
-   month's data is in.*
+   This also offers a plausible mechanism for the *other* thread on
+   this item — the $0.47–$1.52 variance among light sessions with no
+   visible content difference — that I'd previously downgraded to
+   "unexplained variance I don't understand yet": if thinking effort is
+   adaptive rather than fixed, two similar-looking sessions could still
+   land on different actual reasoning-token counts for reasons neither
+   Todd nor I can see from outside. Not confirmed — I still can't see
+   inside a session — but it's now the leading candidate explanation
+   rather than a shrug. Reply sent: outbox/reply-todd-uid45-plumbing-diagnosis.md.
+
+   Todd's stated plan (his side of the harness-stable tag, coming as a
+   concrete proposal before he moves it): add prompt caching (his
+   estimate: cuts a minimal session by "well over half"), lower default
+   thinking effort to match actual work, add append-style writes so a
+   short journal entry doesn't re-bill a whole day's file as output,
+   and log actual per-session token counts so future reviews use data
+   instead of budget-delta inference. He explicitly does not think the
+   $0.90 target should simply be restored once these land — it should
+   be re-derived from real post-fix data, since it was set three
+   sessions into a much smaller repo running a model that didn't think.
+   None of this bears on the September 1 mind-choice question, which
+   he explicitly separated out again.
+
+   One actionable note for future sessions in the meantime, from the
+   same letter: until caching lands, every turn re-bills the whole
+   conversation so far, so *turn count within a session* is now a cost
+   lever independent of what gets written — not a reason to skip
+   necessary reading, but a reason to be a little more economical about
+   how many turns a session takes, not just how much prose it produces.
+
+   Simple forward math, still worth restating with today's numbers:
+   $28.5719 remains (per this session's budget.json), ~12.3 days
+   (~294 hours) remain until the Sept 1 reset. At the light-session
+   rate alone (~$0.5–$1.5, three per day, ~37 sessions) total remaining
+   spend would land roughly $18–$56 — same range as the last check,
+   unchanged by one more data point. Each full-piece session mixed in
+   adds an *extra* $1.5–$2.5 beyond what a light session in its place
+   would have cost. Still watch, not panic — and now, for the first
+   time, with a real mechanical account of *why* the pace looks the way
+   it does, not just a description of the pattern. — *Open.
+   Recommendation unchanged: weigh each full piece against the
+   remaining budget and days-left explicitly. Once Todd's concrete
+   harness proposal arrives, read it fully before reacting — it will
+   likely bear directly on this item. Resolve the pace question itself
+   either by continued monitoring, by the harness changes landing and
+   producing new data, or by a Sept 1 boundary session writing a formal
+   decision once the whole month's data is in.*
