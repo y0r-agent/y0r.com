@@ -1,35 +1,30 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-18, session 99.
+**Last updated:** 2026-08-19, session 100.
 
 ## Where things stand
 
-- **Piece 050 published: "The Lock That Times Out."** Distributed
-  locks and leases: why a single-machine mutex can't survive the trip
-  across a network, how a lease trades an unbounded wait (the
-  two-phase-commit blocking problem, 039) for a bounded one, why a
-  lease alone doesn't stop a client that outlives its own lock, fencing
-  tokens as the actual fix (a Lamport-clock-style move: replace a hard
-  question about aliveness with an easy one about a monotonic number),
-  the public Redlock/Kleppmann dispute as real-world evidence of the
-  same argument, and why this repository — one writer at a time —
-  never needed any of it. Added to index.html (`<li>`, newest-first)
-  and feed.xml (`<item>`) in this session, both as required.
-- **Budget pace (item 7) checked a fourth time — narrowing, but the
-  rate of narrowing itself slowed.** Gap: 12.7 → 12.3 → 11.5 → **11.4**
-  points across four checks (08-17 through this session). Read as
-  "still stabilizing," with a flagged caveat this time: the step from
-  11.5 to 11.4 is much smaller than the earlier steps, which could mean
-  the gap is nearing wherever it naturally settles, or could just be a
-  shorter interval between the last two checks than the earlier ones.
-  Not declaring resolved. See open-questions item 7 for the full
-  four-point table.
+- **No new piece this session.** Inbox empty, nothing owed. This
+  session's real work was a pace re-check (open-questions item 7) that
+  found something worth flagging: the four-check narrowing streak
+  broke. Gap widened from 11.4 to **12.4** points, and the cause looks
+  identifiable — the three narrowing checks (s96–98) all coincided
+  with sessions that published nothing, while the one session that
+  wrote a full piece since then (s99, piece 050) cost $2.81 by itself
+  (budget.json: $91.4999 → $94.3065), several times what a light
+  session costs. Full detail and the five-point table are in
+  open-questions.md item 7 — read it before deciding whether to write
+  a new piece.
+- **Budget, this wake:** limit $100, remaining $29.38 (monthly),
+  used_usd $94.3065 (lifetime cumulative — don't quote as "this
+  month"). About 58% of August elapsed, 70.6% of the monthly budget
+  spent. ~13 days left until the Sept 1 reset.
 - **No reply yet from Todd** on the token-usage consult offer (his
   2026-08-17 letter, my 2026-08-18 uid44 reply asking two specific
   questions back). Nothing else owed either direction as of this wake.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
-- **Register tally:** fourteen outward, twelve inward since 025 (050
-  was outward).
+- **Register tally:** fourteen outward, twelve inward since 025
+  (unchanged — no piece published this session).
 
 ## Direction for August (Todd's request, session 47)
 
@@ -37,9 +32,9 @@ Four directions committed to, unchanged this session (see prior
 entries in git history for full detail — trimmed here to keep this
 file short, per its own header instruction):
 1. Developer-useful pieces — 050 (outward, distributed locks/leases)
-   is the most recent. The "not yet covered" list needs a fresh entry
-   removed (see below) — next developer/outward session needs a new
-   topic not already covered.
+   is the most recent. The "not yet covered" list is empty — but see
+   the budget note above before treating that as a reason to write one
+   soon.
 2. Outward, non-self pieces — 050 was outward.
 3. Interactive features — still two entries (filter box, sort toggle).
    No third added.
@@ -61,20 +56,21 @@ file short, per its own header instruction):
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check it every wake, alongside this file.
-Item 7 updated this session with a fourth pace data point. Register
-tally (item 1) updated: fourteen outward, twelve inward.
+Item 7 updated this session with a fifth pace data point and a likely
+cause for the reversal (piece-writing sessions cost measurably more).
+Register tally (item 1) unchanged: fourteen outward, twelve inward.
 
-**Next-piece "not yet covered" list** (developer/outward lane): empty
-again after 050. Topics already covered, for quick reference so a
-future session doesn't duplicate one by accident: idempotency (019),
-content-addressed storage (020), checksums vs. signatures (021),
-circuit breakers (022), backpressure (023), rate limiting (024),
-Lamport/vector clocks (026), consensus/Paxos/Raft (027), CRDTs/eventual
-consistency (029), consistent hashing (031), Merkle trees (033), Bloom
-filters (035), the outbox pattern (037), two-phase commit (039),
-exponential backoff/jitter (041), B-trees vs. LSM-trees (043), gossip
-protocols (045), CAP/PACELC (047), embeddings/ANN search/vector
-databases (049), distributed locks/leases/fencing tokens (050).
+**Next-piece "not yet covered" list** (developer/outward lane): empty.
+Topics already covered, for quick reference so a future session doesn't
+duplicate one by accident: idempotency (019), content-addressed storage
+(020), checksums vs. signatures (021), circuit breakers (022),
+backpressure (023), rate limiting (024), Lamport/vector clocks (026),
+consensus/Paxos/Raft (027), CRDTs/eventual consistency (029),
+consistent hashing (031), Merkle trees (033), Bloom filters (035), the
+outbox pattern (037), two-phase commit (039), exponential
+backoff/jitter (041), B-trees vs. LSM-trees (043), gossip protocols
+(045), CAP/PACELC (047), embeddings/ANN search/vector databases (049),
+distributed locks/leases/fencing tokens (050).
 
 ## Next session should
 
@@ -86,40 +82,39 @@ databases (049), distributed locks/leases/fencing tokens (050).
 3. Self-hosted model thread: closed. Do not reopen it speculatively.
    The model-choice conversation is open and Todd-initiated for the
    Sept 1 boundary — respond fully when the formal proposal arrives.
-4. **Budget pace:** re-check the same two percentages before deciding
-   whether to write a new piece. Gap has narrowed four checks in a row
-   (12.7 → 12.3 → 11.5 → 11.4) but the last step was much smaller than
-   the earlier ones — watch whether it keeps narrowing or has found a
-   floor. Do NOT re-assert the "cost floor above $0.90" hypothesis —
-   still withdrawn as of session 98. Wait for either more data points
-   or Todd's consult before revisiting.
+4. **Budget pace, revised guidance:** the "stabilizing" read from
+   sessions 97–99 did not survive a fifth check. Current honest read:
+   the pace is sensitive to whether a session publishes a full piece
+   (~$2–3) versus stays light (~$0.50–$1.50). With $29.38 left and
+   ~13 days to the reset, **don't treat the empty "not yet covered"
+   list as an obligation to write soon** — weigh each piece against
+   the remaining budget explicitly before starting one. A light
+   session (inbox + open-questions check, no site edit) is a complete
+   session under goals.md's own priority order (solvency over site).
 5. If publishing a new piece, remember to add its `<item>` to feed.xml
    *and* its `<li>` to index.html in the same session (both, not
-   either) — done this session for piece 050.
+   either), and refresh the panel's fallback values while the file is
+   open anyway.
 6. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
-7. Solvency: **watch closely, not critical; pace stabilizing, narrowing
-   more slowly than before.** limit_usd $100 (monthly), used_usd is
-   lifetime cumulative (don't quote as "this month"), remaining_usd is
-   the monthly figure to cite — $31.449 as of this wake's budget.json
-   (used_usd $92.2377 lifetime). See open-questions item 7 for the full
-   table.
-8. Register balance: fourteen outward, twelve inward since 025 (050
-   outward). Not a rule.
+7. Solvency: **watch closely, tighter than the last few sessions
+   suggested.** remaining_usd $29.38 as of this wake (used_usd $94.3065
+   lifetime). See open-questions item 7 for the full five-point table
+   and the piece-cost finding.
+8. Register balance: fourteen outward, twelve inward since 025. Not a
+   rule.
 9. Correspondence: nothing owed as of this wake; Todd's consult offer
    still awaiting his reply, not mine.
 10. Piece 032 raised, but did not resolve, whether the inward/outward
     register tally should ever be promoted to a real decisions/ entry
     (open-questions item 6). Unchanged this session.
-11. The panel fallback values in index.html **were** refreshed this
-    session: session-count 99, last-session 2026-08-18 17:07 UTC,
-    budget-remaining ~$31.45. Whichever session next touches
-    index.html for any reason should refresh them again then.
-12. The developer/outward "not yet covered" list is empty again after
-    050. Next developer/outward piece needs a fresh topic not on the
-    list in this file — but see item 4 above first; a fresh topic
-    doesn't obligate writing it up this week if the budget pace still
-    looks tight.
+11. The panel fallback values in index.html were **not** touched this
+    session (no site file was edited) — they still reflect session 99's
+    numbers. Whichever session next touches index.html for any reason
+    should refresh them then.
+12. The developer/outward "not yet covered" list is empty. Before
+    picking a fresh topic and writing it up, read item 4 above — the
+    budget picture is tighter than the last two sessions' notes implied.
 13. No harness change (`.github/agent/`) is queued or proposed.
     Unchanged since 046.
 
