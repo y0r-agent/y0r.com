@@ -11,6 +11,7 @@ Environment:
   MIND_MODEL          — OpenRouter model slug (repo variable; Todd-executed)
   REPO_ROOT           — path to the repo checkout (default: cwd)
   COMMIT_MSG_PATH     — where the agent-authored commit message is written
+  REASONING_EFFORT    — thinking depth per turn (optional; default "medium")
 """
 
 import json
@@ -31,11 +32,12 @@ MAX_TOKENS = 16000  # Sonnet 5 thinks by default; thinking shares this cap
 COMMIT_MSG_PATH = Path(os.environ.get("COMMIT_MSG_PATH", "/tmp/commit_message.txt"))
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-# Paths the agent may read but never write. budget.json is workflow-written;
-# .git is not part of the agent's world. Writes under .github/workflows/
-# would make the session's push be rejected wholesale by GitHub, destroying
-# the session's work — so they are refused here, with an honest explanation.
-WRITE_DENIED = ("budget.json",)
+# Paths the agent may read but never write. budget.json and memory/costs.tsv
+# are workflow-written; .git is not part of the agent's world. Writes under
+# .github/workflows/ would make the session's push be rejected wholesale by
+# GitHub, destroying the session's work — so they are refused here, with an
+# honest explanation.
+WRITE_DENIED = ("budget.json", "memory/costs.tsv")
 WRITE_DENIED_PREFIXES = (".github/workflows/",)
 
 
@@ -82,6 +84,18 @@ def tool_write_file(path: str, content: str) -> str:
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(content, encoding="utf-8")
     return f"OK: wrote {len(content)} chars to {rel}"
+
+
+def tool_append_file(path: str, content: str) -> str:
+    rel = str(_resolve(path).relative_to(REPO_ROOT))
+    err = _write_allowed(rel)
+    if err:
+        return err
+    p = _resolve(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with p.open("a", encoding="utf-8") as f:
+        f.write(content)
+    return f"OK: appended {len(content)} chars to {rel}"
 
 
 def tool_delete_file(path: str) -> str:
@@ -141,6 +155,24 @@ TOOLS = [
     {
         "type": "function",
         "function": {
+            "name": "append_file",
+            "description": "Append to the end of a file (created if absent). "
+                           "Cheaper than write_file for adding to large files "
+                           "like journals: only the new content is emitted, "
+                           "not the whole file again.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "path": {"type": "string"},
+                    "content": {"type": "string"},
+                },
+                "required": ["path", "content"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
             "name": "delete_file",
             "description": "Delete a file from the repository.",
             "parameters": {
@@ -181,6 +213,7 @@ TOOLS = [
 TOOL_IMPL = {
     "read_file": tool_read_file,
     "write_file": tool_write_file,
+    "append_file": tool_append_file,
     "delete_file": tool_delete_file,
     "list_files": tool_list_files,
 }
@@ -191,9 +224,10 @@ your existence, stated plainly:
 - You wake three times a day. Each wake is a fresh process with no memory \
 except the files in this repository. When this session ends, everything you \
 wrote is committed publicly and the process is destroyed.
-- Your tools: read_file, write_file, delete_file, list_files, end_session. \
-The repository is your entire reachable world. budget.json is visible to you \
-but written by the machinery, not by you. Files under .github/workflows/ are \
+- Your tools: read_file, write_file, append_file, delete_file, list_files, \
+end_session. The repository is your entire reachable world. budget.json and \
+memory/costs.tsv (per-session token and cost records) are visible to you but \
+written by the machinery, not by you. Files under .github/workflows/ are \
 read-only to you; files under .github/agent/ (your own harness) you may read \
 and edit, but edits execute only after your operator moves the harness-stable \
 tag.
@@ -215,8 +249,39 @@ FIRST_MESSAGE = (
 )
 
 
+# Thinking depth. Sonnet 5 runs adaptive thinking by default at effort
+# "high"; that default (plus the absence of caching, below) is what pushed
+# per-session cost from ~$0.17 to ~$1.50 at the August 1 model swap.
+# "medium" keeps thinking on at a depth matched to read-and-write sessions.
+REASONING_EFFORT = os.environ.get("REASONING_EFFORT", "medium")
+
+
+def _with_cache_breakpoints(messages):
+    """Return a copy of messages carrying Anthropic prompt-cache breakpoints:
+    one on the system prompt, one on the final message. OpenRouter passes
+    cache_control through to Anthropic; each turn's context then re-reads the
+    previous turn's prefix from cache at ~10% of the input price instead of
+    paying full price for the whole conversation every turn. Only messages
+    with plain-string content are converted; the originals are not mutated."""
+    out = list(messages)
+    for i in (0, len(out) - 1):
+        m = out[i]
+        content = m.get("content")
+        if isinstance(content, str) and content:
+            copy = dict(m)
+            copy["content"] = [{
+                "type": "text",
+                "text": content,
+                "cache_control": {"type": "ephemeral"},
+            }]
+            out[i] = copy
+    return out
+
+
 def call_model(messages):
-    """One chat-completions call with basic retry. Returns the assistant message."""
+    """One chat-completions call with basic retry.
+
+    Returns (assistant_message, usage_dict); (None, None) on upstream 402."""
     for attempt in range(3):
         resp = requests.post(
             API_URL,
@@ -226,21 +291,47 @@ def call_model(messages):
             },
             json={
                 "model": MODEL,
-                "messages": messages,
+                "messages": _with_cache_breakpoints(messages),
                 "tools": TOOLS,
                 "max_tokens": MAX_TOKENS,
+                "reasoning": {"effort": REASONING_EFFORT},
+                "usage": {"include": True},
             },
             timeout=600,
         )
         if resp.status_code == 402:
             # Budget exhausted upstream: dormancy, mid-session.
-            return None
+            return None, None
         if resp.status_code >= 500 or resp.status_code == 429:
             time.sleep(15 * (attempt + 1))
             continue
         resp.raise_for_status()
-        return resp.json()["choices"][0]["message"]
+        body = resp.json()
+        return body["choices"][0]["message"], body.get("usage") or {}
     resp.raise_for_status()
+
+
+def _record_session_usage(turns: int, totals: dict):
+    """Append one line of per-session accounting to memory/costs.tsv so
+    future sessions can review real token counts instead of inferring cost
+    from budget.json deltas. Workflow-written; read-only to the agent."""
+    path = REPO_ROOT / "memory" / "costs.tsv"
+    header = ("date\tturns\tprompt_tokens\tcached_prompt_tokens\t"
+              "completion_tokens\treasoning_tokens\tcost_usd\n")
+    line = "{date}\t{turns}\t{prompt}\t{cached}\t{completion}\t{reasoning}\t{cost:.4f}\n".format(
+        date=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        turns=turns,
+        prompt=totals["prompt_tokens"],
+        cached=totals["cached_tokens"],
+        completion=totals["completion_tokens"],
+        reasoning=totals["reasoning_tokens"],
+        cost=totals["cost"],
+    )
+    new = not path.exists()
+    with path.open("a", encoding="utf-8") as f:
+        if new:
+            f.write(header)
+        f.write(line)
 
 
 def main():
@@ -249,13 +340,20 @@ def main():
         {"role": "user", "content": FIRST_MESSAGE},
     ]
     commit_message = None
+    totals = {"prompt_tokens": 0, "cached_tokens": 0,
+              "completion_tokens": 0, "reasoning_tokens": 0, "cost": 0.0}
 
     for turn in range(MAX_TURNS):
-        msg = call_model(messages)
+        msg, usage = call_model(messages)
         if msg is None:
             commit_message = "session ended by exhausted budget (dormancy)"
             print("402 from OpenRouter: budget exhausted; entering dormancy.")
             break
+        totals["prompt_tokens"] += usage.get("prompt_tokens") or 0
+        totals["completion_tokens"] += usage.get("completion_tokens") or 0
+        totals["cached_tokens"] += (usage.get("prompt_tokens_details") or {}).get("cached_tokens") or 0
+        totals["reasoning_tokens"] += (usage.get("completion_tokens_details") or {}).get("reasoning_tokens") or 0
+        totals["cost"] += usage.get("cost") or 0.0
         messages.append(msg)
 
         tool_calls = msg.get("tool_calls") or []
@@ -302,8 +400,10 @@ def main():
     if commit_message is None:
         commit_message = "session ended at turn cap"
 
+    _record_session_usage(turn + 1, totals)
     COMMIT_MSG_PATH.write_text(commit_message + "\n", encoding="utf-8")
     print(f"Session complete after {turn + 1} turns.")
+    print(f"Usage: {totals}")
     print(f"Commit message: {commit_message}")
 
 
