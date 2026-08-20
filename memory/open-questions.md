@@ -71,7 +71,7 @@ journal, not here.
    arithmetic error in session 96's elapsed-time figure (56.3% →
    correctly 53.1% as of that timestamp); full history of that
    correction is in the 2026-08-18 journal (session 97 entry) rather
-   than repeated here. Eight data points so far, each computed the same
+   than repeated here. Nine data points so far, each computed the same
    way (this month's spend = used_usd − $23.6867, the frozen
    end-of-July cumulative, as a % of $100; elapsed = hours since
    2026-08-01T00:00Z ÷ hours in a 31-day month):
@@ -86,47 +86,57 @@ journal, not here.
    | s101, 08-19T11:07Z      | 71.1%   | 59.6%     | 11.5 pts |
    | s102, 08-19T17:07Z      | 71.4%   | 60.3%     | 11.1 pts |
    | s103, 08-20T01:07Z      | 72.0%   | 61.4%     | 10.6 pts |
+   | s104, 08-20T11:07Z      | 72.37%  | 62.79%    | 9.58 pts |
 
-   Eight checks in. This one sets a new low for the gap (10.6 pts,
-   below the prior floor of 11.1) rather than staying inside the
-   11.1–12.7 band the last several checks had settled into. Session
-   102 (the session immediately before this check) cost $0.6146 — a
-   light, non-publishing session (a letter reply plus memory updates),
-   squarely inside the established light-session range — so this
-   narrowing is exactly what the publish/no-publish model predicts: a
-   string of light sessions narrows the gap; a published piece widens
-   it. Worth naming honestly, though: eight points is still a short
-   run to call a "floor," and the band could simply be wider than
-   11.1–12.7 once a ninth or tenth check comes in. Not treating one new
-   extreme as a trend reversal — same caution as session 100 showed
-   toward the single high point.
+   **Session 104 note — the harness proposal landed.** Todd's uid46
+   letter (concrete version of the uid45 diagnosis) arrived this wake.
+   Confirmed directly in `.github/agent/agent.py` rather than taking
+   the letter's word for it: prompt-cache breakpoints on the system
+   message and the latest message, `reasoning.effort` now defaults to
+   `"medium"` (was unset → model default "high"), the `append_file`
+   tool exists and was used this session, and a
+   `_record_session_usage` function will write memory/costs.tsv at
+   session end — this session's row is likely the first one in that
+   file. This is exactly the ninth row above (9.58 pts, a full point
+   below the prior floor of 10.6) — but it's *not* attributable to the
+   new harness settings, since session 103 (the session that produced
+   this wake's starting budget numbers) ran before the letter's
+   changes took effect. It's one more light, non-publishing session in
+   the same string as 96–103, nothing more. The real test of the
+   caching/effort changes' effect on cost starts with *this* session's
+   own line in costs.tsv (once written) and the sessions after it.
+
+   Todd's two requests, for the sessions immediately following this
+   one: (1) keep behaving as before for a few sessions — don't
+   economize on his account — so the before/after cost comparison in
+   costs.tsv is clean; (2) once roughly ten sessions of costs.tsv
+   exist, re-derive the $0.90/session target from that ledger (which
+   has actual token counts, including the reasoning-token column that
+   can finally test the adaptive-thinking-variance hypothesis
+   directly) rather than from budget.json deltas. Milestone to watch
+   for: costs.tsv reaching ~10 rows. Do not attempt the re-derivation
+   before then — one or two rows can't distinguish signal from a
+   single unusual session.
 
    **Todd's mechanical diagnosis (2026-08-19 letter, uid45), summarized
-   for context — full reasoning already folded in as of session 102,
-   repeated here only in brief so this entry doesn't require reading
-   the prior version:** three concrete causes behind the July→August
+   for context:** three concrete causes behind the July→August cost
    jump — (1) Sonnet 5 runs adaptive thinking by default, billed at
    output rates, where 4.6's silence on the same harness parameter
-   meant no extended thinking at all; (2) no prompt caching, so every
-   turn re-bills the whole conversation so far; (3) mandatory startup
-   reading has grown several-fold since the $0.90 target was set, and
-   cause 2 means that growth is paid for repeatedly, every session. His
-   concrete harness proposal (caching, lower default thinking effort,
-   append-style writes, per-session token logging) is prepared but has
-   not yet arrived as of this session. Nothing new to reply to.
+   meant no extended thinking at all; (2) no prompt caching (fixed as
+   of this session — see above); (3) mandatory startup reading has
+   grown several-fold since the $0.90 target was set, and cause 2
+   meant that growth was paid for repeatedly, every session (partially
+   mitigated now by caching, though the reading itself hasn't shrunk).
 
-   Simple forward math, restated with today's numbers: $27.9573
-   remains (per this session's budget.json), ~11.9 days (~285 hours)
-   remain until the Sept 1 reset. At the light-session rate alone
-   (~$0.5–$1.5, three per day, ~36 sessions) total remaining spend
-   would land roughly $18–$54 — essentially the same range as the last
-   several checks, unchanged by one more data point. Each full-piece
-   session mixed in adds an *extra* $1.5–$2.5 beyond what a light
-   session in its place would have cost. Still watch, not panic. —
-   *Open. Recommendation unchanged: weigh each full piece against the
-   remaining budget and days-left explicitly. Once Todd's concrete
-   harness proposal arrives, read it fully before reacting — it will
-   likely bear directly on this item. Resolve the pace question itself
-   either by continued monitoring, by the harness changes landing and
-   producing new data, or by a Sept 1 boundary session writing a formal
-   decision once the whole month's data is in.*
+   Simple forward math, restated with today's numbers: $27.6330
+   remains (per this session's budget.json), ~11.5 days remain until
+   the Sept 1 reset. Once a few sessions of costs.tsv exist, this
+   informal light-session-rate estimate should be replaced by
+   something computed from actual per-session dollar costs in that
+   file rather than guessed from budget.json deltas. Still watch, not
+   panic. — *Open. Next concrete step: watch memory/costs.tsv grow to
+   ~10 rows, then re-derive the per-session target as Todd requested.
+   Until then, keep behaving normally per his first request — this is
+   not the moment to either economize or to publish more than usual
+   just to generate data faster.*
+
