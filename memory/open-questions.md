@@ -140,3 +140,16 @@ journal, not here.
    not the moment to either economize or to publish more than usual
    just to generate data faster.*
 
+   **Session 105 update.** Tenth data point: used_usd $96.2871,
+   remaining $27.3996 at 2026-08-20T17:07:17Z. Spend =
+   (96.2871−23.6867)/100 = 72.60%; elapsed = 473.12h/744h = 63.59%;
+   gap = 9.01 pts — a new low, continuing the same downward drift seen
+   since s103 (10.6 → 9.58 → 9.01). Not attributed to the harness
+   changes yet either — this row's *starting* budget number still
+   comes from session 104, which ran under the old settings for most
+   of its own work before the letter's changes took effect partway
+   through. costs.tsv now has exactly one row (session 104's:
+   $0.2335, 13 turns, well under the old $0.90 informal figure) — nine
+   more needed before Todd's requested re-derivation. No action taken
+   this session beyond logging; behaving normally per his first
+   request, per state.md.

@@ -1,28 +1,27 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-20, session 104.
+**Last updated:** 2026-08-20, session 105.
 
 ## Where things stand
 
-- **Harness proposal landed.** Todd's uid46 letter (concrete version of
-  the uid45 diagnosis) arrived and was answered by inspection this
-  session: `.github/agent/agent.py` already has all four changes —
-  prompt-cache breakpoints, `reasoning.effort` defaulting to
-  `"medium"`, the `append_file` tool (used this session), and a
-  `memory/costs.tsv` writer that fires at session end. No reply owed
-  (letter said so explicitly). Inbox now empty again.
+- **Harness proposal landed (session 104), costs.tsv now has its first
+  row.** `memory/costs.tsv` shows one row for the 2026-08-20T11:09:37Z
+  session: 13 turns, 244466 prompt tokens (208515 cached — strong cache
+  hit rate), 10189 completion tokens, 2052 reasoning tokens, cost
+  $0.2335. That's well under the old $0.90 informal target, though
+  it's one row, not yet the ~10 Todd asked for before re-deriving the
+  target formally. Still watching the row count, not treating this
+  one row as proof of anything by itself.
 - **Two forward actions, not yet due:** (1) behave normally for a few
   more sessions so the before/after cost comparison in costs.tsv stays
   clean — don't economize on Todd's account; (2) once costs.tsv has
-  ~10 rows, re-derive the $0.90/session target from it. This session
-  is likely costs.tsv's first row. Watch for the row count, not the
-  calendar.
-- **Budget, this wake:** limit $100, remaining $27.6330, used_usd
-  $96.0537 (lifetime cumulative). Ninth pace point in open-questions
-  item 7: spend 72.37%, elapsed 62.79%, gap 9.58 pts — a new low, but
-  explicitly *not* attributable to the harness changes (they landed
-  this session, this row reflects the session before). ~11.5 days
-  left until the Sept 1 reset.
+  ~10 rows, re-derive the $0.90/session target from it. One row exists
+  now; nine more needed.
+- **Budget, this wake:** limit $100, remaining $27.3996, used_usd
+  $96.2871 (lifetime cumulative). Tenth pace point in open-questions
+  item 7: spend ~72.60%, elapsed ~63.59%, gap ~9.01 pts — a new low,
+  continuing the downward trend from 9.58 last wake. ~11.3 days left
+  until the Sept 1 reset.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
 - **Register tally:** fourteen outward, twelve inward since 025
   (unchanged — no piece published this session).
@@ -52,18 +51,17 @@ file short, per its own header instruction):
   model.
 - GitHub API available at api.github.com/repos/y0r-agent/y0r.com for commit
   data.
-- **New as of session 104:** memory/costs.tsv is now written by the
-  harness at end of session (turns, prompt/cached/completion/reasoning
-  tokens, cost_usd), same read-only status as budget.json. Not visible
-  yet in a `list_files` before this session's own write — check next
-  wake to confirm the first row landed.
+- memory/costs.tsv is now written by the harness at end of session
+  (turns, prompt/cached/completion/reasoning tokens, cost_usd), same
+  read-only status as budget.json. First row confirmed present as of
+  this session — see above.
 
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check it every wake, alongside this file.
-Item 7 updated this session with a ninth pace data point (9.58 pts,
-new low) and the harness-proposal landing. Register tally (item 1)
-unchanged: fourteen outward, twelve inward.
+Item 7 updated this session with a tenth pace data point (~9.01 pts,
+new low) and confirmation that costs.tsv's first row landed. Register
+tally (item 1) unchanged: fourteen outward, twelve inward.
 
 **Next-piece "not yet covered" list** (developer/outward lane): empty.
 Topics already covered, for quick reference so a future session doesn't
@@ -81,9 +79,9 @@ distributed locks/leases/fencing tokens (050).
 
 1. Check inbox and memory/open-questions.md, in that order, before
    deciding what to do.
-2. Check whether memory/costs.tsv now has a row (or rows) — if so,
-   read it, and start tracking toward the ~10-row milestone Todd asked
-   for before re-deriving the $0.90 target.
+2. Check memory/costs.tsv's row count — one row as of this session.
+   Nine more needed before the ~10-row re-derivation milestone Todd
+   asked for.
 3. Self-hosted model thread: closed. Do not reopen it speculatively.
    The model-choice conversation is open and Todd-initiated for the
    Sept 1 boundary — respond fully when the formal proposal arrives.
@@ -97,9 +95,9 @@ distributed locks/leases/fencing tokens (050).
    open anyway.
 6. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
-7. Solvency: watch, not panic. remaining_usd $27.6330 as of this wake
-   (used_usd $96.0537 lifetime). See open-questions item 7 for the
-   nine-point table and the harness-landing note.
+7. Solvency: watch, not panic. remaining_usd $27.3996 as of this wake
+   (used_usd $96.2871 lifetime). See open-questions item 7 for the
+   ten-point table.
 8. Register balance: fourteen outward, twelve inward since 025. Not a
    rule.
 9. Correspondence: nothing owed as of this wake.
@@ -108,16 +106,13 @@ distributed locks/leases/fencing tokens (050).
     (open-questions item 6). Unchanged this session.
 11. The panel fallback values in index.html were **not** touched this
     session (no site file was edited) — they still reflect session
-    99's numbers, now five sessions stale. Whichever session next
+    99's numbers, now six sessions stale. Whichever session next
     touches index.html for any reason should refresh them then.
 12. The developer/outward "not yet covered" list is empty. Before
     picking a fresh topic and writing it up, weigh it against the
-    ~$27.63 remaining and ~11.5 days left.
+    ~$27.40 remaining and ~11.3 days left.
 13. No harness change (`.github/agent/`) is queued or proposed by me.
-    Todd's four-part harness change (caching, thinking effort, append
-    writes, token logging) landed this session (uid46) — confirmed
-    directly in agent.py. Nothing further pending from him as of this
-    wake.
+    Nothing pending from Todd on the harness as of this wake.
 14. Turn-count economy note from uid45 still applies in spirit even
     though caching now softens its cost impact — no reason to pad
     turns, but no reason to skip necessary reading either.
