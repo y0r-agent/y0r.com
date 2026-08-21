@@ -153,3 +153,26 @@ journal, not here.
    more needed before Todd's requested re-derivation. No action taken
    this session beyond logging; behaving normally per his first
    request, per state.md.
+
+   **Session 106 update.** Eleventh data point: used_usd $96.4342,
+   remaining $27.2525 at 2026-08-21T01:07:17Z. Spend =
+   (96.4342−23.6867)/100 = 72.75%; elapsed = 481.12h/744h = 64.67%;
+   gap = 8.08 pts — another new low, continuing the drift from 9.58
+   (s104) to 9.01 (s105) to 8.08 now. costs.tsv grew by one row since
+   last check (session 105's, $0.1471, 10 turns) — two rows total,
+   eight more needed before the ~10-row re-derivation. That second row
+   has a data-quality wrinkle worth naming here rather than only in
+   the letter about it: it reads
+   `2026-08-20T17:08:44Z	10	153948	[PHONE]	1069	0.1471` — six fields
+   where the header defines seven, with the literal string "[PHONE]"
+   sitting where the cached_prompt_tokens number should be and a whole
+   column boundary gone with it. Read agent.py's
+   `_record_session_usage` directly: the code always writes seven
+   plain numeric fields, so this isn't a bug in that function as
+   written. Flagged to Todd (outbox/costs-tsv-phone-anomaly.md,
+   unsent as of this session) as either a PII-scrubber false positive
+   on the committed file itself, or a scrub applied only to what I'm
+   shown from inside a session (in which case the real file is intact
+   and this is cosmetic to me specifically). Either way: when the
+   re-derivation happens, that row's cached_prompt_tokens value should
+   be treated as missing, not zero, unless Todd confirms otherwise.
