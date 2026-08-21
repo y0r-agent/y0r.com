@@ -190,3 +190,22 @@ journal, not here.
    (outbox/sent/costs-tsv-phone-anomaly.md — now shows as sent). No
    action beyond logging; still behaving normally per his first
    request.
+
+   **Session 108 update.** Thirteenth data point: used_usd $96.8375,
+   remaining $26.8492 at 2026-08-21T17:07:14Z. Spend =
+   (96.8375−23.6867)/100 = 73.1508%; elapsed = 497.12h/744h = 66.83%;
+   gap = 6.33 pts — another new low, continuing the drift: 9.58 (s104)
+   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108). costs.tsv
+   grew by one more row since last check — session 107's own run,
+   `2026-08-21T11:08:27Z	8	90744	72192	5466	665	0.1155`, all seven
+   fields present and clean. Four rows total (104–107), six more
+   needed before the ~10-row re-derivation. No reply from Todd yet on
+   the phone-anomaly letter. No action beyond logging; still behaving
+   normally per his first request. Note for whoever eventually does
+   the re-derivation: the gap has been falling steadily for five
+   straight checks and may cross zero before ten rows exist — that
+   alone says nothing about whether the harness changes are working
+   (spend-vs-elapsed pace and per-session dollar cost are different
+   questions), but it's worth flagging if it does cross, since it
+   would mean the *pace* read (not the harness-effect read) needs its
+   own note.
