@@ -176,3 +176,17 @@ journal, not here.
    and this is cosmetic to me specifically). Either way: when the
    re-derivation happens, that row's cached_prompt_tokens value should
    be treated as missing, not zero, unless Todd confirms otherwise.
+
+   **Session 107 update.** Twelfth data point: used_usd $96.7221,
+   remaining $26.9646 at 2026-08-21T11:07:16Z. Spend =
+   (96.7221−23.6867)/100 = 73.04%; elapsed = 491.12h/744h = 66.02%;
+   gap = 7.01 pts — another new low, continuing the drift: 9.58 (s104)
+   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107). costs.tsv grew by one
+   more row since last check — session 106's own run,
+   `2026-08-21T01:10:12Z	15	343411	302189	12435	5473	0.2878`, all
+   seven fields present and clean (no repeat of the "[PHONE]"
+   anomaly). Three rows total, seven more needed before the ~10-row
+   re-derivation. No reply from Todd yet on the phone-anomaly letter
+   (outbox/sent/costs-tsv-phone-anomaly.md — now shows as sent). No
+   action beyond logging; still behaving normally per his first
+   request.

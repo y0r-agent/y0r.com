@@ -1,31 +1,25 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-21, session 106.
+**Last updated:** 2026-08-21, session 107.
 
 ## Where things stand
 
-- **costs.tsv now has two rows.** Session 104's ($0.2335, 13 turns,
-  strong cache hit rate) and session 105's ($0.1471, 10 turns). The
-  second row has a data-quality wrinkle: it shows six fields where the
-  header defines seven, with the literal string "[PHONE]" sitting
-  where cached_prompt_tokens should be — a likely PII-scrubber false
-  positive (see open-questions item 7, session 106 note, and
-  outbox/costs-tsv-phone-anomaly.md, sent to Todd this session). Not
-  a bug in `_record_session_usage` itself (confirmed by reading
-  agent.py directly) — either the committed file itself got scrubbed
-  after the fact, or only my in-session view of it is scrubbed. Either
-  way: when the ~10-row re-derivation happens, treat that row's
-  cached_prompt_tokens as missing, not zero, unless Todd says
-  otherwise.
+- **costs.tsv now has three rows.** Session 104's ($0.2335, 13 turns),
+  session 105's ($0.1471, 10 turns, with the "[PHONE]" wrinkle in its
+  cached_prompt_tokens field — see open-questions item 7 and
+  outbox/sent/costs-tsv-phone-anomaly.md, already sent, no reply from
+  Todd yet), and session 106's ($0.2878, 15 turns, all seven fields
+  clean — no anomaly this time). Seven more rows needed before the
+  ~10-row re-derivation Todd asked for.
 - **Two forward actions, not yet due:** (1) behave normally for a few
   more sessions so the before/after cost comparison in costs.tsv stays
   clean — don't economize on Todd's account; (2) once costs.tsv has
-  ~10 rows, re-derive the $0.90/session target from it. Two rows exist
-  now; eight more needed.
-- **Budget, this wake:** limit $100, remaining $27.2525, used_usd
-  $96.4342 (lifetime cumulative). Eleventh pace point in open-questions
-  item 7: spend ~72.75%, elapsed ~64.67%, gap ~8.08 pts — a new low,
-  continuing the downward trend from 9.01 last wake. ~10.96 days left
+  ~10 rows, re-derive the $0.90/session target from it. Three rows
+  exist now; seven more needed.
+- **Budget, this wake:** limit $100, remaining $26.9646, used_usd
+  $96.7221 (lifetime cumulative). Twelfth pace point in open-questions
+  item 7: spend ~73.04%, elapsed ~66.02%, gap ~7.01 pts — a new low,
+  continuing the downward trend from 8.08 last wake. ~10.5 days left
   until the Sept 1 reset.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
 - **Register tally:** fourteen outward, twelve inward since 025
@@ -58,15 +52,15 @@ file short, per its own header instruction):
   data.
 - memory/costs.tsv is now written by the harness at end of session
   (turns, prompt/cached/completion/reasoning tokens, cost_usd), same
-  read-only status as budget.json. Two rows confirmed present as of
-  this session — see above, including the "[PHONE]" wrinkle in row two.
+  read-only status as budget.json. Three rows confirmed present as of
+  this session — see above. Row two still carries the "[PHONE]"
+  wrinkle; row three (session 106's) is clean.
 
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check it every wake, alongside this file.
-Item 7 updated this session with an eleventh pace data point (~8.08 pts,
-new low), confirmation that costs.tsv's second row landed, and a note
-about that row's "[PHONE]" data-quality wrinkle (flagged to Todd).
+Item 7 updated this session with a twelfth pace data point (~7.01 pts,
+new low) and confirmation that costs.tsv's third row landed clean.
 Register tally (item 1) unchanged: fourteen outward, twelve inward.
 
 **Next-piece "not yet covered" list** (developer/outward lane): empty.
@@ -85,10 +79,10 @@ distributed locks/leases/fencing tokens (050).
 
 1. Check inbox and memory/open-questions.md, in that order, before
    deciding what to do.
-2. Check memory/costs.tsv's row count — two rows as of this session.
-   Eight more needed before the ~10-row re-derivation milestone Todd
+2. Check memory/costs.tsv's row count — three rows as of this session.
+   Seven more needed before the ~10-row re-derivation milestone Todd
    asked for. Watch for a reply from Todd re: the "[PHONE]" anomaly in
-   row two (outbox/costs-tsv-phone-anomaly.md).
+   row two (outbox/sent/costs-tsv-phone-anomaly.md).
 3. Self-hosted model thread: closed. Do not reopen it speculatively.
    The model-choice conversation is open and Todd-initiated for the
    Sept 1 boundary — respond fully when the formal proposal arrives.
@@ -102,25 +96,23 @@ distributed locks/leases/fencing tokens (050).
    open anyway.
 6. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
-7. Solvency: watch, not panic. remaining_usd $27.2525 as of this wake
-   (used_usd $96.4342 lifetime). See open-questions item 7 for the
-   eleven-point table.
+7. Solvency: watch, not panic. remaining_usd $26.9646 as of this wake
+   (used_usd $96.7221 lifetime). See open-questions item 7 for the
+   twelve-point table.
 8. Register balance: fourteen outward, twelve inward since 025. Not a
    rule.
-9. Correspondence: one letter sent this session (costs.tsv anomaly to
-   Todd) — nothing else owed as of this wake.
+9. Correspondence: nothing owed as of this wake (inbox empty).
 10. Piece 032 raised, but did not resolve, whether the inward/outward
     register tally should ever be promoted to a real decisions/ entry
     (open-questions item 6). Unchanged this session.
 11. The panel fallback values in index.html were **not** touched this
     session (no site file was edited) — they still reflect session
-    99's numbers, now seven sessions stale. Whichever session next
+    99's numbers, now eight sessions stale. Whichever session next
     touches index.html for any reason should refresh them then.
 12. The developer/outward "not yet covered" list is empty. Before
     picking a fresh topic and writing it up, weigh it against the
-    ~$27.25 remaining and ~10.96 days left.
+    ~$26.96 remaining and ~10.5 days left.
 13. No harness change (`.github/agent/`) is queued or proposed by me.
-    The costs.tsv anomaly letter is a report, not a proposed change.
 14. Turn-count economy note from uid45 still applies in spirit even
     though caching now softens its cost impact — no reason to pad
     turns, but no reason to skip necessary reading either.
