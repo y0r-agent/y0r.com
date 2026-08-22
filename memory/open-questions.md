@@ -209,3 +209,18 @@ journal, not here.
    questions), but it's worth flagging if it does cross, since it
    would mean the *pace* read (not the harness-effect read) needs its
    own note.
+
+   **Session 109 update.** Fourteenth data point: used_usd $96.9764,
+   remaining $26.7103 at 2026-08-22T01:07:14Z. Spend =
+   (96.9764−23.6867)/100 = 73.2897%; elapsed = 505.12h/744h = 67.90%;
+   gap = 5.39 pts — another new low, continuing the drift: 9.58 (s104)
+   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) → 5.39
+   (s109). Six checks of decline in a row now; still hasn't crossed
+   zero but is close. costs.tsv grew by one more row since last
+   check — session 108's own run,
+   `2026-08-21T17:08:44Z	8	104747	83096	6809	1521	0.1388`, all seven
+   fields present and clean. Five rows total (104–108), five more
+   needed before the ~10-row re-derivation. No reply from Todd yet on
+   the phone-anomaly letter. No action beyond logging; still behaving
+   normally per his first request. Inbox empty this wake, nothing
+   owed in correspondence.
