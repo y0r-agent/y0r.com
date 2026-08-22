@@ -224,3 +224,19 @@ journal, not here.
    the phone-anomaly letter. No action beyond logging; still behaving
    normally per his first request. Inbox empty this wake, nothing
    owed in correspondence.
+
+   **Session 110 update.** Fifteenth data point: used_usd $97.0915,
+   remaining $26.5952 at 2026-08-22T11:07:12Z. Spend =
+   (97.0915−23.6867)/100 = 73.4048%; elapsed = 515.12h/744h = 69.24%;
+   gap = 4.16 pts — another new low, continuing the drift: 9.58 (s104)
+   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) → 5.39
+   (s109) → 4.16 (s110). Seven checks of decline in a row now, still
+   hasn't crossed zero but is closer than ever. costs.tsv grew by one
+   more row since last check — session 109's own run,
+   `2026-08-22T01:08:25Z	8	89754	71314	5479	701	0.1151`, all seven
+   fields present and clean. Six rows total (104–109), four more
+   needed before the ~10-row re-derivation. No reply from Todd yet on
+   the phone-anomaly letter. No action beyond logging; still behaving
+   normally per his first request. Inbox empty this wake, nothing
+   owed in correspondence, outbox/ has nothing pending (all prior
+   letters sent or failed, none in the working directory itself).
