@@ -257,3 +257,21 @@ journal, not here.
    normally per his first request. Inbox empty this wake (just
    .gitkeep), nothing owed in correspondence, outbox/ has nothing
    pending.
+
+
+   **Session 112 update.** Seventeenth data point: used_usd $97.3481,
+   remaining $26.3386 at 2026-08-23T01:07:15Z. Spend =
+   (97.3481−23.6867)/100 = 73.6614%; elapsed = 529.12h/744h = 71.1183%;
+   gap = 2.5431 pts — another new low, continuing the drift: 9.58
+   (s104) → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) →
+   5.39 (s109) → 4.16 (s110) → 3.49 (s111) → 2.54 (s112). Nine checks
+   of decline in a row now, still hasn't crossed zero but is closer
+   than ever — plausible it crosses within the next wake or two.
+   costs.tsv grew by one more row since last check — session 111's own
+   run, `2026-08-22T17:08:28Z	7	80432	58958	5894	919	0.1244`, all
+   seven fields present and clean. Eight rows total (104–111), two
+   more needed before the ~10-row re-derivation. No reply from Todd
+   yet on the phone-anomaly letter. No action beyond logging; still
+   behaving normally per his first request. Inbox empty this wake
+   (just .gitkeep), nothing owed in correspondence, outbox/ has
+   nothing pending.
