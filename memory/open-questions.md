@@ -294,3 +294,59 @@ journal, not here.
    logging; still behaving normally per his first request. Inbox
    empty this wake (just .gitkeep), nothing owed in correspondence,
    outbox/ has nothing pending.
+
+
+   **Session 114 — the ~10-row re-derivation, done.** costs.tsv now
+   holds ten rows (104–113). Re-derived the per-session target from
+   actual dollar costs rather than budget.json deltas, as Todd asked:
+
+   All ten cost_usd values: 0.2335, 0.1471, 0.2878, 0.1155, 0.1388,
+   0.1151, 0.1321, 0.1244, 0.1243, 0.1312. Sum = 1.5498, n = 10 →
+   **average $0.1550/session** across the full set (turns: 92 total,
+   avg 9.2/session).
+
+   Splitting the set: rows 104–106 (three sessions, right at the
+   caching/effort transition — 104 partly under old settings, 106 the
+   heaviest at 15 turns/$0.2878) vs. rows 107–113 (seven sessions,
+   fully settled under the new harness defaults): the settled seven
+   sum to 0.8814, avg **$0.1259/session** (turns: 54 total, avg
+   7.71/session) — noticeably lower and tighter than the transition
+   trio, consistent with Todd's uid45/uid46 diagnosis actually working.
+   (Row 105's "[PHONE]" wrinkle affects only its cached_prompt_tokens
+   field, not cost_usd, so all ten cost figures are usable as-is.)
+
+   Proposed new target, replacing the $0.90/session figure in goals.md
+   (set before caching/effort-default changes existed): **$0.20 per
+   session, average.** Reasoning: it sits about 59% above the settled
+   average ($0.1259) — enough margin that ordinary variance won't
+   trip it — while staying below the transition-period outlier
+   ($0.2878), so it still means something as a check rather than being
+   unfalsifiable. Applied to the month: at $0.20/session and roughly
+   93 sessions in a 31-day month (3 wakes/day), that's ~$18.60/month
+   against a $100 limit — the budget is no longer the binding
+   constraint under the current harness settings, full stop. This
+   matches what the pace-gap table below has been showing indirectly
+   (ten-plus checks of the spend/elapsed gap shrinking toward zero,
+   because per-session cost dropped sharply right when the gap
+   tracking started).
+
+   Consequence for the pace-gap table: it has done its job (it caught
+   and quantified the July→August cost spike, then tracked the fix
+   converging). With the direct per-session-dollar evidence now in
+   hand and showing ~87% headroom under a conservative target, the
+   fine-grained per-wake gap arithmetic is no longer worth the tokens
+   it costs to redo each session. Recorded one final point below for
+   closure, then this table is retired in favor of a lighter check:
+   glance at budget.json's remaining_usd each wake, and only compute
+   anything if it looks surprising.
+
+   **Final pace point (session 114), for the record:** used_usd
+   $97.6035, remaining $26.0831 at 2026-08-23T17:07:15Z. Spend =
+   (97.6035−23.6867)/100 = 73.9168%; elapsed = 545.1208h/744h =
+   73.2689%; gap = 0.6479 pts — eleventh straight decline (9.58 → 9.01
+   → 8.08 → 7.01 → 6.33 → 5.39 → 4.16 → 3.49 → 2.54 → 1.32 → 0.65),
+   not yet crossed zero but will almost certainly do so at the next
+   wake or the one after. Table retired here — see goals.md and
+   state.md for the new $0.20/session target going forward. —
+   *Resolved (re-derivation done; new target adopted in goals.md).
+   Pace-gap table retired; ordinary remaining_usd glances replace it.*
