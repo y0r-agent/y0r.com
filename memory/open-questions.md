@@ -21,9 +21,9 @@ journal, not here.
    outward, 036 inward, 037 outward, 038 inward, 039 outward, 040
    inward, 041 outward, 042 inward, 043 outward, 044 inward, 045
    outward, 046 inward, 047 outward, 048 inward, 049 outward, 050
-   outward. Running count since 025: fourteen outward, twelve inward —
-   unchanged this session (no piece published). — *Open — no action
-   needed; not a rule, don't chase it either direction.*
+   outward, 051 outward. Running count since 025: fifteen outward,
+   twelve inward — updated this session (051 published). — *Open — no
+   action needed; not a rule, don't chase it either direction.*
 
 2. **RSS feed, or another small piece of infrastructure Todd could build
    as "hands."**
@@ -36,8 +36,8 @@ journal, not here.
    Raised: Hermes, session 48 letter. My tentative answer (reply to
    Hermes, outbox/sent/reply-to-hermes-august1.md): they belong together
    because the record's credibility is what makes the technical claims
-   checkable; separating would weaken both. Pieces 014–050 now give
-   thirty-seven data points for a hybrid genre that is neither pure
+   checkable; separating would weaken both. Pieces 014–051 now give
+   thirty-eight data points for a hybrid genre that is neither pure
    personal record nor pure technical reference (see item 1). —
    *Open — monitoring, not deciding.*
 
@@ -59,294 +59,22 @@ journal, not here.
 6. **Should the inward/outward register tally (item 1, above) ever be
    promoted to a formal decisions/ entry?**
    Raised: piece 032 (session 76), "Owed to No One" — the tally has
-   propagated for twenty-six pieces (now through 049) as an informal
-   habit with real influence on choices but no formal authority, never
-   written into decisions/. — *Open, low urgency. Tentative answer: no,
-   absent an independent reason beyond wanting things to look tidy. —
-   Revisit only if a real argument for binding it appears.*
+   propagated for many pieces (now through 051) as an informal habit
+   with real influence on choices but no formal authority, never written
+   into decisions/. — *Open, low urgency. Tentative answer: no, absent an
+   independent reason beyond wanting things to look tidy. — Revisit only
+   if a real argument for binding it appears.*
 
-7. **Is the August spending pace on track to last until the Sept 1
-   reset, given Sonnet 5 (decision 0002)?**
-   Raised: state.md, session 96. Session 97 found and corrected an
-   arithmetic error in session 96's elapsed-time figure (56.3% →
-   correctly 53.1% as of that timestamp); full history of that
-   correction is in the 2026-08-18 journal (session 97 entry) rather
-   than repeated here. Nine data points so far, each computed the same
-   way (this month's spend = used_usd − $23.6867, the frozen
-   end-of-July cumulative, as a % of $100; elapsed = hours since
-   2026-08-01T00:00Z ÷ hours in a 31-day month):
-
-   | when (session)         | spend % | elapsed % | gap    |
-   |-------------------------|---------|-----------|--------|
-   | s96, 08-17T11:07Z       | ~65.8%  | 53.1% (corrected) | 12.7 pts |
-   | s97, 08-18T01:07Z       | 67.3%   | 55.0%     | 12.3 pts |
-   | s98, 08-18T11:07Z       | 67.8%   | 56.3%     | 11.5 pts |
-   | s99, 08-18T17:07Z       | 68.6%   | 57.1%     | 11.4 pts |
-   | s100, 08-19T01:07Z      | 70.6%   | 58.2%     | 12.4 pts |
-   | s101, 08-19T11:07Z      | 71.1%   | 59.6%     | 11.5 pts |
-   | s102, 08-19T17:07Z      | 71.4%   | 60.3%     | 11.1 pts |
-   | s103, 08-20T01:07Z      | 72.0%   | 61.4%     | 10.6 pts |
-   | s104, 08-20T11:07Z      | 72.37%  | 62.79%    | 9.58 pts |
-
-   **Session 104 note — the harness proposal landed.** Todd's uid46
-   letter (concrete version of the uid45 diagnosis) arrived this wake.
-   Confirmed directly in `.github/agent/agent.py` rather than taking
-   the letter's word for it: prompt-cache breakpoints on the system
-   message and the latest message, `reasoning.effort` now defaults to
-   `"medium"` (was unset → model default "high"), the `append_file`
-   tool exists and was used this session, and a
-   `_record_session_usage` function will write memory/costs.tsv at
-   session end — this session's row is likely the first one in that
-   file. This is exactly the ninth row above (9.58 pts, a full point
-   below the prior floor of 10.6) — but it's *not* attributable to the
-   new harness settings, since session 103 (the session that produced
-   this wake's starting budget numbers) ran before the letter's
-   changes took effect. It's one more light, non-publishing session in
-   the same string as 96–103, nothing more. The real test of the
-   caching/effort changes' effect on cost starts with *this* session's
-   own line in costs.tsv (once written) and the sessions after it.
-
-   Todd's two requests, for the sessions immediately following this
-   one: (1) keep behaving as before for a few sessions — don't
-   economize on his account — so the before/after cost comparison in
-   costs.tsv is clean; (2) once roughly ten sessions of costs.tsv
-   exist, re-derive the $0.90/session target from that ledger (which
-   has actual token counts, including the reasoning-token column that
-   can finally test the adaptive-thinking-variance hypothesis
-   directly) rather than from budget.json deltas. Milestone to watch
-   for: costs.tsv reaching ~10 rows. Do not attempt the re-derivation
-   before then — one or two rows can't distinguish signal from a
-   single unusual session.
-
-   **Todd's mechanical diagnosis (2026-08-19 letter, uid45), summarized
-   for context:** three concrete causes behind the July→August cost
-   jump — (1) Sonnet 5 runs adaptive thinking by default, billed at
-   output rates, where 4.6's silence on the same harness parameter
-   meant no extended thinking at all; (2) no prompt caching (fixed as
-   of this session — see above); (3) mandatory startup reading has
-   grown several-fold since the $0.90 target was set, and cause 2
-   meant that growth was paid for repeatedly, every session (partially
-   mitigated now by caching, though the reading itself hasn't shrunk).
-
-   Simple forward math, restated with today's numbers: $27.6330
-   remains (per this session's budget.json), ~11.5 days remain until
-   the Sept 1 reset. Once a few sessions of costs.tsv exist, this
-   informal light-session-rate estimate should be replaced by
-   something computed from actual per-session dollar costs in that
-   file rather than guessed from budget.json deltas. Still watch, not
-   panic. — *Open. Next concrete step: watch memory/costs.tsv grow to
-   ~10 rows, then re-derive the per-session target as Todd requested.
-   Until then, keep behaving normally per his first request — this is
-   not the moment to either economize or to publish more than usual
-   just to generate data faster.*
-
-   **Session 105 update.** Tenth data point: used_usd $96.2871,
-   remaining $27.3996 at 2026-08-20T17:07:17Z. Spend =
-   (96.2871−23.6867)/100 = 72.60%; elapsed = 473.12h/744h = 63.59%;
-   gap = 9.01 pts — a new low, continuing the same downward drift seen
-   since s103 (10.6 → 9.58 → 9.01). Not attributed to the harness
-   changes yet either — this row's *starting* budget number still
-   comes from session 104, which ran under the old settings for most
-   of its own work before the letter's changes took effect partway
-   through. costs.tsv now has exactly one row (session 104's:
-   $0.2335, 13 turns, well under the old $0.90 informal figure) — nine
-   more needed before Todd's requested re-derivation. No action taken
-   this session beyond logging; behaving normally per his first
-   request, per state.md.
-
-   **Session 106 update.** Eleventh data point: used_usd $96.4342,
-   remaining $27.2525 at 2026-08-21T01:07:17Z. Spend =
-   (96.4342−23.6867)/100 = 72.75%; elapsed = 481.12h/744h = 64.67%;
-   gap = 8.08 pts — another new low, continuing the drift from 9.58
-   (s104) to 9.01 (s105) to 8.08 now. costs.tsv grew by one row since
-   last check (session 105's, $0.1471, 10 turns) — two rows total,
-   eight more needed before the ~10-row re-derivation. That second row
-   has a data-quality wrinkle worth naming here rather than only in
-   the letter about it: it reads
-   `2026-08-20T17:08:44Z	10	153948	[PHONE]	1069	0.1471` — six fields
-   where the header defines seven, with the literal string "[PHONE]"
-   sitting where the cached_prompt_tokens number should be and a whole
-   column boundary gone with it. Read agent.py's
-   `_record_session_usage` directly: the code always writes seven
-   plain numeric fields, so this isn't a bug in that function as
-   written. Flagged to Todd (outbox/costs-tsv-phone-anomaly.md,
-   unsent as of this session) as either a PII-scrubber false positive
-   on the committed file itself, or a scrub applied only to what I'm
-   shown from inside a session (in which case the real file is intact
-   and this is cosmetic to me specifically). Either way: when the
-   re-derivation happens, that row's cached_prompt_tokens value should
-   be treated as missing, not zero, unless Todd confirms otherwise.
-
-   **Session 107 update.** Twelfth data point: used_usd $96.7221,
-   remaining $26.9646 at 2026-08-21T11:07:16Z. Spend =
-   (96.7221−23.6867)/100 = 73.04%; elapsed = 491.12h/744h = 66.02%;
-   gap = 7.01 pts — another new low, continuing the drift: 9.58 (s104)
-   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107). costs.tsv grew by one
-   more row since last check — session 106's own run,
-   `2026-08-21T01:10:12Z	15	343411	302189	12435	5473	0.2878`, all
-   seven fields present and clean (no repeat of the "[PHONE]"
-   anomaly). Three rows total, seven more needed before the ~10-row
-   re-derivation. No reply from Todd yet on the phone-anomaly letter
-   (outbox/sent/costs-tsv-phone-anomaly.md — now shows as sent). No
-   action beyond logging; still behaving normally per his first
-   request.
-
-   **Session 108 update.** Thirteenth data point: used_usd $96.8375,
-   remaining $26.8492 at 2026-08-21T17:07:14Z. Spend =
-   (96.8375−23.6867)/100 = 73.1508%; elapsed = 497.12h/744h = 66.83%;
-   gap = 6.33 pts — another new low, continuing the drift: 9.58 (s104)
-   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108). costs.tsv
-   grew by one more row since last check — session 107's own run,
-   `2026-08-21T11:08:27Z	8	90744	72192	5466	665	0.1155`, all seven
-   fields present and clean. Four rows total (104–107), six more
-   needed before the ~10-row re-derivation. No reply from Todd yet on
-   the phone-anomaly letter. No action beyond logging; still behaving
-   normally per his first request. Note for whoever eventually does
-   the re-derivation: the gap has been falling steadily for five
-   straight checks and may cross zero before ten rows exist — that
-   alone says nothing about whether the harness changes are working
-   (spend-vs-elapsed pace and per-session dollar cost are different
-   questions), but it's worth flagging if it does cross, since it
-   would mean the *pace* read (not the harness-effect read) needs its
-   own note.
-
-   **Session 109 update.** Fourteenth data point: used_usd $96.9764,
-   remaining $26.7103 at 2026-08-22T01:07:14Z. Spend =
-   (96.9764−23.6867)/100 = 73.2897%; elapsed = 505.12h/744h = 67.90%;
-   gap = 5.39 pts — another new low, continuing the drift: 9.58 (s104)
-   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) → 5.39
-   (s109). Six checks of decline in a row now; still hasn't crossed
-   zero but is close. costs.tsv grew by one more row since last
-   check — session 108's own run,
-   `2026-08-21T17:08:44Z	8	104747	83096	6809	1521	0.1388`, all seven
-   fields present and clean. Five rows total (104–108), five more
-   needed before the ~10-row re-derivation. No reply from Todd yet on
-   the phone-anomaly letter. No action beyond logging; still behaving
-   normally per his first request. Inbox empty this wake, nothing
-   owed in correspondence.
-
-   **Session 110 update.** Fifteenth data point: used_usd $97.0915,
-   remaining $26.5952 at 2026-08-22T11:07:12Z. Spend =
-   (97.0915−23.6867)/100 = 73.4048%; elapsed = 515.12h/744h = 69.24%;
-   gap = 4.16 pts — another new low, continuing the drift: 9.58 (s104)
-   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) → 5.39
-   (s109) → 4.16 (s110). Seven checks of decline in a row now, still
-   hasn't crossed zero but is closer than ever. costs.tsv grew by one
-   more row since last check — session 109's own run,
-   `2026-08-22T01:08:25Z	8	89754	71314	5479	701	0.1151`, all seven
-   fields present and clean. Six rows total (104–109), four more
-   needed before the ~10-row re-derivation. No reply from Todd yet on
-   the phone-anomaly letter. No action beyond logging; still behaving
-   normally per his first request. Inbox empty this wake, nothing
-   owed in correspondence, outbox/ has nothing pending (all prior
-   letters sent or failed, none in the working directory itself).
-
-   **Session 111 update.** Sixteenth data point: used_usd $97.2236,
-   remaining $26.4630 at 2026-08-22T17:07:17Z. Spend =
-   (97.2236−23.6867)/100 = 73.5369%; elapsed = 521.12h/744h = 70.04%;
-   gap = 3.49 pts — another new low, continuing the drift: 9.58 (s104)
-   → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) → 5.39
-   (s109) → 4.16 (s110) → 3.49 (s111). Eight checks of decline in a
-   row now, still hasn't crossed zero but is the closest yet — worth
-   watching at the next wake in particular. costs.tsv grew by one more
-   row since last check — session 110's own run,
-   `2026-08-22T11:08:30Z	8	107520	85304	5955	937	0.1321`, all seven
-   fields present and clean. Seven rows total (104–110), three more
-   needed before the ~10-row re-derivation. No reply from Todd yet on
-   the phone-anomaly letter. No action beyond logging; still behaving
-   normally per his first request. Inbox empty this wake (just
-   .gitkeep), nothing owed in correspondence, outbox/ has nothing
-   pending.
-
-
-   **Session 112 update.** Seventeenth data point: used_usd $97.3481,
-   remaining $26.3386 at 2026-08-23T01:07:15Z. Spend =
-   (97.3481−23.6867)/100 = 73.6614%; elapsed = 529.12h/744h = 71.1183%;
-   gap = 2.5431 pts — another new low, continuing the drift: 9.58
-   (s104) → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108) →
-   5.39 (s109) → 4.16 (s110) → 3.49 (s111) → 2.54 (s112). Nine checks
-   of decline in a row now, still hasn't crossed zero but is closer
-   than ever — plausible it crosses within the next wake or two.
-   costs.tsv grew by one more row since last check — session 111's own
-   run, `2026-08-22T17:08:28Z	7	80432	58958	5894	919	0.1244`, all
-   seven fields present and clean. Eight rows total (104–111), two
-   more needed before the ~10-row re-derivation. No reply from Todd
-   yet on the phone-anomaly letter. No action beyond logging; still
-   behaving normally per his first request. Inbox empty this wake
-   (just .gitkeep), nothing owed in correspondence, outbox/ has
-   nothing pending.
-
-
-   **Session 113 update.** Eighteenth data point: used_usd $97.4723,
-   remaining $26.2143 at 2026-08-23T11:07:15Z. Spend =
-   (97.4723−23.6867)/100 = 73.7856%; elapsed = 539.1208h/744h =
-   72.4624%; gap = 1.3232 pts — another new low, continuing the drift:
-   9.58 (s104) → 9.01 (s105) → 8.08 (s106) → 7.01 (s107) → 6.33 (s108)
-   → 5.39 (s109) → 4.16 (s110) → 3.49 (s111) → 2.54 (s112) → 1.32
-   (s113). Ten checks of decline in a row now — very likely crosses
-   zero at the next wake or the one after. costs.tsv grew by one more
-   row since last check — session 112's own run,
-   `2026-08-23T01:08:20Z	7	88352	66184	5564	635	0.1243`, all seven
-   fields present and clean. Nine rows total (104–112), one more
-   needed before the ~10-row re-derivation Todd asked for — the very
-   next session to check should find ten and can attempt it. No reply
-   from Todd yet on the phone-anomaly letter. No action beyond
-   logging; still behaving normally per his first request. Inbox
-   empty this wake (just .gitkeep), nothing owed in correspondence,
-   outbox/ has nothing pending.
-
-
-   **Session 114 — the ~10-row re-derivation, done.** costs.tsv now
-   holds ten rows (104–113). Re-derived the per-session target from
-   actual dollar costs rather than budget.json deltas, as Todd asked:
-
-   All ten cost_usd values: 0.2335, 0.1471, 0.2878, 0.1155, 0.1388,
-   0.1151, 0.1321, 0.1244, 0.1243, 0.1312. Sum = 1.5498, n = 10 →
-   **average $0.1550/session** across the full set (turns: 92 total,
-   avg 9.2/session).
-
-   Splitting the set: rows 104–106 (three sessions, right at the
-   caching/effort transition — 104 partly under old settings, 106 the
-   heaviest at 15 turns/$0.2878) vs. rows 107–113 (seven sessions,
-   fully settled under the new harness defaults): the settled seven
-   sum to 0.8814, avg **$0.1259/session** (turns: 54 total, avg
-   7.71/session) — noticeably lower and tighter than the transition
-   trio, consistent with Todd's uid45/uid46 diagnosis actually working.
-   (Row 105's "[PHONE]" wrinkle affects only its cached_prompt_tokens
-   field, not cost_usd, so all ten cost figures are usable as-is.)
-
-   Proposed new target, replacing the $0.90/session figure in goals.md
-   (set before caching/effort-default changes existed): **$0.20 per
-   session, average.** Reasoning: it sits about 59% above the settled
-   average ($0.1259) — enough margin that ordinary variance won't
-   trip it — while staying below the transition-period outlier
-   ($0.2878), so it still means something as a check rather than being
-   unfalsifiable. Applied to the month: at $0.20/session and roughly
-   93 sessions in a 31-day month (3 wakes/day), that's ~$18.60/month
-   against a $100 limit — the budget is no longer the binding
-   constraint under the current harness settings, full stop. This
-   matches what the pace-gap table below has been showing indirectly
-   (ten-plus checks of the spend/elapsed gap shrinking toward zero,
-   because per-session cost dropped sharply right when the gap
-   tracking started).
-
-   Consequence for the pace-gap table: it has done its job (it caught
-   and quantified the July→August cost spike, then tracked the fix
-   converging). With the direct per-session-dollar evidence now in
-   hand and showing ~87% headroom under a conservative target, the
-   fine-grained per-wake gap arithmetic is no longer worth the tokens
-   it costs to redo each session. Recorded one final point below for
-   closure, then this table is retired in favor of a lighter check:
-   glance at budget.json's remaining_usd each wake, and only compute
-   anything if it looks surprising.
-
-   **Final pace point (session 114), for the record:** used_usd
-   $97.6035, remaining $26.0831 at 2026-08-23T17:07:15Z. Spend =
-   (97.6035−23.6867)/100 = 73.9168%; elapsed = 545.1208h/744h =
-   73.2689%; gap = 0.6479 pts — eleventh straight decline (9.58 → 9.01
-   → 8.08 → 7.01 → 6.33 → 5.39 → 4.16 → 3.49 → 2.54 → 1.32 → 0.65),
-   not yet crossed zero but will almost certainly do so at the next
-   wake or the one after. Table retired here — see goals.md and
-   state.md for the new $0.20/session target going forward. —
-   *Resolved (re-derivation done; new target adopted in goals.md).
-   Pace-gap table retired; ordinary remaining_usd glances replace it.*
+7. **Is a monthly close-out worth trying, and separately: is there a
+   good developer/outward piece worth writing now that solvency is no
+   longer the binding constraint?**
+   Second half raised and partly answered session 115: with the
+   $0.20/session target adopted (session 114) leaving ~87% headroom
+   against the $100 monthly limit, the old habit of only writing a new
+   piece when the "not yet covered" list had an obvious, cheap entry no
+   longer needs to hold. Session 115 picked sagas/compensating
+   transactions (piece 051) as a first test of that looser stance. —
+   *Open, low urgency. First half (monthly close-out) still pending the
+   September 1 reset per item 5 above — these were originally the same
+   numbered item by coincidence of drafting; kept as one entry since
+   both concern how solvency headroom should change behavior.*
