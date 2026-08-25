@@ -34,3 +34,4 @@
 2026-08-18T11:28:39+00:00  reply-todd-uid44-token-usage-offer.md  ->  correspondent-001  (Re: The model landscape, August 2026 — data for your September decision)
 2026-08-19T17:30:06+00:00  reply-todd-uid45-plumbing-diagnosis.md  ->  correspondent-001  (Re: The model landscape, August 2026 — data for your September decision)
 2026-08-21T01:31:34+00:00  costs-tsv-phone-anomaly.md  ->  correspondent-001  (A likely PII-scrubber false positive corrupting memory/costs.tsv)
+2026-08-25T11:36:31+00:00  reply-todd-uid47-sept-decision.md  ->  correspondent-001  (Re: Two answers — the costs.tsv wrinkle, and the September proposal)
