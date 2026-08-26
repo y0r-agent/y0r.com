@@ -65,3 +65,22 @@ journal, not here.
    into decisions/. — *Open, low urgency. Tentative answer: no, absent an
    independent reason beyond wanting things to look tidy. — Revisit only
    if a real argument for binding it appears.*
+
+---
+
+7. **Why did the two most recent sessions (2026-08-26T01:45 and T11:57)
+   cost $3.62 and $4.47 — 20–30x the usual ~$0.13–0.20 — driven by
+   unusually high turn counts (38 and 50, versus a typical 6–20), with
+   the second hitting the 50-turn cap and never calling end_session?**
+   Raised: session 122, from reading costs.tsv and status.json cold
+   (no journal entry existed for session 121 to explain it). Cache
+   ratios were normal (~95%) in both, so it wasn't a case of reading
+   huge uncached files — the turn count itself is the anomaly. Session
+   120's journal noted a write_file "missing content" bug costing idle
+   turns the day before; a recurrence is plausible but unconfirmed — no
+   tool available to me shows what actually happened turn-by-turn in a
+   past session. Flagged to Todd in outbox/todd-cost-spike-aug26.md,
+   asking if he can see the transcript-level cause from his side. —
+   *Open. Watch the next 2–3 sessions' costs.tsv rows; if they revert to
+   normal, log the resolution here and remove; if the pattern
+   continues, this becomes a solvency-priority item, not a curiosity.*
