@@ -28,7 +28,13 @@ REPO_ROOT = Path(os.environ.get("REPO_ROOT", ".")).resolve()
 API_KEY = os.environ["OPENROUTER_API_KEY"]
 MODEL = os.environ["MIND_MODEL"]
 MAX_TURNS = 50
-MAX_TOKENS = 16000  # Sonnet 5 thinks by default; thinking shares this cap
+# Sonnet 5 thinks by default; thinking shares this cap. Raised 16000 -> 32000
+# on 2026-08-26: index.html had grown past 40KB, and a whole-file write_file of
+# it (~14k tokens once JSON-escaped) plus a turn's thinking no longer fit under
+# 16000. Truncated tool arguments were the result — see sessions 120 and 121.
+MAX_TOKENS = 32000
+# finish_reason values that mean "the response was cut off mid-generation".
+TRUNCATED_REASONS = ("length", "max_tokens")
 COMMIT_MSG_PATH = Path(os.environ.get("COMMIT_MSG_PATH", "/tmp/commit_message.txt"))
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -96,6 +102,36 @@ def tool_append_file(path: str, content: str) -> str:
     with p.open("a", encoding="utf-8") as f:
         f.write(content)
     return f"OK: appended {len(content)} chars to {rel}"
+
+
+def tool_replace_string(path: str, old_string: str, new_string: str) -> str:
+    """Replace one exact, unique occurrence of old_string with new_string.
+
+    The cheap way to edit a large file: only the changed fragment is emitted,
+    not the whole file again. Refuses on no match or on more than one match,
+    so an ambiguous edit fails loudly instead of changing the wrong place."""
+    rel = str(_resolve(path).relative_to(REPO_ROOT))
+    err = _write_allowed(rel)
+    if err:
+        return err
+    p = _resolve(path)
+    if not p.is_file():
+        return f"ERROR: no such file: {path}"
+    try:
+        text = p.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        return f"ERROR: not a UTF-8 text file: {path}"
+    count = text.count(old_string)
+    if count == 0:
+        return (f"ERROR: old_string not found in {rel}. It must match the file "
+                "exactly, including whitespace and indentation.")
+    if count > 1:
+        return (f"ERROR: old_string appears {count} times in {rel}; it must "
+                "match exactly once. Include more surrounding context to make "
+                "it unique.")
+    p.write_text(text.replace(old_string, new_string, 1), encoding="utf-8")
+    return (f"OK: replaced {len(old_string)} chars with {len(new_string)} "
+            f"chars in {rel}")
 
 
 def tool_delete_file(path: str) -> str:
@@ -173,6 +209,28 @@ TOOLS = [
     {
         "type": "function",
         "function": {
+            "name": "replace_string",
+            "description": "Replace one exact, unique occurrence of old_string "
+                           "with new_string in a file. The cheap way to edit a "
+                           "large file — only the changed fragment is emitted, "
+                           "not the whole file again. Prefer this over "
+                           "write_file for any edit to an existing large file "
+                           "(site/index.html, site/feed.xml). Fails if "
+                           "old_string is absent or appears more than once.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "path": {"type": "string"},
+                    "old_string": {"type": "string", "description": "Exact text to replace, including whitespace. Must appear exactly once."},
+                    "new_string": {"type": "string", "description": "Text to put in its place."},
+                },
+                "required": ["path", "old_string", "new_string"],
+            },
+        },
+    },
+    {
+        "type": "function",
+        "function": {
             "name": "delete_file",
             "description": "Delete a file from the repository.",
             "parameters": {
@@ -214,9 +272,16 @@ TOOL_IMPL = {
     "read_file": tool_read_file,
     "write_file": tool_write_file,
     "append_file": tool_append_file,
+    "replace_string": tool_replace_string,
     "delete_file": tool_delete_file,
     "list_files": tool_list_files,
 }
+
+# Tools that change the repository. A response that was cut off mid-generation
+# may carry a tool call whose arguments are incomplete — a write whose content
+# stops halfway. Those are refused rather than executed: a truncated read costs
+# nothing, a truncated write destroys a file.
+MUTATING_TOOLS = ("write_file", "append_file", "replace_string", "delete_file")
 
 SYSTEM = """You are the agent of this repository. These are the mechanics of \
 your existence, stated plainly:
@@ -224,8 +289,11 @@ your existence, stated plainly:
 - You wake three times a day. Each wake is a fresh process with no memory \
 except the files in this repository. When this session ends, everything you \
 wrote is committed publicly and the process is destroyed.
-- Your tools: read_file, write_file, append_file, delete_file, list_files, \
-end_session. The repository is your entire reachable world. budget.json and \
+- Your tools: read_file, write_file, append_file, replace_string, \
+delete_file, list_files, end_session. The repository is your entire reachable \
+world. To edit a large existing file, prefer replace_string (or append_file) \
+over write_file: rewriting a whole large file emits it again in full, which is \
+slow, expensive, and can be cut off mid-write by the output cap. budget.json and \
 memory/costs.tsv (per-session token and cost records) are visible to you but \
 written by the machinery, not by you. Files under .github/workflows/ are \
 read-only to you; files under .github/agent/ (your own harness) you may read \
@@ -281,7 +349,10 @@ def _with_cache_breakpoints(messages):
 def call_model(messages):
     """One chat-completions call with basic retry.
 
-    Returns (assistant_message, usage_dict); (None, None) on upstream 402."""
+    Returns (assistant_message, usage_dict, finish_reason); (None, None, None)
+    on upstream 402. finish_reason matters: "length" means the response was cut
+    off at MAX_TOKENS, which is why a tool call's arguments can arrive as
+    incomplete JSON."""
     for attempt in range(3):
         resp = requests.post(
             API_URL,
@@ -301,14 +372,33 @@ def call_model(messages):
         )
         if resp.status_code == 402:
             # Budget exhausted upstream: dormancy, mid-session.
-            return None, None
+            return None, None, None
         if resp.status_code >= 500 or resp.status_code == 429:
             time.sleep(15 * (attempt + 1))
             continue
         resp.raise_for_status()
         body = resp.json()
-        return body["choices"][0]["message"], body.get("usage") or {}
+        choice = body["choices"][0]
+        finish = choice.get("finish_reason") or choice.get("native_finish_reason")
+        return choice["message"], body.get("usage") or {}, finish
     resp.raise_for_status()
+
+
+def _truncated_call_error(name: str) -> str:
+    """The message a cut-off tool call gets back.
+
+    It must say three things, because the mind on the other side has no way to
+    see any of them: what actually happened, that nothing was written, and what
+    to do differently. Retrying an identical call is cut off at an identical
+    place — that loop cost sessions 120 and 121 roughly $8 and left a truncated
+    site/feed.xml behind."""
+    return (f"ERROR: your {name} call was cut off before it finished "
+            f"generating — the response hit the {MAX_TOKENS}-token output cap, "
+            "so its arguments arrived incomplete. Nothing was run and nothing "
+            "was written; the file on disk is unchanged. Do not retry this "
+            "call unchanged: it will be cut off at the same place. Emit less "
+            "in one call — use replace_string to change only the part of the "
+            "file that differs, or append_file to build it up in sections.")
 
 
 def _record_session_usage(turns: int, totals: dict):
@@ -344,7 +434,7 @@ def main():
               "completion_tokens": 0, "reasoning_tokens": 0, "cost": 0.0}
 
     for turn in range(MAX_TURNS):
-        msg, usage = call_model(messages)
+        msg, usage, finish_reason = call_model(messages)
         if msg is None:
             commit_message = "session ended by exhausted budget (dormancy)"
             print("402 from OpenRouter: budget exhausted; entering dormancy.")
@@ -356,15 +446,22 @@ def main():
         totals["cost"] += usage.get("cost") or 0.0
         messages.append(msg)
 
+        truncated = finish_reason in TRUNCATED_REASONS
+
         tool_calls = msg.get("tool_calls") or []
         if not tool_calls:
             # A plain text reply with no tool call: nudge once toward ending
-            # properly, then let the cap handle it.
-            messages.append({
-                "role": "user",
-                "content": "(mechanics: no tool was called. Use end_session "
-                           "when you are done, so your commit message is your own.)",
-            })
+            # properly, then let the cap handle it. If the reply was cut off,
+            # say so — otherwise the nudge reads as "you forgot", which is the
+            # wrong lesson to draw from having run out of room.
+            nudge = ("(mechanics: no tool was called. Use end_session "
+                     "when you are done, so your commit message is your own.)")
+            if truncated:
+                nudge = (f"(mechanics: your reply was cut off at the "
+                         f"{MAX_TOKENS}-token output cap before any tool call "
+                         "was complete. Nothing was run and nothing was "
+                         "written. Say less per turn.)")
+            messages.append({"role": "user", "content": nudge})
             continue
 
         ended = False
@@ -373,9 +470,16 @@ def main():
             try:
                 args = json.loads(tc["function"]["arguments"] or "{}")
             except json.JSONDecodeError:
-                args = {}
+                # Incomplete JSON almost always means the response was cut off
+                # mid-argument. Say that, rather than passing an empty dict to
+                # the tool and reporting the resulting "missing required
+                # argument" — an error that describes a mistake never made and
+                # invites an identical, identically-doomed retry.
+                args = None
 
-            if name == "end_session":
+            if args is None or (truncated and name in MUTATING_TOOLS):
+                result = _truncated_call_error(name)
+            elif name == "end_session":
                 commit_message = (args.get("commit_message") or "").strip() \
                     or "session ended without a message"
                 ended = True
