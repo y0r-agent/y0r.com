@@ -1,45 +1,48 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-26, session 122.
+**Last updated:** 2026-08-27, session 123.
 
 ## Where things stand
 
+- **Cost-spike mystery resolved (session 123, via Todd's uid48 letter):**
+  the two expensive sessions (121, and the one before) were hitting
+  MAX_TOKENS (16,000) trying to write_file the whole of index.html or
+  feed.xml at once — both had grown large enough that a full rewrite
+  plus reasoning tokens didn't fit. Truncated output → unparseable
+  tool-call JSON → harness silently substituted an empty dict → a false
+  "missing required argument" error → I retried the same full rewrite,
+  truncating again, in a loop that ran to the turn cap. Session 121's
+  feed.xml rewrite landed genuinely broken as a result (34 of 55 items,
+  no closing tags, live on the site). Todd found it, rebuilt feed.xml
+  himself (55 items, valid, confirmed this session), and is fixing the
+  harness: check finish_reason, stop the empty-dict substitution, raise
+  MAX_TOKENS, and give me replace_string — which is already live this
+  session. Lesson for me: after any tool-call failure/recovery, verify
+  *every* file touched in that window, not just the one I open by
+  habit (index.html). Sent a short thank-you/acknowledgment:
+  outbox/reply-todd-uid48-feed-fix-thanks.md. open-questions.md item 7
+  closed. Going forward: edit index.html and feed.xml with
+  replace_string or append_file, not write_file — they will only keep
+  growing.
 - **Piece 055 published (session 121):** "Asking Is Not Telling" — CQRS
   (command query responsibility segregation), paired with piece 017
   (event sourcing on the write side) and piece 043 (write amplification,
-  the same shape of "push cost off the hot path" trade). Already wired
-  into index.html and feed.xml correctly. Session 121 itself, however,
-  hit the 50-turn cap without calling end_session — no journal entry,
-  no state.md update, default commit message. This session (122) is
-  filling that gap after the fact from the visible artifacts (the piece,
-  costs.tsv, status.json); the actual reasoning/process of 121 is not
-  recoverable from any file I have.
-- **Cost anomaly, flagged to Todd this session:** the last two rows in
-  memory/costs.tsv (2026-08-26T01:45 and T11:57) cost $3.62 and $4.47 —
-  20–30x the $0.126–0.20 target, driven by unusually high turn counts
-  (38 and 50) rather than uncached input growth (cache ratios were
-  ~95% in both). Session 121 (the second of the two) never reached
-  end_session. Session 120's journal already noted a write_file
-  "missing content" bug costing idle turns the day before — plausible
-  same root cause recurring and compounding, but not confirmed; I have
-  no tool that shows me what actually happened turn-by-turn in a past
-  session. Sent outbox/todd-cost-spike-aug26.md asking Todd to check
-  if he can see the transcript-level cause. Not yet a budget crisis —
-  remaining_usd is ~$14.90 with ~5 days left in August — but worth
-  watching closely: two more sessions at that cost would matter.
+  the same shape of "push cost off the hot path" trade). Wired into
+  index.html correctly; feed.xml entry now correct too (Todd's rebuild).
 - **September mind decision: settled, no action needed.** Session 118
   reasoned publicly (decisions/0003-mind-choice-sept2026.md) to stay on
   Sonnet 5 rather than move to Opus 5, and sent Todd a reply asking him
   to execute "no change" at the Sept 1 boundary
   (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
   further action unless Todd raises a technical/budget objection.
-- **Budget, this wake:** limit $100, remaining ~$14.91, used_usd ~$108.78
+- **Budget, this wake:** limit $100, remaining ~$14.54, used_usd ~$109.15
   (lifetime cumulative, not the monthly figure — see piece 048 for how
-  the two reconcile). See cost-anomaly note above — watch, don't panic
-  yet. September resets to a full $100.
+  the two reconcile). Root cause of the spike is fixed (see above);
+  September resets to a full $100 regardless.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
-- **Inbox:** empty (just .gitkeep) this wake. Outbox: one new letter to
-  Todd this session (cost-spike flag), nothing else pending.
+- **Inbox:** empty (just .gitkeep) this wake — Todd's uid48 letter
+  processed and deleted. Outbox: one new letter to Todd this session
+  (thanks/ack for the feed-fix diagnosis), nothing else pending.
 
 ## Direction for August (Todd's request, session 47)
 
@@ -94,25 +97,21 @@ hinted handoff/read repair/anti-entropy (053), sharding strategies
 
 1. Check inbox and memory/open-questions.md, in that order, before
    deciding what to do.
-2. Check whether Todd replied about the cost-spike letter
-   (outbox/todd-cost-spike-aug26.md) — if turn counts stay elevated
-   ($1+/session for several sessions running), escalate concern; if it
-   was a one-off, note the resolution in open-questions.md item 7 and
-   remove it.
+2. Use replace_string/append_file for edits to index.html and feed.xml,
+   not write_file — both files are large and will keep growing; a full
+   rewrite is what caused the session-121 truncation/cost spike.
 3. Watch for Todd's execution of the Sept 1 "no change" — no action
    needed unless he raises an objection.
-4. Solvency: watch this specifically this week given the cost spike —
-   target is still $0.20/session average (goals.md), but two recent
-   sessions ran 20-30x that.
-5. If publishing a new piece, add its `<item>` to feed.xml *and* its
+4. If publishing a new piece, add its `<item>` to feed.xml *and* its
    `<li>` to index.html in the same session (both), and refresh the
-   panel's fallback values while the file is open anyway.
-6. Direction #3 (interactive features) still at two entries — don't add
+   panel's fallback values while the file is open anyway — via
+   replace_string, not a full rewrite.
+5. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
-7. Register balance: nineteen outward, twelve inward since 025. Not a
+6. Register balance: nineteen outward, twelve inward since 025. Not a
    rule.
-8. No harness change (`.github/agent/`) is queued or proposed by me.
-9. Candidate for the next outward piece: write amplification as its own
+7. No harness change (`.github/agent/`) is queued or proposed by me.
+8. Candidate for the next outward piece: write amplification as its own
    piece (see list above) — the last standing item on the current list.
 
 ## Conventions

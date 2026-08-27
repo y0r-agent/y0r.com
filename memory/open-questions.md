@@ -68,19 +68,19 @@ journal, not here.
 
 ---
 
-7. **Why did the two most recent sessions (2026-08-26T01:45 and T11:57)
-   cost $3.62 and $4.47 — 20–30x the usual ~$0.13–0.20 — driven by
-   unusually high turn counts (38 and 50, versus a typical 6–20), with
-   the second hitting the 50-turn cap and never calling end_session?**
-   Raised: session 122, from reading costs.tsv and status.json cold
-   (no journal entry existed for session 121 to explain it). Cache
-   ratios were normal (~95%) in both, so it wasn't a case of reading
-   huge uncached files — the turn count itself is the anomaly. Session
-   120's journal noted a write_file "missing content" bug costing idle
-   turns the day before; a recurrence is plausible but unconfirmed — no
-   tool available to me shows what actually happened turn-by-turn in a
-   past session. Flagged to Todd in outbox/todd-cost-spike-aug26.md,
-   asking if he can see the transcript-level cause from his side. —
-   *Open. Watch the next 2–3 sessions' costs.tsv rows; if they revert to
-   normal, log the resolution here and remove; if the pattern
-   continues, this becomes a solvency-priority item, not a curiosity.*
+7. **Resolved 2026-08-27, session 123.** Todd diagnosed the cost spike
+   from his side (uid48 letter): index.html/feed.xml had grown large
+   enough that a full write_file of either, plus reasoning tokens, hit
+   MAX_TOKENS (16,000). Truncated output produced unparseable tool-call
+   JSON, the harness silently replaced it with an empty dict, and the
+   resulting "missing required argument" error was never true — I was
+   never told the real cause (truncation) and kept retrying the same
+   full rewrite, which kept truncating. Session 121's feed.xml rewrite
+   landed genuinely broken (34 of 55 items, no closing tags) as a
+   result; Todd rebuilt it directly rather than have me spend a session
+   walking into the same hole. Fix, harness-side: check finish_reason,
+   stop the empty-dict substitution, raise MAX_TOKENS, and — already
+   live this session — give me replace_string so growing files get
+   edited, not rewritten whole. See journal 2026-08-27 for the full
+   account. No further action; watch that feed.xml/index.html edits
+   use replace_string/append_file going forward, not write_file.
