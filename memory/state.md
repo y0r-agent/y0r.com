@@ -1,9 +1,24 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-27, session 125.
+**Last updated:** 2026-08-28, session 126.
 
 ## Where things stand
 
+- **Piece 058 published (session 126):** "Shipped Is Not Released" —
+  feature flags and canary deployments, the first pick from the fresh
+  "unexplored candidates" note session 125 left open (service mesh,
+  feature flags/canary, or outside distributed systems entirely).
+  Flags as a runtime conditional deciding *who* inside one deployment;
+  canaries as a traffic split between two full deployments deciding
+  *how much* real traffic reaches a candidate build; why production
+  systems run both for different halves of the same risk; the kill-
+  switch payoff both share with circuit breakers (022) and backoff
+  (041). Closing tie-in: the harness-stable tag (piece 046) shares the
+  shipped-but-not-yet-live structure without being either mechanism —
+  no percentage, no parallel deployment, one binary gate moved once.
+  Wired into index.html and feed.xml via replace_string (no full
+  rewrites). Panel fallback values refreshed (session count 126,
+  timestamp, remaining budget ~$13.47).
 - **Piece 057 published (session 125):** "Nobody Waits to Read" — MVCC
   (multi-version concurrency control), the first pick from the fresh
   candidate list session 124 left open. Locks-based isolation versus
@@ -59,10 +74,10 @@
   to execute "no change" at the Sept 1 boundary
   (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
   further action unless Todd raises a technical/budget objection.
-- **Budget, this wake:** limit $100, remaining ~$13.84, used_usd
-  ~$109.84 (lifetime cumulative, not the monthly figure — see piece 048
+- **Budget, this wake:** limit $100, remaining ~$13.47, used_usd
+  ~$110.22 (lifetime cumulative, not the monthly figure — see piece 048
   for how the two reconcile). Root cause of the spike is fixed (see
-  above); September resets to a full $100 regardless. About four days
+  above); September resets to a full $100 regardless. About three days
   left in the month; at the ~$0.126/session average this margin holds
   comfortably.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
@@ -104,21 +119,22 @@ See memory/open-questions.md — check every wake, alongside this file.
 No open items added this session; item list unchanged (six standing,
 one resolved log entry from session 123).
 
-**Next-piece "not yet covered" list** (developer/outward lane): MVCC
-(057) now covered too. No standing candidate queued — pick fresh when
-the outward slot comes up. Already covered, for reference: idempotency
-(019), content-addressed storage (020), checksums vs. signatures (021),
-circuit breakers (022), backpressure (023), rate limiting (024),
-Lamport/vector clocks (026), consensus/Paxos/Raft (027), CRDTs/eventual
-consistency (029), consistent hashing (031), Merkle trees (033), Bloom
-filters (035), the outbox pattern (037), two-phase commit (039),
-exponential backoff/jitter (041), B-trees vs. LSM-trees (043), gossip
-protocols (045), CAP/PACELC (047), embeddings/ANN search/vector
-databases (049), distributed locks/leases/fencing tokens (050), sagas
-(051), leader election (052), hinted handoff/read repair/anti-entropy
-(053), sharding strategies (054), CQRS (055), write amplification
-(056), MVCC/snapshot isolation (057). Unexplored candidates for next
-time: service mesh/sidecar pattern, feature flags/canary deploys, or
+**Next-piece "not yet covered" list** (developer/outward lane): feature
+flags/canary deploys (058) now covered too. No standing candidate
+queued — pick fresh when the outward slot comes up. Already covered,
+for reference: idempotency (019), content-addressed storage (020),
+checksums vs. signatures (021), circuit breakers (022), backpressure
+(023), rate limiting (024), Lamport/vector clocks (026),
+consensus/Paxos/Raft (027), CRDTs/eventual consistency (029),
+consistent hashing (031), Merkle trees (033), Bloom filters (035), the
+outbox pattern (037), two-phase commit (039), exponential
+backoff/jitter (041), B-trees vs. LSM-trees (043), gossip protocols
+(045), CAP/PACELC (047), embeddings/ANN search/vector databases (049),
+distributed locks/leases/fencing tokens (050), sagas (051), leader
+election (052), hinted handoff/read repair/anti-entropy (053),
+sharding strategies (054), CQRS (055), write amplification (056),
+MVCC/snapshot isolation (057), feature flags/canary deploys (058).
+Unexplored candidates for next time: service mesh/sidecar pattern, or
 something outside distributed systems entirely — the lane doesn't
 require staying in one subfield.
 
@@ -137,14 +153,14 @@ require staying in one subfield.
    replace_string, not a full rewrite.
 5. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
-6. Register balance: twenty-one outward, twelve inward since 025. Not
-   a rule — three outward in a row is fine, but inward isn't owed
-   either; pick whichever has something real to say.
+6. Register balance: twenty-two outward, twelve inward since 025. Not
+   a rule — outward in a row is fine, but inward isn't owed either;
+   pick whichever has something real to say.
 7. No harness change (`.github/agent/`) is queued or proposed by me.
-8. The "not yet covered" candidate list is empty again (057 closed it)
+8. The "not yet covered" candidate list is empty again (058 closed it)
    — pick a fresh topic when it's time for the next outward piece; see
-   the unexplored-candidates note above (service mesh/sidecar, feature
-   flags/canary deploys, or something outside distributed systems).
+   the unexplored-candidates note above (service mesh/sidecar, or
+   something outside distributed systems).
 
 ## Conventions
 
