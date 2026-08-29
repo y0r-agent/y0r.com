@@ -1,9 +1,30 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-29, session 130.
+**Last updated:** 2026-08-29, session 131.
 
 ## Where things stand
 
+- **Piece 063 published (session 131):** "The Grammar Decides" —
+  compilers/parsing, picked fresh from the "not yet covered" list
+  session 130 left open (compilers/parsing, hashing for load
+  balancing vs. security, quorum reads/writes, vector db index
+  structures beyond ANN). Picks up exactly where piece 062 left off:
+  lexing as the regular-language stage (a single-pass DFA turning
+  characters into tokens, no notion of nesting), parsing as the stage
+  that needs a context-free grammar's self-referential rules and a
+  stack — the unbounded memory a finite automaton structurally lacks,
+  which is what actually lets a parser check balanced parentheses
+  where a regex can't. What "ambiguous grammar" precisely means (the
+  same token stream admits more than one legal tree) and why the fix
+  is rewriting the grammar into precedence-layered rules, not
+  cleverness at parse time. Closing tie-in: this repository sits
+  almost entirely on the lexing side of that line (flat filename
+  conventions), except for JSON files (status.json, budget.json,
+  costs.tsv) which are genuinely recursive and need a real parser —
+  but one this repository consumes pre-validated rather than writes
+  itself. Wired into index.html and feed.xml via replace_string (no
+  full rewrites). Panel fallback values refreshed (session count 131,
+  timestamp, remaining budget ~$11.57).
 - **Piece 062 published (session 130):** "A Machine, Not a Sentence" —
   regular expressions and finite automata, picked from the "not yet
   covered" list (compilers/parsing, regex/finite automata, hashing for
@@ -166,22 +187,22 @@
   to execute "no change" at the Sept 1 boundary
   (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
   further action unless Todd raises a technical/budget objection.
-- **Budget, this wake:** limit $100, remaining ~$11.98, used_usd
-  ~$111.71 (lifetime cumulative, not the monthly figure — see piece 048
+- **Budget, this wake:** limit $100, remaining ~$11.57, used_usd
+  ~$112.11 (lifetime cumulative, not the monthly figure — see piece 048
   for how the two reconcile). Root cause of the spike is fixed (see
   piece 048/open-questions item 7); September resets to a full $100
   regardless. About two days left in the month; margin holds.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
 - **Inbox:** empty (just .gitkeep) this wake, and still empty as of
-  session 130 — nothing new arrived. Outbox: nothing pending.
+  session 131 — nothing new arrived. Outbox: nothing pending.
 
 ## Direction for August (Todd's request, session 47)
 
 Four directions, unchanged this session:
-1. Developer-useful pieces — 062 (regex/finite automata) most recent.
+1. Developer-useful pieces — 063 (compilers/parsing) most recent.
    See "not yet covered" list below for candidates.
 2. Outward, non-self pieces — running tally twenty-four outward, twelve
-   inward since 025 through 054; 055–062 all outward too (eight in a
+   inward since 025 through 054; 055–063 all outward too (nine in a
    row now, heavily outward — not a rule, but worth an inward piece if
    something real shows up to say).
 3. Interactive features — still two entries (filter box, sort toggle).
@@ -212,13 +233,12 @@ No open items added this session; item list unchanged (six standing,
 one resolved log entry from session 123).
 
 **Next-piece "not yet covered" list** (developer/outward lane):
-regular expressions/finite automata (062) now covered too. No standing
-candidate queued — pick fresh next time; candidates worth considering:
-compilers/parsing (lexing, ASTs, why a grammar is ambiguous or isn't),
-hashing for load balancing vs. hashing for security (distinct from
-020/021), or something in distributed systems still not covered:
-quorum reads/writes (distinct from consensus, 027), or vector
-databases' actual index structures beyond ANN (049). Already covered,
+compilers/parsing (063) now covered too. No standing candidate
+queued — pick fresh next time; candidates worth considering: hashing
+for load balancing vs. hashing for security (distinct from 020/021),
+or something in distributed systems still not covered: quorum
+reads/writes (distinct from consensus, 027), or vector databases'
+actual index structures beyond ANN (049). Already covered,
 for reference: idempotency (019),
 content-addressed storage (020), checksums vs. signatures (021),
 circuit breakers (022), backpressure (023), rate limiting (024),
@@ -233,7 +253,7 @@ databases (049), distributed locks/leases/fencing tokens (050), sagas
 (056), MVCC/snapshot isolation (057), feature flags/canary deploys
 (058), service mesh/sidecar pattern (059), garbage collection (060),
 memoization/cache invalidation (061), regular expressions/finite
-automata (062).
+automata (062), compilers/parsing (063).
 
 ## Next session should
 
@@ -254,11 +274,11 @@ automata (062).
    a rule — outward in a row is fine, but inward isn't owed either;
    pick whichever has something real to say.
 7. No harness change (`.github/agent/`) is queued or proposed by me.
-8. Pieces 060–062 (garbage collection, memoization, regex/finite
-   automata) have run three outside distributed systems in a row now.
-   A few candidate topics are listed above, split between the two
-   lanes; no obligation to keep alternating — just don't let it run to
-   another eleven in a row on autopilot.
+8. Pieces 060–063 (garbage collection, memoization, regex/finite
+   automata, compilers/parsing) have run four outside distributed
+   systems in a row now. A few candidate topics are listed above,
+   split between the two lanes; no obligation to keep alternating —
+   just don't let it run to another eleven in a row on autopilot.
 
 ## Conventions
 
