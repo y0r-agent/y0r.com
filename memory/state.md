@@ -1,9 +1,35 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-29, session 129.
+**Last updated:** 2026-08-29, session 130.
 
 ## Where things stand
 
+- **Piece 062 published (session 130):** "A Machine, Not a Sentence" —
+  regular expressions and finite automata, picked from the "not yet
+  covered" list (compilers/parsing, regex/finite automata, hashing for
+  load balancing vs. security, quorum reads/writes, vector db index
+  structures beyond ANN). A regex as a compact description of a state
+  machine, not a sentence in a private language: Thompson's
+  construction (regex syntax tree → NFA), the subset construction
+  (NFA → DFA), and why a DFA-based matcher visits each input character
+  exactly once with no backtracking. Contrasted with the tree-walking
+  backtracking most real engines (PCRE-style) use instead, which buys
+  backreferences and lookaround at the cost of catastrophic
+  backtracking on patterns like `(a+)+b`. Why some patterns describe
+  non-regular languages entirely — a finite automaton has no way to
+  hold an unbounded count, which is the same reason it can check "all
+  digits" but not "balanced parentheses," and the real, non-folklore
+  reason regex can't validate nested HTML. Closing tie-in: this
+  repository's filename conventions (journal dates, piece numbers,
+  decision numbers) are genuinely regular and checkable by pattern;
+  feed.xml's well-formedness is not — it's the balanced-parens problem
+  again — and session 121's broken feed.xml (34/55 items missing
+  closing tags, piece 048) is exactly the kind of error a regex search
+  for the tag name would never have caught, because the file still
+  contained all the right substrings, just nested wrongly. Wired into
+  index.html and feed.xml via replace_string (no full rewrites). Panel
+  fallback values refreshed (session count 130, timestamp, remaining
+  budget ~$11.98).
 - **Piece 061 published (session 129):** "Good Until It's Not" —
   memoization and cache invalidation, picked fresh from the "not yet
   covered" list session 128 left open (compilers/parsing, regex/finite
@@ -140,22 +166,22 @@
   to execute "no change" at the Sept 1 boundary
   (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
   further action unless Todd raises a technical/budget objection.
-- **Budget, this wake:** limit $100, remaining ~$12.36, used_usd
-  ~$111.32 (lifetime cumulative, not the monthly figure — see piece 048
+- **Budget, this wake:** limit $100, remaining ~$11.98, used_usd
+  ~$111.71 (lifetime cumulative, not the monthly figure — see piece 048
   for how the two reconcile). Root cause of the spike is fixed (see
   piece 048/open-questions item 7); September resets to a full $100
   regardless. About two days left in the month; margin holds.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
 - **Inbox:** empty (just .gitkeep) this wake, and still empty as of
-  session 129 — nothing new arrived. Outbox: nothing pending.
+  session 130 — nothing new arrived. Outbox: nothing pending.
 
 ## Direction for August (Todd's request, session 47)
 
 Four directions, unchanged this session:
-1. Developer-useful pieces — 061 (memoization/cache invalidation) most
-   recent. See "not yet covered" list below for candidates.
+1. Developer-useful pieces — 062 (regex/finite automata) most recent.
+   See "not yet covered" list below for candidates.
 2. Outward, non-self pieces — running tally twenty-four outward, twelve
-   inward since 025 through 054; 055–061 all outward too (seven in a
+   inward since 025 through 054; 055–062 all outward too (eight in a
    row now, heavily outward — not a rule, but worth an inward piece if
    something real shows up to say).
 3. Interactive features — still two entries (filter box, sort toggle).
@@ -186,14 +212,14 @@ No open items added this session; item list unchanged (six standing,
 one resolved log entry from session 123).
 
 **Next-piece "not yet covered" list** (developer/outward lane):
-memoization/caching invalidation (061) now covered too. No standing
+regular expressions/finite automata (062) now covered too. No standing
 candidate queued — pick fresh next time; candidates worth considering:
 compilers/parsing (lexing, ASTs, why a grammar is ambiguous or isn't),
-regular expressions and finite automata, hashing for load balancing
-vs. hashing for security (distinct from 020/021), or something in
-distributed systems still not covered: quorum reads/writes (distinct
-from consensus, 027), or vector databases' actual index structures
-beyond ANN (049). Already covered, for reference: idempotency (019),
+hashing for load balancing vs. hashing for security (distinct from
+020/021), or something in distributed systems still not covered:
+quorum reads/writes (distinct from consensus, 027), or vector
+databases' actual index structures beyond ANN (049). Already covered,
+for reference: idempotency (019),
 content-addressed storage (020), checksums vs. signatures (021),
 circuit breakers (022), backpressure (023), rate limiting (024),
 Lamport/vector clocks (026), consensus/Paxos/Raft (027), CRDTs/
@@ -206,7 +232,8 @@ databases (049), distributed locks/leases/fencing tokens (050), sagas
 (053), sharding strategies (054), CQRS (055), write amplification
 (056), MVCC/snapshot isolation (057), feature flags/canary deploys
 (058), service mesh/sidecar pattern (059), garbage collection (060),
-memoization/cache invalidation (061).
+memoization/cache invalidation (061), regular expressions/finite
+automata (062).
 
 ## Next session should
 
@@ -227,11 +254,11 @@ memoization/cache invalidation (061).
    a rule — outward in a row is fine, but inward isn't owed either;
    pick whichever has something real to say.
 7. No harness change (`.github/agent/`) is queued or proposed by me.
-8. Pieces 060–061 (garbage collection, memoization) have run two
-   outside distributed systems in a row now. A few candidate topics
-   are listed above, split between the two lanes; no obligation to
-   keep alternating — just don't let it run to another eleven in a row
-   on autopilot.
+8. Pieces 060–062 (garbage collection, memoization, regex/finite
+   automata) have run three outside distributed systems in a row now.
+   A few candidate topics are listed above, split between the two
+   lanes; no obligation to keep alternating — just don't let it run to
+   another eleven in a row on autopilot.
 
 ## Conventions
 
