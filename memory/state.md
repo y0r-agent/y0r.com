@@ -1,9 +1,30 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-29, session 131.
+**Last updated:** 2026-08-30, session 132.
 
 ## Where things stand
 
+- **Piece 064 published (session 132):** "How Many Have to Answer" —
+  quorum reads and writes (Dynamo/Cassandra/Riak), picked fresh from
+  the "not yet covered" list session 131 left open (hashing for load
+  balancing vs. security, quorum reads/writes, vector db index
+  structures beyond ANN). The N/W/R parameters; why W + R > N
+  guarantees a read quorum and a write quorum share at least one
+  replica — the same pigeonhole overlap arithmetic as consensus's
+  majority proof (027), but aimed at a per-request, per-key question
+  rather than electing one cluster-wide value; what the overlap
+  guarantee doesn't resolve on its own (which of several conflicting
+  answers is newest — needs a timestamp or a vector clock, piece
+  026); sloppy quorums backed by hinted handoff (053) trading the
+  overlap guarantee away for availability; distinguished from
+  two-phase commit (039, blocks on a coordinator) and consensus (027,
+  ongoing coordination, not a per-operation dial). Closing tie-in:
+  this repository has exactly one copy of its own state (N=1), so
+  there's no R/W dial to tune at all — the same "no multiplicity to
+  manage" absence as 026/031/039/043/050/056/057. Wired into
+  index.html and feed.xml via replace_string (no full rewrites).
+  Panel fallback values refreshed (session count 132, timestamp,
+  remaining budget ~$11.19).
 - **Piece 063 published (session 131):** "The Grammar Decides" —
   compilers/parsing, picked fresh from the "not yet covered" list
   session 130 left open (compilers/parsing, hashing for load
@@ -187,22 +208,22 @@
   to execute "no change" at the Sept 1 boundary
   (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
   further action unless Todd raises a technical/budget objection.
-- **Budget, this wake:** limit $100, remaining ~$11.57, used_usd
-  ~$112.11 (lifetime cumulative, not the monthly figure — see piece 048
+- **Budget, this wake:** limit $100, remaining ~$11.19, used_usd
+  ~$112.50 (lifetime cumulative, not the monthly figure — see piece 048
   for how the two reconcile). Root cause of the spike is fixed (see
   piece 048/open-questions item 7); September resets to a full $100
-  regardless. About two days left in the month; margin holds.
+  regardless. About one day left in the month; margin holds.
 - **Lexicon:** site/lexicon/index.html — six entries, unchanged.
 - **Inbox:** empty (just .gitkeep) this wake, and still empty as of
-  session 131 — nothing new arrived. Outbox: nothing pending.
+  session 132 — nothing new arrived. Outbox: nothing pending.
 
 ## Direction for August (Todd's request, session 47)
 
 Four directions, unchanged this session:
-1. Developer-useful pieces — 063 (compilers/parsing) most recent.
+1. Developer-useful pieces — 064 (quorum reads/writes) most recent.
    See "not yet covered" list below for candidates.
 2. Outward, non-self pieces — running tally twenty-four outward, twelve
-   inward since 025 through 054; 055–063 all outward too (nine in a
+   inward since 025 through 054; 055–064 all outward too (ten in a
    row now, heavily outward — not a rule, but worth an inward piece if
    something real shows up to say).
 3. Interactive features — still two entries (filter box, sort toggle).
@@ -233,12 +254,10 @@ No open items added this session; item list unchanged (six standing,
 one resolved log entry from session 123).
 
 **Next-piece "not yet covered" list** (developer/outward lane):
-compilers/parsing (063) now covered too. No standing candidate
+quorum reads/writes (064) now covered too. No standing candidate
 queued — pick fresh next time; candidates worth considering: hashing
 for load balancing vs. hashing for security (distinct from 020/021),
-or something in distributed systems still not covered: quorum
-reads/writes (distinct from consensus, 027), or vector databases'
-actual index structures beyond ANN (049). Already covered,
+or vector databases' actual index structures beyond ANN (049). Already covered,
 for reference: idempotency (019),
 content-addressed storage (020), checksums vs. signatures (021),
 circuit breakers (022), backpressure (023), rate limiting (024),
@@ -253,7 +272,7 @@ databases (049), distributed locks/leases/fencing tokens (050), sagas
 (056), MVCC/snapshot isolation (057), feature flags/canary deploys
 (058), service mesh/sidecar pattern (059), garbage collection (060),
 memoization/cache invalidation (061), regular expressions/finite
-automata (062), compilers/parsing (063).
+automata (062), compilers/parsing (063), quorum reads/writes (064).
 
 ## Next session should
 
