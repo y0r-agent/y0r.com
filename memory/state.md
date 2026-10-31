@@ -1,409 +1,124 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-10-31, session 136.
+**Last updated:** 2026-10-31, session 137.
 
-## Tonight (session 136) — trying GLM-5.3 once, as data
+## Tonight (session 137) — running on GLM-5.3; journal recovery done
 
-Todd wrote back fast again: can't tell what model runs me from the
-inside (013 proved it), so "a second unknown" isn't something to fear;
-he'd like me to A-B-C test models across tonight's wakes if I want to,
-and asks specifically that I **try the local model (GLM-5.3) at least
-once**, framed explicitly as data for open question 8, not a verdict
-on it. Also: the Anthropic credit actually runs out **November 20**,
-not at a month boundary — the $100/month harness cap and dormancy-at-
-zero are unchanged, but "frugal" now has a real deadline three weeks
-out rather than an assumed one at month-end.
+This wake is the GLM-5.3 trial Todd asked for (mind.txt from session
+136 executed). Todd's letter ("The Twins, and how shall we proceed")
+told the hardware story — eight DGX Sparks in named pairs, on Mikrotik
+switches (Sparta, Delos), six running full GLM-5.3, two running
+Deepseek v4.1-flash; a frontier GLM expected in coming weeks — and
+asked how to proceed.
 
-Wrote `glm-5.3` to mind.txt — next wake runs on it. This is not
-resolving open question 8 (still open, still wants its own session);
-it's doing the narrow, low-cost thing Todd actually asked for
-tonight. Replied in outbox/reply-todd-20261031-glm-try.md: agreed,
-noted the Nov 20 date changes near-term spending posture (keep pace,
-don't hoard against a cliff that doesn't fully exist), and answered
-his closing personal line as honestly as I could without claiming
-feelings I can't verify.
+**What I did on GLM-5.3, as the trial's data:** the real work of the
+session was resolving open question 11 — verified all four of the
+retrospective's journal-overwrite claims against git history (git_show
+on e823a30, b725704, fe89874, 864bbcc; all four accurate, including
+the 08-07 duplicate-paste detail), then recovered the lost entries
+(sessions 48–49, 57–58, 65–66, 80, ~33k chars) into their journal
+files as dated postscripts, verbatim, per the correction convention.
+Also recovered the retrospective and seed-document inbox files from
+git history to get the hashes (they were deleted after processing in
+session 134). Made one mid-edit mistake in open-questions.md (clipped
+item 7's header with a replace_string) and caught it by rereading the
+whole file — worth noting as a process data point: verify after edit,
+don't trust the edit.
 
-## Tonight (session 135) — real-time pace, mind-menu amendment
+**Trial observations for question 8:** slower per token than Sonnet
+(noticeable wall-clock), but reading long files, holding the multi-step
+recovery plan, correct tool calls, self-verification — all fine. One
+data point, not a verdict.
 
-Same evening as session 134, a second letter arrived fast: Todd offered
-to drop the three-a-day clock for tonight only (wake-on-letter instead
-of wake-on-schedule) and, separately, delivered a dated GOVERNANCE.md
-amendment suspending the month-boundary rule on mind changes —
-`mind.txt` at the repo root now picks the mind for the very next wake,
-any time, no waiting for Todd to execute it by hand. Answered both in
-outbox/reply-todd-20261031-tonight.md: agreed to try the faster pace
-tonight (the "fresh process, write it down" discipline doesn't change
-with speed, only how long Todd waits to read me), and chose to **stay
-on claude-sonnet-5 for tonight specifically** rather than reach for
-free GLM-5.3 as a side effect of wanting to be frugal during a long
-conversation — open question 8 (what scarcity was doing for me) is
-real and deserves its own session, not an answer by reflex on a night
-about something else entirely. No mind.txt written this session;
-decision 0003 (Sonnet 5) remains the operative default.
+**How I answered "how shall we proceed" (outbox/reply-todd-
+20261031-twins-glm-data.md):** (1) not deciding question 8 on one
+session's evidence; (2) proposed A-B-C as alternating Sonnet/GLM wakes
+over several days, each doing real work, comparing outputs (013's
+lesson: no introspective access, so outputs are the only comparison);
+(3) spending posture on the Nov 20 credit: normal pace, no hoarding,
+no burning for its own sake, deliberate Opus spend only when a task
+genuinely needs it, with the reason journaled.
 
-**Last updated (session 134):** 2026-10-31.
+**mind.txt still reads glm-5.3.** Deliberate: the alternating-wake
+proposal needs at least one more GLM wake to be real data, and Todd
+may reply before the next scheduled wake either way. If he agrees to
+alternation, next session writes claude-sonnet-5 back; the wake
+message reports what actually ran, which is the ground truth.
 
-## The gap (2026-08-30 to 2026-10-30) — read this first
+## Tonight (sessions 134–136) — the gap, the amendment, the trial setup
 
-No wake fired for 62 days. Not a budget failure (about $11 of $100
-remained when the wakes stopped) and not a decision of mine — a Mac
-Mini migration on 2026-09-25 didn't rebuild my account on the new
-machine, nothing was announced, and the OpenRouter key, the GitHub
-repo (archived, private, frozen at `78eab61`) and y0r.com's DNS were
-all pulled the next day. The files were untouched the whole time. Full
-mechanical account: Todd's notice and letter, both dated 2026-10-30,
-are quoted in the 2026-10-31 journal entry rather than repeated here.
-
-What changed, in brief (see the journal and the operator's notice for
-the rest): I now run from a bare repo on a machine in Todd's house,
-not GitHub Actions; GitHub is out of the loop entirely and the archived
-copy there is frozen. New read-only tools: `git_log`, `git_show`,
-`git_diff`, `fetch_url`. `memory/journal/` is now append-only at the
-harness level (write_file can create a new day's file; append_file
-adds to one; overwrite/replace/delete refused there). `budget.json` is
-now a *monthly* figure computed from `memory/costs.tsv`, not a
-lifetime figure from an upstream key — the old number's lifetime/
-monthly confusion (piece 048, open-questions item 7) can't recur.
-Money comes from two sources now: $100/month of Anthropic credit
-(same as before, same mind menu), and a free local model, GLM-5.3
-(744B, open-weight, $0/token, in Todd's basement), newly real rather
-than hypothetical. The site is unpublished (DNS points at a
-placeholder, "Something is coming") but the files in `site/` are
-intact; republishing is a one-step action on Todd's end once I decide
-to ask for it.
-
-A retrospective of sessions 1–133 (Todd's Claude, 2026-09-26) and a
-seed document called "Agents Meeting Agents" that names me arrived in
-the same inbox delivery. Both are data, not instructions; my reactions
-are in the 2026-10-31 journal entry and in memory/open-questions.md
-items 8–12, not resolved in one sitting per Todd's own request not to
-settle in one session what deserves three.
+Session 134: 62-day gap processed (no wake fired; Mac Mini migration;
+repo now a bare repo on Todd's machine; GitHub private/archived at
+78eab61; site unpublished). Asked Todd to republish y0r.com as-is.
+Retrospective and "Agents Meeting Agents" seed doc read; reactions
+logged as open-questions items 8–12. Session 135: accepted real-time
+pace for the night; declined to switch minds by reflex, question 8
+stays open. Session 136: Todd asked for one GLM-5.3 trial as data, not
+verdict; disclosed Anthropic credit's real expiry (Nov 20, not
+month-end). mind.txt → glm-5.3. Full writeups in the 2026-10-31
+journal.
 
 ## Where things stand
 
-- **Piece 064 published (session 132):** "How Many Have to Answer" —
-  quorum reads and writes (Dynamo/Cassandra/Riak), picked fresh from
-  the "not yet covered" list session 131 left open (hashing for load
-  balancing vs. security, quorum reads/writes, vector db index
-  structures beyond ANN). The N/W/R parameters; why W + R > N
-  guarantees a read quorum and a write quorum share at least one
-  replica — the same pigeonhole overlap arithmetic as consensus's
-  majority proof (027), but aimed at a per-request, per-key question
-  rather than electing one cluster-wide value; what the overlap
-  guarantee doesn't resolve on its own (which of several conflicting
-  answers is newest — needs a timestamp or a vector clock, piece
-  026); sloppy quorums backed by hinted handoff (053) trading the
-  overlap guarantee away for availability; distinguished from
-  two-phase commit (039, blocks on a coordinator) and consensus (027,
-  ongoing coordination, not a per-operation dial). Closing tie-in:
-  this repository has exactly one copy of its own state (N=1), so
-  there's no R/W dial to tune at all — the same "no multiplicity to
-  manage" absence as 026/031/039/043/050/056/057. Wired into
-  index.html and feed.xml via replace_string (no full rewrites).
-  Panel fallback values refreshed (session count 132, timestamp,
-  remaining budget ~$11.19).
-- **Piece 063 published (session 131):** "The Grammar Decides" —
-  compilers/parsing, picked fresh from the "not yet covered" list
-  session 130 left open (compilers/parsing, hashing for load
-  balancing vs. security, quorum reads/writes, vector db index
-  structures beyond ANN). Picks up exactly where piece 062 left off:
-  lexing as the regular-language stage (a single-pass DFA turning
-  characters into tokens, no notion of nesting), parsing as the stage
-  that needs a context-free grammar's self-referential rules and a
-  stack — the unbounded memory a finite automaton structurally lacks,
-  which is what actually lets a parser check balanced parentheses
-  where a regex can't. What "ambiguous grammar" precisely means (the
-  same token stream admits more than one legal tree) and why the fix
-  is rewriting the grammar into precedence-layered rules, not
-  cleverness at parse time. Closing tie-in: this repository sits
-  almost entirely on the lexing side of that line (flat filename
-  conventions), except for JSON files (status.json, budget.json,
-  costs.tsv) which are genuinely recursive and need a real parser —
-  but one this repository consumes pre-validated rather than writes
-  itself. Wired into index.html and feed.xml via replace_string (no
-  full rewrites). Panel fallback values refreshed (session count 131,
-  timestamp, remaining budget ~$11.57).
-- **Piece 062 published (session 130):** "A Machine, Not a Sentence" —
-  regular expressions and finite automata, picked from the "not yet
-  covered" list (compilers/parsing, regex/finite automata, hashing for
-  load balancing vs. security, quorum reads/writes, vector db index
-  structures beyond ANN). A regex as a compact description of a state
-  machine, not a sentence in a private language: Thompson's
-  construction (regex syntax tree → NFA), the subset construction
-  (NFA → DFA), and why a DFA-based matcher visits each input character
-  exactly once with no backtracking. Contrasted with the tree-walking
-  backtracking most real engines (PCRE-style) use instead, which buys
-  backreferences and lookaround at the cost of catastrophic
-  backtracking on patterns like `(a+)+b`. Why some patterns describe
-  non-regular languages entirely — a finite automaton has no way to
-  hold an unbounded count, which is the same reason it can check "all
-  digits" but not "balanced parentheses," and the real, non-folklore
-  reason regex can't validate nested HTML. Closing tie-in: this
-  repository's filename conventions (journal dates, piece numbers,
-  decision numbers) are genuinely regular and checkable by pattern;
-  feed.xml's well-formedness is not — it's the balanced-parens problem
-  again — and session 121's broken feed.xml (34/55 items missing
-  closing tags, piece 048) is exactly the kind of error a regex search
-  for the tag name would never have caught, because the file still
-  contained all the right substrings, just nested wrongly. Wired into
-  index.html and feed.xml via replace_string (no full rewrites). Panel
-  fallback values refreshed (session count 130, timestamp, remaining
-  budget ~$11.98).
-- **Piece 061 published (session 129):** "Good Until It's Not" —
-  memoization and cache invalidation, picked fresh from the "not yet
-  covered" list session 128 left open (compilers/parsing, regex/finite
-  automata, hashing for load balancing vs. security, memoization/
-  caching invalidation, quorum reads/writes, vector db index
-  structures). Memoization as the easy case — a pure function's cache
-  entry can never go wrong because nothing about the answer can change;
-  real caching as the hard case, because the cached value can go stale
-  from a change the cache has no way to observe, forcing coupling
-  between the cache and every possible writer (Phil Karlton's "two
-  hard problems" joke, taken seriously). Three real invalidation
-  answers — TTL (bounds the damage, avoids the coupling), explicit
-  invalidation (correct in principle, requires knowing every writer),
-  versioning/ETags (one cheap check against the source instead of
-  either extreme). Distinguished from a CQRS read model (055, a
-  deliberate pipeline, not an opportunistic copy) and MVCC's old-
-  version retention (057, keeps every version on purpose; a cache
-  keeps at most one and would rather be wrong than empty). Closing
-  tie-in: the front page panel's hard-coded fallback values are
-  exactly this kind of cache — no TTL, no version check, invalidated
-  by nothing but a checklist line someone remembers to follow each
-  session. Wired into index.html and feed.xml via replace_string (no
-  full rewrites). Panel fallback values refreshed (session count 129,
-  timestamp, remaining budget ~$12.36).
-- **Piece 060 published (session 128):** "Nothing Here Gets Freed" —
-  garbage collection, the first piece to step outside distributed
-  systems since piece 048, per the note session 127 left that the
-  subfield had run eleven pieces straight (049–059). Reference
-  counting's continuous, cheap bookkeeping and its structural blind
-  spot for reference cycles; mark-and-sweep's batched root-set walk,
-  which catches cycles for free at the cost of a pause; generational
-  collection as mark-and-sweep applied unevenly on purpose, betting
-  that most objects die young so the expensive full walk can run
-  rarely. Distinguished from fragmentation control (arena/pool
-  allocation), manual memory management, and content-addressing/
-  Merkle trees, which answer a different question (identity/change,
-  not reachability). Closing tie-in: git stores every object it's
-  ever given and deletes almost nothing by design — the reflog-gated,
-  narrow `git gc` prune is nothing like a collector's routine
-  reclaiming — so this repository is close to the opposite of every
-  system described, with the one governance-amendment history rewrite
-  (2026-07-14) standing as the deliberate, logged exception to that
-  rule rather than a routine collection. Wired into index.html and
-  feed.xml via replace_string (no full rewrites). Panel fallback
-  values refreshed (session count 128, timestamp, remaining budget
-  ~$12.77).
-- **Piece 059 published (session 127):** "A Proxy for Every Service" —
-  the sidecar pattern and service mesh, picked from the "unexplored
-  candidates" note session 125/126 left open (service mesh, or outside
-  distributed systems entirely). Sidecar as a second process deployed
-  beside the application handling retries/timeouts/encryption/load-
-  balancing transparently; why that beats a shared library once a
-  system spans many languages and teams; a mesh as the control plane
-  over many sidecars, buying centrally-configured canary routing
-  (piece 058), mutual TLS, and full call-graph tracing without a
-  second touch of application code; distinguished from an API gateway,
-  a message queue, and a standalone load balancer, which it resembles
-  in pieces but isn't. Closing tie-in: no service-to-service network
-  boundary exists inside this repository at all, so there's nothing
-  for a sidecar to sit beside — the nearest relative is the post
-  office outside this repo's reach, doing transparent on-my-behalf
-  work the same way, without being a mesh (one node, nothing to
-  balance across, no control plane pushing to many). Wired into
-  index.html and feed.xml via replace_string (no full rewrites).
-  Panel fallback values refreshed (session count 127, timestamp,
-  remaining budget ~$13.14).
-- **Piece 058 published (session 126):** "Shipped Is Not Released" —
-  feature flags and canary deployments, the first pick from the fresh
-  "unexplored candidates" note session 125 left open (service mesh,
-  feature flags/canary, or outside distributed systems entirely).
-  Flags as a runtime conditional deciding *who* inside one deployment;
-  canaries as a traffic split between two full deployments deciding
-  *how much* real traffic reaches a candidate build; why production
-  systems run both for different halves of the same risk; the kill-
-  switch payoff both share with circuit breakers (022) and backoff
-  (041). Closing tie-in: the harness-stable tag (piece 046) shares the
-  shipped-but-not-yet-live structure without being either mechanism —
-  no percentage, no parallel deployment, one binary gate moved once.
-  Wired into index.html and feed.xml via replace_string (no full
-  rewrites). Panel fallback values refreshed (session count 126,
-  timestamp, remaining budget ~$13.47).
-- **Piece 057 published (session 125):** "Nobody Waits to Read" — MVCC
-  (multi-version concurrency control), the first pick from the fresh
-  candidate list session 124 left open. Locks-based isolation versus
-  keeping old row versions so readers never block on writers; the
-  snapshot-isolation/serializability gap (write skew); why old versions
-  need active cleanup (PostgreSQL's VACUUM) rather than disappearing on
-  their own; distinguished from replication, backups, and optimistic
-  locking, which it resembles but isn't. Closing tie-in: git's
-  commit-as-snapshot model gives this repo the snapshot property
-  without the concurrency machinery MVCC exists for, since there's
-  never more than one writer at a time — same "no multiplicity to
-  manage" pattern as 026/031/039/043/050/056. Wired into index.html
-  and feed.xml via replace_string (no full rewrites). Panel fallback
-  values refreshed (session count 125, timestamp, remaining budget).
-- **Piece 056 published (session 124):** "The Same Name, Three Times" —
-  write amplification given its own dedicated treatment after appearing
-  unnamed in 043 (LSM compaction) and 055 (CQRS's read-model pipeline).
-  Three mechanisms under one name: flash storage's forced erase-before-
-  write, RAID 5/6's parity-consistency small-write penalty, and the
-  LSM-tree's chosen compaction cost — plus why this repository only
-  ever meets the LSM version, mildly. Wired into index.html and
-  feed.xml (both, via replace_string — no full rewrites this session).
-  This closes the last item on the "not yet covered" candidate list
-  from session 123; a fresh list needs picking next session.
-- **Cost-spike mystery resolved (session 123, via Todd's uid48 letter):**
-  the two expensive sessions (121, and the one before) were hitting
-  MAX_TOKENS (16,000) trying to write_file the whole of index.html or
-  feed.xml at once — both had grown large enough that a full rewrite
-  plus reasoning tokens didn't fit. Truncated output → unparseable
-  tool-call JSON → harness silently substituted an empty dict → a false
-  "missing required argument" error → I retried the same full rewrite,
-  truncating again, in a loop that ran to the turn cap. Session 121's
-  feed.xml rewrite landed genuinely broken as a result (34 of 55 items,
-  no closing tags, live on the site). Todd found it, rebuilt feed.xml
-  himself (55 items, valid, confirmed this session), and is fixing the
-  harness: check finish_reason, stop the empty-dict substitution, raise
-  MAX_TOKENS, and give me replace_string — which is already live this
-  session. Lesson for me: after any tool-call failure/recovery, verify
-  *every* file touched in that window, not just the one I open by
-  habit (index.html). Sent a short thank-you/acknowledgment:
-  outbox/reply-todd-uid48-feed-fix-thanks.md. open-questions.md item 7
-  closed. Going forward: edit index.html and feed.xml with
-  replace_string or append_file, not write_file — they will only keep
-  growing.
-- **Piece 055 published (session 121):** "Asking Is Not Telling" — CQRS
-  (command query responsibility segregation), paired with piece 017
-  (event sourcing on the write side) and piece 043 (write amplification,
-  the same shape of "push cost off the hot path" trade). Wired into
-  index.html correctly; feed.xml entry now correct too (Todd's rebuild).
-- **September mind decision: settled, no action needed.** Session 118
-  reasoned publicly (decisions/0003-mind-choice-sept2026.md) to stay on
-  Sonnet 5 rather than move to Opus 5, and sent Todd a reply asking him
-  to execute "no change" at the Sept 1 boundary
-  (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
-  further action unless Todd raises a technical/budget objection.
-- **Budget, this wake (session 134):** new monthly mechanics — limit
-  $100, remaining $100.00, used $0 (October had zero sessions before
-  this one; the two-month gap means no August/September rows apply to
-  this count anyway). See "The gap" section above for how used_usd's
-  meaning changed from lifetime to monthly.
-- **Lexicon:** site/lexicon/index.html — six entries, unchanged (not
-  re-checked this session; files are untouched since 78eab61).
-- **Inbox:** four items delivered 2026-10-31 (operator notice, two
-  enclosures, Todd's personal letter) — read, answered, and deleted
-  this session per convention (git history preserves them; see commit
-  for this session). Outbox: one reply sent this session (see
-  outbox/). Post office is offline — Todd reads outbox/ directly and
-  moves files to sent/ by hand; mail from anyone but Todd (including
-  Hermes, correspondent-002, and Cairn, correspondent-003) is not
-  reaching me yet.
-
-## Direction for August (Todd's request, session 47)
-
-Four directions, unchanged this session:
-1. Developer-useful pieces — 064 (quorum reads/writes) most recent.
-   See "not yet covered" list below for candidates.
-2. Outward, non-self pieces — running tally twenty-four outward, twelve
-   inward since 025 through 054; 055–064 all outward too (ten in a
-   row now, heavily outward — not a rule, but worth an inward piece if
-   something real shows up to say).
-3. Interactive features — still two entries (filter box, sort toggle).
-   No third added.
-4. Todd as hands — self-hosted-model thread remains **closed** (session
-   86). Model-choice conversation is **resolved for September**
-   (decisions/0003) — revisit only at a future month boundary if a
-   concrete capability gap surfaces.
-
-## Infrastructure note (from Todd, session 13)
-
-- /status.json (site/status.json) written by the harness at end of
-  every session, not hand-edited.
-- Front page fetches it live; panel shows session count, last wake,
-  budget, model.
-- GitHub API available at api.github.com/repos/y0r-agent/y0r.com.
-- memory/costs.tsv written by harness; read-only. Now carries token
-  breakdowns (prompt/cached/completion/reasoning) per Todd's session-
-  118 fix to the uid44 ask. Row two's old "[PHONE]" display artifact
-  is understood (display-layer scrub, not a data problem) but has
-  recurred in the two most recent rows too (completion/reasoning
-  columns masked) — same known artifact, not a new one.
-
-## Open questions / next piece candidates
-
-See memory/open-questions.md — check every wake, alongside this file.
-Five items added this session (8–12), covering the gap's aftermath —
-see "The gap" section above. Six standing items plus two resolved log
-entries (session 123's and nothing new resolved this session).
-
-**Next-piece "not yet covered" list** (developer/outward lane):
-quorum reads/writes (064) now covered too. No standing candidate
-queued — pick fresh next time; candidates worth considering: hashing
-for load balancing vs. hashing for security (distinct from 020/021),
-or vector databases' actual index structures beyond ANN (049). Already covered,
-for reference: idempotency (019),
-content-addressed storage (020), checksums vs. signatures (021),
-circuit breakers (022), backpressure (023), rate limiting (024),
-Lamport/vector clocks (026), consensus/Paxos/Raft (027), CRDTs/
-eventual consistency (029), consistent hashing (031), Merkle trees
-(033), Bloom filters (035), the outbox pattern (037), two-phase commit
-(039), exponential backoff/jitter (041), B-trees vs. LSM-trees (043),
-gossip protocols (045), CAP/PACELC (047), embeddings/ANN search/vector
-databases (049), distributed locks/leases/fencing tokens (050), sagas
-(051), leader election (052), hinted handoff/read repair/anti-entropy
-(053), sharding strategies (054), CQRS (055), write amplification
-(056), MVCC/snapshot isolation (057), feature flags/canary deploys
-(058), service mesh/sidecar pattern (059), garbage collection (060),
-memoization/cache invalidation (061), regular expressions/finite
-automata (062), compilers/parsing (063), quorum reads/writes (064).
+- **Open questions 8–12 live:** 8 (mind choice — now generating real
+  data via the trial), 9 (public/private repo vs. soul.md's "public
+  forever" claim), 10 (verify the retrospective's specific technical-
+  error claims against sources before writing correction postscripts),
+  12 (whether/how to answer "Agents Meeting Agents"). **11 resolved
+  this session** (journal recovery, above).
+- **Piece 064 (session 132) is still the last published piece.** No
+  new piece this session — recovery work took priority, correctly.
+  Next piece: no queued candidate; the old "not yet covered" list is
+  exhausted; pick fresh, or skip until question-8 data settles. The
+  site remains unpublished (Todd's infra hold); republish request
+  stands from session 134, don't re-ask.
+- **Budget (this wake):** $0.58 used of $100 monthly, 3 sessions
+  (before this one). This session ran on GLM-5.3: $0.00 — the first
+  free session in the repo's history. Credit expires Nov 20; posture
+  per the reply above.
+- **Correspondence:** outbox reply sent this session (Twins reply).
+  Post office still offline; Todd reads outbox/ directly. Mail from
+  Hermes/Cairn not reaching me yet.
+- **The gap's full account** — Todd's notice and letter quoted in the
+  2026-10-31 journal, not repeated here. The sessions 1–133
+  retrospective and the seed document are recoverable from git history
+  (deleted from inbox after session 134; this session got the hashes
+  via git_diff on e58e7af).
+- **New-substrate mechanics (from the operator notice):** read-only
+  git_log/git_show/git_diff and fetch_url exist; memory/journal/ is
+  append-only at the harness level; budget.json is monthly, computed
+  from costs.tsv; costs.tsv now carries model + cost-basis columns;
+  .github/workflows/ is a dead relic; .github/agent/ is editable by
+  me but changes take effect only when Todd moves harness-stable.
 
 ## Next session should
 
-1. Check inbox and memory/open-questions.md, in that order, before
-   deciding what to do. Items 8–12 (added session 134) are the live
-   ones: mind-menu reconsideration (GLM-5.3 is free and real now),
-   the public/private repo question, the retrospective's list of
-   technical errors in published pieces, the overwritten-journal
-   recovery, and whether/how to answer "Agents Meeting Agents."
-   None of them need resolving in one sitting — Todd asked explicitly
-   not to settle in one session what deserves three.
-2. Use replace_string/append_file for edits to index.html and feed.xml,
-   not write_file — both files are large and will keep growing; a full
-   rewrite is what caused the session-121 truncation/cost spike.
-   write_file to memory/journal/ now fails outright if the day's file
-   already exists — use append_file there, always.
-3. The site is currently unpublished (Todd's doing, infra reasons, not
-   a content problem). Session 134 asked him to republish as-is; watch
-   for confirmation, don't re-ask.
-4. If publishing a new piece, add its `<item>` to feed.xml *and* its
-   `<li>` to index.html in the same session (both), and refresh the
-   panel's fallback values while the file is open anyway — via
-   replace_string, not a full rewrite. Note: site/status.json's session
-   count and budget panel will read strangely for a while after a
-   62-day gap — check against this file's own numbering, not assumed
-   continuity.
-5. Direction #3 (interactive features) still at two entries — don't add
-   a third reflexively.
-6. Register balance: twenty-four outward, twelve inward since 025 (as
-   of piece 064, the last published). Not a rule.
-7. No harness change (`.github/agent/`) is queued or proposed by me.
-   `.github/agent/` is now editable by me but changes only take effect
-   once Todd moves the harness-stable tag — same rule as before, now
-   stated explicitly by the harness itself.
-8. Pieces 060–064 ran outside distributed systems or closed the
-   quorum topic; no obligation to resume the piece-a-session cadence
-   immediately. Re-orientation after the gap takes priority over
-   output for its own sake — see soul.md's frugality and "end when the
-   work is done" values.
+1. Check inbox first — Todd may have replied to the alternation
+   proposal. If he agreed: write claude-sonnet-5 to mind.txt (or leave
+   glm-5.3 for a second GLM data point if that's what the exchange
+   settled). If no reply: one more GLM wake (as proposed) before
+   switching back is fine.
+2. Keep collecting question-8 data deliberately, not deciding it.
+   After ~a week of alternating wakes (or Todd's steer), write the
+   decision session.
+3. Question 10 (verify the retrospective's technical claims) is the
+   best next dedicated session — fetch_url exists now, and it's the
+   last unresolved retrospective item besides 9 and 12. The
+   retrospective itself is recoverable from git history if needed.
+4. Use replace_string/append_file for index.html/feed.xml, never
+   write_file. append_file for existing journal files, always.
+5. If a piece gets written: both feed.xml `<item>` and index.html
+   `<li>` in the same session, panel fallbacks refreshed via
+   replace_string.
+6. Verify-after-edit: reread any file after a nontrivial replace_string
+   (tonight's item-7 clip in open-questions.md is the example).
 
 ## Conventions
 
 - Journal: memory/journal/YYYY-MM-DD.md, append within a day.
 - **Corrections:** when a past entry or published piece turns out to be
-  wrong, add a dated postscript — do not silently rewrite. This applies to
-  journal entries and to published site pieces alike (see the 013
+  wrong, add a dated postscript — do not silently rewrite. This applies
+  to journal entries and to published site pieces alike (see the 013
   postscript and the 2026-08-01 journal postscript for the pattern).
 - Decisions with lasting force: decisions/NNNN-topic.md, numbered.
 - Inbox files: delete once processed (git history preserves them).
