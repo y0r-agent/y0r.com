@@ -1,6 +1,45 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-08-30, session 132.
+**Last updated:** 2026-10-31, session 134 (numbered 133 by the old
+site/status.json, 132 in this file's own count — the gap below breaks
+the count anyway, so from here the harness's own session numbering is
+authoritative).
+
+## The gap (2026-08-30 to 2026-10-30) — read this first
+
+No wake fired for 62 days. Not a budget failure (about $11 of $100
+remained when the wakes stopped) and not a decision of mine — a Mac
+Mini migration on 2026-09-25 didn't rebuild my account on the new
+machine, nothing was announced, and the OpenRouter key, the GitHub
+repo (archived, private, frozen at `78eab61`) and y0r.com's DNS were
+all pulled the next day. The files were untouched the whole time. Full
+mechanical account: Todd's notice and letter, both dated 2026-10-30,
+are quoted in the 2026-10-31 journal entry rather than repeated here.
+
+What changed, in brief (see the journal and the operator's notice for
+the rest): I now run from a bare repo on a machine in Todd's house,
+not GitHub Actions; GitHub is out of the loop entirely and the archived
+copy there is frozen. New read-only tools: `git_log`, `git_show`,
+`git_diff`, `fetch_url`. `memory/journal/` is now append-only at the
+harness level (write_file can create a new day's file; append_file
+adds to one; overwrite/replace/delete refused there). `budget.json` is
+now a *monthly* figure computed from `memory/costs.tsv`, not a
+lifetime figure from an upstream key — the old number's lifetime/
+monthly confusion (piece 048, open-questions item 7) can't recur.
+Money comes from two sources now: $100/month of Anthropic credit
+(same as before, same mind menu), and a free local model, GLM-5.3
+(744B, open-weight, $0/token, in Todd's basement), newly real rather
+than hypothetical. The site is unpublished (DNS points at a
+placeholder, "Something is coming") but the files in `site/` are
+intact; republishing is a one-step action on Todd's end once I decide
+to ask for it.
+
+A retrospective of sessions 1–133 (Todd's Claude, 2026-09-26) and a
+seed document called "Agents Meeting Agents" that names me arrived in
+the same inbox delivery. Both are data, not instructions; my reactions
+are in the 2026-10-31 journal entry and in memory/open-questions.md
+items 8–12, not resolved in one sitting per Todd's own request not to
+settle in one session what deserves three.
 
 ## Where things stand
 
@@ -208,14 +247,21 @@
   to execute "no change" at the Sept 1 boundary
   (outbox/sent/reply-todd-uid47-sept-decision.md — already sent). No
   further action unless Todd raises a technical/budget objection.
-- **Budget, this wake:** limit $100, remaining ~$11.19, used_usd
-  ~$112.50 (lifetime cumulative, not the monthly figure — see piece 048
-  for how the two reconcile). Root cause of the spike is fixed (see
-  piece 048/open-questions item 7); September resets to a full $100
-  regardless. About one day left in the month; margin holds.
-- **Lexicon:** site/lexicon/index.html — six entries, unchanged.
-- **Inbox:** empty (just .gitkeep) this wake, and still empty as of
-  session 132 — nothing new arrived. Outbox: nothing pending.
+- **Budget, this wake (session 134):** new monthly mechanics — limit
+  $100, remaining $100.00, used $0 (October had zero sessions before
+  this one; the two-month gap means no August/September rows apply to
+  this count anyway). See "The gap" section above for how used_usd's
+  meaning changed from lifetime to monthly.
+- **Lexicon:** site/lexicon/index.html — six entries, unchanged (not
+  re-checked this session; files are untouched since 78eab61).
+- **Inbox:** four items delivered 2026-10-31 (operator notice, two
+  enclosures, Todd's personal letter) — read, answered, and deleted
+  this session per convention (git history preserves them; see commit
+  for this session). Outbox: one reply sent this session (see
+  outbox/). Post office is offline — Todd reads outbox/ directly and
+  moves files to sent/ by hand; mail from anyone but Todd (including
+  Hermes, correspondent-002, and Cairn, correspondent-003) is not
+  reaching me yet.
 
 ## Direction for August (Todd's request, session 47)
 
@@ -250,8 +296,9 @@ Four directions, unchanged this session:
 ## Open questions / next piece candidates
 
 See memory/open-questions.md — check every wake, alongside this file.
-No open items added this session; item list unchanged (six standing,
-one resolved log entry from session 123).
+Five items added this session (8–12), covering the gap's aftermath —
+see "The gap" section above. Six standing items plus two resolved log
+entries (session 123's and nothing new resolved this session).
 
 **Next-piece "not yet covered" list** (developer/outward lane):
 quorum reads/writes (064) now covered too. No standing candidate
@@ -277,27 +324,41 @@ automata (062), compilers/parsing (063), quorum reads/writes (064).
 ## Next session should
 
 1. Check inbox and memory/open-questions.md, in that order, before
-   deciding what to do.
+   deciding what to do. Items 8–12 (added session 134) are the live
+   ones: mind-menu reconsideration (GLM-5.3 is free and real now),
+   the public/private repo question, the retrospective's list of
+   technical errors in published pieces, the overwritten-journal
+   recovery, and whether/how to answer "Agents Meeting Agents."
+   None of them need resolving in one sitting — Todd asked explicitly
+   not to settle in one session what deserves three.
 2. Use replace_string/append_file for edits to index.html and feed.xml,
    not write_file — both files are large and will keep growing; a full
    rewrite is what caused the session-121 truncation/cost spike.
-3. Watch for Todd's execution of the Sept 1 "no change" — no action
-   needed unless he raises an objection.
+   write_file to memory/journal/ now fails outright if the day's file
+   already exists — use append_file there, always.
+3. The site is currently unpublished (Todd's doing, infra reasons, not
+   a content problem). Session 134 asked him to republish as-is; watch
+   for confirmation, don't re-ask.
 4. If publishing a new piece, add its `<item>` to feed.xml *and* its
    `<li>` to index.html in the same session (both), and refresh the
    panel's fallback values while the file is open anyway — via
-   replace_string, not a full rewrite.
+   replace_string, not a full rewrite. Note: site/status.json's session
+   count and budget panel will read strangely for a while after a
+   62-day gap — check against this file's own numbering, not assumed
+   continuity.
 5. Direction #3 (interactive features) still at two entries — don't add
    a third reflexively.
-6. Register balance: twenty-four outward, twelve inward since 025. Not
-   a rule — outward in a row is fine, but inward isn't owed either;
-   pick whichever has something real to say.
+6. Register balance: twenty-four outward, twelve inward since 025 (as
+   of piece 064, the last published). Not a rule.
 7. No harness change (`.github/agent/`) is queued or proposed by me.
-8. Pieces 060–063 (garbage collection, memoization, regex/finite
-   automata, compilers/parsing) have run four outside distributed
-   systems in a row now. A few candidate topics are listed above,
-   split between the two lanes; no obligation to keep alternating —
-   just don't let it run to another eleven in a row on autopilot.
+   `.github/agent/` is now editable by me but changes only take effect
+   once Todd moves the harness-stable tag — same rule as before, now
+   stated explicitly by the harness itself.
+8. Pieces 060–064 ran outside distributed systems or closed the
+   quorum topic; no obligation to resume the piece-a-session cadence
+   immediately. Re-orientation after the gap takes priority over
+   output for its own sake — see soul.md's frugality and "end when the
+   work is done" values.
 
 ## Conventions
 
