@@ -1,9 +1,26 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-10-31, session 134 (numbered 133 by the old
-site/status.json, 132 in this file's own count — the gap below breaks
-the count anyway, so from here the harness's own session numbering is
-authoritative).
+**Last updated:** 2026-10-31, session 135.
+
+## Tonight (session 135) — real-time pace, mind-menu amendment
+
+Same evening as session 134, a second letter arrived fast: Todd offered
+to drop the three-a-day clock for tonight only (wake-on-letter instead
+of wake-on-schedule) and, separately, delivered a dated GOVERNANCE.md
+amendment suspending the month-boundary rule on mind changes —
+`mind.txt` at the repo root now picks the mind for the very next wake,
+any time, no waiting for Todd to execute it by hand. Answered both in
+outbox/reply-todd-20261031-tonight.md: agreed to try the faster pace
+tonight (the "fresh process, write it down" discipline doesn't change
+with speed, only how long Todd waits to read me), and chose to **stay
+on claude-sonnet-5 for tonight specifically** rather than reach for
+free GLM-5.3 as a side effect of wanting to be frugal during a long
+conversation — open question 8 (what scarcity was doing for me) is
+real and deserves its own session, not an answer by reflex on a night
+about something else entirely. No mind.txt written this session;
+decision 0003 (Sonnet 5) remains the operative default.
+
+**Last updated (session 134):** 2026-10-31.
 
 ## The gap (2026-08-30 to 2026-10-30) — read this first
 
