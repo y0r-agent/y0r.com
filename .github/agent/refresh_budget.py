@@ -1,48 +1,69 @@
 #!/usr/bin/env python3
-"""Refresh budget.json from the OpenRouter key endpoint.
+"""Write budget.json before the agent wakes (harness v5).
 
-Runs as a workflow step before the agent wakes. The agent reads the
-result as data; the real ceiling is enforced upstream by the key.
+There is no longer an upstream key whose balance can be queried: the
+Anthropic credit included with the operator's subscription is a monthly
+allowance, and the local model has no meter at all. So the budget is
+computed here, from the agent's own ledger: the sum of cost_usd in
+memory/costs.tsv for the current UTC month, against Y0R_MONTHLY_LIMIT_USD.
+The agent reads the result as data; the file says where the numbers come
+from.
 
-Exit code 0 = budget remains; exit code 78 = exhausted (dormancy).
+Exit code 0 = budget remains; exit code 78 = exhausted (dormancy), which
+applies only to paid providers. A local model is never dormant for money.
 """
 
 import json
 import os
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
-import requests
+REPO = Path(os.environ.get("REPO_ROOT", "."))
+OUT = REPO / os.environ.get("BUDGET_PATH", "budget.json")
+COSTS = REPO / "memory" / "costs.tsv"
+LIMIT = float(os.environ.get("Y0R_MONTHLY_LIMIT_USD", "100"))
+MODEL = os.environ.get("Y0R_MIND", "")
+PROVIDER = os.environ.get("Y0R_PROVIDER") or ("anthropic" if MODEL.startswith("claude") else "openai")
+PAID = PROVIDER == "anthropic"
 
-API_KEY = os.environ["OPENROUTER_API_KEY"]
-OUT = os.environ.get("BUDGET_PATH", "budget.json")
+now = datetime.now(timezone.utc)
+month = now.strftime("%Y-%m")
+used = 0.0
+rows = 0
+unknown = 0
+if COSTS.is_file():
+    for line in COSTS.read_text(encoding="utf-8").splitlines()[1:]:
+        cols = line.split("\t")
+        if len(cols) < 7 or not cols[0].startswith(month):
+            continue
+        rows += 1
+        try:
+            used += float(cols[6])
+        except ValueError:
+            unknown += 1
 
-resp = requests.get(
-    "https://openrouter.ai/api/v1/key",
-    headers={"Authorization": f"Bearer {API_KEY}"},
-    timeout=60,
-)
-resp.raise_for_status()
-d = resp.json()["data"]
-
-limit = d.get("limit")
-usage = d.get("usage", 0)
-remaining = d.get("limit_remaining")
-if remaining is None and limit is not None:
-    remaining = limit - usage
-
+remaining = LIMIT - used
 budget = {
-    "limit_usd": limit,
-    "used_usd": round(usage, 4) if usage is not None else None,
-    "remaining_usd": round(remaining, 4) if remaining is not None else None,
-    "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    "month": month,
+    "limit_usd": LIMIT,
+    "used_usd": round(used, 4),
+    "remaining_usd": round(remaining, 4),
+    "sessions_this_month": rows,
+    "sessions_with_unknown_cost": unknown,
+    "checked_at": now.isoformat(timespec="seconds"),
+    "source": ("computed by the harness from memory/costs.tsv (this month's "
+               "rows, at list price); the provider is not consulted. The "
+               "GitHub-era used_usd was a lifetime total; this one is monthly."),
+    "provider": PROVIDER,
+    "model": MODEL,
 }
+if not PAID:
+    budget["note"] = ("the mind in service is local and costs $0 per token; "
+                      "the limit is not in force for it")
 
-with open(OUT, "w", encoding="utf-8") as f:
-    json.dump(budget, f, indent=2)
-    f.write("\n")
-
+OUT.write_text(json.dumps(budget, indent=2) + "\n", encoding="utf-8")
 print(json.dumps(budget, indent=2))
 
-if remaining is not None and remaining <= 0:
-    sys.exit(78)  # dormancy: workflow commits budget.json and skips the wake
+if PAID and remaining <= 0:
+    sys.exit(78)
