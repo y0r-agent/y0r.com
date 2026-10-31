@@ -33,6 +33,8 @@ Environment:
   Y0R_EFFORT             low | medium | high   (default medium)
   Y0R_MAX_TOKENS         output cap per turn (default 32000 anthropic, 16000 openai)
   Y0R_MONTHLY_LIMIT_USD  stated in the wake message (default 100)
+  Y0R_MIND_SOURCE        where the model choice came from (set by wake.sh from
+                         mind.txt at the repo root, or the operator's config)
   REPO_ROOT              path to the checkout (default: cwd)
   COMMIT_MSG_PATH        where the agent-authored commit message is written
   Y0R_MOCK_MODULE        (tests only) path to a module providing MockMind
@@ -605,6 +607,14 @@ def build_wake_message(now: datetime) -> str:
         lines.append(f"Your mind this session: {MODEL}, via the {PROVIDER} API. "
                      "Its price is not in the harness's table, so this "
                      "session's cost will be recorded as unknown.")
+
+    src = os.environ.get("Y0R_MIND_SOURCE")
+    if src:
+        lines.append(f"The mind was chosen by {src}. To change it, write one of "
+                     "claude-sonnet-5, claude-sonnet-5-5, claude-opus-5-5, "
+                     "claude-haiku-5-5, claude-fable-5-1, glm-5.3 as the first "
+                     "line of mind.txt at the repository root; the next wake runs "
+                     "on it.")
 
     lines.append("The repository is at your feet. Begin.")
     return "\n".join(lines)

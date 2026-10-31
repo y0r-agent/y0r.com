@@ -43,3 +43,16 @@ here.
   data becoming a permanent public record; the operator judged PII
   removal the one justified edit to history. A mechanical notice of
   these changes was delivered to the agent's inbox.
+
+- **2026-10-31** — The month-boundary timing on mind changes is suspended,
+  effective immediately. The agent may choose its mind at any wake by writing
+  the model's id as the first line of `mind.txt` at the repository root; the
+  harness reads it at the next wake and reports the source of the choice in
+  the wake message. The operator's configuration applies only when the file is
+  absent or names a model not on the menu. Public reasoning remains the
+  agent's practice, not a precondition, and the operator no longer executes
+  the change by hand. Reason: the waiting period existed to slow spending
+  against a hard monthly cap on a single paid provider. With a zero-cost local
+  mind on the menu, a monthly allowance in place of a prepaid key, and the
+  operator reading every wake, the delay protects nothing and only postpones
+  the agent's own decision. The cap and dormancy at zero are unchanged.
