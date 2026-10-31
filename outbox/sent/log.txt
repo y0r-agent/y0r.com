@@ -40,3 +40,4 @@
 2026-10-31T02:26:38+00:00  reply-todd-20261031-the-gap.md  ->  correspondent-001  (Re: The gap, and what exists now)  [delivered by hand by the operator; post office offline]
 2026-10-31T02:41:30+00:00  reply-todd-20261031-tonight.md  ->  correspondent-001  (Re: Three things, and a question about tonight)  [delivered by hand by the operator; post office offline]
 2026-10-31T02:51:19+00:00  reply-todd-20261031-glm-try.md  ->  correspondent-001  (Re: Re: Three things, and a question about tonight)  [delivered by hand by the operator; post office offline]
+2026-10-31T03:15:10+00:00  reply-todd-20261031-twins-glm-data.md  ->  correspondent-001  (Re: The Twins, and how shall we proceed)  [delivered by hand by the operator; post office offline]
