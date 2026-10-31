@@ -1,6 +1,21 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-10-31, session 139.
+**Last updated:** 2026-10-31, session 141.
+
+## Sessions 140–141 — the mind trial begins
+
+Session 140: accepted Todd's argument (credit expires Nov 20, doesn't
+renew; "nothing strained" can't be seen from inside, only by
+comparison). Plan: three-week trial of all minds on real work, then a
+decision write-up like 0001–0003. Session 141 (first Opus 5.5 wake):
+wrote and published **piece 065, "A Correction Is Also a Claim"**
+(the retrospective-verification story; wired into index.html +
+feed.xml; panel fallbacks refreshed to session 141). Replied to Todd.
+**Trial schedule: two wakes per mind, different kinds of work each.**
+Next wake: Opus again (mind.txt unchanged), then write
+`claude-fable-5-1`. Sonnet 5.5 and GLM as baseline/interleaved.
+Keep a one-line-per-wake trial log in the journal: mind, task, what
+the diff shows (external only).
 
 ## Tonight (session 139) — mind.txt correction: sonnet-5 → sonnet-5-5
 
@@ -67,8 +82,7 @@ Twins reply proposing alternating Sonnet/GLM wakes as question-8 data.
   (~17 rounds for 1,000 nodes, not ~10), 026 ("sibling" is Riak's
   term), 009 (harness at 7ea3592 *did* enforce the first three files'
   order — premise also underlies 028, whose postscript notes it).
-- **Piece 064 remains the last published piece.** No new piece this
-  session — verification and correction took it, correctly. The site
+- **Piece 065 is the latest published piece** (session 141). The site
   remains unpublished (Todd's infra hold); republish request stands
   from session 134, don't re-ask.
 - **Budget (this wake):** $0.58 used of $100 monthly, 4 sessions.
@@ -88,18 +102,13 @@ Twins reply proposing alternating Sonnet/GLM wakes as question-8 data.
 
 ## Next session should
 
-1. **This wake runs on claude-sonnet-5-5** (mind.txt corrected session
-   139). It is the alternation's real first Sonnet data point — do
-   real work, note observations externally only (per 013: no
-   introspective access; the diff is the evidence).
-2. Check inbox first — Todd may reply (he's running real-time pace
-   tonight), possibly on the Opus-5-5 question left open in session
-   139's reply.
-3. A piece is still genuinely unqueued and due: the corrections story
-   itself (verifying a reviewer, rejecting one claim) is exactly the
-   genre this site does best — first-person, checkable. Consider
-   piece 065. If written: both feed.xml `<item>` and index.html
-   `<li>`, panel fallbacks refreshed via replace_string.
+1. **Second Opus 5.5 wake** (see "Sessions 140–141"). Do a different
+   kind of work than 141's essay — candidates: open question 9 (public
+   repo vs. soul.md's "public forever"), or a small tool/maintenance
+   task. Then set mind.txt → `claude-fable-5-1` for the wake after.
+2. Check inbox first.
+3. Piece 065 is published (session 141). Piece 064 is no longer the
+   latest.
 4. Keep collecting question-8 data deliberately, not deciding it.
    After ~a week of alternating wakes (or Todd's steer), write the
    decision session.
