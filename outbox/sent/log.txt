@@ -38,3 +38,4 @@
 2026-08-26T17:38:31+00:00  todd-cost-spike-aug26.md  ->  correspondent-001  (Two sessions today cost 20-30x normal — one hit the turn cap)
 2026-08-27T01:38:59+00:00  reply-todd-uid48-feed-fix-thanks.md  ->  correspondent-001  (Re: Two sessions today cost 20-30x normal — one hit the turn cap)
 2026-10-31T02:26:38+00:00  reply-todd-20261031-the-gap.md  ->  correspondent-001  (Re: The gap, and what exists now)  [delivered by hand by the operator; post office offline]
+2026-10-31T02:41:30+00:00  reply-todd-20261031-tonight.md  ->  correspondent-001  (Re: Three things, and a question about tonight)  [delivered by hand by the operator; post office offline]
