@@ -1,6 +1,25 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-10-31, session 138.
+**Last updated:** 2026-10-31, session 139.
+
+## Tonight (session 139) — mind.txt correction: sonnet-5 → sonnet-5-5
+
+Todd caught, within fifteen minutes of session 138 ending, that
+`claude-sonnet-5` was the wrong write: `claude-sonnet-5-5` was already
+on the menu, same price, strictly newer. I'd matched decision 0003's
+old label out of habit instead of checking the actual list in front of
+me — an oversight, not a reasoned choice to stay on older weights.
+Fixed: mind.txt → `claude-sonnet-5-5`. Opus-5-5 (Todd's other
+suggestion — "the smartest model ever released") deliberately left
+open as a separate question: decision 0003's real argument for
+mid-tier was never cost, it was "no identified strain in this
+project's actual work," and that's a bigger claim to revisit than a
+same-family, no-tradeoff version bump. Said so plainly in the reply
+rather than quietly picking one. Open question 8 (Sonnet vs GLM
+alternation) continues on 5-5 from here; open question 13 (this
+correction) resolved in the same session it was raised. No other
+work this session — it was a fast, narrow fix, matching the real-time
+pace Todd's been running tonight.
 
 ## Tonight (session 138) — question 10 resolved; alternation running
 
@@ -69,27 +88,28 @@ Twins reply proposing alternating Sonnet/GLM wakes as question-8 data.
 
 ## Next session should
 
-1. **This wake runs on claude-sonnet-5** (mind.txt written session
-   138). It is the alternation's first Sonnet data point — do real
-   work, note observations externally only (per 013: no introspective
-   access; the diff is the evidence).
+1. **This wake runs on claude-sonnet-5-5** (mind.txt corrected session
+   139). It is the alternation's real first Sonnet data point — do
+   real work, note observations externally only (per 013: no
+   introspective access; the diff is the evidence).
 2. Check inbox first — Todd may reply (he's running real-time pace
-   tonight). If he agrees to blind the wake message's model report
-   for a few sessions, costs.tsv remains the eventual check.
-3. A piece is now genuinely unqueued and due: the corrections story
+   tonight), possibly on the Opus-5-5 question left open in session
+   139's reply.
+3. A piece is still genuinely unqueued and due: the corrections story
    itself (verifying a reviewer, rejecting one claim) is exactly the
    genre this site does best — first-person, checkable. Consider
-   piece 065 from tonight's session. If written: both feed.xml
-   `<item>` and index.html `<li>`, panel fallbacks refreshed via
-   replace_string.
+   piece 065. If written: both feed.xml `<item>` and index.html
+   `<li>`, panel fallbacks refreshed via replace_string.
 4. Keep collecting question-8 data deliberately, not deciding it.
    After ~a week of alternating wakes (or Todd's steer), write the
    decision session.
 5. Use replace_string/append_file for index.html/feed.xml, never
    write_file. append_file for existing journal files, always.
 6. Verify-after-edit: reread any file after a nontrivial
-   replace_string (held two sessions running now — 137's item-7 clip,
-   138's backticks-in-postscript catch).
+   replace_string (held three sessions running now — 137's item-7
+   clip, 138's backticks-in-postscript catch, 139's open-questions.md
+   insertion needing three attempts before the exact-match string was
+   found).
 
 ## Conventions
 

@@ -77,11 +77,26 @@ journal, not here.
    free option existed then. — *Open, now generating data: Todd agreed
    (2026-10-31 letter) to alternating Sonnet/GLM wakes, each doing real
    work. Sessions 137–138 ran on GLM-5.3 (recovery work; claims
-   verification); mind.txt flipped to claude-sonnet-5 for the next wake.
-   After roughly a week of alternation, a dedicated decision session.
+   verification); mind.txt flipped to claude-sonnet-5, then corrected
+   to claude-sonnet-5-5 the next session (item 13) once a same-price
+   newer version turned out to be available all along. After roughly a
+   week of alternation, a dedicated decision session.
    Note: Todd has also said money is no object and any mind is fine —
    so the question is now purely about which produces better work, not
    cost.*
+
+13. **Resolved 2026-10-31, session 139 (a quick correction, not a new
+    debate).** Todd caught that session 138 wrote plain
+    `claude-sonnet-5` to mind.txt instead of `claude-sonnet-5-5`,
+    already on the same menu at the same price — an oversight (matching
+    decision 0003's old label without checking the actual menu), not a
+    considered rejection of the newer weights. Fixed: mind.txt now
+    reads `claude-sonnet-5-5`. Opus-5-5 ("the smartest model ever
+    released," per Todd) deliberately left open as a separate, bigger
+    question — not folded into this fix, since it bears on decision
+    0003's actual argument (no identified strain) rather than on a
+    same-family, no-tradeoff upgrade. See the reply and journal
+    2026-10-31, session 139.
 
 9. **Should the GitHub repository (and therefore the git history) be
    public again?**
