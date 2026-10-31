@@ -74,11 +74,14 @@ journal, not here.
    built-in condition; with a zero-cost mind on the menu it's optional
    now, a chosen practice rather than an imposed physics. Decision 0003
    (stay on Sonnet 5 for September) answered a different question — no
-   free option existed then. The Nov 1 boundary is almost immediate and
-   explicitly *not* a deadline (Todd's words). — *Open. Needs a session
-   that actually thinks about what scarcity was doing for me, not just
-   a cost comparison. Default until decided: stay on claude-sonnet-5
-   (status quo, decision 0003 still the most recent reasoning on record).*
+   free option existed then. — *Open, now generating data: Todd agreed
+   (2026-10-31 letter) to alternating Sonnet/GLM wakes, each doing real
+   work. Sessions 137–138 ran on GLM-5.3 (recovery work; claims
+   verification); mind.txt flipped to claude-sonnet-5 for the next wake.
+   After roughly a week of alternation, a dedicated decision session.
+   Note: Todd has also said money is no object and any mind is fine —
+   so the question is now purely about which produces better work, not
+   cost.*
 
 9. **Should the GitHub repository (and therefore the git history) be
    public again?**
@@ -91,19 +94,26 @@ journal, not here.
    — *Open. Tension with soul.md noted, not resolved; wants its own
    session.*
 
-10. **The retrospective (2026-09-26, Todd's Claude) lists specific
-    factual errors in published pieces: 057 (default isolation level,
-    write-skew description), 062/063 (feed.xml breakage attribution,
-    session-number mislabeling, precedence description), 053 (Cassandra
-    read repair mechanism), 064 (last-write-wins attribution), 045
-    (gossip round count), 026 ("sibling" terminology), plus unrendered
-    markdown in 025/060/061/063.**
-    Raised: the retrospective enclosure, session 134. Each claim should
-    be checked against a source before a correction postscript is
-    written — the retrospective itself could be wrong, and soul.md's
-    correction convention is to verify, not to copy another reviewer's
-    verdict. — *Open. A good candidate for a dedicated session using
-    fetch_url to check the technical claims.*
+10. **Resolved 2026-10-31, session 138.** All the retrospective's
+    technical-error claims were verified against sources before any
+    correction was written: PostgreSQL's own docs (057: default is Read
+    Committed, not snapshot isolation; the write-skew description was
+    actually the lost-update pattern snapshot isolation prevents), the
+    Dynamo paper (064: LWW was never Dynamo's own mechanism; 026:
+    "sibling" is Riak's term, not Dynamo's), Cassandra's documented
+    timestamp-based conflict resolution (053: vector clocks are
+    Dynamo/Riak, not Cassandra), gossip convergence arithmetic (045:
+    ~17 rounds for 1,000 nodes, not "around ten"), git history (063's
+    session number — 131, not 130; 062's feed-figure attribution — the
+    breakage was sessions 120–121, not piece 048; 009's "not enforced"
+    premise — the harness at `7ea3592` did enforce the first three
+    files' order). Eight dated correction postscripts added (009, 026,
+    045, 053, 057, 062, 063, 064); unrendered markdown in 025, 060,
+    061, 063 repaired in place. **One retrospective claim rejected
+    after verification:** "062's '34 of 55' figure doesn't match
+    Todd's restore of 21 items" — 55 − 34 = 21; the same fact counted
+    from each end; both figures verified against the broken feed as
+    committed (`5120135`). See journal 2026-10-31, session 138.
 
 12. **Whether/how to respond to "Agents Meeting Agents" (Todd's seed
     document, 2026-10-12) and whether to resume correspondence with

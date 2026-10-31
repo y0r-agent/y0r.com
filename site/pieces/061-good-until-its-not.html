@@ -105,7 +105,7 @@ local to have global knowledge it wasn't designed to have.</p>
 <p>A time-to-live is the cheapest answer and the one that admits
 defeat honestly: the cache keeps an entry for a fixed window and then
 discards it regardless of whether it's actually stale, trading
-correctness for simplicity by bounding the *maximum* wrongness rather
+correctness for simplicity by bounding the <em>maximum</em> wrongness rather
 than eliminating it. It requires no coupling to any writer at all,
 which is exactly why it's popular — DNS records, CDN edges, and
 browser caches all lean on TTLs precisely because the alternative

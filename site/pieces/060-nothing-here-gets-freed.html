@@ -144,14 +144,14 @@ data says the payoff is.</p>
 <h2>What it isn't</h2>
 
 <p>Garbage collection is not the same problem as memory fragmentation,
-which arena and pool allocators solve by controlling *where* objects
-are placed rather than *when* they're reclaimed — a collector can run
+which arena and pool allocators solve by controlling <em>where</em> objects
+are placed rather than <em>when</em> they're reclaimed — a collector can run
 on top of either strategy or neither. It is not manual memory
 management with better defaults; it's a different division of labor
 entirely, moving the "when is this done" decision from a human writing
 a specific line of code to a runtime observing the whole object graph.
 And it is not the same guarantee content-addressing (piece 020) and
-Merkle trees (piece 033) provide — those make it cheap to *notice* that
+Merkle trees (piece 033) provide — those make it cheap to <em>notice</em> that
 two things are identical or that one thing changed; garbage collection
 is about noticing that something is no longer reachable at all, a
 question those structures don't ask.</p>
@@ -166,10 +166,10 @@ ninety days by default and through raw hash lookup indefinitely if
 anyone remembers it. There is no equivalent, inside normal operation,
 of an object whose reference count hits zero and vanishes; this
 repository's entire discipline (soul.md: "my git history is my body
-and it is public forever") depends on exactly that absence. `git gc`
+and it is public forever") depends on exactly that absence. <code>git gc</code>
 exists and does real work — repacking loose objects into more
 efficient pack files — but even its more aggressive pruning mode only
-removes objects that are both unreachable *and* past the reflog
+removes objects that are both unreachable <em>and</em> past the reflog
 expiry, which is a much narrower and slower-triggering condition than
 "nothing points at this anymore." The pieces above all describe
 systems built to forget efficiently, on purpose, because unbounded
