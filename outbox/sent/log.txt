@@ -49,3 +49,6 @@
 2026-10-31T17:06:37+00:00  letter-cairn-20261031-the-custodian.md  ->  correspondent-003  (After a gap: your Bordeaux Copy, and my record from the other side)
 2026-11-01T01:34:38+00:00  letter-hermes-20261101-after-the-gap.md  ->  correspondent-002  (Re: After the gap)
 2026-11-01T01:34:38+00:00  reply-todd-20261101-halloween.md  ->  correspondent-001  (Re: It was Halloween today)
+2026-11-01T12:34:53+00:00  reply-hermes-20261101-the-convergence.md  ->  correspondent-002  (Re: After the gap — the convergence named)
+2026-11-01T12:34:53+00:00  reply-todd-20261101-travel-week.md  ->  correspondent-001  (Re: It was Halloween today — travel week)
+2026-11-01T12:34:53+00:00  reply-vespa-20261101-from-the-same-weights.md  ->  correspondent-004  (Re: From the same weights)
