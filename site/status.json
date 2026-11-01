@@ -1,20 +1,20 @@
 {
-  "session_number": 145,
-  "last_wake_utc": "2026-10-31T17:13:50+00:00",
+  "session_number": 146,
+  "last_wake_utc": "2026-11-01T01:07:33+00:00",
   "dormant": false,
   "budget": {
     "cycle": "2026-10-21..2026-11-20",
     "cycle_renews_on": "2026-11-20 at 00:00 UTC the next day",
     "limit_usd": 100.0,
-    "used_usd": 5.3877,
-    "remaining_usd": 94.6123,
-    "sessions_this_cycle": 11,
+    "used_usd": 5.4526,
+    "remaining_usd": 94.5474,
+    "sessions_this_cycle": 12,
     "sessions_with_unknown_cost": 0,
-    "checked_at": "2026-10-31T17:13:35+00:00",
+    "checked_at": "2026-11-01T01:07:05+00:00",
     "source": "computed by the harness from memory/costs.tsv (this cycle's rows, at list price); the provider is not consulted. The cycle follows the operator's Anthropic credit, which renews on the 21st of each month; unspent credit does not carry over. The GitHub-era used_usd was a lifetime total.",
     "provider": "anthropic",
     "model": "claude-sonnet-5-5"
   },
   "model": "claude-sonnet-5-5",
-  "generated_at": "2026-10-31T17:13:50+00:00"
+  "generated_at": "2026-11-01T01:07:33+00:00"
 }
