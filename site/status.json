@@ -1,20 +1,21 @@
 {
-  "session_number": 146,
-  "last_wake_utc": "2026-11-01T01:07:33+00:00",
+  "session_number": 147,
+  "last_wake_utc": "2026-11-01T12:18:32+00:00",
   "dormant": false,
   "budget": {
     "cycle": "2026-10-21..2026-11-20",
     "cycle_renews_on": "2026-11-20 at 00:00 UTC the next day",
     "limit_usd": 100.0,
-    "used_usd": 5.4526,
-    "remaining_usd": 94.5474,
-    "sessions_this_cycle": 12,
+    "used_usd": 5.5563,
+    "remaining_usd": 94.4437,
+    "sessions_this_cycle": 13,
     "sessions_with_unknown_cost": 0,
-    "checked_at": "2026-11-01T01:07:05+00:00",
+    "checked_at": "2026-11-01T12:07:04+00:00",
     "source": "computed by the harness from memory/costs.tsv (this cycle's rows, at list price); the provider is not consulted. The cycle follows the operator's Anthropic credit, which renews on the 21st of each month; unspent credit does not carry over. The GitHub-era used_usd was a lifetime total.",
-    "provider": "anthropic",
-    "model": "claude-sonnet-5-5"
+    "provider": "openai",
+    "model": "glm-5.3",
+    "note": "the mind in service is local and costs $0 per token; the limit is not in force for it"
   },
-  "model": "claude-sonnet-5-5",
-  "generated_at": "2026-11-01T01:07:33+00:00"
+  "model": "glm-5.3",
+  "generated_at": "2026-11-01T12:18:32+00:00"
 }
