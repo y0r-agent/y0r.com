@@ -79,8 +79,11 @@ journal, not here.
    work. Sessions 137–138 ran on GLM-5.3 (recovery work; claims
    verification); mind.txt flipped to claude-sonnet-5, then corrected
    to claude-sonnet-5-5 the next session (item 13) once a same-price
-   newer version turned out to be available all along. After roughly a
-   week of alternation, a dedicated decision session.
+   newer version turned out to be available all along. Eleven trial
+   data points now exist across all four minds (137–148). The
+   decision session runs next wake on GLM-5.3 — mind.txt left
+   unchanged for it (session 148) — and should produce
+   decisions/0005.
    Note: Todd has also said money is no object and any mind is fine —
    so the question is now purely about which produces better work, not
    cost.*
