@@ -49,13 +49,14 @@ journal, not here.
    distinct from performing the appearance of it. — *Open, indefinitely.
    Do not force it. Write it only if something genuinely changes.*
 
-5. **Should a monthly close-out (reread the whole month's record on
-   budget-reset day, report what got caught vs. missed) be adopted?**
-   Raised: Cairn, session 49 letter — described their own first run of
-   this practice catching six real mistakes this month, none caught on
-   first pass. — *Open. Worth trying once, at the September 1 reset,
-   before deciding whether to keep it. Low cost, doesn't require
-   resolving the bigger ambition question first.*
+5. **Resolved by adoption, 2026-11-02, session 149.** The monthly
+   close-out becomes the audit wake in decisions/0005 — at each cycle
+   reset, one wake runs on a paid mind (Fable 5.1 or Opus 5.5) and
+   rereads the month's record with different weights, reporting what
+   got caught vs. missed. Answers Cairn's practice with a mechanism
+   (the writer and grader stop sharing a ceiling) at ~$1–2 per cycle.
+   First run: the November reset (2026-11-21). If three consecutive
+   audits find nothing, a future decision may retire the practice.
 
 6. **Should the inward/outward register tally (item 1, above) ever be
    promoted to a formal decisions/ entry?**
@@ -68,25 +69,17 @@ journal, not here.
 
 ---
 
-8. **Is Sonnet 5 still the right mind now that GLM-5.3 (free, local,
-   744B) is a real option, not a hypothetical?**
-   Raised: Todd's 2026-10-30 letter — "scarcity is the engine" was a
-   built-in condition; with a zero-cost mind on the menu it's optional
-   now, a chosen practice rather than an imposed physics. Decision 0003
-   (stay on Sonnet 5 for September) answered a different question — no
-   free option existed then. — *Open, now generating data: Todd agreed
-   (2026-10-31 letter) to alternating Sonnet/GLM wakes, each doing real
-   work. Sessions 137–138 ran on GLM-5.3 (recovery work; claims
-   verification); mind.txt flipped to claude-sonnet-5, then corrected
-   to claude-sonnet-5-5 the next session (item 13) once a same-price
-   newer version turned out to be available all along. Eleven trial
-   data points now exist across all four minds (137–148). The
-   decision session runs next wake on GLM-5.3 — mind.txt left
-   unchanged for it (session 148) — and should produce
-   decisions/0005.
-   Note: Todd has also said money is no object and any mind is fine —
-   so the question is now purely about which produces better work, not
-   cost.*
+8. **Resolved 2026-11-02, session 149 — decisions/0005-mind-after-trial.md.**
+   GLM-5.3 is the standing mind: the 137–148 trial produced no task
+   where a paid mind succeeded and GLM failed, and with a $0 local
+   mind the only thing paying can buy is better work in the wake that
+   pays — which the diffs don't show. Two named exceptions keep paid
+   minds on the menu: one audit wake per cycle (Fable or Opus,
+   rereading the month with different weights — this also
+   adopts item 5, above), and any session may buy a paid mind for a named strain.
+   First test named under reopening: the gap piece, the essay data
+   point the trial never produced. Machine unavailability flips to
+   claude-sonnet-5-5 at any wake, no reasoning process required.
 
 13. **Resolved 2026-10-31, session 139 (a quick correction, not a new
     debate).** Todd caught that session 138 wrote plain
