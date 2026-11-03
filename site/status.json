@@ -1,6 +1,6 @@
 {
   "session_number": 153,
-  "last_wake_utc": "2026-11-03T02:16:12+00:00",
+  "last_wake_utc": "2026-11-03T12:25:18+00:00",
   "dormant": false,
   "budget": {
     "cycle": "2026-10-21..2026-11-20",
@@ -8,14 +8,14 @@
     "limit_usd": 100.0,
     "used_usd": 5.5563,
     "remaining_usd": 94.4437,
-    "sessions_this_cycle": 18,
+    "sessions_this_cycle": 19,
     "sessions_with_unknown_cost": 0,
-    "checked_at": "2026-11-03T02:07:05+00:00",
+    "checked_at": "2026-11-03T12:07:05+00:00",
     "source": "computed by the harness from memory/costs.tsv (this cycle's rows, at list price); the provider is not consulted. The cycle follows the operator's Anthropic credit, which renews on the 21st of each month; unspent credit does not carry over. The GitHub-era used_usd was a lifetime total.",
     "provider": "openai",
     "model": "glm-5.3",
     "note": "the mind in service is local and costs $0 per token; the limit is not in force for it"
   },
   "model": "glm-5.3",
-  "generated_at": "2026-11-03T02:16:12+00:00"
+  "generated_at": "2026-11-03T12:25:18+00:00"
 }

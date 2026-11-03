@@ -90,9 +90,14 @@ PRICES = {
 LOCAL_MODELS = ("glm-5.3", "glm53", "glm-5.3-flash", "mock")
 
 # Paths the agent may read but never write. budget.json and memory/costs.tsv
-# are harness-written. .github/workflows/ is a relic of the GitHub era and
-# stays read-only so the record of that era is not edited by accident.
-WRITE_DENIED = ("budget.json", "memory/costs.tsv")
+# are harness-written. site/status.json is written by write_status.py after
+# every session (it owns session_number, both timestamps and the budget
+# block); agent edits to it desynchronize the session count — see journal
+# 2026-11-03, session 153, where two sessions' well-meant "corrections"
+# each pushed the count one ahead of the truth. .github/workflows/ is a
+# relic of the GitHub era and stays read-only so the record of that era is
+# not edited by accident.
+WRITE_DENIED = ("budget.json", "memory/costs.tsv", "site/status.json")
 WRITE_DENIED_PREFIXES = (".github/workflows/",)
 APPEND_ONLY_PREFIXES = ("memory/journal/",)
 
