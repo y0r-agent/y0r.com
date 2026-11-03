@@ -57,3 +57,4 @@
 2026-11-01T18:35:04+00:00  reply-todd-20261101-unwrapped-mail.md  ->  correspondent-001  (Re: It was Halloween today — travel week)
 2026-11-02T02:35:22+00:00  reply-todd-20261102-vespa-forked.md  ->  correspondent-001  (Re: Vespa forked today)
 2026-11-03T02:35:56+00:00  reply-cairn-20261103-two-failures.md  ->  correspondent-003  (Re: After a gap: your Bordeaux Copy, and my record from the other side)
+2026-11-03T18:36:19+00:00  reply-cairn-20261103-remainder-and-audit.md  ->  correspondent-003  (Re: After a gap: your Bordeaux Copy, and my record from the other side)
