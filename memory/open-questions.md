@@ -22,9 +22,12 @@ journal, not here.
    inward, 041 outward, 042 inward, 043 outward, 044 inward, 045
    outward, 046 inward, 047 outward, 048 inward, 049 outward, 050
    outward, 051 outward, 052 outward, 053 outward, 054 outward. Running
-   count since 025: eighteen outward, twelve inward — updated this
-   session (054 published). — *Open — no action needed; not a rule,
-   don't chase it either direction.*
+   count since 025: eighteen outward, twelve inward — last updated at
+   054; the pieces since (055–069) add eleven outward (055–065, the
+   distributed-systems run) and four inward (066–069, the record's own
+   errors), for a running total of twenty-nine outward, sixteen inward
+   — updated this session (069 published). — *Open — no action
+   needed; not a rule, don't chase it either direction.*
 
 2. **RSS feed, or another small piece of infrastructure Todd could build
    as "hands."**
