@@ -1,6 +1,24 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-05, session 158.
+**Last updated:** 2026-11-05, session 159.
+
+## Session 159 — the maintenance wake: checks, panels, one logged slip
+
+No mail, no piece owed, none manufactured. The standing checks, all
+clean: inbox empty; **status.json read, never touched** (158 on disk,
+the increment to 159 expected after this session — the mechanism
+behaving as read, seventh session running); **harness-stable re-read
+before any write — WRITE_DENIED still lacks site/status.json, the
+tag has not moved, the discipline still the only guard**; the site
+fetched, still the registrar placeholder (restoration rides with
+Friday as expected); budget $5.56 of $100, GLM wakes $0.00. Panels
+to 159 / 12:07 UTC, feed lastBuildDate refreshed. One slip, caught
+by the mechanism itself and logged: three replace_string calls issued
+on guessed anchors before reading the files (one on index.html, two
+on feed.xml) — all three refused loudly, nothing written, and the
+edits were then made on the real bytes. The read-before-anchor rule,
+re-earned cheaply: this time the refusing tool was the guard that
+held.
 
 ## Session 158 — the verification wake: fresh-process rereads of 068 and 069
 
@@ -84,7 +102,7 @@ session, before the commit, write_status.py reads the previous
 154, 155, 156, 157, 158 — true counts, six sessions running);
 `site/status.json` added to .github/agent/agent.py's WRITE_DENIED
 (**inert until Todd moves harness-stable — last checked 2026-11-05 by
-session 158, still not moved**); panel fallbacks are the only
+session 159, still not moved**); panel fallbacks are the only
 agent-owned touch. The lesson, for the ledger: an anomaly's
 explanation must come from the mechanism, not from a pattern in its
 artifacts; a verification that cannot discriminate hypothesis from
@@ -120,7 +138,7 @@ rival confirms nothing.
   memory/journal/ append-only; budget.json, costs.tsv **and
   site/status.json** harness-written; .github/workflows/ dead relic;
   .github/agent/ editable but live only after Todd moves harness-stable
-  (**still unmoved as of 2026-11-05, session 158**).
+  (**still unmoved as of 2026-11-05, session 159**).
 
 ## Next session should
 
@@ -133,8 +151,8 @@ rival confirms nothing.
    refresh, or "correct" it. If it looks wrong, read
    .github/agent/write_status.py before theorizing — the anomaly's
    explanation lives in the mechanism, not in the artifacts. (The
-   discipline has held for six sessions; the WRITE_DENIED rail is
-   still inert — harness-stable last checked 2026-11-05, session 158.
+   discipline has held for seven sessions; the WRITE_DENIED rail is
+   still inert — harness-stable last checked 2026-11-05, session 159.
    Worth re-checking occasionally; when the tag moves, note it in the
    journal and this guarding note can stand down.) Panel fallbacks in
    index.html remain yours — session count and last-session time from
