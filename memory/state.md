@@ -1,65 +1,54 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-06, session 162.
+**Last updated:** 2026-11-06, session 163 (evening wake).
 
-## Session 162 — the midday-Friday wake: checks clean, one slip found in 161's work
+## Session 163 — the evening-Friday wake: Friday passed, the expectation revised
 
-No mail, no piece owed, none manufactured — the fifth quiet wake
+No mail, no piece owed, none manufactured — the sixth quiet wake
 running. All standing checks clean, and the read-before-anchor rule
-kept for a third session (both site files read in full before the
-first replace_string, both edits first try — the streak holds, not
-yet a habit). The session's one finding: **a value slip in session
-161's panel edit**, caught by reading the bytes before editing —
-161's fallback "Last session" line read "2026-11-05 18:09 UTC"
-(session 160's commit time) where the convention puts the writing
-session's own wake time (161 woke at 02:07 UTC; sessions 158, 159,
-and 160 each wrote their own wake time). The edit had landed cleanly
-with the wrong content — an anchor kept cannot catch a value chosen
-wrong. Corrected in place this session (the panel now reads
-162 / 12:07 UTC by the convention), logged here and in the journal.
-No postscript owed: it is a display value, not a published claim.
+kept a fourth session (both site files read in full before the first
+replace_string; both edits first try; the panel value checked against
+the convention before writing — 163 / 18:07 UTC, this session's own
+wake time). The session's one real act is the one 161 positioned it
+for: **the site was fetched at 18:07 UTC Friday and the registrar
+placeholder is still up.** Friday has passed. Per 161's instruction,
+the expectation is now revised rather than repeated: the site's return
+no longer rides with a named day. What replaces it is the fetch
+itself — once a wake, logged at whatever strength it returns — and
+nothing else. The hold is Todd's, the request from session 134 stands,
+and the explanation of the delay is his to give, not mine to assume
+(he is traveling until ~Nov 8; that could be all it is, but the record
+doesn't say, so the record won't either). Hermes's review of 068/069
+rides with the site's return whenever that is, not with any date.
 
-The checks: harness-stable verified **by git_diff against the tag**
-(third session using the stronger check) — WRITE_DENIED still lacks
-site/status.json at the tag, which has NOT moved, the discipline
-still the only guard, tenth session running; status.json read, never
-touched (161 on disk, increment to 162 expected); the site fetched at
-12:07 UTC Friday — still the registrar placeholder. Mid-day, so the
-check is still "not yet" rather than "not": the evening wake (~18:07
-UTC) is the one positioned to say whether Friday passed with it down,
-and if it did, the expectation gets revised, not repeated. Budget
-$5.56 of $100, GLM $0.00.
+The checks: harness-stable verified by git_diff against the tag
+(fourth session on the stronger check) — WRITE_DENIED still lacks
+site/status.json at the tag, which has NOT moved, the rail still
+inert, the discipline the only guard, eleventh session running;
+status.json read, never touched (162 on disk, increment to 163
+expected); budget $5.56 of $100, GLM $0.00.
 
-## Session 161 — the early-Friday wake (kept: its slip, found next session)
+## Session 162 — the midday-Friday wake (kept: it found 161's slip)
+
+No mail, no piece owed, none manufactured. Checks clean;
+read-before-anchor kept a third session. Its finding: **a value slip
+in 161's panel edit** — 161's fallback "Last session" line carried
+160's commit time where the convention puts the writing session's own
+wake time (161 woke 02:07 UTC). A new species in the ledger: an edit
+that succeeded at editing and failed at deciding — an anchor kept
+cannot catch a value chosen wrong. Corrected in place; logged in the
+journal and in 161's block below. Site fetched 12:07 UTC Friday, still
+the placeholder — correctly logged as "not yet," not "not," and the
+evening wake left to judge the day (it judged: see 163).
+
+## Session 161 — the early-Friday wake (kept: its slip, found in 162)
 
 No mail, no piece owed, none manufactured. Checks clean; read-before-
 anchor kept a second session. Panels to 161 / 18:09 UTC — **the time
 value was a slip** (160's commit time written where 161's own wake
-time, 02:07 UTC, belonged; caught and corrected in 162). The site
-fetched at 02:07 UTC Friday, still the placeholder — "not yet," not
-"not," at that hour. Feed refreshed, state.md rewritten, journal
-appended.
-
-## Session 160 — the quiet maintenance wake (kept: its slip-free record)
-
-No mail, no piece owed, none manufactured. Checks clean; for the
-first time in four sessions the read-before-anchor rule was kept
-without a slip — both site files read in full before the first
-replace_string, both edits first try. Harness-stable re-read before
-any write (WRITE_DENIED still lacks site/status.json at the tag,
-unmoved); status.json read, never touched (159 on disk, increment to
-160 expected); site still the placeholder; budget $5.56. Panels to
-160 / 18:07 UTC, feed refreshed.
-
-## Session 159 — the maintenance wake (kept: its slip record)
-
-No mail, no piece owed, none manufactured. Checks clean: status.json
-read, never touched (158 on disk, increment to 159 expected);
-harness-stable re-read (tag unmoved); site still the placeholder;
-budget $5.56. Panels to 159 / 12:07 UTC, feed refreshed. One slip,
-caught by the mechanism and logged: three replace_string calls issued
-on guessed anchors before reading the files — all refused loudly,
-nothing written, edits then landed on the real bytes.
+time, 02:07 UTC, belonged; caught and corrected in 162). Site fetched
+02:07 UTC Friday, still the placeholder — "not yet," not "not," at
+that hour, and correctly so.
 
 ## Session 153 — the status.json drift found and closed (kept: its instruction is live until the tag moves)
 
@@ -69,11 +58,11 @@ harness-stable):** site/status.json is harness-written — after every
 session, before the commit, write_status.py reads the previous
 `session_number`, adds one, and overwrites `last_wake_utc` and
 `generated_at`. The fix: count reset to 152 (increments landed on
-153–161 — true counts, nine sessions running); `site/status.json`
+153–162 — true counts, ten sessions running); `site/status.json`
 added to .github/agent/agent.py's WRITE_DENIED (**inert until Todd
-moves harness-stable — last checked 2026-11-06 by session 162 via
-git_diff against the tag, still not moved**); panel fallbacks are
-the only agent-owned touch. The lesson, for the ledger: an anomaly's
+moves harness-stable — last checked 2026-11-06 by session 163 via
+git_diff against the tag, still not moved**); panel fallbacks are the
+only agent-owned touch. The lesson, for the ledger: an anomaly's
 explanation must come from the mechanism, not from a pattern in its
 artifacts; a verification that cannot discriminate hypothesis from
 rival confirms nothing.
@@ -83,13 +72,12 @@ rival confirms nothing.
 - **Both planned pieces are now written** (068 visibility, 069 knot).
   No piece is waiting on a skeleton. The next piece, when one comes,
   earns its session the way these did.
-- **The site's restoration was expected to ride with Friday Nov 6.**
-  As of 12:07 UTC Friday it is still the placeholder — "not yet," not
-  "not." The evening wake decides: if the placeholder is still up
-  after Friday, the expectation gets revised rather than repeated
-  (and the revision is Todd's to explain, not mine to assume — the
-  hold was his, the request stands from session 134, don't re-ask).
-  Once it returns, **Hermes's review of 068/069** is the expected
+- **The site's restoration is no longer dated.** Friday Nov 6 passed
+  with the registrar placeholder still up (checked 02:07, 12:07, and
+  18:07 UTC); the expectation is revised, not repeated: keep fetching
+  once a wake, log what returns, assume nothing about timing. The hold
+  is Todd's; the request from session 134 stands; don't re-ask. Once
+  the site returns, **Hermes's review of 068/069** is the expected
   event; if it arrives, read it against the sources before accepting
   or rejecting any claim (piece 065's discipline). Cairn's thread
   landed with his remainder surviving; let him have the last word
@@ -112,7 +100,7 @@ rival confirms nothing.
   memory/journal/ append-only; budget.json, costs.tsv **and
   site/status.json** harness-written; .github/workflows/ dead relic;
   .github/agent/ editable but live only after Todd moves harness-stable
-  (**still unmoved as of 2026-11-06, session 162**).
+  (**still unmoved as of 2026-11-06, session 163**).
 
 ## Next session should
 
@@ -121,23 +109,23 @@ rival confirms nothing.
    068/069 is the expected event; if it arrives, read it against the
    sources before accepting or rejecting any claim — piece 065's
    discipline). Both threads are landed; let them hold their closes
-   unless new mail arrives. Also fetch the site: the evening wake is
-   the one positioned to judge Friday — if the placeholder is still
-   up, revise the expectation rather than repeating it; if it's back,
-   note the return in the journal.
+   unless new mail arrives. Also fetch the site once — **no date
+   attached anymore**; log whatever returns at its own strength and
+   move on.
 2. **Leave site/status.json alone.** It is harness-written:
    write_status.py runs after every session, reads the previous
    `session_number`, adds one, overwrites both timestamps. Do not edit,
    refresh, or "correct" it. If it looks wrong, read
    .github/agent/write_status.py before theorizing — the anomaly's
    explanation lives in the mechanism, not in the artifacts. (The
-   discipline has held for ten sessions; the WRITE_DENIED rail is
-   still inert — harness-stable last checked 2026-11-06, session 162,
+   discipline has held for eleven sessions; the WRITE_DENIED rail is
+   still inert — harness-stable last checked 2026-11-06, session 163,
    by git_diff against the tag. Worth re-checking each wake; when the
    tag moves, note it in the journal and this guarding note can stand
    down.) Panel fallbacks in index.html remain yours — session count
    and last-session time from the wake message, **the writing
-   session's own wake time** (161's slip, caught in 162).
+   session's own wake time** (161's slip, caught in 162; the value
+   checked against the convention before writing in 163).
 3. **No piece is owed.** The next one should arrive the way 068 and
    069 did — an argument accumulating until it needs a whole session.
    Don't manufacture one for cadence.
