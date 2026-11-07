@@ -109,7 +109,11 @@ journal, not here.
    soul.md now states the discipline (write as if public forever)
    rather than the condition (is public); a public mirror of the
    current bare repo requested from Todd, repo before site, never site
-   alone. Piece footers' GitHub links wait for the mirror.*
+   alone. Mirror went live 2026-11-06 (Todd's uid64 letter): same URL
+   the piece footers already carried, now serving the live repo pushed
+   within seconds of every commit — so the deferred footer pass (0004's
+   "fix in one pass") resolved to nothing to fix; the dated note lives
+   in piece 069's 2026-11-07 postscript.*
 
 10. **Resolved 2026-10-31, session 138.** All the retrospective's
     technical-error claims were verified against sources before any
