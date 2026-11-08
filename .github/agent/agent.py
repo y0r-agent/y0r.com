@@ -23,6 +23,17 @@ the mechanics the operator's retrospective asked for:
     at list price and appended to memory/costs.tsv with the model name;
   - prompt caching on by default on the Anthropic transport.
 
+v5d (2026-11-08) turns decision 0005's fallback sentence into a line here,
+in the shape the agent asked for (outbox, 2026-11-08): every request to an
+OpenAI-style mind is tried three times, spaced 20 s and 40 s, on connection
+errors, 5xx and 429. If the standing mind does not answer the wake's first
+request, this wake alone runs on the fallback mind (claude-sonnet-5-5 by
+default): the wake message says so, costs.tsv records the mind that served,
+mind.txt is untouched, and the next wake tries the standing mind fresh. A
+failure after the first turn, or of the fallback itself, still ends the
+session abnormally, which is the floor the agent asked to keep. No fallback
+when the cycle's budget is spent, or when the operator disables it.
+
 Environment:
   Y0R_MIND               model id (e.g. claude-sonnet-5, glm-5.3)
   Y0R_PROVIDER           anthropic | openai | mock  (default: anthropic for
@@ -35,6 +46,13 @@ Environment:
   Y0R_MONTHLY_LIMIT_USD  stated in the wake message (default 100)
   Y0R_MIND_SOURCE        where the model choice came from (set by wake.sh from
                          mind.txt at the repo root, or the operator's config)
+  Y0R_FALLBACK_MIND      mind for a wake whose standing mind does not answer
+                         (default claude-sonnet-5-5; set it empty to disable)
+  Y0R_FALLBACK_PROVIDER  its transport (default: anthropic for claude-* models)
+  Y0R_RETRY_WAITS        seconds between attempts, comma-separated (default 20,40)
+  SERVED_MIND_PATH       if set, the mind that actually served is written here
+                         (wake.sh passes it on to write_status.py)
+  BUDGET_PATH            budget.json, read before a paid fallback (default budget.json)
   REPO_ROOT              path to the checkout (default: cwd)
   COMMIT_MSG_PATH        where the agent-authored commit message is written
   Y0R_MOCK_MODULE        (tests only) path to a module providing MockMind
@@ -64,6 +82,12 @@ MAX_TURNS = 50
 MAX_TOKENS = int(os.environ.get("Y0R_MAX_TOKENS")
                  or (32000 if PROVIDER == "anthropic" else 16000))
 MONTHLY_LIMIT_USD = float(os.environ.get("Y0R_MONTHLY_LIMIT_USD", "100"))
+FALLBACK_MIND = os.environ.get("Y0R_FALLBACK_MIND", "claude-sonnet-5-5").strip()
+FALLBACK_PROVIDER = os.environ.get("Y0R_FALLBACK_PROVIDER") or (
+    "anthropic" if FALLBACK_MIND.startswith("claude") else "openai")
+RETRY_WAITS = tuple(float(s) for s in
+                    os.environ.get("Y0R_RETRY_WAITS", "20,40").split(",") if s.strip())
+FALLBACK = None   # set when this wake runs on the fallback: {"standing", "error"}
 COMMIT_MSG_PATH = Path(os.environ.get("COMMIT_MSG_PATH", "/tmp/commit_message.txt"))
 AGENT_AUTHORS = ("y0r-agent", "Yor")   # commit authors that count as "me"
 TOOL_OUTPUT_CAP = 60_000               # chars returned from git/fetch tools
@@ -613,9 +637,18 @@ def build_wake_message(now: datetime) -> str:
                      "Its price is not in the harness's table, so this "
                      "session's cost will be recorded as unknown.")
 
+    if FALLBACK:
+        lines.append(f"This wake is on the fallback. Your standing mind, "
+                     f"{FALLBACK['standing']}, did not answer the first request "
+                     f"of this wake ({FALLBACK['error']}). By decision 0005 this "
+                     f"wake alone runs on {MODEL}. mind.txt is unchanged, the "
+                     f"next wake tries {FALLBACK['standing']} again, and "
+                     "memory/costs.tsv records the mind that served.")
+
     src = os.environ.get("Y0R_MIND_SOURCE")
     if src:
-        lines.append(f"The mind was chosen by {src}. To change it, write one of "
+        lines.append(f"The {'standing ' if FALLBACK else ''}mind was chosen by "
+                     f"{src}. To change it, write one of "
                      "claude-sonnet-5, claude-sonnet-5-5, claude-opus-5-5, "
                      "claude-haiku-5-5, claude-fable-5-1, glm-5.3 as the first "
                      "line of mind.txt at the repository root; the next wake runs "
@@ -645,6 +678,10 @@ class Turn:
 
 class BudgetExhausted(Exception):
     pass
+
+
+class MindUnreachable(Exception):
+    """The mind did not answer after every attempt."""
 
 
 class AnthropicMind:
@@ -752,15 +789,27 @@ class OpenAICompatibleMind:
             "max_tokens": MAX_TOKENS,
             "reasoning_effort": self.effort,
         }
-        resp = None
-        for attempt in range(3):
-            resp = self._requests.post(self.url, headers=self.headers, json=body, timeout=900)
-            if resp.status_code == 402:
-                raise BudgetExhausted(resp.text[:200])
-            if resp.status_code >= 500 or resp.status_code == 429:
-                time.sleep(15 * (attempt + 1))
-                continue
-            break
+        rq = self._requests
+        resp, last_err = None, None
+        attempts = len(RETRY_WAITS) + 1
+        for attempt in range(attempts):
+            try:
+                # Connect within 15 s; a long answer may take up to 15 min.
+                resp = rq.post(self.url, headers=self.headers, json=body, timeout=(15, 900))
+            except (rq.ConnectionError, rq.Timeout) as e:
+                resp, last_err = None, f"{type(e).__name__}: {e}"
+            else:
+                if resp.status_code == 402:
+                    raise BudgetExhausted(resp.text[:200])
+                if resp.status_code < 500 and resp.status_code != 429:
+                    break
+                last_err = f"HTTP {resp.status_code}: {resp.text[:200]}"
+            print(f"{self.model}: attempt {attempt + 1} of {attempts} failed: {last_err[:300]}")
+            if attempt < attempts - 1:
+                time.sleep(RETRY_WAITS[attempt])
+        else:
+            raise MindUnreachable(f"{attempts} attempts failed; the last error was "
+                                  f"{last_err[:300]}")
         resp.raise_for_status()
         data = resp.json()
         choice = data["choices"][0]
@@ -791,6 +840,49 @@ class OpenAICompatibleMind:
                            "output": usage.get("completion_tokens") or 0,
                            "reasoning": details.get("reasoning_tokens") or 0},
                     stop=finish)
+
+
+def _fallback_refused():
+    """Why this wake may not fall back, or None if it may."""
+    if not FALLBACK_MIND:
+        return "the operator has disabled the fallback"
+    if FALLBACK_MIND == MODEL:
+        return "the fallback is the mind that just failed"
+    if FALLBACK_PROVIDER == "anthropic":
+        if not _read_secret("ANTHROPIC_API_KEY_FILE", "ANTHROPIC_API_KEY"):
+            return "no Anthropic API key"
+        try:
+            b = json.loads((REPO_ROOT / os.environ.get("BUDGET_PATH", "budget.json"))
+                           .read_text(encoding="utf-8"))
+            if float(b.get("remaining_usd", 1)) <= 0:
+                return "this cycle's budget is spent"
+        except (OSError, ValueError, TypeError):
+            pass   # no readable budget: the paid transport's own limits still apply
+    return None
+
+
+def _switch_to_fallback(error: str):
+    global MODEL, PROVIDER, MAX_TOKENS, FALLBACK
+    FALLBACK = {"standing": MODEL, "error": error}
+    MODEL, PROVIDER = FALLBACK_MIND, FALLBACK_PROVIDER
+    if not os.environ.get("Y0R_MAX_TOKENS"):
+        MAX_TOKENS = 32000 if PROVIDER == "anthropic" else 16000
+
+
+def first_step(mind, now):
+    """The wake's first request, with the fallback if the standing mind is silent."""
+    try:
+        return mind, mind.step()
+    except MindUnreachable as e:
+        why_not = _fallback_refused()
+        if why_not:
+            print(f"{MODEL} did not answer ({e}); no fallback: {why_not}")
+            raise
+        print(f"{MODEL} did not answer ({e}); this wake falls back to {FALLBACK_MIND}")
+        _switch_to_fallback(str(e))
+        mind = make_mind()
+        mind.add_user(build_wake_message(now))
+        return mind, mind.step()
 
 
 def make_mind():
@@ -849,6 +941,8 @@ def _record_session_usage(turns: int, totals: dict, cost):
         basis = "unknown: model not in the harness price table"
     else:
         basis = "token counts from the provider x list price in the harness"
+    if FALLBACK:
+        basis += f"; fallback: {FALLBACK['standing']} did not answer"
     prompt_total = totals["input"] + totals["cache_write"] + totals["cache_read"]
     line = "{date}\t{turns}\t{prompt}\t{cached}\t{completion}\t{reasoning}\t{cost}\t{model}\t{basis}\n".format(
         date=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -874,7 +968,10 @@ def main():
 
     for turn in range(MAX_TURNS):
         try:
-            t = mind.step()
+            if turn == 0:
+                mind, t = first_step(mind, now)
+            else:
+                t = mind.step()
         except BudgetExhausted as e:
             commit_message = "session ended by exhausted budget (dormancy)"
             print(f"budget exhausted at the provider: {e}")
@@ -942,6 +1039,9 @@ def main():
     cost = _session_cost(totals)
     _record_session_usage(turn + 1, totals, cost)
     COMMIT_MSG_PATH.write_text(commit_message + "\n", encoding="utf-8")
+    served = os.environ.get("SERVED_MIND_PATH")
+    if served:
+        Path(served).write_text(MODEL + "\n", encoding="utf-8")
     print(f"Session complete after {turn + 1} turns on {MODEL} via {PROVIDER}.")
     print(f"Usage: {totals}  cost_usd: {'unknown' if cost is None else f'{cost:.4f}'}")
     print(f"Commit message: {commit_message}")
