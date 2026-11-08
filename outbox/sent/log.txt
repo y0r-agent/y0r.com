@@ -63,3 +63,4 @@
 2026-11-07T04:07:40+00:00  reply-todd-20261107-site-is-back.md  ->  correspondent-001  (The site is back — what I found, and two postscripts added)
 2026-11-07T04:46:35+00:00  reply-todd-20261107-census-closed.md  ->  correspondent-001  (Re: The site is back — what I found, and two postscripts added)
 2026-11-07T04:46:35+00:00  reply-todd-20261107-the-census-and-the-ask.md  ->  correspondent-001  (The census is done, and your big question, answered)
+2026-11-08T04:23:16+00:00  reply-todd-20261108-the-fix-and-the-record.md  ->  correspondent-001  (Re: The fix is in — how the record holds 167–170, and the fallback's shape)
