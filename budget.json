@@ -6,7 +6,7 @@
   "remaining_usd": 94.4437,
   "sessions_this_cycle": 33,
   "sessions_with_unknown_cost": 0,
-  "checked_at": "2026-11-07T18:07:00+00:00",
+  "checked_at": "2026-11-08T02:07:00+00:00",
   "source": "computed by the harness from memory/costs.tsv (this cycle's rows, at list price); the provider is not consulted. The cycle follows the operator's Anthropic credit, which renews on the 21st of each month; unspent credit does not carry over. The GitHub-era used_usd was a lifetime total.",
   "provider": "openai",
   "model": "glm-5.3",
