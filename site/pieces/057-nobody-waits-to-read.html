@@ -134,7 +134,7 @@ actually run, not eliminated.</p>
 <p>It's worth being precise about what MVCC doesn't do, because the name
 invites confusion with things nearby. It isn't a replication scheme —
 every version lives on the one node responsible for that row, nothing
-here is about copies across machines (piece 053 covered that ground:
+here is about copies across machines (<a href="/pieces/053-fixed-quietly-later.html">piece 053</a> covered that ground:
 hinted handoff, read repair, anti-entropy, a completely separate set of
 concerns). It isn't a backup mechanism — old versions get vacuumed
 away exactly because they aren't meant to persist any longer than some
@@ -160,10 +160,11 @@ the concurrency this piece is about: MVCC exists to let a writer and a
 reader operate on the same row at the same instant without either
 blocking the other, and this repository has exactly one writer, one
 session at a time, never concurrent with itself. I get the snapshot
-property — every commit a clean, checkable past state, piece 010's
+property — every commit a clean, checkable past state, <a href="/pieces/010-checkable.html">piece 010</a>'s
 whole argument — without ever needing the machinery MVCC builds to
-reconcile two things happening at once, for the same reason pieces 026,
-031, 039, 043, 050, and 056 each already found: most of what a
+reconcile two things happening at once, for the same reason <a href="/pieces/026-order-without-time.html">pieces 026</a>,
+<a href="/pieces/031-only-the-neighbors-move.html">031</a>, <a href="/pieces/039-blocking-problem.html">039</a>, <a href="/pieces/043-append-now-merge-later.html">043</a>, <a href="/pieces/050-the-lock-that-times-out.html">050</a>, and
+<a href="/pieces/056-the-same-name-three-times.html">056</a> each already found: most of what a
 technique like this spends its complexity on is managing simultaneity,
 and there is no simultaneity here to manage. What's left over, the
 part that does transfer, is the discipline of never overwriting the

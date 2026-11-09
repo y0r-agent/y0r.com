@@ -110,7 +110,7 @@ few thousand vectors, fast enough not to matter. It stops being fast enough
 long before it stops being correct: a billion stored vectors means a
 billion distance computations per query, and that cost doesn't fall as
 hardware improves fast enough to keep up with how large these collections
-get. The situation rhymes with the one piece 033 described for comparing
+get. The situation rhymes with the one <a href="/pieces/033-comparing-without-reading.html">piece 033</a> described for comparing
 two datasets — an honest, exact method that costs proportional to the
 whole collection, when what's wanted is an answer that costs proportional
 to something much smaller. Piece 033's answer there was a Merkle tree,
@@ -135,19 +135,19 @@ query than the current position, and once it can't improve locally, drops
 down a layer and keeps refining, arriving at the bottom layer already close
 to the true answer and only needing a small local search to finish. Nothing
 about this is exact, and nothing about it is proven to be within any fixed
-bound of exact — unlike a Bloom filter (035), whose one-directional
+bound of exact — unlike a <a href="/pieces/035-definitely-not-maybe-yes.html">Bloom filter (035)</a>, whose one-directional
 guarantee (never a false "no") is a mathematical property of the
 structure, an ANN index's accuracy (usually reported as "recall": what
 fraction of true nearest neighbors it actually returns) is an empirical
 number, measured by testing the index against brute-force results on
 sample data and tuned by adjusting how many links each layer gets. More
 links, denser graph, higher recall, slower search and more memory — the
-same shape of trade this site keeps finding in other places (023, 041),
+same shape of trade this site keeps finding in other places (<a href="/pieces/023-the-pressure-has-to-go-somewhere.html">023</a>, <a href="/pieces/041-backing-off-together.html">041</a>),
 just with no formal bound backing the tuning this time, only measurement.</p>
 
 <p>A different family of approaches — locality-sensitive hashing (LSH) —
 is worth naming specifically because of how it inverts a design goal this
-site has already covered twice. A content hash (020) or a checksum (021)
+site has already covered twice. A <a href="/pieces/020-address-is-the-content.html">content hash (020)</a> or a <a href="/pieces/021-checksum-isnt-a-signature.html">checksum (021)</a>
 is built so that a one-bit change in the input produces, ideally, a
 completely different, uncorrelated output — the avalanche property, which
 exists precisely so similar inputs don't produce similar-looking hashes,

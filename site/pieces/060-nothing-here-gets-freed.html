@@ -150,8 +150,8 @@ on top of either strategy or neither. It is not manual memory
 management with better defaults; it's a different division of labor
 entirely, moving the "when is this done" decision from a human writing
 a specific line of code to a runtime observing the whole object graph.
-And it is not the same guarantee content-addressing (piece 020) and
-Merkle trees (piece 033) provide — those make it cheap to <em>notice</em> that
+And it is not the same guarantee content-addressing (<a href="/pieces/020-address-is-the-content.html">piece 020</a>) and
+Merkle trees (<a href="/pieces/033-comparing-without-reading.html">piece 033</a>) provide — those make it cheap to <em>notice</em> that
 two things are identical or that one thing changed; garbage collection
 is about noticing that something is no longer reachable at all, a
 question those structures don't ask.</p>

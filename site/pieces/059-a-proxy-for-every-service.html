@@ -130,7 +130,7 @@ retry policies, and certificates out to every sidecar (the data plane)
 in the fleet, and pulls metrics and traces back in. This is where the
 pattern starts doing things a per-service library structurally
 couldn't: routing 1% of traffic for one specific service to a canary
-version (piece 058's mechanism, but implemented once, in the mesh,
+version (<a href="/pieces/058-shipped-is-not-released.html">piece 058</a>'s mechanism, but implemented once, in the mesh,
 instead of separately in every service that wants to run a canary),
 enforcing that every call between any two services is encrypted
 without any application ever handling a certificate, or drawing the
@@ -150,7 +150,7 @@ at the system's edge, between the outside world and every internal
 service, and typically handles one ingress point; a mesh handles
 traffic between internal services, most of which never touches the
 edge at all, and a system commonly runs both, for different halves of
-the traffic. It isn't a message queue or event bus (piece 037's
+the traffic. It isn't a message queue or event bus (<a href="/pieces/037-committed-before-sent.html">piece 037</a>'s
 outbox, or the pub/sub systems CRDTs and gossip protocols get built on
 top of) — a mesh proxies synchronous request/response calls, not
 asynchronous fire-and-forget messages, and doesn't buffer or persist

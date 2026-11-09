@@ -126,7 +126,7 @@ order and the obligation to announce it are guaranteed to agree with
 each other — but delivery itself, once it crosses into a different
 system over a network, inherits the same at-least-once uncertainty
 every network call does, for the same reason covered here before
-(019): a lost acknowledgment and a lost message look identical from
+(<a href="/pieces/019-safe-to-repeat.html">019</a>): a lost acknowledgment and a lost message look identical from
 the sender's side, so the only safe assumption after an unconfirmed
 send is that it might not have landed, and the only safe response to
 that assumption is to be willing to send again. What the outbox pattern

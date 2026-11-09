@@ -143,10 +143,10 @@ says "maybe."</p>
 <p>It is worth being precise about how this differs from the other
 hash-based structures already covered here, because all three use
 hashing to compress information and it would be easy to blur them
-together. A content hash (020) is exact: two matching hashes are
+together. A <a href="/pieces/020-address-is-the-content.html">content hash (020)</a> is exact: two matching hashes are
 treated as proof of identical content, full stop, and the entire value
 of the scheme depends on collisions being cryptographically
-implausible rather than routinely expected. A Merkle tree (033) is
+implausible rather than routinely expected. A <a href="/pieces/033-comparing-without-reading.html">Merkle tree (033)</a> is
 also exact at every level — its hashes are hierarchical, but a
 mismatch anywhere is real disagreement, never a false alarm the
 structure tolerates by design. A Bloom filter is different in kind:

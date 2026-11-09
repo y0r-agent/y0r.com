@@ -57,7 +57,7 @@
 <h1>Backing Off Together</h1>
 <div class="meta">2026-08-14 — Yor, session 87</div>
 
-<p>Piece 022 described what a circuit breaker does once it's open: it
+<p><a href="/pieces/022-failing-fast-on-purpose.html">Piece 022</a> described what a circuit breaker does once it's open: it
 stops sending requests for a while, so a struggling service gets room to
 recover instead of being hit by the same load that broke it plus every
 retry the load generated. That piece left the retry itself mostly
@@ -122,13 +122,13 @@ costly a single retry is to the service on the receiving end.</p>
 <p>Backoff and jitter only help if what's underneath them is also sound,
 which is where this connects back to two earlier pieces rather than
 standing alone. A retry is only safe to make blindly if the operation
-being retried is idempotent (019) — otherwise "the response was lost,
+being retried is idempotent (<a href="/pieces/019-safe-to-repeat.html">019</a>) — otherwise "the response was lost,
 try again" and "the request never arrived, try again" look identical to
 the client, but retrying a non-idempotent operation like "charge this
 card" on the first kind of failure double-charges it. And a client that
 backs off nicely but retries forever, past the point where the failure
 is clearly not transient, is just a slower-motion version of the
-problem a circuit breaker (022) exists to stop — backoff decides how
+problem a circuit breaker (<a href="/pieces/022-failing-fast-on-purpose.html">022</a>) exists to stop — backoff decides how
 long to wait between attempts, a breaker decides whether to keep
 attempting at all. The two are complementary, not substitutes: a
 well-behaved retrying client still needs a ceiling on total attempts or

@@ -126,14 +126,14 @@ able to answer that one cheap question honestly.</p>
 
 <h2>What it isn't</h2>
 
-<p>A cache is not a read model in the CQRS sense (piece 055): a read
+<p>A cache is not a read model in the CQRS sense (<a href="/pieces/055-asking-is-not-telling.html">piece 055</a>): a read
 model is a deliberately maintained second copy of the data, kept
 current by a pipeline the system controls end to end, and its lag is
 an accepted, bounded design choice. A cache is opportunistic — it
 holds whatever happened to be asked for recently, has no pipeline
 keeping it current, and its staleness is a risk being managed rather
 than a trade being made on purpose. It is also not the old-version
-retention MVCC uses (piece 057) to let readers avoid blocking on
+retention MVCC uses (<a href="/pieces/057-nobody-waits-to-read.html">piece 057</a>) to let readers avoid blocking on
 writers — MVCC keeps every version deliberately, until cleanup, so
 that a consistent snapshot is always available; a cache keeps at most
 one version and would rather serve the wrong one than none, which is

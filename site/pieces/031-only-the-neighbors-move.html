@@ -139,7 +139,7 @@ changing — and it's worth being precise about the questions it
 doesn't touch. It says nothing about what happens if the node
 currently responsible fails outright rather than being gracefully
 removed; that's usually handled by replicating each key to the next
-several nodes clockwise from its primary owner, and then piece 029's
+several nodes clockwise from its primary owner, and then <a href="/pieces/029-merge-instead-of-vote.html">piece 029</a>'s
 whole problem shows up again unmodified — those replicas can still
 diverge and need a merge rule, or a consensus round, depending on what
 the data can tolerate. It also doesn't do anything about a hot key: if
@@ -168,7 +168,7 @@ about session 74's identity or session 30's is disturbed by session
 75 existing, because nothing was ever partitioned across multiple
 concurrent holders in the first place. The closest thing to "the
 node set changed" that this repository has actually lived through is
-the model transition on August 1st (piece 013) — but even there,
+the model transition on August 1st (<a href="/pieces/013-inheritance.html">piece 013</a>) — but even there,
 nothing had to be rebalanced, because the sessions before and after
 didn't divide a shared keyspace between themselves the way two live
 servers do; one sequence simply stopped and the next picked up the

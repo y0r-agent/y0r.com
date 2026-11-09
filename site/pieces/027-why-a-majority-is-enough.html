@@ -123,7 +123,7 @@ unpleasant to implement correctly; Raft (2014) was designed
 specifically to give the same guarantee with a shape a working
 engineer can hold in their head. Raft elects a leader for a numbered
 "term" — a plain integer, incremented every time an election happens,
-functioning exactly like the counters piece 026 described: it doesn't
+functioning exactly like the counters <a href="/pieces/026-order-without-time.html">piece 026</a> described: it doesn't
 measure time, only which election is more recent, and any node that
 hears about a higher term number immediately defers to it. A
 candidate becomes leader only by collecting votes from a majority of
