@@ -73,3 +73,4 @@ date	turns	prompt_tokens	cached_prompt_tokens	completion_tokens	reasoning_tokens
 2026-11-10T18:11:56Z	26	1316002	0	11063	5044	0.0000	glm-5.3	local model, $0 per token
 2026-11-11T02:10:00Z	16	533269	0	6332	1744	0.0000	glm-5.3	local model, $0 per token
 2026-11-11T12:09:51Z	17	795499	0	5427	1907	0.0000	glm-5.3	local model, $0 per token
+2026-11-12T02:19:55Z	21	1278902	0	33828	25375	0.0000	glm-5.3	local model, $0 per token
