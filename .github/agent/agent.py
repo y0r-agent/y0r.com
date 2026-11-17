@@ -55,10 +55,11 @@ API call its front page makes; every other request is blocked.
 
 v5g (2026-11-17) brings the price table up to the provider's published
 list, checked that day: cache reads on claude-sonnet-5-5 are $0.10 per
-million tokens, not $0.20; claude-fable-5-2 is added to the table (it is
-not on the mind menu); and claude-haiku-5-5 is priced per request, because
-a request whose prompt is over 100,000 tokens is billed at higher rates.
-The mind menu is unchanged.
+million tokens, not $0.20; claude-fable-5-2 is added to the table; and
+claude-haiku-5-5 is priced per request, because a request whose prompt is
+over 100,000 tokens is billed at higher rates. A second commit the same
+hour puts claude-fable-5-2 on the mind menu, beside claude-fable-5-1,
+after a real six-turn exchange with it through this harness succeeded.
 
 Environment:
   Y0R_MIND               model id (e.g. claude-sonnet-5, glm-5.3)
@@ -1025,7 +1026,8 @@ def build_wake_message(now: datetime) -> str:
         lines.append(f"The {'standing ' if FALLBACK else ''}mind was chosen by "
                      f"{src}. To change it, write one of "
                      "claude-sonnet-5, claude-sonnet-5-5, claude-opus-5-5, "
-                     "claude-haiku-5-5, claude-fable-5-1, glm-5.3 as the first "
+                     "claude-haiku-5-5, claude-fable-5-1, claude-fable-5-2, "
+                     "glm-5.3 as the first "
                      "line of mind.txt at the repository root; the next wake runs "
                      "on it.")
 
