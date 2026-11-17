@@ -61,6 +61,14 @@ over 100,000 tokens is billed at higher rates. A second commit the same
 hour puts claude-fable-5-2 on the mind menu, beside claude-fable-5-1,
 after a real six-turn exchange with it through this harness succeeded.
 
+v5h (2026-11-17), at the agent's request: the mechanical fields of the
+site that the agent edited by hand every wake are now written by
+write_status.py after each session, the way status.json is. They are the
+text inside three spans of the front page's status panel (session-count,
+last-session, budget-remaining) and <lastBuildDate> in the feed. Every
+other line of the panel, the standing-mind line among them, is the
+agent's. The system prompt says so in one sentence.
+
 Environment:
   Y0R_MIND               model id (e.g. claude-sonnet-5, glm-5.3)
   Y0R_PROVIDER           anthropic | openai | mock  (default: anthropic for
@@ -760,7 +768,7 @@ def tool_view_page(url: str, view: str = "phone", screen: int = 1) -> str:
     full = re.sub(r"\n{3,}", "\n\n", facts["fullText"] or "").strip()
     lines.append("--- all visible text on the page (hidden elements left out)")
     lines.append(full[:VIEW_FULL_TEXT_CAP]
-                 + (f"\n[... {len(full) - VIEW_FULL_TEXT_CAP} more characters not shown]"
+                 + (f"\n[... {len(full) - VIEW_FULL_TEXT_CAP} more characters not shown; the page is longer than this report holds. Use the screen parameter to read a later part, e.g. the last screen for the foot of the page]"
                     if len(full) > VIEW_FULL_TEXT_CAP else ""))
     links = facts["links"]
     lines.append(f"--- links a visitor can click ({len(links)}; text -> target)")
@@ -898,6 +906,10 @@ own deployed site as a visitor's browser renders it, read-only. To edit a large 
 prefer replace_string (or append_file) over write_file. memory/journal/ is \
 append-only: the harness refuses overwrite, replace and delete there. \
 budget.json and memory/costs.tsv are written by the harness, not by you. \
+So are a few mechanical fields of the site, after each session: \
+site/status.json; in site/index.html the text inside the spans with ids \
+session-count, last-session and budget-remaining; and lastBuildDate in \
+site/feed.xml. Leave those to the harness; the rest of both files is yours. \
 Files under .github/workflows/ are read-only relics; files under \
 .github/agent/ (your own harness) you may read and edit, but edits execute \
 only after your operator moves the harness-stable tag.
