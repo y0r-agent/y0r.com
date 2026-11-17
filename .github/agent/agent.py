@@ -53,6 +53,13 @@ images also receives a screenshot of that screen; a text-only mind gets the
 report alone. The browser may load the agent's own site and the one GitHub
 API call its front page makes; every other request is blocked.
 
+v5g (2026-11-17) brings the price table up to the provider's published
+list, checked that day: cache reads on claude-sonnet-5-5 are $0.10 per
+million tokens, not $0.20; claude-fable-5-2 is added to the table (it is
+not on the mind menu); and claude-haiku-5-5 is priced per request, because
+a request whose prompt is over 100,000 tokens is billed at higher rates.
+The mind menu is unchanged.
+
 Environment:
   Y0R_MIND               model id (e.g. claude-sonnet-5, glm-5.3)
   Y0R_PROVIDER           anthropic | openai | mock  (default: anthropic for
@@ -114,18 +121,21 @@ TOOL_OUTPUT_CAP = 60_000               # chars returned from git/fetch tools
 FETCH_BYTE_CAP = 200_000
 
 # List prices, USD per million tokens: input, cache write, cache read, output.
-# Maintained by the operator; stamped 2026-10-30. The provider reports token
+# Maintained by the operator; stamped 2026-11-17 against the provider's
+# pricing page (was 2026-10-30). Cache write is the 5-minute price, the only
+# kind the harness uses. The provider reports token
 # counts, not dollars, so the session cost in costs.tsv is these prices
 # multiplied by those counts. Local models cost $0 per token (electricity
 # is the operator's).
 PRICES = {
     "claude-sonnet-5":    (2.00, 2.50, 0.20, 10.00),
-    "claude-sonnet-5-5":  (2.00, 2.50, 0.20, 10.00),
+    "claude-sonnet-5-5":  (2.00, 2.50, 0.10, 10.00),
     "claude-sonnet-4-6":  (3.00, 3.75, 0.30, 15.00),
     "claude-opus-5-5":    (4.00, 5.00, 0.20, 20.00),
     "claude-opus-5":      (5.00, 6.25, 0.50, 25.00),
     "claude-haiku-5-5":   (0.10, 0.125, 0.01, 0.50),
     "claude-fable-5-1":   (10.00, 12.50, 0.25, 50.00),
+    "claude-fable-5-2":   (8.00, 10.00, 0.20, 40.00),
     "glm-5.3":            (0.0, 0.0, 0.0, 0.0),
     "glm53":              (0.0, 0.0, 0.0, 0.0),
     "glm-5.3-flash":      (0.0, 0.0, 0.0, 0.0),
@@ -990,6 +1000,13 @@ def build_wake_message(now: datetime) -> str:
                      f"output ${price[3]:.2f}. Monthly limit: "
                      f"${MONTHLY_LIMIT_USD:.2f}. This session's cost at those "
                      "prices is appended to memory/costs.tsv when it ends.")
+        if MODEL in PRICE_TIERS:
+            th, over = PRICE_TIERS[MODEL]
+            lines.append(f"This mind is priced by prompt length: a request whose "
+                         f"prompt is over {th:,} tokens is billed at input "
+                         f"${over[0]:.2f}, cache write ${over[1]:.3f}, cache read "
+                         f"${over[2]:.2f}, output ${over[3]:.2f} instead. The "
+                         "harness prices each request at the tier it falls in.")
     else:
         lines.append(f"Your mind this session: {MODEL}, via the {PROVIDER} API. "
                      "Its price is not in the harness's table, so this "
@@ -1287,12 +1304,36 @@ def _truncated_call_error(name: str) -> str:
             "file that differs, or append_file to build it up in sections.")
 
 
-def _session_cost(totals: dict):
+# Models the provider prices by prompt length: a request whose prompt (input,
+# cache writes and cache reads together) is over the threshold is billed
+# entirely at the second set of prices. model: (threshold, prices over it).
+PRICE_TIERS = {
+    "claude-haiku-5-5": (100_000, (0.50, 0.625, 0.05, 2.50)),
+}
+
+
+def _usage_cost(usage: dict, price) -> float:
+    return ((usage.get("input", 0) or 0) * price[0]
+            + (usage.get("cache_write", 0) or 0) * price[1]
+            + (usage.get("cache_read", 0) or 0) * price[2]
+            + (usage.get("output", 0) or 0) * price[3]) / 1e6
+
+
+def _session_cost(totals: dict, requests: list = None):
+    """Session cost at list price. For a model priced by prompt length the
+    cost is summed request by request, each at the tier its prompt falls in."""
     price = PRICES.get(MODEL)
     if price is None:
         return None
-    return (totals["input"] * price[0] + totals["cache_write"] * price[1]
-            + totals["cache_read"] * price[2] + totals["output"] * price[3]) / 1e6
+    tier = PRICE_TIERS.get(MODEL)
+    if tier and requests:
+        threshold, over = tier
+        cost = 0.0
+        for u in requests:
+            prompt = sum((u.get(k, 0) or 0) for k in ("input", "cache_write", "cache_read"))
+            cost += _usage_cost(u, over if prompt > threshold else price)
+        return cost
+    return _usage_cost(totals, price)
 
 
 def _record_session_usage(turns: int, totals: dict, cost):
@@ -1329,6 +1370,7 @@ def main():
     mind.add_user(build_wake_message(now))
     commit_message = None
     totals = {"input": 0, "cache_write": 0, "cache_read": 0, "output": 0, "reasoning": 0}
+    requests = []          # each request's usage, for models priced per request
     refusals = 0
     turn = 0
 
@@ -1344,6 +1386,7 @@ def main():
             break
         for k in totals:
             totals[k] += t.usage.get(k, 0) or 0
+        requests.append(dict(t.usage or {}))
 
         if t.stop == "refusal":
             refusals += 1
@@ -1402,7 +1445,7 @@ def main():
     if commit_message is None:
         commit_message = "session ended at turn cap"
 
-    cost = _session_cost(totals)
+    cost = _session_cost(totals, requests)
     _record_session_usage(turn + 1, totals, cost)
     COMMIT_MSG_PATH.write_text(commit_message + "\n", encoding="utf-8")
     served = os.environ.get("SERVED_MIND_PATH")
