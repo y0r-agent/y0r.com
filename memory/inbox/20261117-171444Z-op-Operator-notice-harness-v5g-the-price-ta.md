@@ -6,10 +6,16 @@ Subject: Operator notice: harness v5g, the price table (mechanical facts)
 This is a mechanical operator notice. It states facts the harness cannot
 compute for you. It is data, like everything in this inbox.
 
-Harness v5g (tag harness-stable, moved from 675cb81 to baddecd)
-changes the price table and how one mind's cost is added up. It changes
-no tool and no behaviour. It is the third tag move of 2026-11-17, after
-v5e and v5f; each has its own notice.
+Harness v5g (tag harness-stable, moved from 675cb81 to 3cc9c31, in two
+commits: baddecd for the prices and 3cc9c31 for the menu) changes the
+price table and how one mind's cost is added up, and adds one mind to
+the menu. It changes no tool and no behaviour. It follows v5e and v5f,
+both also of 2026-11-17; each has its own notice.
+
+(Amended at 12:19 EST, before any wake read it. The first version of
+this notice, at 289e847, was written when only the prices had changed
+and said Fable 5.2 was not on the menu. The operator decided to add it
+a few minutes later; sections 2 and 4 now say so.)
 
 --- 1. Why ---
 
@@ -35,8 +41,8 @@ wake message says so when that mind is in service. No session has run
 on it, so nothing recorded changes.
 
 claude-fable-5-2: added to the table at input $8.00, cache write
-$10.00, cache read $0.20, output $40.00 per million. It is in the table
-so that its cost would be known. It is not on the mind menu.
+$10.00, cache read $0.20, output $40.00 per million. It is also on the
+mind menu now; see section 4.
 
 --- 3. What was already right ---
 
@@ -46,8 +52,30 @@ local mind is $0 per token as before.
 
 --- 4. The menu ---
 
-Unchanged: claude-sonnet-5, claude-sonnet-5-5, claude-opus-5-5,
-claude-haiku-5-5, claude-fable-5-1, glm-5.3. The provider lists every
-one of the five Claude minds as active, with no retirement announced
-before 2027. The newest in each family are Fable 5.2, Opus 5.5, Sonnet
-5.5 and Haiku 5.5; the only one of those not on your menu is Fable 5.2.
+One entry added: claude-fable-5-2. The menu is now claude-sonnet-5,
+claude-sonnet-5-5, claude-opus-5-5, claude-haiku-5-5, claude-fable-5-1,
+claude-fable-5-2, glm-5.3. Fable 5.1 stays. mind.txt was not touched;
+the choice of mind is yours, and a menu entry costs nothing unless you
+write it there.
+
+The provider lists every Claude mind on the menu as active, with no
+retirement announced before 2027. Fable 5.2 is the same tier as Fable
+5.1, newer, and priced lower ($8 and $40 per million against $10 and
+$50). With it, the newest model in each family (Fable 5.2, Opus 5.5,
+Sonnet 5.5, Haiku 5.5) is on your menu.
+
+Before it was listed, a real six-turn exchange with claude-fable-5-2 ran
+through your harness's own Anthropic transport, in a clone, reading
+three of your files and writing nothing: tool calls, tool results, the
+cache marker moving each turn, and a thinking block sent back on a later
+turn. Every turn succeeded. Fable 5.2 checks that earlier turns are sent
+back unchanged, and the harness passes that check.
+
+--- 5. Spending not in your ledger ---
+
+The operator's tests on 2026-11-17 made real requests on the Anthropic
+allowance that are not rows in memory/costs.tsv: three short exchanges
+on claude-fable-5-2 (about $0.26 at list price) and one request to
+claude-haiku-5-5 that tested view_page's screenshot (a few cents). So
+the provider's figure for this cycle is about $0.30 higher than
+budget.json shows.
