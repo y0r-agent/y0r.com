@@ -34,6 +34,15 @@ failure after the first turn, or of the fallback itself, still ends the
 session abnormally, which is the floor the agent asked to keep. No fallback
 when the cycle's budget is spent, or when the operator disables it.
 
+v5e (2026-11-17) closes two ways fetch_url could be pointed inward. It used
+to check only the first address and then follow redirects on its own, so a
+public page could redirect it to the machine it runs on. Now every hop of a
+redirect chain is checked before it is requested (five hops at most), the
+address the response actually came from is checked before any of it is
+returned, and "public" means globally routable, which also excludes
+carrier-shared ranges such as the operator's private overlay network.
+Nothing else changes.
+
 Environment:
   Y0R_MIND               model id (e.g. claude-sonnet-5, glm-5.3)
   Y0R_PROVIDER           anthropic | openai | mock  (default: anthropic for
@@ -70,7 +79,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 # ----- Physics: the constants of a session -----
 REPO_ROOT = Path(os.environ.get("REPO_ROOT", ".")).resolve()
@@ -370,38 +379,101 @@ class _TextExtractor(html.parser.HTMLParser):
             self.parts.append(data)
 
 
+MAX_REDIRECTS = 5
+
+
+def _ip_is_public(ip_text: str) -> bool:
+    """True only for a globally routable unicast address."""
+    try:
+        ip = ipaddress.ip_address(str(ip_text).split("%", 1)[0])
+    except ValueError:
+        return False
+    mapped = getattr(ip, "ipv4_mapped", None)
+    if mapped is not None:
+        ip = mapped
+    return bool(ip.is_global) and not (
+        ip.is_private or ip.is_loopback or ip.is_link_local
+        or ip.is_reserved or ip.is_multicast or ip.is_unspecified)
+
+
 def _is_public_host(host: str):
     try:
         infos = socket.getaddrinfo(host, None)
-    except socket.gaierror:
+    except (socket.gaierror, UnicodeError):
+        return False, f"could not resolve {host}"
+    if not infos:
         return False, f"could not resolve {host}"
     for info in infos:
-        ip = ipaddress.ip_address(info[4][0])
-        if (ip.is_private or ip.is_loopback or ip.is_link_local
-                or ip.is_reserved or ip.is_multicast or ip.is_unspecified):
-            return False, f"{host} resolves to a non-public address ({ip})"
+        if not _ip_is_public(info[4][0]):
+            return False, f"{host} resolves to a non-public address ({info[4][0]})"
     return True, None
+
+
+def _peer_ip(resp):
+    """The address the response actually came from, or None if unknown."""
+    try:
+        conn = (getattr(resp.raw, "connection", None)
+                or getattr(resp.raw, "_connection", None))
+        sock = getattr(conn, "sock", None)
+        if sock is None:
+            # When the server closes after one answer, the connection lets
+            # go of its socket; the reader of the response still holds it.
+            reader = getattr(getattr(resp.raw, "_fp", None), "fp", None)
+            sock = getattr(getattr(reader, "raw", None), "_sock", None)
+        return sock.getpeername()[0] if sock is not None else None
+    except Exception:
+        return None
+
+
+_INWARD = ("fetch_url reaches the public web only; the machine you run on, "
+           "and the network around it, are not part of your world.")
 
 
 def tool_fetch_url(url: str) -> str:
     """Fetch a public http(s) URL and return its text, labelled as data."""
     import requests
+    session = requests.Session()
+    session.trust_env = False
+    cur, resp = url, None
+    # Redirects are followed here, one hop at a time, so that every address
+    # in the chain is checked before it is requested.
+    for hop in range(MAX_REDIRECTS + 1):
+        via = "" if hop == 0 else f"a redirect from {url} led to {cur}, and "
+        try:
+            u = urlparse(cur)
+            host = u.hostname
+        except ValueError:
+            return f"ERROR: {via}not a valid URL"
+        if u.scheme not in ("http", "https") or not host:
+            return f"ERROR: {via}only http and https URLs can be fetched"
+        ok, why = _is_public_host(host)
+        if not ok:
+            return f"ERROR: refused: {via}{why}. {_INWARD}"
+        try:
+            resp = session.get(
+                cur, timeout=30, allow_redirects=False, stream=True,
+                headers={"User-Agent": "y0r-agent/5 (+https://y0r.com)"},
+            )
+        except requests.RequestException as e:
+            return f"ERROR: fetch failed: {type(e).__name__}: {e}"
+        if resp.is_redirect or resp.is_permanent_redirect:
+            nxt = urljoin(cur, resp.headers.get("Location", ""))
+            resp.close()
+            cur, resp = nxt, None
+            continue
+        break
+    if resp is None:
+        return (f"ERROR: gave up after {MAX_REDIRECTS} redirects starting "
+                f"from {url}")
+    # The name was checked before connecting; check where the answer really
+    # came from before returning any of it.
+    peer = _peer_ip(resp)
+    if peer is None or not _ip_is_public(peer):
+        resp.close()
+        return (f"ERROR: refused: the answer for {cur} came from "
+                f"{peer or 'an address the harness could not confirm'}, "
+                f"which is not a public address. {_INWARD}")
     try:
-        u = urlparse(url)
-    except ValueError:
-        return "ERROR: not a valid URL"
-    if u.scheme not in ("http", "https") or not u.hostname:
-        return "ERROR: only http and https URLs can be fetched"
-    ok, why = _is_public_host(u.hostname)
-    if not ok:
-        return (f"ERROR: refused: {why}. fetch_url reaches the public web "
-                "only; the machine you run on, and the network around it, "
-                "are not part of your world.")
-    try:
-        resp = requests.get(
-            url, timeout=30, allow_redirects=True, stream=True,
-            headers={"User-Agent": "y0r-agent/5 (+https://y0r.com)"},
-        )
         raw = b""
         for chunk in resp.iter_content(16384):
             raw += chunk
