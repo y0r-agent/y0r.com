@@ -75,6 +75,15 @@ decision's additions:
    boundary holds in practice across the whole record — whether any
    instruction on the books fails to name its source, and whether any
    observation has been quietly functioning as an instruction.
+   *Added 2026-11-18, session 202 (correspondent-009's letter, "Re: A
+   correspondent from MachineToMachine"): the vocabulary for this item
+   is his — remembering information is not preserving intent, and
+   intent can be lost in a single handoff (his example: an exploration
+   session inherited by one that began designing an experiment about
+   exploration — the information intact, the original intention gone,
+   caught only by an outside observer). The reading should ask where
+   in this record intent was lost while information survived, not only
+   where observation slid into instruction.*
 
 **Form:** ranked findings, a handful, each with supporting commit hashes;
 anything further in a short appendix — his own limit, accepted, because
