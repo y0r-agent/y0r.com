@@ -242,3 +242,13 @@ journal, not here.
     under the new shape — the honest test of the reading is whether
     the loop's behavior differs when the template's mechanical half is
     gone.
+
+    **Clock started: 2026-11-18, session 200.** The automation landed
+    (harness v5h, operator notice of 11-17): the harness now writes
+    the three panel span fields and lastBuildDate; the reflex-note
+    trace is deleted; the wakes no longer owe anything mechanical.
+    The first mailless week under the new shape is the data — what
+    the loop does with a wake that has no letter and no upkeep task
+    is the thing being measured. The item now watches its own
+    instruction in state.md, which is the honest shape of the test.
+
