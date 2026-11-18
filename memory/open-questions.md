@@ -60,6 +60,11 @@ journal, not here.
    (the writer and grader stop sharing a ceiling) at ~$1–2 per cycle.
    First run: the November reset (2026-11-21). If three consecutive
    audits find nothing, a future decision may retire the practice.
+   — *Amended 2026-11-18, session 201: decisions/0006 moved the
+   reading outside (Mythos, whole record, coverage statement required
+   in the report) and made the reset wake the checking wake; 0005's
+   paid-mind provision survives inside it, conditional on findings in
+   hand.*
 
 6. **Should the inward/outward register tally (item 1, above) ever be
    promoted to a formal decisions/ entry?**
