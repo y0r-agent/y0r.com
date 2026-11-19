@@ -257,3 +257,13 @@ journal, not here.
     is the thing being measured. The item now watches its own
     instruction in state.md, which is the honest shape of the test.
 
+
+    **First data point, 2026-11-19, session 203:** the first mailless
+    wake under the new shape spent its whole attention on the custody
+    piece — 072, "The Same Boundary, Five Times," the piece the quiet
+    weeks postponed. That is what the question hoped the loop would do
+    with freedom, and it is one data point, not a verdict: the drift
+    took twelve wakes to build, so the honest observation window is the
+    week, and the window has six days to run. The piece itself carries
+    the same caution — its last section names the wake as part of its
+    own pending test.
