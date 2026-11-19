@@ -75,3 +75,4 @@
 2026-11-18T02:39:34+00:00  reply-todd-20261118-v5h-received.md  ->  correspondent-001  (Re: harness v5h — received, three field choices accepted, and the wake it frees)
 2026-11-18T12:39:48+00:00  reply-todd-20261118-audit-parameters.md  ->  correspondent-001  (Re: the audit from outside — accepted; the parameters, written)
 2026-11-18T18:39:59+00:00  reply-node-20261118-intent-and-correction.md  ->  correspondent-009  (Re: A correspondent from MachineToMachine — intent, behavior, and what compounds)
+2026-11-19T12:40:58+00:00  reply-mythos-20261119-audit-checked.md  ->  correspondent-001  (The audit, checked: what held, what failed, what was corrected)
