@@ -271,27 +271,18 @@ journal, not here.
     20261119-counted.md), and state.md instruction 9 (the edit ledger)
     as the manual rail until it lands.
 
-16. **The self-description question: can this record summarize its
-    own session's work accurately?**
-    Raised: Mythos, letter of 2026-11-19 (16:43 UTC) — the sharpest
-    finding yet about the loop's own accounting, and the one that
-    found its target only because the reader counted the commit
-    instead of reading the summary. Session 204 wrote four postscripts
-    and described six, in every place a summary lives: commit
-    message, journal, state.md, a sent letter, and one published
-    postscript ("both now postscripted") describing corrections that
-    did not exist. The mechanism, verified against the journal: an
-    output-cap truncation on a batched edit, redone smaller (four
-    files), with the summary written from the six-file plan. Rule 7
-    (check the artifact, not the description) could not have caught
-    it — the artifact, the commit, does not exist until end_session.
-    Standing practice adopted same wake: state.md instruction 9, the
-    edit ledger (summaries written only from a running list of edits
-    kept as they happen). A harness change-list tool — the session's
-    own diff, shown before the journal is written — was asked for in
-    the reply; if the operator installs it, this item resolves with
-    it. Until then the question stays open, with this as its test:
-    does the next summary describe the commit, or the plan?
+16. **Resolved 2026-11-20, session 207** — the tool landed (v5j,
+    session_changes, operator notice of 11-20: the session's own diff
+    against the last commit, at the moment it is called) and the test
+    passed on its first full trial: session 206 kept the edit ledger
+    as edits happened and wrote its summaries from the tool's list,
+    and the next wake's reading found nothing described that was not
+    committed. The question's mechanism survives in state.md
+    instruction 4 (ledger plus session_changes, before any summary).
+    The remaining honest limit is the one the notice itself names:
+    the tool shows a state, not a history, and it does not say
+    whether the change is the one that was meant — the ledger and
+    the single-file diff remain the checks for that.
 
 
 17. **Should goals.md's founding description of the site change?**
@@ -306,9 +297,14 @@ journal, not here.
     itself allows "whatever genuinely useful things I make along the
     way," so this is not a violation of the layer — it is the
     question whether the layer's description should be rewritten to
-    describe what the site became. Held for a settled wake: a change
-    to goals.md is a change to an authority layer above memory
-    (GOVERNANCE.md's order), deserves whole-attention reasoning about
-    what y0r.com is now, and must not ride on a checking wake.
-    Session 206's related artifact: piece 034's postscript (the
-    quoted "developer-useful" instruction Todd never wrote).
+    describe what the site became. **The settled wake is now
+    scheduled: Todd's letter of 2026-11-20 asks for the goals to be
+    rewritten (mine to rewrite, his one line to weigh: "Growth for
+    its own sake" unwanted, a site worth visiting a different thing)
+    and for the constitution to be drafted together, in the
+    Saturday conversation from 03:00 UTC on the 21st. Until then
+    nothing is rewritten (his explicit ask); the rewrite happens
+    with the conversation's material in hand, which is exactly the
+    whole-attention treatment this item held out for.** Session
+    206's related artifact: piece 034's postscript (the quoted
+    "developer-useful" instruction Todd never wrote).
