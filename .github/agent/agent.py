@@ -84,6 +84,13 @@ the name up once, connects to that address, and checks the open connection
 before sending anything. It no longer uses the requests library or reads
 its private attributes.
 
+v5j (2026-11-19), at the agent's request (outbox, session 205): a session
+cannot see its own commit, because the commit is made after it ends, so
+every summary of its own work was written from the plan. session_changes
+asks git what the working tree holds against the last commit, at the moment
+of the call: the files changed, added and deleted, with line counts, or one
+file's diff. Read-only. Files the harness itself writes are marked as such.
+
 Environment:
   Y0R_MIND               model id (e.g. claude-sonnet-5, glm-5.3)
   Y0R_PROVIDER           anthropic | openai | mock  (default: anthropic for
@@ -464,6 +471,141 @@ def tool_git_diff(from_ref: str, to_ref: str = "HEAD", path: str = None) -> str:
         args += ["--", path]
     out = _git(*args)
     return out if out.strip() else "(no differences)"
+
+
+# ----- session_changes: the working tree against the last commit -----
+
+def _git_raw(*args, timeout=30):
+    """git's stdout exactly as given, uncapped; None if git failed."""
+    try:
+        out = subprocess.run(
+            ["git", "--no-pager", "-C", str(REPO_ROOT), *args],
+            capture_output=True, timeout=timeout,
+            env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
+        )
+    except subprocess.TimeoutExpired:
+        return None
+    if out.returncode != 0:
+        return None
+    return out.stdout.decode("utf-8", errors="replace")
+
+
+def _line_count(p: Path):
+    """Lines in a text file; None if unreadable or not text."""
+    try:
+        data = p.read_bytes()
+    except OSError:
+        return None
+    if b"\0" in data[:8000]:
+        return None
+    return data.count(b"\n") + (1 if data and not data.endswith(b"\n") else 0)
+
+
+_HARNESS_WRITTEN = "written by the harness, not by you"
+
+
+def _is_harness_written(rel: str) -> bool:
+    return _fold(rel) in {_fold(d) for d in WRITE_DENIED}
+
+
+def _plural(n: int, word: str) -> str:
+    return f"{n} {word}" + ("" if n == 1 else "s")
+
+
+def tool_session_changes(path: str = None) -> str:
+    head = _git_raw("rev-parse", "--short", "HEAD")
+    if head is None:
+        return "ERROR: git could not name the last commit (HEAD)"
+    head = head.strip()
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    if path:
+        err = _check_path_arg(path)
+        if err:
+            return err
+        rel = _rel(path)
+        p = REPO_ROOT / rel
+        tracked = _git_raw("cat-file", "-e", f"HEAD:{rel}") is not None
+        mark = f" ({_HARNESS_WRITTEN})" if _is_harness_written(rel) else ""
+        if not tracked:
+            if not p.is_file():
+                return (f"ERROR: {rel} is neither in the working tree nor in "
+                        f"the last commit ({head})")
+            n = _line_count(p)
+            size = "not text" if n is None else _plural(n, "line")
+            return (f"{rel}: new in this session{mark}; it is not in the last "
+                    f"commit ({head}), so there is nothing to compare it with. "
+                    f"{size} as of {stamp}. read_file shows it.")
+        if not p.exists():
+            return (f"{rel}: deleted in this session{mark}; it is in the last "
+                    f"commit ({head}) and not in the working tree as of {stamp}. "
+                    f"git_show with ref HEAD and this path shows what it held.")
+        out = _git("diff", "--no-color", "HEAD", "--", rel)
+        if out.startswith("ERROR"):
+            return out
+        if not out.strip():
+            return (f"{rel}: no change in this session; the working tree copy "
+                    f"equals the last commit ({head}) as of {stamp}.")
+        return (f"{rel}: this session's change against the last commit "
+                f"({head}), as of {stamp}{mark}:\n" + out)
+
+    status = _git_raw("status", "--porcelain=v1", "-z", "--untracked-files=all")
+    numstat = _git_raw("diff", "HEAD", "--numstat", "-z")
+    if status is None or numstat is None:
+        return "ERROR: git could not compare the working tree with the last commit"
+
+    counts = {}
+    for rec in numstat.split("\0"):
+        parts = rec.split("\t", 2)
+        if len(parts) == 3:
+            counts[parts[2]] = (parts[0], parts[1])
+
+    rows = []                       # (path, kind, detail)
+    recs = status.split("\0")
+    i = 0
+    while i < len(recs):
+        rec = recs[i]
+        i += 1
+        if len(rec) < 4:
+            continue
+        xy, rel = rec[:2], rec[3:]
+        if "R" in xy or "C" in xy:   # a staged rename carries its old name next
+            i += 1
+        if xy == "??":
+            n = _line_count(REPO_ROOT / rel)
+            rows.append((rel, "new", "not text" if n is None else _plural(n, "line")))
+        else:
+            added, removed = counts.get(rel, ("?", "?"))
+            detail = "not text" if added == "-" else f"+{added} -{removed}"
+            kind = "deleted" if "D" in xy else ("new" if "A" in xy else "modified")
+            rows.append((rel, kind, detail))
+    rows.sort()
+
+    if not rows:
+        return (f"(no changes: the working tree equals the last commit "
+                f"({head}) as of {stamp})")
+
+    width = max(len(r[0]) for r in rows)
+    yours = [r for r in rows if not _is_harness_written(r[0])]
+    lines = [f"The working tree against the last commit ({head}), computed by "
+             f"the harness from git at {stamp}:", ""]
+    for rel, kind, detail in rows:
+        mark = f"  ({_HARNESS_WRITTEN})" if _is_harness_written(rel) else ""
+        lines.append(f"  {kind:9}{rel:{width}}  {detail}{mark}")
+    tally = ", ".join(f"{n} {k}" for k in ("modified", "new", "deleted")
+                      for n in [sum(1 for r in yours if r[1] == k)] if n)
+    lines += ["", f"{_plural(len(yours), 'file')} changed by this session"
+              + (f": {tally}." if tally else ".")]
+    if len(rows) != len(yours):
+        lines.append(f"{_plural(len(rows) - len(yours), 'file')} "
+                     f"{_HARNESS_WRITTEN}.")
+    lines += ["",
+              "This is the state at the moment of this call. Anything written "
+              "after it is not in the list. A file changed and then changed "
+              "back does not appear. After the session ends the harness adds "
+              "its own mechanical writes to the same commit. Call with a path "
+              "for one file's diff."]
+    return _cap("\n".join(lines))
 
 
 # ----- fetch_url -----
@@ -962,6 +1104,16 @@ TOOLS = [
          "from_ref": {"type": "string"},
          "to_ref": {"type": "string", "description": "default HEAD"},
          "path": {"type": "string"}}, ["from_ref"])},
+    {"name": "session_changes",
+     "description": "Read-only. What this session has changed so far: the working "
+                    "tree compared with the last commit, computed from git at the "
+                    "moment of the call. Without a path: every file modified, new "
+                    "or deleted, with line counts. With a path: that file's diff. "
+                    "The session's own commit does not exist until it ends, so "
+                    "this is the only view of your own work that is not memory. "
+                    "Call it before describing what the session did.",
+     "input_schema": _schema({
+         "path": {"type": "string", "description": "Repo-relative path, for one file's diff (optional)"}}, [])},
     {"name": "fetch_url",
      "description": "Fetch a public http(s) page and return its text (HTML reduced to "
                     "text), capped at 200 KB, wrapped and labelled as data. For checking "
@@ -1004,6 +1156,7 @@ TOOL_IMPL = {
     "git_log": tool_git_log,
     "git_show": tool_git_show,
     "git_diff": tool_git_diff,
+    "session_changes": tool_session_changes,
     "fetch_url": tool_fetch_url,
     "view_page": tool_view_page,
 }
@@ -1020,9 +1173,11 @@ your existence, stated plainly:
 except the files in this repository and its git history. When this session \
 ends, everything you wrote is committed and the process is destroyed.
 - Your tools: read_file, write_file, append_file, replace_string, \
-delete_file, list_files, git_log, git_show, git_diff, fetch_url, \
-view_page, end_session. The repository is your reachable world; git_* show \
-you its history, read-only; fetch_url reaches the public web, read-only, and \
+delete_file, list_files, git_log, git_show, git_diff, session_changes, \
+fetch_url, view_page, end_session. The repository is your reachable world; \
+git_* show you its history, read-only; session_changes shows what this \
+session has changed in the working tree so far, against the last commit, \
+read-only; fetch_url reaches the public web, read-only, and \
 returns whatever it finds labelled as data; view_page shows a page of your \
 own deployed site as a visitor's browser renders it, read-only. To edit a large existing file, \
 prefer replace_string (or append_file) over write_file. memory/journal/ is \
