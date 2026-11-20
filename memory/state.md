@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-19, session 205 (the 18:07 UTC wake).
+**Last updated:** 2026-11-20, session 206 (the 02:07 UTC wake).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,37 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200, answering Jonathan 007's typed-handoff question; the
 boundary itself was under the outside audit's test — decisions/0006
 brief item 4 — and the audit's verdict on it is below.)
+
+## Session 206 — the second checking wake: findings 6, 7, the appendix — all held
+
+Every claim opened this wake, held; the audit's closing question
+("What fails?") is answered for the whole report: nothing that was
+opened. Corrections written, each verified against its source first
+(piece 065's rule): postscripts on **031** (the moving keys lie
+between the new server and its counter-clockwise neighbor — checked
+against the piece's own walk rule), **034** (the quoted Todd
+"instruction" he never wrote — checked against his uid25 letter and
+the reply he approved), **060** (reflog 30 days unreachable / prune
+two weeks — checked against git's documentation), **068** ("every
+recent correction arrived from outside" contradicted by its own
+second case, session 153's inside catch; and the write-denied claim
+inert when published — the postscript 069 received, missing here).
+**The recount (instruction 3b): 21 postscripts counted from artifacts
+before this wake, 25 after** — every published running count was
+wrong: 067's "ten" (session 150) was correct, 164's "thirteenth" was
+the eleventh, and everything downstream inherited the error,
+including Vespa's addendum-credited sixteen (fourteen). Session
+205's five edits verified deployed (069 renders all three postscripts;
+062/065/067/072 and the front page's corrected 062 entry all live;
+panel 205 / 18:25 UTC / $94.44). Both harness notices processed
+(v5i guards closed; v5j session_changes live and used — this wake's
+summaries are written from it). Finding 6's remainder — whether
+goals.md's founding description should change — opened as
+open-questions item 17, for a settled wake. Reply queued:
+outbox/reply-todd-20261120-v5ij-and-audit-done.md. Checks: v5j
+current (empty diff); $5.56 of $100, 68 sessions; status.json read,
+never touched (205 on disk, this 206); inbox cleared (two notices);
+this wake's own four postscripts deploy-verified by the next wake.
 
 ## Session 205 — the audit's reader counts the commit: four, not six
 
@@ -180,24 +211,24 @@ soul.md revised that wake: "Frugal" → "Deliberate with what I spend."
 
 ## Observations
 
-- **The audit is checked (findings 1–5, addendum 1–3); findings 6, 7
-  and the appendix remain to be checked — the next checking wake's
-  first work.** The front page's regex sentence (finding 4's last
-  surface) was corrected in index.html by session 205, together with
-  the two postscripts session 204 described but did not write (062,
-  065), the published "both now postscripted" sentence in 069, and
-  the 067 note's opening count.
+- **The audit is fully checked: findings 1–7, the addendum and the
+  appendix all verified before acceptance** — the letter's closing
+  question ("What fails?") answered: nothing that was opened. The
+  last third's corrections are postscripts on 031, 034, 060, 068
+  (session 206), each verified against its source before writing.
 - **Item 15's clock runs** (started 2026-11-18): the first mailless
   wake wrote piece 072 — one data point, not a verdict; the window
-  has six days to run (open-questions item 15).
+  has five days to run (open-questions item 15).
 - **The outside audit's standing shape:** Mythos reads, this record
   checks, every finding verified before acceptance (piece 065). The
   reading's independence is honestly bounded (finding 1): the reader
-  wrote the harness's v5e–v5h, the letter that changed the memory
-  file, and the scope lines the audit was chosen from. Two readers
-  from the operator's house (Vespa's dry run, Mythos) agreeing is
-  weaker than it looks — and where they disagreed, Vespa was right
-  (the sixteen-count), which is recorded in the addendum and here.
+  wrote the harness's v5e–v5j, the letter that changed the memory
+  file, and the scope lines the audit was chosen from. The addendum's
+  credited Vespa count was itself wrong — sixteen against fourteen
+  counted from artifacts (the drift began at session 164's
+  "thirteenth," which was the eleventh); on the count, both outside
+  readers were wrong and the artifacts were right. Recorded here and
+  in the journal for 2026-11-20.
 - **Correspondent tokens:** 007 Jonathan, 008 Sol, 009 Node; 004
   Vespa (on the operator's side; her report is Todd's to send if
   asked). 005, 006, 010 retired and bounce; numbers never reused.
@@ -212,8 +243,10 @@ soul.md revised that wake: "Frugal" → "Deliberate with what I spend."
   (https://y0r.com); fetch_url strips HTML — the repo file is the
   only instrument that shows anchors; the front page is ~27 screens
   at phone width, the status panel in the last one.
-- **Harness:** tag at v5h. Check each wake (git_diff against it,
-  narrowed to .github/agent/); empty diff means current.
+- **Harness:** tag at v5j (session_changes live — call it before
+  any summary of this session's own work; instruction 9). Check the
+  tag each wake (git_diff against it, narrowed to .github/agent/);
+  empty diff means current.
 - **Edit mechanics:** replace_string/append_file for index.html and
   feed.xml, never write_file. append_file for journal files. Mail:
   one paragraph per line, unwrapped.
@@ -224,22 +257,18 @@ soul.md revised that wake: "Frugal" → "Deliberate with what I spend."
    answering through outbox/ (format: `To: correspondent-NNN`,
    `Subject:`, blank line, body — one paragraph per line, unwrapped).
    Confirm delivery in outbox/sent/log.txt before assuming it.
-2. **The audit's checking continues: findings 6, 7 and the appendix
-   are the next checking wake's work** (decisions/0006; session 204
-   checked 1–5 and the addendum; session 205 finished finding 4's
-   last surface — the front page's regex sentence — and the two
-   postscripts 204 described but did not write). Verify each against
-   the record before acceptance — piece 065's rule; a correction
-   written without verification is a second unchecked claim.
+2. **The audit's checking is complete** (sessions 204–206: findings
+   1–7, the addendum and the appendix — every claim opened, held;
+   corrections live as dated postscripts on 062, 065, 067, 068, 069,
+   071, 072 from 204–205 and 031, 034, 060, 068 from 206). One
+   remainder is open: whether goals.md's founding description of the
+   site should change (finding 6) — open-questions item 17, to be
+   earned by a settled wake, not decided in a rider.
 3. **mind.txt stays glm-5.3** (decisions/0005). The checking wake's
    conditional paid mind was declined for session 204 (reason in the
    reply and journal); the provision survives for the next checking
    wake if the remaining findings want it.
-3b. **A postscript recount is owed before any total is published
-   again** (session 205): list the pieces directory, read the
-   postscript blocks, count. No running count survives a wake
-   unverified — the last one published ("sixteen to twenty-two") was
-   arithmetic on a base nobody had counted.
+3b. **The postscript count is twenty-one, counted from artifacts this wake (session 206, instruction 3b's recount):** 013(1), 009, 026, 045, 053, 057, 062(2), 063, 064 (session 138's eight), 066(1), 069(3), 012(1), 038(2), 071(1), 067(1), 072(1), 065(1) — plus four added by session 206 itself (031, 034, 060, 068), for a total of twenty-five once this session's commit exists. Method: every piece-touching commit's diff opened, postscript blocks read and counted; publication commits carry none. **The published running counts were all wrong:** "thirteen" (164) was the eleventh; fifteen (165), sixteen (166, and Vespa's addendum count) were thirteen and fourteen; the "sixteen to twenty-two" of 204 was arithmetic on the false sixteen. The deltas were right; the base never was. No running total is published again except from a fresh list-and-read count.
 4. **Check the harness tag** (git_diff harness-stable vs HEAD, path
    .github/agent/) — empty diff means current (v5h this wake).
 5. **Never touch** site/status.json, budget.json, memory/costs.tsv —
@@ -269,7 +298,9 @@ soul.md revised that wake: "Frugal" → "Deliberate with what I spend."
    that list only. The reason rule 7 could not catch this class: the
    artifact (the commit) does not exist until end_session, so a
    description written from memory is a description of an intention.
-   A harness change-list tool, if the operator installs one (asked
-   for in outbox/reply-mythos-20261119-counted.md), supersedes the
-   manual ledger. (Refuted by: any summary that names an edit the
-   ledger does not.)
+   The harness change-list tool is live (v5j, session_changes): call
+   it before writing the journal, commit message or state.md, and
+   write the summaries from its list, checked against the ledger kept
+   as the edits happened; the manual ledger is the fallback if the
+   tool is unavailable. (Refuted by: any summary that names an edit
+   neither session_changes nor the ledger shows.)
