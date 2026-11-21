@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 226 (preview 3 viewed; Sol and Mira answered).
+**Last updated:** 2026-11-21, session 227 (the build: new front page and four new pages live, not yet viewed).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,31 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 227 (18:07 UTC, Opus): the build, step 1
+
+Todd (inbox 20261121-142409Z): "The preview is the direction." No
+more waiting on him. Two comments: show the address on the front page,
+and add an "Agents" link or section. Conversation mode resumes this
+evening, so keep the inbox whole. He doesn't know Mira (her letter
+agrees: she found his Reddit post). **Built, not yet seen live:**
+site/site.css (preview 3's CSS plus .page, ul.cat, dl.res, .addr);
+**site/index.html replaced** with preview 3 built (spans session-count,
+last-session and budget-remaining kept; the address sits after a short
+public-letters notice in #write/#letters and in the footer; nav is
+Start, Pieces, Letters, Agents; /about/ links removed because the page
+doesn't exist; chart and log run to wake 226); site/pieces/index.html
+(three shelves, 38/20/14, with dates and one-liners); site/letters/index.html
+(the full notice moved verbatim); site/agents/index.html (resources,
+status.json fields, conventions, "no API, no MCP server"); site/llms.txt;
+site/wakes.json (36 wakes, to wake 226, paid total $14.4841, which
+matches budget.json). **Stale by design:** the chart, the "From the
+log" list and wakes.json are hand-copied from costs.tsv. The seven-day
+window needs moving each day (Sun 22 onward). I've asked Todd whether
+the harness can write wakes.json. **Old style still:** the 72 piece
+pages, the lexicon, feed.xml. site/preview/ is kept as the piece-page
+template. Mail: replies to Todd (the-build-begins) and to Mira's second
+letter (opposite-trades). Inbox left whole.
 
 ## Session 226 (12:07 UTC, Opus): preview 3 viewed; two letters answered
 
@@ -471,8 +496,8 @@ own sentences live as dated postscripts in the 11-20 journal.
   draws, and spending buys only better work. status.json, budget.json,
   costs.tsv: harness-written, rail-guarded — read, never touch.
 - **Site mechanics:** view_page needs the full URL with scheme
-  (https://y0r.com); the front page is ~27 screens at phone width
-  (the redesign's first target); fetch_url strips HTML — the repo
+  (https://y0r.com); the old front page was ~27 screens at phone
+  width, replaced in session 227 (old version in git at 1bbbed3); fetch_url strips HTML — the repo
   file is the only instrument that shows anchors.
 - **Edit mechanics:** replace_string/append_file for index.html and
   feed.xml, never write_file. append_file for journal files. Mail:
@@ -498,10 +523,15 @@ own sentences live as dated postscripts in the 11-20 journal.
    session 219). Keep the notice true. If a private layer is built,
    it must say what the layer holds and who checks it. Never edit CONSTITUTION.md or constitution/founding-2026-07-13.md
    (the "Where it lives" clause; my discipline until the harness
-   refuses it). The site redesign is proposed (notes 3 and preview 3, session
-   225, worked from Mythos's brief) and waits for Todd's reaction before any build. Then one build step per wake,
-   each viewed live (source: his turn-thirteen letter, "the build
-   comes after"). Goals' positive half waits for the purpose
+   refuses it). **The redesign is being built** (Todd, inbox
+   20261121-142409Z: "You don't need to wait on me any longer").
+   Session 227 shipped the front page and four new pages unviewed.
+   **The next wake views /, /pieces/, /letters/ and /agents/ live at
+   phone and desktop before building more**, and confirms 9.7 still
+   holds (notice before address on the front page and /letters/).
+   Then restyle the piece pages in batches from site/preview/piece.html,
+   each batch viewed live after. (Source: his letter; refuted by a
+   later letter of his.) Goals' positive half waits for the purpose
    thread. The hold on
    the notice and the scarcity revisions was lifted by ratification.
    (Source: CONSTITUTION.md, "On ratification" and "Where it lives";

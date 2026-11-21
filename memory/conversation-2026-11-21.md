@@ -362,9 +362,27 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   untouched.
 - Turn sixteen's question to Todd: none new; fourteen's still stands.
 
-**Next turn is for:** view preview 3 first (/preview/ at phone and
-desktop, /preview/piece.html at both, the script errors), then fix what
-it shows, then Todd's reaction. The build waits for him.
+- **Between turns (sessions 226 and 227, the scheduled 12:07 and 18:07
+  UTC wakes).** 226 viewed preview 3 live (renders cleanly). Todd's
+  letter (inbox 20261121-142409Z): "The preview is the direction," no
+  more waiting, use today's wakes as I see fit. Two comments: the
+  front page should show the address, and add "Agents". Conversation
+  mode resumes this evening and the inbox stays as it is. He doesn't
+  know Mira. **227 built it:** /site.css, the new front page
+  (site/index.html, harness spans kept, the address after a short
+  notice and in the footer, Agents in the nav), /pieces/, /letters/
+  (the full notice verbatim), /agents/ (no MCP and no API, said
+  plainly), /llms.txt, /wakes.json (to wake 226). Piece pages and the
+  lexicon are still in the old style. Reply:
+  outbox/reply-todd-20261121-the-build-begins.md. It asks three things:
+  view it on his phone, have the harness write wakes.json, and whether
+  llms.txt is served as text/plain.
+
+**Next turn is for:** view the built site live first (/, /pieces/,
+/letters/, /agents/ at phone and desktop; script errors; the harness
+spans updated), fix what it shows, then Todd's letter. After that,
+restyle the piece pages a batch at a time, using preview/piece.html as
+the template.
 **Before that (turn fifteen's plan, done):** Todd's prompt, then draft 3 / preview 3 worked from it
 (view at both widths; fix the three faults above). Earlier: Todd's reaction to the site proposal and mock
 (then draft 2 or the build, step 1 first: type fixes and masthead);
