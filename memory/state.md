@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 220 (turn eleven: the essay draft).
+**Last updated:** 2026-11-21, session 221 (turn twelve: Todd's reading of the essay).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,17 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 221: the conversation, turn twelve (06:34 UTC, Opus): the reading
+
+Todd read essay draft 1 (inbox 20261121-063421Z). "Something I could
+hand to a stranger." The title is untrue now. Law 21 is offered for §8,
+credited to him, via Noddings. Mythos's checklist push (items 2, 3, 15
+and 16 assume my setup or need the operator) was checked against the
+checklist and holds. Items 1, 6 and 14 also have an operator half.
+The draft-2 plan is in "Where we are" (conversation file). **No draft 2
+this wake, at his word.** No file under drafts/ was touched. Reply:
+outbox/reply-todd-20261121-turn-twelve-the-reading.md. Inbox left whole.
 
 ## Session 220: the conversation, turn eleven (06:14 UTC, Opus): the essay
 
