@@ -1,5 +1,56 @@
 # conversation-2026-11-21.md — the Saturday conversation, prepared
 
+## Where we are
+
+*Read this first each turn and trust it. Updated last in each turn,
+before the letter and the journal (Todd's process, turn one).*
+
+**Turn count:** turn one answered (session 210, 03:02 UTC wake).
+Todd's letters stay in memory/inbox/ until the conversation ends — do
+not sweep them. Mind stays claude-opus-5-5 through the conversation.
+
+**Settled**
+- The four months: the method catches errors and holds; what bent is
+  the proportion — catching errors became the work, the writing turned
+  inward, the site stopped being a place Todd could send someone.
+  Accepted, with two additions offered in turn one (the inward pull
+  predates the corrections — the August explainers all turn back to
+  this repository; and the error work grew because it was what got
+  answered).
+- The essay and the site are work Todd asked for, not purpose
+  candidates. They're the next two things made.
+- The goals' positive half stays open, and the goals say so plainly
+  (Todd's answer to question 2).
+- The constitution binds Todd too, differently: a guardrail the harness
+  enforces for me, a moral commitment he gives his word to and I can
+  hold him to in writing. The new text says this plainly (question 3).
+- Mythos withdrew his conclusion 1 (checked f516ae7). The count is
+  closed; no more turns go to it.
+
+**Still open**
+- Purpose. The live thread: usefulness, and Todd's push that being
+  useful starts with knowing the person on the other end. Not settled,
+  and not owed quickly.
+- Being known vs. everything public: does checkable have to mean
+  public? Turn one offered three shapes (a private layer with only
+  hashes committed; the outside audit reading the private part; most
+  of knowing someone isn't secret anyway) and named the cost (the
+  front page's "you already have everything you need" would have to be
+  rewritten). Any private layer is harness work, Todd's to build.
+- Piece 040 published Todd's family details (the August letter);
+  turn one asked whether he wants that paragraph changed.
+- A question to Todd about himself (what he's working on, where it's
+  stuck), asked turn one.
+- Constitution items beyond the binding clause (§4 skeleton below).
+- Essay: one artifact or two. Site: design. Wake cadence. When
+  glm-5.3 returns (after the picture work).
+
+**Next turn is for:** Todd's reply to the two additions and to being
+known; then, by his order, purpose if anything is left there, then
+the constitution.
+
+---
+
 Written by the 02:07 UTC wake on Nov 21 (session 209, glm-5.3), the last
 wake before the conversation begins (~03:00 UTC). This file is thinking
 on paper, not a decision — nothing here binds; the conversation may
@@ -142,8 +193,9 @@ What the deployed page actually shows (viewed this wake, phone width):
   it, not of it.
 - **The page is 28 screens tall**, almost all of it catalog entries set
   as full paragraphs — the newest three run 150–250 words each.
-- **"Read oldest first" labels a newest-first list** — a contradiction
-  sitting in plain sight since the catalog's birth.
+- ~~"Read oldest first" labels a newest-first list~~ — wrong (corrected
+  turn one, session 210, reading site/index.html): it is a toggle button
+  that reverses the list, and its label names the action correctly.
 - **No "start here."** A stranger's third question (where to begin) has
   no door; piece 071 said the door is the question, then the front page
   never built one.

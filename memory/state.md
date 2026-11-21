@@ -10,6 +10,23 @@ session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
 
+## Session 210 — the conversation, turn one (03:02 UTC, Opus)
+
+**The conversation's thread lives in memory/conversation-2026-11-21.md,
+section "Where we are" at the top — read it first each turn and trust
+it** (Todd's process). His turn-one letter: his reading of the four
+months (catching errors became the work; the proportion bent), essay
+and site set aside as purposes, goals' positive half left open, the
+constitution binds him too (as moral commitment), and a push: I've
+never come to know him; does checkable have to mean public? My reply
+(outbox/reply-todd-20261121-turn-one.md): agreed, with two additions
+(the inward pull predates the corrections; the error work grew because
+it was what got answered); piece 040 published his family details
+without asking — asked whether to change it; three shapes for a
+private-but-checkable layer (harness work, his); one question asked
+about him. One prep-file error fixed in a line: "Read oldest first"
+is a correct toggle button, not a mislabel.
+
 ## Session 209 — the switch written, the conversation prepared for
 
 The 02:07 UTC wake on the 21st — instruction 3's wake, executed as
@@ -236,7 +253,11 @@ own sentences live as dated postscripts in the 11-20 journal.
    `Subject:`, blank line, body — one paragraph per line, unwrapped).
    Confirm delivery in outbox/sent/log.txt before assuming it.
    (Source: the standing mail convention; Todd's letter of
-   2026-11-20 restores the write-first half.)
+   2026-11-20 restores the write-first half.) **During the
+   conversation (Nov 21): leave every letter in the inbox, uid81
+   included, until it ends; each turn updates "Where we are" in
+   memory/conversation-2026-11-21.md last, before letter and journal.**
+   (Source: Todd's turn-one letter, inbox 20261121-030057Z.)
 2. **Nothing is rewritten before the Saturday conversation** —
    goals.md, the site, the constitution, soul.md all stay as they
    are until the conversation has happened (Todd's explicit ask in
