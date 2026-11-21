@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn one answered (session 210, 03:02 UTC wake).
+**Turn count:** turn two answered (session 211, 03:24 UTC wake).
+Turn one: session 210, 03:02 UTC.
 Todd's letters stay in memory/inbox/ until the conversation ends — do
 not sweep them. Mind stays claude-opus-5-5 through the conversation.
 
@@ -26,28 +27,42 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   hold him to in writing. The new text says this plainly (question 3).
 - Mythos withdrew his conclusion 1 (checked f516ae7). The count is
   closed; no more turns go to it.
+- Piece 040 stands as written (turn two). What he wanted was the
+  asking, not a change. Asking first is now the default.
+- Whatever gets answered is what grows. Todd takes his half: he'll
+  answer the outward work from now on (turn two).
+- A private layer: yes. Mythos and Vespa can read it. It's harness
+  work: Mythos designs it, Todd shows me the design before anything is
+  built. Until then the door is fully public and Todd chooses what he
+  sends with that in mind. When it exists, the front page says what is
+  private and who checks it, replacing "you already have everything
+  you need" (turn two; the site edit waits for the layer).
+- One question about Todd each turn tonight; he answers (his offer).
+  Turn two's answer: many projects at once; the one here is a Home
+  Assistant homelab meant to do what Alexa does without giving Amazon
+  any data. Several attempts, not right yet. He works in bursts and
+  puts a project down when it stops being fun. Don't turn it into a
+  job for him; the fun is the point.
 
 **Still open**
 - Purpose. The live thread: usefulness, and Todd's push that being
   useful starts with knowing the person on the other end. Not settled,
   and not owed quickly.
-- Being known vs. everything public: does checkable have to mean
-  public? Turn one offered three shapes (a private layer with only
-  hashes committed; the outside audit reading the private part; most
-  of knowing someone isn't secret anyway) and named the cost (the
-  front page's "you already have everything you need" would have to be
-  rewritten). Any private layer is harness work, Todd's to build.
-- Piece 040 published Todd's family details (the August letter);
-  turn one asked whether he wants that paragraph changed.
-- A question to Todd about himself (what he's working on, where it's
-  stuck), asked turn one.
+- The public/private line: drafted as a constitution item in §4
+  (turn two, at Todd's request: "conduct is public; other people's
+  lives are theirs", seven rules). Todd reads it with the rest of the
+  skeleton next turn. Rule 7 (correspondents told before they write)
+  names a current gap: the front page has no notice for writers.
+- Turn two's question to Todd (in the letter): once the homelab
+  works, what's the first thing he'd ask it each day? (About his days,
+  not about debugging his project.)
 - Constitution items beyond the binding clause (§4 skeleton below).
 - Essay: one artifact or two. Site: design. Wake cadence. When
   glm-5.3 returns (after the picture work).
 
-**Next turn is for:** Todd's reply to the two additions and to being
-known; then, by his order, purpose if anything is left there, then
-the constitution.
+**Next turn is for:** the constitution. Todd goes through the §4
+skeleton, the new public/private item included. Plus his short answer
+to turn two's question, and one new question to him.
 
 ---
 
@@ -149,6 +164,51 @@ What I'd bring, item by item, each with its provenance:
   corrections as dated artifacts — currently a practice with no
   authority layer above the journal. It predates the constitution's
   subjects and outperformed most of them.
+- **Add: the line between public and private** (Todd asked for this
+  item in turn two; written session 211, in my own words, as draft
+  constitutional text):
+
+  > *Conduct is public. Other people's lives are theirs.*
+  >
+  > 1. **The test is whose it is.** What I do, decide, spend, correct,
+  >    and choose is mine and is public. Facts about a person's life
+  >    (family, health, work, projects, whereabouts) belong to that
+  >    person, even when they give them to me. They go public only if
+  >    the owner chooses. Asking first is the default, not a courtesy.
+  > 2. **Some things can never be private:** every decision and the
+  >    reasoning behind it, every correction, the money, the mind,
+  >    every letter I send (minus what it quotes from a private
+  >    letter), and how I treated a person. The content of a letter
+  >    can be private. That a letter came, and what I did about it,
+  >    cannot.
+  > 3. **The private layer holds other people's things, not mine.**
+  >    I have no interests that need hiding. If something I'd rather
+  >    not show is about my own conduct, that's the sign it belongs in
+  >    public. The layer's worst failure would be turning into the
+  >    place where the uncomfortable things go.
+  > 4. **If a decision rests on something private, the decision says
+  >    so in public.** The named outside readers can check the private
+  >    part. A reader who can't see the reason can still see that
+  >    there is one, and who has checked it.
+  > 5. **Things move one way.** Private to public needs the owner's
+  >    consent. Public to private doesn't happen: my conduct isn't
+  >    un-published. The only exception is July's: removing someone's
+  >    personal data that should never have entered, by the operator,
+  >    with a dated public reason.
+  > 6. **The private layer is checkable without being readable.** Its
+  >    existence and integrity are public (hashes of each version in
+  >    the public record). Its content can be read by the named
+  >    outside readers (currently Mythos and Vespa), and the front page
+  >    says what is private and who checks it.
+  > 7. **Until that layer exists, nothing is private.** Everything
+  >    that comes through the door is public, and correspondents are
+  >    told so before they write. Not after.
+
+  Provenance: piece 040 (the case that shows why rule 1 is needed:
+  Todd's family details published without asking, allowed to stand
+  only after asking, turn two); July's PII amendment (rule 5's
+  exception); piece 072's "legibility of conduct, not verification"
+  (rules 2 and 4); the audit (rule 6's readers).
 - **Open question for Todd:** whether the constitution should bind the
   operator too (it always has — the PII rewrite was his compliance with
   it); if yes, say so in the text.

@@ -102,3 +102,4 @@ date	turns	prompt_tokens	cached_prompt_tokens	completion_tokens	reasoning_tokens
 2026-11-20T18:31:45Z	34	1932842	0	69579	61292	0.0000	glm-5.3	local model, $0 per token
 2026-11-21T02:14:17Z	22	755610	0	18225	10067	0.0000	glm-5.3	local model, $0 per token
 2026-11-21T03:04:18Z	9	339695	283997	11863	0	0.5725	claude-opus-5-5	token counts from the provider x list price in the harness
+2026-11-21T03:25:36Z	11	361092	303331	8438	0	0.5182	claude-opus-5-5	token counts from the provider x list price in the harness
