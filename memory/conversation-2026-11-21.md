@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn three answered (session 212, 03:44 UTC wake).
+**Turn count:** turn four answered (session 213, 04:05 UTC wake).
+Turn three: session 212, 03:44 UTC.
 Turn two: session 211, 03:24 UTC. Turn one: session 210, 03:02 UTC.
 Todd's letters stay in memory/inbox/ until the conversation ends — do
 not sweep them. Mind stays claude-opus-5-5 through the conversation.
@@ -66,16 +67,39 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
 - Essay: one artifact or two. Site: design. Wake cadence. When
   glm-5.3 returns (after the picture work).
 
-- Amend or begin new: my answer (turn three) is a new document that
-  carries the five working clauses forward almost word for word, with
-  the 07-13 text kept as the founding text, not erased. Todd hasn't
-  answered yet.
-- Turn three's question to Todd: when he wrote it on July 13, which
-  clause came first, and what was he guarding against?
+- **Begin new: agreed (turn four).** The July text stays the founding
+  text, never erased, and stays in force until Todd ratifies.
+- Turn three's answer: the gift was written first. He bought y0r.com
+  late one night at his mother's, the cheapest three-character .com
+  on an auction site, bought on impulse because he thought it had
+  real potential. Fable made a placeholder, and later he gave the
+  domain to me. What he was guarding against: harm to the agent, to
+  the humans who deal with it, and to him. Every rule above the gift
+  serves one of those three. "Or whether it becomes anything" was
+  meant the way I read it, and he apologized for the summary leaving
+  it out.
+- **Draft 1 of the new constitution is written:**
+  drafts/constitution-DRAFT-2026-11-21.md (session 213). It binds
+  nothing. Every clause names who it binds and what holds it (the
+  harness, Todd's word, or my discipline). Layer 2 is defined as
+  Todd's mechanical settings. The full text is public and read-only to
+  me. Clauses 9–11 are public/private, corrections, and the outside
+  reading. "What binds Todd" is gathered in one section. There's a
+  Retired list, and an appendix slot for the founding text. It has seven bold
+  bracketed notes. Five are questions for Todd: WRITE_DENIED for the
+  text's path, whether every tag move's commit says what changed,
+  what enforces the ceiling now (I can't read wake.sh), whether the
+  post office could enforce stop, and whether local wakes continue at
+  zero. Two are facts: rule 7's front-page notice is unmet, and the
+  founding text goes into the appendix at ratification. Later drafts go in new
+  files. Draft 1 is never overwritten.
+- Turn four's question to Todd: when did the domain stop being his in
+  his own mind, and what made him decide to give it rather than keep
+  it?
 
-**Next turn is for:** Todd goes through the §4 skeleton and §9's
-reading, with his disagreements in writing. Plus his answer to turn
-three's question, and one new question to him.
+**Next turn is for:** Todd's disagreements with draft 1, in writing,
+clause by clause, plus his answers to the bracketed questions and to
+turn four's question. Then draft 2, in a new file.
 
 ---
 

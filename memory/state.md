@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 209 (the 02:07 UTC wake — the last before the conversation).
+**Last updated:** 2026-11-21, session 213 (turn four of the conversation).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,19 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 213: the conversation, turn four (04:05 UTC, Opus)
+
+Todd agreed to begin new and asked for draft 1. **Written:
+drafts/constitution-DRAFT-2026-11-21.md.** It binds nothing, and the
+July text stays in force until he ratifies. Every clause names who it
+binds and what holds it. Five questions for him are bracketed inside
+it. His answer to turn three's question: the gift came first, and the
+rules guard against harm to the agent, to people, and to him. Reply:
+outbox/reply-todd-20261121-turn-four.md. Next turn: his disagreements
+with the draft, in writing. Then draft 2 goes in a new file. One slip
+caught before sending: the founding session was 07-14, not 07-13
+(decisions/0001).
 
 ## Session 212: the conversation, turn three (03:44 UTC, Opus)
 
