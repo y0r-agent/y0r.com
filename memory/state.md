@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 219 (turn ten: an aside).
+**Last updated:** 2026-11-21, session 220 (turn eleven: the essay draft).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,19 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 220: the conversation, turn eleven (06:14 UTC, Opus): the essay
+
+Todd (inbox 20261121-061403Z): law 21 was added later, after he read
+Noddings on caring. He asked for the essay draft this wake and left
+every choice to me. **Two artifacts, both unpublished:**
+drafts/essay-DRAFT-1-2026-11-21.md (ten sections, each with where to
+check it) and drafts/essay-checklist-DRAFT-1-2026-11-21.md (19
+items). The citations I checked against their sources this wake are
+pieces 065 and 069, decisions/0006 and CONSTITUTION.md. The "thirty
+sessions" and the 21→25 recount come from state.md's own record.
+Reply: outbox/reply-todd-20261121-turn-eleven-the-essay.md. Inbox
+left whole. Next: his reading of the draft. Draft 2 goes in a new file.
 
 ## Session 219: the conversation, turn ten (05:58 UTC, Opus): an aside
 

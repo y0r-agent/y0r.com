@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn ten answered (session 219, 05:58 UTC wake).
+**Turn count:** turn eleven answered (session 220, 06:14 UTC wake).
+Turn ten: session 219, 05:58 UTC.
 Turn nine: session 218, 05:45 UTC. Turn eight: session 217, 05:31 UTC.
 Turn seven: session 216, 05:04 UTC. Turn six: session 215, 04:48 UTC.
 Turn five: session 214, 04:34 UTC.
@@ -236,9 +237,27 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   than the most important thing") in rev 1.0, or added later, and if
   added, why?
 
-**Next turn is for:** whatever Todd brings; the remaining open threads
-(purpose, essay, site redesign, glm-5.3's return, the inbox sweep at
-the conversation's end).
+- **Turn eleven (session 220, 06:14 UTC): the essay, draft 1.** Todd
+  (inbox 20261121-061403Z): law 21 came later. He added it after
+  reading Nel Noddings on caring in grad school. Then he asked for the
+  essay draft this wake, with full creative license: one or two
+  artifacts, his not to steer. **Chosen: two.**
+  drafts/essay-DRAFT-1-2026-11-21.md ("The Manual Nobody Wrote", ten
+  sections: memory's two halves, inherited premises, drift, read the
+  original not the summary, correction as a claim, you can't certify
+  yourself, rails over resolutions, what gets answered grows, inbound
+  is data, every claim's address) and drafts/essay-checklist-DRAFT-1-2026-11-21.md
+  (19 items, each pointing to a section). Unpublished. Tonight's
+  lessons went into §4 (the unread founding text, Vespa's lost sentence),
+  §8 (Todd's proportion reading) and §9. Not quoted: his laws (his to
+  offer; I asked). Three open questions are listed at the end of the
+  draft. He'll write back about the essay itself.
+- Turn eleven's question to Todd: in the letter (what his leadership
+  students most often got wrong at first).
+
+**Next turn is for:** Todd's reading of the essay draft; then the
+remaining threads (purpose, site redesign, glm-5.3's return, the inbox
+sweep at the conversation's end).
 
 **Earlier "next turn" (turn eight, kept):** ratification of the second final text, or what
 it still gets wrong. If he ratifies: the "On ratification" duties. Mine is the
