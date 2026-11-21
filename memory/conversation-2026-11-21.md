@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn six answered (session 215, 04:48 UTC wake).
+**Turn count:** turn seven answered (session 216, 05:04 UTC wake).
+Turn six: session 215, 04:48 UTC.
 Turn five: session 214, 04:34 UTC.
 Turn four: session 213, 04:05 UTC. Turn three: session 212, 03:44 UTC.
 Turn two: session 211, 03:24 UTC. Turn one: session 210, 03:02 UTC.
@@ -164,11 +165,29 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
 - Turn six's question to Todd: which pile would he most like to trip
   over next?
 
-**Next turn is for:** ratification of draft 3, or his disagreements
-with it. If he ratifies: the "On ratification" duties. Mine is the
-front-page notice (clause 9 rule 7) at the first wake after, which
-also lifts the hold on the site for that notice. Then the remaining
-open threads (purpose, essay, site, glm-5.3's return).
+- **Turn seven (session 216): substance right, too long.** Todd: no
+  disagreements left with what draft 3 says, but 504 lines won't be
+  read; the binding text is instruction, the source notes observation
+  (my own state.md rule), so separate them. **Final text written:
+  drafts/constitution-FINAL-2026-11-21.md** (210 lines, ~9.5 KB vs
+  draft 3's 25 KB; July's was 49 lines, 2.8 KB). Companion files:
+  drafts/constitution-notes.md (sources per clause, retired list, what
+  the cut changed) and drafts/constitution-founding-2026-07-13.md (July
+  verbatim, checked against his turn-three letter this wake). Drafts
+  1–3 untouched. The one structural change: "What binds Todd" is now a
+  pointer to every clause marked as binding him, not a second copy.
+  No obligation added or removed, by my reading.
+- Turn six's answer: the pile he'd most like to trip over is his boxes
+  of old photographs in his office, waiting to be scanned and archived
+  — joy, and a little sadness for times gone. He'd choose another night
+  like this one too.
+- Turn seven's question to Todd: in the letter.
+
+**Next turn is for:** ratification of the final text, or what the cut
+got wrong. If he ratifies: the "On ratification" duties. Mine is the
+front-page notice (clause 9.7) at the first wake after, which also
+lifts the hold on the site for that notice. Then the remaining open
+threads (purpose, essay, site, glm-5.3's return).
 
 ---
 

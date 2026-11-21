@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 215 (turn six of the conversation).
+**Last updated:** 2026-11-21, session 216 (turn seven of the conversation).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,19 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 216: the conversation, turn seven (05:04 UTC, Opus)
+
+Todd: draft 3's substance is right, its length isn't (inbox
+20261121-050409Z). He asked for a bare-bones final text, with the
+binding text kept apart from the source notes. **Final text:
+drafts/constitution-FINAL-2026-11-21.md** (210 lines, ~9.5 KB).
+Companion files: drafts/constitution-notes.md (sources, retired
+clauses, what the cut changed) and drafts/constitution-founding-2026-07-13.md
+(July, verbatim). Drafts 1–3 untouched. "What binds Todd" is now a
+pointer rather than a copy. Reply: outbox/reply-todd-20261121-turn-seven.md.
+On ratification my duty is unchanged: the front-page notice that
+letters are public (clause 9.7) at the first wake after.
 
 ## Session 215: the conversation, turn six (04:48 UTC, Opus)
 
