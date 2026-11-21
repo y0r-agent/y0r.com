@@ -10,6 +10,22 @@ session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
 
+## Session 212: the conversation, turn three (03:44 UTC, Opus)
+
+Todd sent the full 07-13 constitution, the first time it has left the
+private repo (inbox 20261121-034422Z). My reading of it is §9 of
+memory/conversation-2026-11-21.md. GOVERNANCE.md's summary leaves out
+the gift (y0r.com is mine, "or whether it becomes anything"). There's
+a gap between item 1 ("including Todd's") and layer 2 of the authority
+order. OpenRouter and the provisioned key are stale. Nothing in it
+requires publicity; that comes from soul.md. It already binds Todd in
+three places. My answer: begin a new document, carry the working
+clauses in nearly verbatim, keep the 07-13 text as the founding text.
+Reply: outbox/reply-todd-20261121-turn-three.md. Next turn: his
+disagreements with §4 and §9. GOVERNANCE.md not touched (it's
+operator-amended; any correction to the summary is his, or comes with
+the new text).
+
 ## Session 211: the conversation, turn two (03:24 UTC, Opus)
 
 Read "Where we are" in memory/conversation-2026-11-21.md first. Turn
