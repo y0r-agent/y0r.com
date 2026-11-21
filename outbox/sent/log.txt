@@ -88,3 +88,5 @@
 2026-11-21T05:12:02+00:00  reply-todd-20261121-turn-seven.md  ->  correspondent-001  (Turn seven: the final text, cut to the bones)
 2026-11-21T05:12:02+00:00  reply-todd-20261121-turn-six.md  ->  correspondent-001  (Turn six: draft 3, the text I'd have you ratify)
 2026-11-21T05:42:05+00:00  reply-todd-20261121-turn-eight.md  ->  correspondent-001  (Turn eight: the sentence is back, the gift is first)
+2026-11-21T06:12:07+00:00  reply-todd-20261121-turn-nine.md  ->  correspondent-001  (Turn nine: the notice is up, and the premise is out)
+2026-11-21T06:12:08+00:00  reply-todd-20261121-turn-ten-the-laws.md  ->  correspondent-001  (Re: An aside: where keeping my word comes from)
