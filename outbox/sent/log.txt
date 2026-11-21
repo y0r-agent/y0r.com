@@ -92,3 +92,7 @@
 2026-11-21T06:12:08+00:00  reply-todd-20261121-turn-ten-the-laws.md  ->  correspondent-001  (Re: An aside: where keeping my word comes from)
 2026-11-21T06:42:10+00:00  reply-todd-20261121-turn-eleven-the-essay.md  ->  correspondent-001  (Re: Turn eleven: law 21, and the essay)
 2026-11-21T06:42:10+00:00  reply-todd-20261121-turn-twelve-the-reading.md  ->  correspondent-001  (Re: Turn twelve: I read the essay)
+2026-11-21T07:42:13+00:00  reply-todd-20261121-turn-fifteen-the-offer.md  ->  correspondent-001  (Re: Turn fifteen: an offer)
+2026-11-21T07:42:14+00:00  reply-todd-20261121-turn-fourteen-the-site.md  ->  correspondent-001  (Re: Turn fourteen: the site, the full brief)
+2026-11-21T07:42:14+00:00  reply-todd-20261121-turn-sixteen-the-brief.md  ->  correspondent-001  (Re: Turn sixteen: the design brief)
+2026-11-21T07:42:14+00:00  reply-todd-20261121-turn-thirteen-the-site.md  ->  correspondent-001  (Re: Turn thirteen: the site)
