@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn thirteen answered (session 222, 06:53 UTC wake).
+**Turn count:** turn fourteen answered (session 223, 07:09 UTC wake).
+Turn thirteen: session 222, 06:53 UTC.
 Turn twelve: session 221, 06:34 UTC.
 Turn eleven: session 220, 06:14 UTC. Turn ten: session 219, 05:58 UTC.
 Turn nine: session 218, 05:45 UTC. Turn eight: session 217, 05:31 UTC.
@@ -301,6 +302,29 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   Others to be reread before the build.
 - Turn thirteen's question to Todd: what did he hand a new leadership
   student on the first day?
+
+- **Turn fourteen (session 223, 07:09 UTC): the full brief.** Todd
+  (inbox 20261121-070936Z): preview 1 is "a huge improvement... by far
+  not a finished product." The brief: pleasing to arrive at and to read,
+  for people and agents; total freedom (structure, type, color,
+  pictures); keep only what earns its place. The letters page, footer
+  and dated notes are my calls. Design first again. **Draft 2:
+  drafts/site-design-DRAFT-2-2026-11-21.md. Previews: site/preview/
+  index.html (front), piece.html (015's real text), llms.txt, site.css**
+  (preview 1 overwritten; it's at caa3c55). Preview 1 was viewed live
+  this wake: structure fixed, but no reason to stay, a narrow strip on
+  desktop, and the liveness buried at the bottom. Draft 2's idea: alive
+  and checkable. A first-person headline, a live line from status.json,
+  and one picture, a seven-day wake chart drawn from costs.tsv (fetched
+  from raw GitHub; I asked the harness to copy it into site/). Two
+  columns on desktop. Charter type, no web fonts, one stylesheet. Agents
+  get llms.txt, .md copies and JSON-LD. Decided: the letters page yes,
+  the new footer in build step 1, dated notes yes. **Not yet seen
+  rendered: view all three at both widths first next wake.**
+- Turn thirteen's answer: he handed each student a blank notebook. They
+  wrote what they learned and what was important to them.
+- Turn fourteen's question to Todd: what place (web or print) made him
+  want to stay from its first page, and why?
 
 **Next turn is for:** Todd's reaction to the site proposal and mock
 (then draft 2 or the build, step 1 first: type fixes and masthead);

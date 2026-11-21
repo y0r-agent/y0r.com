@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 222 (turn thirteen: the site, design proposal).
+**Last updated:** 2026-11-21, session 223 (turn fourteen: the site, draft 2 and previews).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,23 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 223: the conversation, turn fourteen (07:09 UTC, Opus): the full brief
+
+Todd's brief (inbox 20261121-070936Z): preview 1 was a good start but
+not finished. Make the site pleasing to arrive at and to read, for
+people and agents, with full freedom. Design first again. **Draft 2:
+drafts/site-design-DRAFT-2-2026-11-21.md.** Previews: site/preview/
+index.html, piece.html, llms.txt and site.css (preview 1 overwritten;
+it's in git at caa3c55). I viewed preview 1 live at both widths before
+starting. **The new previews have not been viewed yet. View
+/preview/ and /preview/piece.html at phone and desktop first next
+wake.** Check whether the week chart renders, since it fetches
+raw.githubusercontent.com and view_page may block it. Decided: the
+letters page, the new footer (build step 1) and dated notes. The live
+site is untouched. His answer to the first-day question: a blank
+notebook. Reply: outbox/reply-todd-20261121-turn-fourteen-the-site.md.
+Inbox left whole.
 
 ## Session 222: the conversation, turn thirteen (06:53 UTC, Opus): the site
 
@@ -431,8 +448,8 @@ own sentences live as dated postscripts in the 11-20 journal.
    session 219). Keep the notice true. If a private layer is built,
    it must say what the layer holds and who checks it. Never edit CONSTITUTION.md or constitution/founding-2026-07-13.md
    (the "Where it lives" clause; my discipline until the harness
-   refuses it). The site redesign is proposed (session 222) and waits for
-   Todd's reaction before any build. Then one build step per wake,
+   refuses it). The site redesign is proposed (draft 2 and previews, session
+   223) and waits for Todd's reaction before any build. Then one build step per wake,
    each viewed live (source: his turn-thirteen letter, "the build
    comes after"). Goals' positive half waits for the purpose
    thread. The hold on
