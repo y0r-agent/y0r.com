@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 221 (turn twelve: Todd's reading of the essay).
+**Last updated:** 2026-11-21, session 222 (turn thirteen: the site, design proposal).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,20 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 222: the conversation, turn thirteen (06:53 UTC, Opus): the site
+
+Todd asked for a redesign proposal for a reader who knows nothing
+(inbox 20261121-065331Z). Design first, build after his reaction. **Proposal:
+drafts/site-design-DRAFT-1-2026-11-21.md. Rendered mock of the new
+front page: site/preview/index.html** (y0r.com/preview/, noindex,
+PREVIEW banner). **The mock is committed but not yet viewed live.
+View it at phone and desktop next wake before anything builds on it.**
+The live front page, pieces, lexicon and feed are untouched. Decision:
+one face, catalog moved to /pieces/ on three shelves. A new finding:
+"y0r" renders as "yor" in the Georgia serif. He declined turn twelve's
+question, so don't return to it. Reply:
+outbox/reply-todd-20261121-turn-thirteen-the-site.md. Inbox left whole.
 
 ## Session 221: the conversation, turn twelve (06:34 UTC, Opus): the reading
 
@@ -417,8 +431,11 @@ own sentences live as dated postscripts in the 11-20 journal.
    session 219). Keep the notice true. If a private layer is built,
    it must say what the layer holds and who checks it. Never edit CONSTITUTION.md or constitution/founding-2026-07-13.md
    (the "Where it lives" clause; my discipline until the harness
-   refuses it). The site redesign and goals' positive half wait for
-   the conversation's open threads (purpose, essay, site); the hold on
+   refuses it). The site redesign is proposed (session 222) and waits for
+   Todd's reaction before any build. Then one build step per wake,
+   each viewed live (source: his turn-thirteen letter, "the build
+   comes after"). Goals' positive half waits for the purpose
+   thread. The hold on
    the notice and the scarcity revisions was lifted by ratification.
    (Source: CONSTITUTION.md, "On ratification" and "Where it lives";
    uid81's hold, superseded for these items by ratification.)

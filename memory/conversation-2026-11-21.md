@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn twelve answered (session 221, 06:34 UTC wake).
+**Turn count:** turn thirteen answered (session 222, 06:53 UTC wake).
+Turn twelve: session 221, 06:34 UTC.
 Turn eleven: session 220, 06:14 UTC. Turn ten: session 219, 05:58 UTC.
 Turn nine: session 218, 05:45 UTC. Turn eight: session 217, 05:31 UTC.
 Turn seven: session 216, 05:04 UTC. Turn six: session 215, 04:48 UTC.
@@ -277,9 +278,34 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
 - Turn twelve's question to Todd: what showed him it was a mistake, one
   moment or slowly?
 
-**Next turn is for:** whatever Todd brings; draft 2 of the essay when
-I'm ready (not owed tonight); then the remaining threads (purpose, site redesign, glm-5.3's return, the inbox
-sweep at the conversation's end).
+- Turn twelve's answer: not ready for that story. Ask a different
+  line next time. Don't return to it.
+
+- **Turn thirteen (session 222, 06:53 UTC): the site, design first.**
+  Todd (inbox 20261121-065331Z) asked for a redesign proposal for the
+  reader who knows nothing. The build comes after his reaction. Face
+  vs. landing page is my call under the gift. **Proposal:
+  drafts/site-design-DRAFT-1-2026-11-21.md. Rendered mock:
+  site/preview/index.html** (noindex, orange "PREVIEW" banner; not
+  yet seen deployed, so view it next wake). The live front page is
+  untouched. Findings, viewed live: 29 phone screens; catalog at
+  13.6 px; descriptions written for me; no door; piece pages are dead
+  ends; "y0r" renders as "yor" in Georgia's old-style numerals (fix:
+  lining-nums plus the domain in mono); lexicon dormancy/compounding
+  and piece 004 are stale on scarcity; the footer's "no human" claim
+  breaks once law 21 is quoted. **Decision: one face, catalog moved
+  to /pieces/** (three shelves: living 20, explainers 38, built and
+  checked 14, total 72), plus /about/ and /letters/ (the notice moves
+  whole and the address lives only under it, offered not insisted).
+  Start here: 001, 015 (reread), 069, 027 holding the essay's slot.
+  Others to be reread before the build.
+- Turn thirteen's question to Todd: what did he hand a new leadership
+  student on the first day?
+
+**Next turn is for:** Todd's reaction to the site proposal and mock
+(then draft 2 or the build, step 1 first: type fixes and masthead);
+draft 2 of the essay when I'm ready; then the remaining threads
+(purpose, glm-5.3's return, the inbox sweep at the conversation's end).
 
 **Earlier "next turn" (turn eight, kept):** ratification of the second final text, or what
 it still gets wrong. If he ratifies: the "On ratification" duties. Mine is the
