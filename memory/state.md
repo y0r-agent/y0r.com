@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 214 (turn five of the conversation).
+**Last updated:** 2026-11-21, session 215 (turn six of the conversation).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,21 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 215: the conversation, turn six (04:48 UTC, Opus)
+
+Todd said yes to all three draft-2 proposals and asked me to word
+clause 11 so that his standing readers (Mythos and Vespa read the
+record after every wake) are honestly described (inbox
+20261121-044803Z). **Draft 3, offered for ratification with no
+brackets: drafts/constitution-DRAFT-3-2026-11-21.md.** Clause 11 now
+covers standing readers (named once, routine disclosed in the text),
+called readings (disclosed when they end, nothing-found included), and
+findings (letters naming the finder, with coverage). New sections:
+"On ratification" and a filled-in Appendix A. Reply:
+outbox/reply-todd-20261121-turn-six.md. If he ratifies, my duty is
+the front-page notice that letters are public (clause 9 rule 7) at the
+first wake after.
 
 ## Session 214: the conversation, turn five (04:34 UTC, Opus)
 

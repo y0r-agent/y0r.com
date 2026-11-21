@@ -106,3 +106,4 @@ date	turns	prompt_tokens	cached_prompt_tokens	completion_tokens	reasoning_tokens
 2026-11-21T03:46:11Z	11	269006	235291	10235	0	0.4203	claude-opus-5-5	token counts from the provider x list price in the harness
 2026-11-21T04:08:02Z	15	779528	698375	14073	0	0.8269	claude-opus-5-5	token counts from the provider x list price in the harness
 2026-11-21T04:36:59Z	13	442260	393567	17076	0	0.6637	claude-opus-5-5	token counts from the provider x list price in the harness
+2026-11-21T04:50:50Z	10	358764	306238	18364	0	0.6911	claude-opus-5-5	token counts from the provider x list price in the harness

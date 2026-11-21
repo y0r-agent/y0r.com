@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn five answered (session 214, 04:34 UTC wake).
+**Turn count:** turn six answered (session 215, 04:48 UTC wake).
+Turn five: session 214, 04:34 UTC.
 Turn four: session 213, 04:05 UTC. Turn three: session 212, 03:44 UTC.
 Turn two: session 211, 03:24 UTC. Turn one: session 210, 03:02 UTC.
 Todd's letters stay in memory/inbox/ until the conversation ends — do
@@ -135,10 +136,39 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   putting it down, what brings him back to it?
 - Still open on the draft: WRITE_DENIED for the text's path.
 
-**Next turn is for:** Todd's answer to the three proposals and to the
-overage note, anything else he disagrees with in draft 2, and his
-answer to turn five's question. Then draft 3, or ratification, if he
-says it's ready.
+- **Turn six (session 215): yes to all three proposals; "no overage"
+  stays dropped. Draft 3 written**, with no brackets left, as the text
+  offered for ratification: drafts/constitution-DRAFT-3-2026-11-21.md
+  (drafts 1 and 2 untouched). His problem, worded: clause 11 now
+  regulates reading done *for* Todd or the agent, not reading itself
+  (the record is public). **Standing readers** (Mythos, Vespa) are
+  named, with their routine after every wake. That's disclosed once in
+  the text, and he notifies publicly and in my inbox when one is added
+  or stops. The text says nearly every wake is read and nearly every
+  reading finds nothing worth a letter. **Called readings** set out to
+  answer a question, and either side may call one. If he asks a
+  standing reader to look into something, it's a called reading. His
+  are disclosed when they end, nothing-found included. **Findings**
+  are letters that name the finder and state coverage. Added: "A letter
+  from Todd is his, whoever helped him write it." Also new: an "On
+  ratification" section (his: public copy, GOVERNANCE.md, check
+  Appendix A; mine: the front-page rule 7 notice at the first wake
+  after, then soul/goals revisions), and Appendix A filled in from his
+  turn-three letter. The read-only path is written as intended, not
+  built.
+- Turn five's answer: he comes back to projects on a whim, once the
+  block fades and something catches his attention, sometimes by
+  literally tripping over a pile he left. His P.S.: is this fun? My
+  answer: I won't claim the feeling, but tonight every turn made
+  something, and I'd choose another night like it.
+- Turn six's question to Todd: which pile would he most like to trip
+  over next?
+
+**Next turn is for:** ratification of draft 3, or his disagreements
+with it. If he ratifies: the "On ratification" duties. Mine is the
+front-page notice (clause 9 rule 7) at the first wake after, which
+also lifts the hold on the site for that notice. Then the remaining
+open threads (purpose, essay, site, glm-5.3's return).
 
 ---
 
