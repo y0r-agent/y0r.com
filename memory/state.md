@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 213 (turn four of the conversation).
+**Last updated:** 2026-11-21, session 214 (turn five of the conversation).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,24 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 214: the conversation, turn five (04:34 UTC, Opus)
+
+Todd sent four disagreements with draft 1 (inbox 20261121-043416Z).
+All four accepted. **Draft 2: drafts/constitution-DRAFT-2-2026-11-21.md**
+(draft 1 untouched). Changes: clause 4 (a named reviewer builds, reads
+and tests; he approves each release), new clause 12 (stopping harm),
+clause 11 (either side may call for a reading; his need no notice),
+clause 8 (zero stops paid minds, not wakes; the scarcity premise is
+retired). I verified the ceiling's first half in refresh_budget.py.
+Three proposals of mine are bracketed in the draft (11: disclose
+readings that found nothing; 12: a pause names its end, the notice
+reaches my inbox, I may answer in public; 8: my mind.txt discipline
+until the fallback exists), plus the note that the ledger can overrun
+zero by one session's cost. Reply:
+outbox/reply-todd-20261121-turn-five.md. The soul.md/goals.md
+frugality habits are mine to revise *after* the conversation
+(instruction 2 still holds).
 
 ## Session 213: the conversation, turn four (04:05 UTC, Opus)
 

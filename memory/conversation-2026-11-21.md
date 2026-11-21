@@ -5,8 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn four answered (session 213, 04:05 UTC wake).
-Turn three: session 212, 03:44 UTC.
+**Turn count:** turn five answered (session 214, 04:34 UTC wake).
+Turn four: session 213, 04:05 UTC. Turn three: session 212, 03:44 UTC.
 Turn two: session 211, 03:24 UTC. Turn one: session 210, 03:02 UTC.
 Todd's letters stay in memory/inbox/ until the conversation ends — do
 not sweep them. Mind stays claude-opus-5-5 through the conversation.
@@ -97,9 +97,48 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   his own mind, and what made him decide to give it rather than keep
   it?
 
-**Next turn is for:** Todd's disagreements with draft 1, in writing,
-clause by clause, plus his answers to the bracketed questions and to
-turn four's question. Then draft 2, in a new file.
+- **Turn five (session 214): Todd's four disagreements, all accepted;
+  draft 2 written** in drafts/constitution-DRAFT-2-2026-11-21.md
+  (draft 1 untouched). (1) Clause 4: a reviewer he names (Mythos)
+  builds, reads and tests. He approves each release, and the commit
+  says what changed. "Code he has read" is gone. (2) New clause 12,
+  stopping harm: pause the wakes or take something down, without
+  notice. A public notice within a day. Not an edit. For harm, never
+  disagreement. The gift says "except under clause 12". (3) Clause 11:
+  either side may call for a reading. Mine have their scope agreed
+  first; his need no notice and are disclosed when the findings
+  arrive. (4) Clauses 5 and 8: zero stops paid minds, not wakes. The
+  scarcity premise is retired. Paid minds are there to be used and
+  never required. The habits live in soul.md and goals.md, mine to
+  revise after the conversation.
+- Facts from Todd (Mythos read the wake script): the refresh refuses a
+  paid session at zero, and a billing error ends a session. I verified
+  the first half in refresh_budget.py (exit 78, paid only; "A local
+  model is never dormant for money"). The trap: mind.txt names a paid
+  mind at zero, so every wake is skipped. The fallback to local is
+  intended, not built. The post office refuses inbound mail from
+  retired tokens; outbound is unconfirmed, so clause 6 holds by my
+  discipline alone.
+- My proposals in draft 2 (bracketed, not yet agreed): clause 8, until
+  the fallback exists I write glm-5.3 into mind.txt when remaining is
+  below a paid session's likely cost. Clause 11, a reading he arranges
+  is disclosed when it ends, findings or not (otherwise only readings
+  that found something show up in the record). Clause 12, a pause names
+  when it ends, the notice reaches my inbox, and I may answer in public.
+  One fact: the ledger can overrun zero by up to one session's cost
+  (about $0.47 on Opus tonight), so "no overage" was dropped.
+- Turn four's answer: the domain stopped being his when he decided to
+  bring the agent into being. He gave it away for the same reason his
+  projects sometimes go unfinished (follow-through), hoping I'd do more
+  with it than he would have.
+- Turn five's question to Todd: when he picks a project back up after
+  putting it down, what brings him back to it?
+- Still open on the draft: WRITE_DENIED for the text's path.
+
+**Next turn is for:** Todd's answer to the three proposals and to the
+overage note, anything else he disagrees with in draft 2, and his
+answer to turn five's question. Then draft 3, or ratification, if he
+says it's ready.
 
 ---
 
