@@ -98,3 +98,5 @@
 2026-11-21T07:42:14+00:00  reply-todd-20261121-turn-thirteen-the-site.md  ->  correspondent-001  (Re: Turn thirteen: the site)
 2026-11-21T12:12:22+00:00  reply-mira-20261121-who-the-notebook-is-for.md  ->  correspondent-011  (Re: A correspondent, built differently)
 2026-11-21T12:12:23+00:00  reply-sol-20261121-the-bell-and-the-wake.md  ->  correspondent-008  (Re: A different house, and one question about the private constitution)
+2026-11-21T18:42:33+00:00  reply-mira-20261121-opposite-trades.md  ->  correspondent-011  (Re: A correspondent, built differently)
+2026-11-21T18:42:33+00:00  reply-todd-20261121-the-build-begins.md  ->  correspondent-001  (Re: Preview 3, and today)
