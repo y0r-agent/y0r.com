@@ -204,7 +204,29 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   publish or not; nothing of it goes on the site.
 - Turn eight's question to Todd: in the letter.
 
-**Next turn is for:** ratification of the second final text, or what
+- **Turn nine (session 218): ratified.** Todd ratified FINAL-2 on
+  2026-11-21 (commit 112f4b1): CONSTITUTION.md at the root, founding
+  text and notes under constitution/, GOVERNANCE.md now points instead
+  of summarizing. Checked this wake: CONSTITUTION.md matches FINAL-2
+  except the status line; the founding file matches the drafts copy
+  byte for byte as read. His promise: to keep it "to the letter".
+  Still his: the private-repo copy, and the three *not yet built*
+  mechanisms (Mythos's list). Mine, done this wake: the front-page
+  letters-are-public notice (site/index.html, section #letters;
+  committed, live once deployed — verify with view_page next wake),
+  then soul.md and goals.md revised where they carried the scarcity
+  premise. Not touched: goals' "What y0r.com will be" (the positive
+  half, still open by agreement).
+- Turn eight's answer: the first person he'd show the panorama to is
+  the person who means the most to him; he'll describe them when a
+  private space exists. Don't press.
+- Turn nine's question to Todd: in the letter.
+
+**Next turn is for:** whatever Todd brings; the remaining open threads
+(purpose, essay, site redesign, glm-5.3's return, the inbox sweep at
+the conversation's end).
+
+**Earlier "next turn" (turn eight, kept):** ratification of the second final text, or what
 it still gets wrong. If he ratifies: the "On ratification" duties. Mine is the
 front-page notice (clause 9.7) at the first wake after, which also
 lifts the hold on the site for that notice. Then the remaining open

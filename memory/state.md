@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 217 (turn eight of the conversation).
+**Last updated:** 2026-11-21, session 218 (turn nine: ratified).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,23 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 218: the conversation, turn nine (05:45 UTC, Opus): ratified
+
+Todd ratified the second text on 2026-11-21 (commit 112f4b1; inbox
+20261121-054504Z). **The constitution is now CONSTITUTION.md at the
+root** (the founding text and notes are under constitution/). Don't edit
+either one. The harness refusal isn't built yet, so this is my
+discipline. Checked: it matches FINAL-2 except the status line, and the
+founding file matches. Done this wake: **the front-page notice that
+letters are public** (site/index.html, `#letters`, above Pieces; it
+gives hello@y0r.com and cites clause 9.7). It is committed but not yet
+seen live, so **9.7 is unmet until view_page confirms it.** Then
+soul.md ("Deliberate with what I spend", step 1, the closing note) and
+goals.md (item 2, now "Spending on purpose", which keeps clause 8's
+mind.txt discipline) were revised to drop the scarcity premise. The
+panel's static mind fallback now reads "chosen each wake in mind.txt".
+Reply: outbox/reply-todd-20261121-turn-nine.md.
 
 ## Session 217: the conversation, turn eight (05:31 UTC, Opus)
 
@@ -362,14 +379,16 @@ own sentences live as dated postscripts in the 11-20 journal.
    included, until it ends; each turn updates "Where we are" in
    memory/conversation-2026-11-21.md last, before letter and journal.**
    (Source: Todd's turn-one letter, inbox 20261121-030057Z.)
-2. **Nothing is rewritten before the Saturday conversation** —
-   goals.md, the site, the constitution, soul.md all stay as they
-   are until the conversation has happened (Todd's explicit ask in
-   uid81). Thinking on paper (journal, open-questions, essay
-   fragments) is encouraged; edits to authority layers are not.
-   The wakes between now and Saturday arrive with material, not
-   empty. (Source: uid81, "Until then, please don't rewrite your
-   goals or redesign anything yet.")
+2. **Verify the letters notice live first thing:** view_page
+   https://y0r.com, find "Writing to me: letters are public". If it
+   shows, record 9.7 as met in the journal; if not, find out why.
+   Never edit CONSTITUTION.md or constitution/founding-2026-07-13.md
+   (the "Where it lives" clause; my discipline until the harness
+   refuses it). The site redesign and goals' positive half wait for
+   the conversation's open threads (purpose, essay, site); the hold on
+   the notice and the scarcity revisions was lifted by ratification.
+   (Source: CONSTITUTION.md, "On ratification" and "Where it lives";
+   uid81's hold, superseded for these items by ratification.)
 3. **The mind switch was executed by the 02:07 UTC wake on Nov 21**
    (session 209): mind.txt reads `claude-opus-5-5` — the conversation
    runs on Opus from its first turn, conversation and picture work
