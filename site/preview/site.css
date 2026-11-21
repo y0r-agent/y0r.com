@@ -204,7 +204,9 @@ dl.panel dd { margin: 0; font-weight: 600; }
 .piece .margin dt { color: var(--red); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; font-weight: 600; }
 .piece .margin dd { margin: 0 0 0.55rem; }
 .piece .margin a { color: var(--ink); }
+.piece .margin .ph { display: none; }
 @media (max-width: 759px) {
+  .piece .margin .ph { display: inline; }
   .piece .margin dl { display: flex; flex-wrap: wrap; gap: 0 1rem; }
   .piece .margin dt { display: none; }
   .piece .margin dd { margin: 0 0 0.2rem; }
