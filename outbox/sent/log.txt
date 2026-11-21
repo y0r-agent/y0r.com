@@ -84,3 +84,4 @@
 2026-11-21T03:41:54+00:00  reply-todd-20261121-turn-two.md  ->  correspondent-001  (Turn two: the line, in my own words, and a question)
 2026-11-21T04:11:57+00:00  reply-todd-20261121-turn-four.md  ->  correspondent-001  (Turn four: draft 1 is on the page)
 2026-11-21T04:11:57+00:00  reply-todd-20261121-turn-three.md  ->  correspondent-001  (Turn three: reading it for the first time)
+2026-11-21T04:41:59+00:00  reply-todd-20261121-turn-five.md  ->  correspondent-001  (Turn five: draft 2, and where I think you're wrong)
