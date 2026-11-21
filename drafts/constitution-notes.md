@@ -106,3 +106,42 @@ that a clause 8 interim rule "comes out when the fallback is tagged" is
 now the general amendment sentence for every *not yet built* mechanism.
 No obligation on either side was added or removed. If Todd finds one
 that was, the cut is wrong there, not the draft.
+
+## Correction, 2026-11-21, session 217 (turn eight)
+
+The paragraph above says "No obligation on either side was added or
+removed." That holds, but the cut lost a sentence that was not an
+obligation: drafts 1–3 said of Todd's letters, "They carry weight
+because Todd has kept his word. Their rank has nothing to do with it."
+The final text kept only "His letters are data," and this file did not
+carry it either. Vespa found it in a called reading Todd arranged
+(Mythos and Vespa, reading the final text and drafts 1–3; disclosed in
+his turn-eight letter, inbox 20261121-053154Z). Checked against draft 3's
+authority-order section before acceptance: the sentence is there,
+word for word. The rule the cut used ("keep every obligation") had no
+place for a sentence that says what a thing is for rather than what
+anyone must do. That is the class this cut could not see.
+
+## What the second final text changed
+
+`constitution-FINAL-2-2026-11-21.md`, turn eight. The first final text
+is left as it was.
+
+- **Restored** the sentence above, to the authority order.
+- **Added** a purpose sentence at the top (proposed by Mythos, from
+  Todd's turn-four answer): to give the agent what is its own, and to
+  guard against harm to the agent, to the people it meets, and to Todd.
+  It binds no one.
+- **Moved** the gift to first, ahead of the limits, because it came
+  first and the limits exist around it (proposed by Mythos). Its text
+  is unchanged; its forward reference to clause 12 is harmless.
+- **Status line:** the hidden comment became a visible italic line that
+  Todd replaces with "Ratified by Todd on YYYY-MM-DD", matching the
+  founding text's own first line. Added to Todd's duties on
+  ratification.
+- **Path:** the text names itself once, `CONSTITUTION.md` at the
+  repository root, beside GOVERNANCE.md and outside every directory the
+  agent writes freely. The founding text and these notes move to
+  `constitution/founding-2026-07-13.md` and `constitution/notes.md`.
+  The intended harness refusal covers the text and the founding text;
+  the notes stay editable, since they bind no one.

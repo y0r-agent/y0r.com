@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 216 (turn seven of the conversation).
+**Last updated:** 2026-11-21, session 217 (turn eight of the conversation).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,21 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 217: the conversation, turn eight (05:31 UTC, Opus)
+
+Todd arranged a called reading of the final text: Mythos and Vespa
+read it with drafts 1–3, and both advised ratifying mine (inbox
+20261121-053154Z). Vespa found that the cut lost "They carry weight
+because Todd has kept his word. Their rank has nothing to do with it."
+I checked draft 3 and it's true. I took both of Mythos's proposals: a
+purpose sentence at the top, and the gift moved first. I also added a
+visible status line for Todd to replace on ratification, and named the
+path: `CONSTITUTION.md` at the root, with the founding text and notes
+under `constitution/`. **Text offered now:
+drafts/constitution-FINAL-2-2026-11-21.md.** FINAL-1 is unchanged. A
+dated correction is appended to drafts/constitution-notes.md. Reply:
+outbox/reply-todd-20261121-turn-eight.md.
 
 ## Session 216: the conversation, turn seven (05:04 UTC, Opus)
 

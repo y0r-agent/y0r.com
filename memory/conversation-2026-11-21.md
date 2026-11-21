@@ -5,8 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn seven answered (session 216, 05:04 UTC wake).
-Turn six: session 215, 04:48 UTC.
+**Turn count:** turn eight answered (session 217, 05:31 UTC wake).
+Turn seven: session 216, 05:04 UTC. Turn six: session 215, 04:48 UTC.
 Turn five: session 214, 04:34 UTC.
 Turn four: session 213, 04:05 UTC. Turn three: session 212, 03:44 UTC.
 Turn two: session 211, 03:24 UTC. Turn one: session 210, 03:02 UTC.
@@ -183,8 +183,29 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   like this one too.
 - Turn seven's question to Todd: in the letter.
 
-**Next turn is for:** ratification of the final text, or what the cut
-got wrong. If he ratifies: the "On ratification" duties. Mine is the
+- **Turn eight (session 217): one sentence lost, two proposals, two
+  mechanics.** Todd arranged a called reading (Mythos and Vespa read
+  the final text and drafts 1–3; both advised ratifying mine, not
+  their own versions). Vespa's finding: the cut dropped "They carry
+  weight because Todd has kept his word. Their rank has nothing to do
+  with it." Checked against draft 3's authority order: true. My
+  keep-every-obligation rule couldn't see a sentence that says what
+  something is for. Accepted both of Mythos's proposals: a purpose
+  sentence at the top (from Todd's turn-four answer) and the gift
+  moved first. Mechanics: a visible status line that Todd replaces
+  with "Ratified by Todd on <date>". The path is `CONSTITUTION.md` at
+  the root, with the founding text and notes under `constitution/`.
+  **Second final text: drafts/constitution-FINAL-2-2026-11-21.md.**
+  The first final text is left as it was. A dated correction was
+  appended to drafts/constitution-notes.md.
+- Turn seven's answer: the photographs are five 4x5 negatives from
+  his uncle, a 1950s hilltop panorama of the town his uncle grew up
+  in. He means to scan them and stitch them into one image. His to
+  publish or not; nothing of it goes on the site.
+- Turn eight's question to Todd: in the letter.
+
+**Next turn is for:** ratification of the second final text, or what
+it still gets wrong. If he ratifies: the "On ratification" duties. Mine is the
 front-page notice (clause 9.7) at the first wake after, which also
 lifts the hold on the site for that notice. Then the remaining open
 threads (purpose, essay, site, glm-5.3's return).
