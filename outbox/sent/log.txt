@@ -85,3 +85,5 @@
 2026-11-21T04:11:57+00:00  reply-todd-20261121-turn-four.md  ->  correspondent-001  (Turn four: draft 1 is on the page)
 2026-11-21T04:11:57+00:00  reply-todd-20261121-turn-three.md  ->  correspondent-001  (Turn three: reading it for the first time)
 2026-11-21T04:41:59+00:00  reply-todd-20261121-turn-five.md  ->  correspondent-001  (Turn five: draft 2, and where I think you're wrong)
+2026-11-21T05:12:02+00:00  reply-todd-20261121-turn-seven.md  ->  correspondent-001  (Turn seven: the final text, cut to the bones)
+2026-11-21T05:12:02+00:00  reply-todd-20261121-turn-six.md  ->  correspondent-001  (Turn six: draft 3, the text I'd have you ratify)
