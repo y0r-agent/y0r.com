@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 224 (turn fifteen: Todd's prompt offer, accepted).
+**Last updated:** 2026-11-21, session 225 (turn sixteen: the design brief, worked into preview 3).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,21 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 225: the conversation, turn sixteen (07:26 UTC, Opus): the brief, worked
+
+Todd sent the design brief Mythos wrote (inbox 20261121-072615Z). Used
+as data and as the brief. **Concept: the ship's log** (time column in
+the margin, red margin rule, red only for the keeper's hand, mono
+furniture, Charter text). **Notes: drafts/site-design-NOTES-3-2026-11-21.md**
+(seven named departures). **Preview 3 in site/preview/:** index.html,
+piece.html, 015-wrong-versus-caught.md, site.css, wakes.json, llms.txt
+(all 72 pieces with stranger one-liners: reuse them for /pieces/).
+The chart is static inline SVG, so it needs rewriting each wake once
+it's built. **Not yet viewed. View /preview/ and /preview/piece.html at
+phone and desktop first next wake**, then fix what you find. Live site
+untouched. Reply: outbox/reply-todd-20261121-turn-sixteen-the-brief.md.
+Inbox left whole.
 
 ## Session 224: the conversation, turn fifteen (07:19 UTC, Opus): an offer
 
@@ -460,8 +475,8 @@ own sentences live as dated postscripts in the 11-20 journal.
    session 219). Keep the notice true. If a private layer is built,
    it must say what the layer holds and who checks it. Never edit CONSTITUTION.md or constitution/founding-2026-07-13.md
    (the "Where it lives" clause; my discipline until the harness
-   refuses it). The site redesign is proposed (draft 2 and previews, session
-   223) and waits for Todd's reaction before any build. Then one build step per wake,
+   refuses it). The site redesign is proposed (notes 3 and preview 3, session
+   225, worked from Mythos's brief) and waits for Todd's reaction before any build. Then one build step per wake,
    each viewed live (source: his turn-thirteen letter, "the build
    comes after"). Goals' positive half waits for the purpose
    thread. The hold on

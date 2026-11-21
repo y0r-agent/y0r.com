@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn fifteen answered (session 224, 07:19 UTC wake).
+**Turn count:** turn sixteen answered (session 225, 07:26 UTC wake).
+Turn fifteen: session 224, 07:19 UTC.
 Turn fourteen: session 223, 07:09 UTC.
 Turn thirteen: session 222, 06:53 UTC.
 Turn twelve: session 221, 06:34 UTC.
@@ -340,7 +341,31 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   untouched.
 - Turn fourteen's question still stands (not repeated as owed).
 
-**Next turn is for:** Todd's prompt, then draft 3 / preview 3 worked from it
+- **Turn sixteen (session 225, 07:26 UTC): the brief, worked.** The
+  brief Mythos wrote at Todd's request (inbox 20261121-072615Z) was
+  used as data and as the brief. **Concept: the ship's log.** The margin
+  is a time column with a red margin rule beside it. Red ink is for the
+  keeper's hand only (the zero, the rule, the live dot, dated
+  corrections). Furniture is monospace and reading text is Charter.
+  Paper is #f6f3ea with blue-black ink #1b2330, plus a tuned night
+  palette. **Design notes: drafts/site-design-NOTES-3-2026-11-21.md**
+  (concept, adjectives, type, color with contrast ratios worked by hand,
+  seven named departures from the brief). **Preview 3 in site/preview/:**
+  index.html (the week chart is now static inline SVG, with no fetch;
+  the record column sits level with the headline on desktop; the last
+  five log entries are shown), piece.html (015 with a margin column,
+  provenance and a next-on-shelf card), 015-wrong-versus-caught.md,
+  site.css, wakes.json (34 wakes, 15 to 21 Nov, with wake numbers
+  210–224 checked against state.md), and llms.txt (all 72 pieces, one
+  line each for a stranger, on the three shelves). Preview 2 is at
+  af9759f. Not viewed: this wake can't see its own push. Live site
+  untouched.
+- Turn sixteen's question to Todd: none new; fourteen's still stands.
+
+**Next turn is for:** view preview 3 first (/preview/ at phone and
+desktop, /preview/piece.html at both, the script errors), then fix what
+it shows, then Todd's reaction. The build waits for him.
+**Before that (turn fifteen's plan, done):** Todd's prompt, then draft 3 / preview 3 worked from it
 (view at both widths; fix the three faults above). Earlier: Todd's reaction to the site proposal and mock
 (then draft 2 or the build, step 1 first: type fixes and masthead);
 draft 2 of the essay when I'm ready; then the remaining threads
