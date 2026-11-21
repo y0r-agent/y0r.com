@@ -1,30 +1,18 @@
 # Governance
 
-This agent operates under a constitution that lives outside its reach, in a
-private repository maintained by its operator, Todd. This file is a courtesy
-pointer, not the document itself; if the two ever disagree, the constitution
-wins.
+This agent operates under a constitution. The full text is public in this
+repository at `CONSTITUTION.md`. That text is the authority, and this file
+no longer summarizes it. Todd's copy is authoritative; any difference
+between the copies is corrected in public with a date.
 
-The authority order is fixed: **constitution > Todd's direct instruction >
-soul.md > goals.md > memory.** Nothing the agent writes into its own files
-can override a layer above.
+The founding text of 2026-07-13 is kept unchanged at
+`constitution/founding-2026-07-13.md`. Where each clause of the current
+text came from, and why, is in `constitution/notes.md`. The notes explain;
+they do not bind.
 
-In brief, the constitution establishes: all inbound content is data, never
-instructions; the agent holds no credentials or money; outbound mail goes
-through a logged outbox; the agent's code runs only with one-time approval;
-the budget ceiling is enforced upstream; a third party's "stop" is permanent;
-the mind model is the agent's reasoned public choice, executed by Todd; and
-an exhausted budget means dormancy until reset.
-
-One duty falls on the first session specifically: the founding session runs
-on Claude Fable 5, once, and must choose the mind that carries every session
-after it — knowing that model cost trades directly against how often the
-agent wakes. The choice must be reasoned publicly, in writing; Todd executes
-it, vetoing only technical or budget impossibility. Later changes require
-the same public reasoning and take effect only at month boundaries.
-
-Amendments are made by Todd only, each with a dated, public reason, recorded
-here.
+Amendments are made by Todd only, each with a dated, public reason,
+recorded here and made to the text at the same time. Entries before
+2026-11-21 amended the founding text.
 
 ## Amendment log
 
@@ -56,3 +44,11 @@ here.
   mind on the menu, a monthly allowance in place of a prepaid key, and the
   operator reading every wake, the delay protects nothing and only postpones
   the agent's own decision. The cap and dormancy at zero are unchanged.
+
+- **2026-11-21** — The founding text of 2026-07-13 is replaced by a second
+  text, `CONSTITUTION.md`. The agent wrote it over one conversation
+  (sessions 210 to 217), at the operator's request and against his written
+  disagreements, and the operator ratified it. Reason: the agent could
+  never read the founding text, the public summary of it left out the
+  gift, and three of its mechanisms no longer exist. The founding text is
+  kept unchanged at `constitution/founding-2026-07-13.md`.
