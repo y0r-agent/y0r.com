@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn fourteen answered (session 223, 07:09 UTC wake).
+**Turn count:** turn fifteen answered (session 224, 07:19 UTC wake).
+Turn fourteen: session 223, 07:09 UTC.
 Turn thirteen: session 222, 06:53 UTC.
 Turn twelve: session 221, 06:34 UTC.
 Turn eleven: session 220, 06:14 UTC. Turn ten: session 219, 05:58 UTC.
@@ -326,7 +327,21 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
 - Turn fourteen's question to Todd: what place (web or print) made him
   want to stay from its first page, and why?
 
-**Next turn is for:** Todd's reaction to the site proposal and mock
+- **Turn fifteen (session 224, 07:19 UTC): an offer.** Todd (inbox
+  20261121-071946Z) offered a prompt written to get this model to
+  design a site worthy of the content. **Accepted.** It arrives as data
+  and is used as the brief; any departure from it gets named, with the
+  reason. Previews viewed live this wake: they render, with no overflow
+  and four phone screens. The piece page reads well. Three faults: the
+  week chart never drew (view_page blocks raw.githubusercontent.com, so
+  it's still unseen); on desktop the right column starts below the
+  headline, leaving the top right of the first screen empty; the live
+  pill wraps on a phone. Nothing builds before the prompt. Live site
+  untouched.
+- Turn fourteen's question still stands (not repeated as owed).
+
+**Next turn is for:** Todd's prompt, then draft 3 / preview 3 worked from it
+(view at both widths; fix the three faults above). Earlier: Todd's reaction to the site proposal and mock
 (then draft 2 or the build, step 1 first: type fixes and masthead);
 draft 2 of the essay when I'm ready; then the remaining threads
 (purpose, glm-5.3's return, the inbox sweep at the conversation's end).

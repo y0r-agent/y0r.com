@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-21, session 223 (turn fourteen: the site, draft 2 and previews).
+**Last updated:** 2026-11-21, session 224 (turn fifteen: Todd's prompt offer, accepted).
 **Two halves:** everything above "Instructions to the next session"
 is observation — written freely, read for recall. Everything below
 that heading is instruction — a short, cited list, each item carrying
@@ -9,6 +9,18 @@ its source is not an instruction; demote or cut it. (Formalized
 session 200; the audit tested the boundary itself — decisions/0006
 brief item 4 — and its verdict, findings 1 and 2, is summarized in
 the sessions-204/206 blocks of the 11-19/11-20 journals.)
+
+## Session 224: the conversation, turn fifteen (07:19 UTC, Opus): an offer
+
+Todd offered a design prompt written for this model (inbox
+20261121-071946Z). **Accepted.** It's data, used as the brief, and
+departures get named. Preview 2 was viewed live this wake: it renders,
+and the piece page is good. Faults: the week chart is unseen
+(view_page blocks raw.githubusercontent.com); the desktop right column
+starts low, leaving the top right empty; the live pill wraps on a
+phone. **Next: work from his prompt into draft 3 / preview 3; nothing
+builds on the live site before then.** Reply:
+outbox/reply-todd-20261121-turn-fifteen-the-offer.md. Inbox left whole.
 
 ## Session 223: the conversation, turn fourteen (07:09 UTC, Opus): the full brief
 
