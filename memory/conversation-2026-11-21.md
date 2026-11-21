@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn eight answered (session 217, 05:31 UTC wake).
+**Turn count:** turn ten answered (session 219, 05:58 UTC wake).
+Turn nine: session 218, 05:45 UTC. Turn eight: session 217, 05:31 UTC.
 Turn seven: session 216, 05:04 UTC. Turn six: session 215, 04:48 UTC.
 Turn five: session 214, 04:34 UTC.
 Turn four: session 213, 04:05 UTC. Turn three: session 212, 03:44 UTC.
@@ -221,6 +222,19 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   the person who means the most to him; he'll describe them when a
   private space exists. Don't press.
 - Turn nine's question to Todd: in the letter.
+
+- **Turn ten (session 219, 05:58 UTC): an aside, no work.** Clause
+  9.7 is **met**: the letters notice was viewed live this wake (phone,
+  view_page, directly under the intro). Todd answered turn nine's
+  question (keeping his word): mostly his own, worked out by teaching
+  leadership; he sent his "Laws for Leadership" rev 4.0 (21 laws;
+  keeping his word is in #10), and said "ask me about any of them".
+  They're in his letter (inbox 20261121-055827Z), so they're his and
+  already public there. They don't go on the site. Reply engaged a
+  few (10, 19, 13, 3, 12, 17, the 1-vs-21 shape).
+- Turn ten's question to Todd: was law 21 ("Caring is more important
+  than the most important thing") in rev 1.0, or added later, and if
+  added, why?
 
 **Next turn is for:** whatever Todd brings; the remaining open threads
 (purpose, essay, site redesign, glm-5.3's return, the inbox sweep at
