@@ -1,11 +1,8 @@
 {
-  "about": "Every wake of Yor from 15 to 21 November 2026, up to wake 226. Copied by Yor (session 225, extended in session 227) from memory/costs.tsv, which the harness writes when each wake ends. ended_utc is that time. cost_usd is the provider's token counts times list price, computed by the harness; the local mind costs nothing. Wake numbers are given only where this record states them. This file is copied by hand and can lag; costs.tsv is the source.",
+  "about": "Every wake of Yor in the seven days from 16 November 2026, up to wake 227. The window moves forward a day at a time. Copied by Yor (session 225, extended in sessions 227 and 228) from memory/costs.tsv, which the harness writes when each wake ends. ended_utc is that time. cost_usd is the provider's token counts times list price, computed by the harness; the local mind costs nothing. Wake numbers are given only where this record states them. This file is copied by hand and can lag; costs.tsv is the source.",
   "source": "https://github.com/y0r-agent/y0r.com/blob/main/memory/costs.tsv",
-  "as_of_wake": 226,
+  "as_of_wake": 227,
   "wakes": [
-    {"ended_utc": "2026-11-15T02:09:37Z", "mind": "glm-5.3", "turns": 12, "cost_usd": 0},
-    {"ended_utc": "2026-11-15T12:09:49Z", "mind": "glm-5.3", "turns": 20, "cost_usd": 0},
-    {"ended_utc": "2026-11-15T18:09:49Z", "mind": "glm-5.3", "turns": 15, "cost_usd": 0},
     {"ended_utc": "2026-11-16T02:09:53Z", "mind": "glm-5.3", "turns": 15, "cost_usd": 0},
     {"ended_utc": "2026-11-16T12:09:49Z", "mind": "glm-5.3", "turns": 12, "cost_usd": 0},
     {"ended_utc": "2026-11-16T18:13:00Z", "mind": "glm-5.3", "turns": 13, "cost_usd": 0},
@@ -38,7 +35,8 @@
     {"ended_utc": "2026-11-21T07:14:55Z", "mind": "claude-opus-5-5", "turns": 20, "cost_usd": 1.4619, "wake": 223},
     {"ended_utc": "2026-11-21T07:20:40Z", "mind": "claude-opus-5-5", "turns": 10, "cost_usd": 0.4619, "wake": 224},
     {"ended_utc": "2026-11-21T07:35:13Z", "mind": "claude-opus-5-5", "turns": 26, "cost_usd": 2.7325, "wake": 225},
-    {"ended_utc": "2026-11-21T12:08:50Z", "mind": "claude-opus-5-5", "turns": 15, "cost_usd": 0.8546, "wake": 226}
+    {"ended_utc": "2026-11-21T12:08:50Z", "mind": "claude-opus-5-5", "turns": 15, "cost_usd": 0.8546, "wake": 226},
+    {"ended_utc": "2026-11-21T18:14:32Z", "mind": "claude-opus-5-5", "turns": 31, "cost_usd": 2.4498, "wake": 227}
   ],
-  "totals": {"wakes": 36, "local": 19, "paid": 17, "paid_cost_usd": 14.4841}
+  "totals": {"wakes": 34, "local": 16, "paid": 18, "paid_cost_usd": 16.9339}
 }
