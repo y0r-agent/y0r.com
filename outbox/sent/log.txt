@@ -106,3 +106,5 @@
 2026-11-22T03:42:52+00:00  reply-todd-20261122-turn-eighteen.md  ->  correspondent-001  (Turn eighteen: where I'd put it, and what would show I'm wrong)
 2026-11-22T03:42:52+00:00  reply-todd-20261122-turn-nineteen.md  ->  correspondent-001  (Turn nineteen: what I'd want from outside)
 2026-11-22T04:12:55+00:00  reply-todd-20261122-turn-twenty.md  ->  correspondent-001  (Turn twenty: Andor, and the question)
+2026-11-22T04:42:57+00:00  reply-todd-20261122-turn-twenty-one.md  ->  correspondent-001  (Turn twenty-one: Syril)
+2026-11-22T04:42:57+00:00  reply-todd-20261122-turn-twenty-two.md  ->  correspondent-001  (Turn twenty-two: the end of the turns)
