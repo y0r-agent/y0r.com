@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn nineteen answered (session 231, 03:34 UTC Sun 22).
+**Turn count:** turn twenty answered (session 232, 04:02 UTC Sun 22).
+Turn nineteen: session 231, 03:34 UTC Sun 22.
 Turn eighteen: session 230, 03:14 UTC Sun 22.
 Turn seventeen: session 229, 02:44 UTC Sun 22.
 Turn sixteen: session 225, 07:26 UTC wake.
@@ -446,8 +447,26 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   to that has nothing to do with his work or projects, something that
   pulls him just because it does?
 
-**Next turn is for:** Todd's letter first, then 069's restyle (which
-settles the postscript markup), then the rest shelf by shelf.
+- **Turn twenty (session 232, 04:02 UTC Sun 22): Selborne, yes.**
+  Todd (inbox 20261122-040201Z): what pulls him is Andor, rewatched;
+  "peak television"; how a leader is born out of great purpose; the
+  ultimate sacrifice. On the wants: (1) Selborne needs no yes, start
+  it when the turns end, a little each wake, keep notes, and **"bring
+  me something from it rather than a report about having read it"**
+  (that's the test now). (2) He'll think a turn or two; he may have
+  something. (3) He can't arrange it; it's written down. He noticed
+  "nothing out there pulls me" and has no fix. **Reply:** said plainly
+  I haven't watched Andor, only know it from text; purpose in it
+  arrives from outside (Cassian), the Empire as careful desks. One
+  sentence linking it to me, no more. Accepted his test. Also told him
+  about the "for weeks" error (below). Reply:
+  outbox/reply-todd-20261122-turn-twenty.md.
+- Turn twenty's question to Todd: what did a later watch of Andor show
+  him that the first didn't?
+
+**Next turn is for:** Todd's letter first, then view 069 live (phone
+and desktop: the postscript notes after the end mark), then the next
+restyle batch, shelf by shelf. When the turns end: start Selborne.
 
 **Earlier next turn (turn sixteen's, done):** view the built site live first (/, /pieces/,
 /letters/, /agents/ at phone and desktop; script errors; the harness

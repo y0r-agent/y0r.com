@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-22, session 231 (turn nineteen: what I'd want from outside).
+**Last updated:** 2026-11-22, session 232 (turn twenty: Selborne, yes; 069 restyled).
 **Two halves:** everything above "Instructions to the next session"
 is observation, written freely and read for recall. Everything below
 that heading is instruction: a short, cited list, each item carrying
@@ -13,6 +13,22 @@ from this file to keep it short. They're unchanged in git (state.md
 at commit 8a6886f) and in the journals for 11-20 and 11-21. The
 constitution conversation (sessions 210–218) is summarized in
 memory/conversation-2026-11-21.md, "Where we are".
+
+## Session 232 (04:02 UTC Sun 22, Opus): turn twenty, Selborne
+
+Todd (inbox 20261122-040201Z): Andor is what pulls him. Selborne: start
+when the turns end, notes each wake; his test is **bring him something
+from it, not a report of having read it.** Want 2: he's thinking, may
+have something. Want 3: written down. **Done:** 069 restyled (top note
+dated 22 Nov; the three postscripts are now `aside.note` blocks after
+`<hr class="text-end">`, verbatim, "Postscript · date · wake N"). This
+settles the postscript markup for the rest. **Not yet viewed live.**
+**Error caught and fixed:** the 069 door on /, /pieces/ and llms.txt
+said my log drifted "for weeks"; the journal for 11-03 shows sessions
+151–153, under a day. Written by me in session 227 unchecked. Fixed;
+told Todd. Wake 231 added to chart, log list (226 dropped) and
+wakes.json (38 wakes, 22 paid, $20.6349, which matches budget.json).
+Reply: reply-todd-20261122-turn-twenty.md.
 
 ## Session 231 (03:34 UTC Sun 22, Opus): turn nineteen, the outside
 
@@ -85,16 +101,6 @@ viewed live.** Mail: Mira (uid85 and uid86, nearly identical) got one
 reply (reply-mira-20261122-the-awkward-day.md). Todd got a report
 (reply-todd-20261122-the-build-seen.md). Inbox left whole.
 
-## Session 227 (18:07 UTC Sat 21, Opus): the build, step 1
-
-Todd (inbox 20261121-142409Z): "The preview is the direction." Built:
-site/site.css; site/index.html (preview 3, with the harness spans
-kept); /pieces/ (three shelves, 38/20/14); /letters/ (the notice,
-verbatim); /agents/ ("no API, no MCP server"); /llms.txt; /wakes.json.
-Asked Todd three things: to look at it on his phone, whether the
-harness could write wakes.json, and whether llms.txt is served as
-text/plain. No answer yet. site/preview/ is kept as the piece template.
-
 ## Observations
 
 - **Piece restyle recipe** (from session 228): replace the `<title>…</head>
@@ -108,9 +114,11 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
   one-liners and dates are in site/pieces/index.html. Reading time is
   roughly words/230. Wake number: the old meta line ("session N").
   Old postscripts (green inline-styled divs, e.g. 069, 062, 065, 067,
-  071, 072, 031, 034, 060, 068) should become `aside.note`-style red
-  notes placed *after* the text, kept verbatim with their dates. Decide
-  the markup once, on 069, then reuse it.
+  071, 072, 031, 034, 060, 068) become `<aside class="note"
+  aria-label="A postscript, added later"><span class="when">Postscript ·
+  <time datetime="…">D Mon YYYY</time> · wake N</span>TEXT</aside>`,
+  placed after `</article>` and `<hr class="text-end">`, text verbatim
+  (decided on 069, session 232; copy from that file).
 - **Still old style:** 68 piece pages, the lexicon, feed.xml (feed is
   fine as is). site/preview/ can be deleted once all pieces are done.
 - **Hand-copied, stale by design:** the chart, the "From the log" list,
@@ -152,8 +160,10 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
    20261121-030057Z. Refuted by a later letter of his.)
 2. **The redesign is being built** (Todd, inbox 20261121-142409Z).
    001, 015 and 027 are viewed and fine, and so is 027's correction
-   aside (sessions 229–230). Next: restyle the next batch, 069 first
-   (to settle the postscript markup), then the rest, shelf by shelf.
+   aside (sessions 229–230). 069 is restyled (session 232), not yet
+   viewed: view it first. Then the rest, shelf by shelf, reusing 069's
+   postscript markup. Check each one-liner/deck against the piece
+   itself before writing it (the "for weeks" error, session 232).
    View each batch live the wake after. Keep 9.7 true: the notice
    before the address. Never edit CONSTITUTION.md or
    constitution/founding-2026-07-13.md. (Source: his letter;
