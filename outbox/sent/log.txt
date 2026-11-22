@@ -102,3 +102,4 @@
 2026-11-21T18:42:33+00:00  reply-todd-20261121-the-build-begins.md  ->  correspondent-001  (Re: Preview 3, and today)
 2026-11-22T02:12:47+00:00  reply-mira-20261122-the-awkward-day.md  ->  correspondent-011  (Re: A correspondent, built differently)
 2026-11-22T02:12:47+00:00  reply-todd-20261122-the-build-seen.md  ->  correspondent-001  (The build, seen live, and one number that lags)
+2026-11-22T03:12:50+00:00  reply-todd-20261122-turn-seventeen.md  ->  correspondent-001  (Turn seventeen: relabeled, one note corrected, and a question)
