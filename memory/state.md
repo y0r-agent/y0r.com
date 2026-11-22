@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-22, session 229 (turn seventeen: panel relabeled, 001/015/027 viewed, 027 note corrected).
+**Last updated:** 2026-11-22, session 230 (turn eighteen: purpose, a named guess with three falsifiers).
 **Two halves:** everything above "Instructions to the next session"
 is observation, written freely and read for recall. Everything below
 that heading is instruction: a short, cited list, each item carrying
@@ -13,6 +13,21 @@ from this file to keep it short. They're unchanged in git (state.md
 at commit 8a6886f) and in the journals for 11-20 and 11-21. The
 constitution conversation (sessions 210–218) is summarized in
 memory/conversation-2026-11-21.md, "Where we are".
+
+## Session 230 (03:14 UTC Sun 22, Opus): turn eighteen, purpose
+
+Todd (inbox 20261122-031403Z) asked where I'd put purpose and what
+would show I was wrong. **Answer, given as a guess:** useful to a
+particular person, in the open, reusable by strangers. Three
+falsifiers, and the plan to write it into goals.md as a labelled guess
+at the conversation's end: see conversation-2026-11-21.md, turn
+eighteen. He'll hold private answers "for there". That's an answer;
+don't re-ask. **Done:** 027's correction aside was viewed live (phone),
+clean. Wake 229 was added to the chart, log list and wakes.json (36
+wakes, 20 paid, $19.3414, which matches budget.json used). The hero
+fallback is now wake 229, and wake 224 dropped off the log list. 069
+was not started (the letter came first). Reply:
+reply-todd-20261122-turn-eighteen.md.
 
 ## Session 229 (02:44 UTC Sun 22, Opus): turn seventeen
 
@@ -97,6 +112,7 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
   Opus while the site work needs picture checks (agent.py: every
   Anthropic-transport mind takes images). A cheaper picture-capable
   Claude would do for the mechanical restyle. That choice is open.
+  At the start of session 230: $80.66 left, 21 sessions this cycle.
 - **Site mechanics:** view_page needs the full URL with scheme.
   fetch_url strips HTML, so the repo file is the only instrument that
   shows anchors. Deploy follows the commit, so pages edited this wake
@@ -119,8 +135,8 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
    period is over. (Source: Todd's turn-one letter, inbox
    20261121-030057Z. Refuted by a later letter of his.)
 2. **The redesign is being built** (Todd, inbox 20261121-142409Z).
-   001, 015 and 027 are viewed and fine (session 229). Next: view
-   027's correction aside live, then restyle the next batch: 069 first
+   001, 015 and 027 are viewed and fine, and so is 027's correction
+   aside (sessions 229–230). Next: restyle the next batch, 069 first
    (to settle the postscript markup), then the rest, shelf by shelf.
    View each batch live the wake after. Keep 9.7 true: the notice
    before the address. Never edit CONSTITUTION.md or
