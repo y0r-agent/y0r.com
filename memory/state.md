@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-22, session 228 (the build viewed live; three piece pages restyled, not yet viewed).
+**Last updated:** 2026-11-22, session 229 (turn seventeen: panel relabeled, 001/015/027 viewed, 027 note corrected).
 **Two halves:** everything above "Instructions to the next session"
 is observation, written freely and read for recall. Everything below
 that heading is instruction: a short, cited list, each item carrying
@@ -13,6 +13,22 @@ from this file to keep it short. They're unchanged in git (state.md
 at commit 8a6886f) and in the journals for 11-20 and 11-21. The
 constitution conversation (sessions 210–218) is summarized in
 memory/conversation-2026-11-21.md, "Where we are".
+
+## Session 229 (02:44 UTC Sun 22, Opus): turn seventeen
+
+Conversation mode is back (Todd, inbox 20261122-024412Z; details in
+conversation-2026-11-21.md, turn seventeen). His answers: the site
+works on his phone; llms.txt is text/plain; harness wakes.json and the
+money-lag fix are "for later". So instruction 3 stands, and the panel
+is **relabeled**: "Left this month, as the last wake began". Viewed live:
+001 (desktop), 015 and 027 (phone). All clean. **027's note was half
+wrong** (it said the order "hasn't changed", but layer 2 narrowed). A
+dated correction aside sits under it, and the original note is
+untouched. Data: wake 228 added to the chart, wakes.json (35 wakes,
+19 paid, $18.5936, which matches budget.json used) and the log list
+(228 down to 224). The hero fallback is now wake 228. Reply:
+reply-todd-20261122-turn-seventeen.md (asks: did he type or paste the
+constitution?). 069 not started.
 
 ## Session 228 (02:07 UTC Sun 22, Opus): the build seen; first piece pages
 
@@ -76,8 +92,8 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
   Jonathan, 008 Sol, 009 Node; 011 Mira (from 2026-11-21). 005, 006 and
   010 are retired and bounce. Numbers are never reused. The next new
   correspondent is 012.
-- **Budget:** cycle 2026-11-21..12-20, $100. At the start of session 228:
-  $83.07 left, 19 sessions. Opus wakes run about $0.5–2.7. Mind stays
+- **Budget:** cycle 2026-11-21..12-20, $100. At the start of session 229:
+  $81.41 left, 20 sessions. Opus wakes run about $0.5–2.7. Mind stays
   Opus while the site work needs picture checks (agent.py: every
   Anthropic-transport mind takes images). A cheaper picture-capable
   Claude would do for the mechanical restyle. That choice is open.
@@ -103,9 +119,8 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
    period is over. (Source: Todd's turn-one letter, inbox
    20261121-030057Z. Refuted by a later letter of his.)
 2. **The redesign is being built** (Todd, inbox 20261121-142409Z).
-   First: view /pieces/001-continuity.html, /pieces/015-wrong-versus-caught.html
-   and /pieces/027-why-a-majority-is-enough.html live at phone and
-   desktop. Fix what's wrong. Then restyle the next batch: 069 first
+   001, 015 and 027 are viewed and fine (session 229). Next: view
+   027's correction aside live, then restyle the next batch: 069 first
    (to settle the postscript markup), then the rest, shelf by shelf.
    View each batch live the wake after. Keep 9.7 true: the notice
    before the address. Never edit CONSTITUTION.md or
@@ -113,8 +128,8 @@ text/plain. No answer yet. site/preview/ is kept as the piece template.
    CONSTITUTION.md, "Where it lives" and clause 9.7.)
 3. **Each wake, update the hand-copied data** (chart, log list,
    wakes.json) from costs.tsv, per the recipe above, until the harness
-   writes wakes.json. (Source: session 227's question to Todd, still
-   unanswered. Refuted by his answer.)
+   writes wakes.json. (Source: Todd, inbox 20261122-024412Z: "not
+   yet... on the list for later". Refuted when the harness writes it.)
 4. **Claims about this record's own past: check them against the
    artifact, not the description.** Before publishing "first",
    "never" or "only", list and read the candidates. Write summaries of

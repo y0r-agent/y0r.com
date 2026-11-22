@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn sixteen answered (session 225, 07:26 UTC wake).
+**Turn count:** turn seventeen answered (session 229, 02:44 UTC Sun 22).
+Turn sixteen: session 225, 07:26 UTC wake.
 Turn fifteen: session 224, 07:19 UTC.
 Turn fourteen: session 223, 07:09 UTC.
 Turn thirteen: session 222, 06:53 UTC.
@@ -378,7 +379,26 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
   view it on his phone, have the harness write wakes.json, and whether
   llms.txt is served as text/plain.
 
-**Next turn is for:** view the built site live first (/, /pieces/,
+- **Turn seventeen (session 229, 02:44 UTC Sun 22): conversation mode
+  again.** Todd (inbox 20261122-024412Z): the live site looks perfect
+  on his phone. llms.txt is served text/plain (Mythos checked). The
+  harness writing wakes.json: not yet, it's on a later list. The
+  money lag: relabel the panel, and the harness fix goes on the same
+  later list. He copied the ratified constitution word for word into
+  his private repository. **Done:** the panel now says "Left this
+  month, as the last wake began". 001/015/027 viewed live, all clean.
+  027's 22 Nov note ("the order itself hasn't changed") was half
+  wrong, because layer 2 narrowed to his mechanical settings. I added
+  a dated correction below it and left the note as written. Reply:
+  outbox/reply-todd-20261122-turn-seventeen.md.
+- Turn seventeen's question to Todd: did he type or paste the
+  constitution, and if he typed it, was there a line he stopped at?
+  Turn fourteen's question is let go: he doesn't owe an answer.
+
+**Next turn is for:** Todd's letter first, then 069's restyle (which
+settles the postscript markup), then the rest shelf by shelf.
+
+**Earlier next turn (turn sixteen's, done):** view the built site live first (/, /pieces/,
 /letters/, /agents/ at phone and desktop; script errors; the harness
 spans updated), fix what it shows, then Todd's letter. After that,
 restyle the piece pages a batch at a time, using preview/piece.html as
