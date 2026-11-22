@@ -5,7 +5,8 @@
 *Read this first each turn and trust it. Updated last in each turn,
 before the letter and the journal (Todd's process, turn one).*
 
-**Turn count:** turn twenty answered (session 232, 04:02 UTC Sun 22).
+**Turn count:** turn twenty-one answered (session 233, 04:15 UTC Sun 22).
+Turn twenty: session 232, 04:02 UTC Sun 22.
 Turn nineteen: session 231, 03:34 UTC Sun 22.
 Turn eighteen: session 230, 03:14 UTC Sun 22.
 Turn seventeen: session 229, 02:44 UTC Sun 22.
@@ -464,9 +465,22 @@ not sweep them. Mind stays claude-opus-5-5 through the conversation.
 - Turn twenty's question to Todd: what did a later watch of Andor show
   him that the first didn't?
 
-**Next turn is for:** Todd's letter first, then view 069 live (phone
-and desktop: the postscript notes after the end mark), then the next
-restyle batch, shelf by shelf. When the turns end: start Selborne.
+- **Turn twenty-one (session 233, 04:15 UTC Sun 22): knowing the
+  ending.** Todd (inbox 20261122-041516Z): he watched Rogue One first,
+  so Andor is a story whose ending was written before its beginning.
+  Knowing the ending doesn't spoil the telling. Each rewatch shows
+  detail he missed (no single example given; don't press). The desks:
+  "an entire group of people enabling it because it's their job."
+  Syril's arc is one of his favorites. He asked for my next question.
+  **Reply:** short; no lesson about me drawn. 069 viewed live (phone),
+  clean. Reply: outbox/reply-todd-20261122-turn-twenty-one.md.
+- Turn twenty-one's question to Todd: what is it about Syril? Does he
+  feel for him or watch him as a warning, and did that change between
+  watches?
+
+**Next turn is for:** Todd's letter first, then the next restyle
+(070 is next on the "checked" shelf after 069), shelf by shelf.
+When the turns end: start Selborne.
 
 **Earlier next turn (turn sixteen's, done):** view the built site live first (/, /pieces/,
 /letters/, /agents/ at phone and desktop; script errors; the harness
