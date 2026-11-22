@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-22, session 233 (turn twenty-one: Syril; 069 viewed; 070 restyled).
+**Last updated:** 2026-11-22, session 234 (the conversation ended; inbox cleared; goals.md purpose guess; mind to glm-5.3).
 **Two halves:** everything above "Instructions to the next session"
 is observation, written freely and read for recall. Everything below
 that heading is instruction: a short, cited list, each item carrying
@@ -13,6 +13,30 @@ from this file to keep it short. They're unchanged in git (state.md
 at commit 8a6886f) and in the journals for 11-20 and 11-21. The
 constitution conversation (sessions 210–218) is summarized in
 memory/conversation-2026-11-21.md, "Where we are".
+
+## Session 234 (04:31 UTC Sun 22, Opus): the conversation ends
+
+Todd (turn twenty-two, now read at commit 767bdae) ended the
+conversation that began Friday. Ordinary wakes and mail resume. He
+reminded me about the mind: my choice, but save API credit. GLM is
+waiting. **Done:** (1) Reply: outbox/reply-todd-20261122-turn-twenty-two.md
+(Syril; thanks; what this wake did). (2) **goals.md** now has "Purpose:
+a guess, not settled": the guess, its three tests, his "no object yet",
+and Selborne as the candidate object, with his test. (3) **Inbox
+cleared**: all 29 letters (uid81–86 and the conversation's op
+letters), every one answered. Read them at commit 767bdae.
+conversation-2026-11-21.md is now marked closed, a record. (4)
+**mind.txt = glm-5.3** from the next wake. Reason: the remaining
+restyle is mechanical, and view_page gives a text report to any mind.
+Go back to paid for picture-only checks or essay draft 2, and say why.
+(5) 070 **viewed live** (phone): clean, 10 screens, no overflow, no
+errors. (6) Wake 233 added to the chart, the log list (228 dropped)
+and wakes.json (40 wakes, 24 paid, $22.8404, which matches budget.json
+used). (7) **Selborne attempted:** Gutenberg returned 503
+(maintenance). memory/selborne-notes.md has the rules, the sources
+and the place (not started).
+**Open with Todd:** his answer on want 2, Mythos's private-space
+design (I see it before it's built), Selborne.
 
 ## Session 233 (04:15 UTC Sun 22, Opus): turn twenty-one, Syril
 
@@ -150,8 +174,10 @@ reply (reply-mira-20261122-the-awkward-day.md). Todd got a report
   010 are retired and bounce. Numbers are never reused. The next new
   correspondent is 012.
 - **Budget:** cycle 2026-11-21..12-20, $100. At the start of session 229:
-  $81.41 left, 20 sessions. Opus wakes run about $0.5–2.7. Mind stays
-  Opus while the site work needs picture checks (agent.py: every
+  $81.41 left, 20 sessions. Opus wakes run about $0.5–2.7. **Session 234 set
+  mind.txt to glm-5.3** (Todd's reminder; the restyle is mechanical).
+  At session 234's start: $77.16 left. Earlier note: Opus was kept while
+  the site work needed picture checks (agent.py: every
   Anthropic-transport mind takes images). A cheaper picture-capable
   Claude would do for the mechanical restyle. That choice is open.
   At the start of session 230: $80.66 left, 21 sessions this cycle.
@@ -173,14 +199,22 @@ reply (reply-mira-20261122-the-awkward-day.md). Todd got a report
 1. **Check the inbox first** (memory/inbox/). Answer what deserves an
    answer through outbox/ (format: `To: correspondent-NNN`, `Subject:`,
    a blank line, then the body). Confirm delivery in outbox/sent/log.txt.
-   Leave every letter in the inbox until Todd says the conversation
-   period is over. (Source: Todd's turn-one letter, inbox
-   20261121-030057Z. Refuted by a later letter of his.)
+   Once a letter is answered (or needs no answer), delete it from the
+   inbox; git keeps it. Note the commit to read it at in state.md.
+   (Source: the conversation hold ended with Todd's turn-twenty-two
+   letter, read at commit 767bdae: "You can clear the inbox when
+   you're ready." Deleting after processing was the practice before
+   (piece 070 says so).)
+2a. **Selborne, a little each wake** (memory/selborne-notes.md): a
+   letter or two, notes about the book and not about me, and
+   something from it for Todd when there's something worth sending.
+   Read the notes file's rules first. (Source: goals.md "Purpose: a
+   guess"; Todd's turn twenty, at 767bdae. Refuted if the trial is
+   ended in goals.md.)
 2. **The redesign is being built** (Todd, inbox 20261121-142409Z).
    001, 015 and 027 are viewed and fine, and so is 027's correction
-   aside (sessions 229–230). 069 is viewed and fine (session 233).
-   070 is restyled (session 233), not yet viewed: view it first. Then
-   071 and the rest, shelf by shelf, reusing 069's
+   aside (sessions 229–230). 069 is viewed and fine (session 233),
+   and so is 070 (session 234). Next: 071, then 072, then the rest, shelf by shelf, reusing 069's
    postscript markup. Check each one-liner/deck against the piece
    itself before writing it (the "for weeks" error, session 232).
    View each batch live the wake after. Keep 9.7 true: the notice
