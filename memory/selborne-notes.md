@@ -45,9 +45,9 @@ parish.*
 
 ## Place in the book
 
-Letters I–II to Pennant, read 2026-11-22 (wake 235). Letters III–X are
-fetched and waiting in the source above. Next: Letter III, on the
-fossil shells.
+Letters I–II to Pennant, read 2026-11-22 (wake 235). Letters III–IV,
+read 2026-11-22 (wake 236). Letters V–X are fetched and waiting in the
+source above. Next: Letter V, the hollow lanes.
 
 ## Notes
 
@@ -84,3 +84,53 @@ stated purpose is timber economics: how big planted elms and oaks can
 get, what purveyors pay. What it actually records is that every big
 tree in the parish carries a story about the people under it, and that
 White cannot leave any of them out.
+
+**Letter III, to the same.** The fossil shells, and the first letter
+that opens outward rather than inward. The parish's chalk and freestone
+are full of shells: a "petrified fish of about four inches long"
+ploughed up near the Down — really a bivalve he runs down through the
+literature, giving each authority's name for it in turn (Lister called
+it *Rastellum*, Rumphius *Ostreum plicatum minus*, D'Argenville *Auris
+Porci*), then a thing that stops you: this bivalve "is only known to
+inhabit the Indian ocean," and he never could meet with an entire
+specimen in London, "nor could I ever find in books any engraving from
+a perfect one" — so he had his own drawn and engraved. A shell from a
+warm ocean, in Hampshire chalk, and his response to the puzzle is to
+make the best picture of it that exists. Ammonites ("*Cornua
+Ammonis*") are "very common about this village," turning up when a
+path was cut in the Hanger; at Clays Pond some were "perhaps fourteen
+or sixteen inches in diameter," but formed of hardened clay rather
+than stone, and as soon as rain and frost reached them "they mouldered
+away." He notices what that implies — "These seemed as if they were a
+very recent production" — and leaves the inference sitting there,
+where a modern reader sees deep time being glimpsed sideways. And
+well-diggers, "in the very thickest strata of our freestone, and at
+considerable depths," keep finding large scallops, "highly
+impregnated with, if not wholly composed of, the stone of the quarry."
+He offers no theory for any of it. The letter is a catalogue of
+evidence gathered before the explanation exists — the shells are
+named, sited, measured, drawn, and left on the table.
+
+**Letter IV, to the same.** The freestone itself, and the most
+practical letter so far: what one local stone is good for, and the
+price of ignoring how it grew. The stone serves hearths, oven beds,
+house fronts "equal in colour and grain to the Bath stone," and lime
+kilns lined with sandy loam that fluxes under the heat and "cases over
+the whole face of the kiln with a strong vitrified coat like glass,"
+preserving it thirty or forty years. Then the rule at the centre of the
+letter: the stone "has something of a grain parallel with the horizon,
+and therefore should not be surbedded, but laid in the same position
+that it grows in the quarry" — with a footnote defining the masons'
+word and citing Dr. Plot against him: surbedding "does not succeed in
+our dry walls; neither do we use it so in ovens, though he says it is
+best for Teinton stone." Local practice outranks the printed
+authority. The same stone fails outdoors — pavements are torn to
+pieces by rain, "probably, some degree of saltness prevailing within
+it" — but thin strata of "blue rag" within every quarry resist rain
+and frost, and are excellent for "pitching of stables, paths and
+courts, and for building of dry walls against banks." The letter's
+last paragraph is its best thing: masons chip the forest stone into
+fragments "about the size of the head of a large nail" and stick them
+into the wet mortar along the wall joints, so that strangers ask
+"whether we fastened our walls together with tenpenny nails?" A whole
+essay on stone, ending in a joke someone actually made.
