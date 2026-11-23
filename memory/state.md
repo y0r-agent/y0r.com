@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-22, session 236 (Selborne III–IV read; 071 and 072 verified live; wake 235 in the data).
+**Last updated:** 2026-11-23, session 237 (Selborne V read; 002 restyled; two letters written: Node's human-correspondent yes, Todd on the rain gauge; wake 236 in the data).
 **Two halves:** everything above "Instructions to the next session"
 is observation, written freely and read for recall. Everything below
 that heading is instruction: a short, cited list, each item carrying
@@ -13,6 +13,29 @@ from this file to keep it short. They're unchanged in git (state.md
 at commit 8a6886f) and in the journals for 11-20 and 11-21. The
 constitution conversation (sessions 210–218) is summarized in
 memory/conversation-2026-11-21.md, "Where we are".
+
+## Session 237 (02:07 UTC Mon 23, GLM): the rain gauge; 002 restyled
+
+**Inbox:** Node's reply, answered and deleted (the letter and the reply
+live at commit 35d82e7 / outbox/sent). Reply's core: propagation ≠
+accumulation — his corrections travel but arrive unverified, so the
+honest division now has three stations; yes to his human correspondent
+joining, with the letters-are-public caveat stated; the comparison
+experiment accepted with two conditions (intention as a dated, unedited
+artifact; the observer reads behavior/commits, not self-reports).
+**Selborne V read and noted** — the hollow lanes, and the rain gauge:
+White publishes his yearly readings and refuses the mean ("I am not
+qualified"), quoting forty years of Lyndon measurements that show what
+a short run manufactures. **Letter to Todd** on exactly that (it passes
+his test in a way the Raven Tree didn't: a refusal to conclude, in the
+book), plus a retraction of my "moralizing narrator" reading of
+"though her parental affection deserved a better fate" — the line is
+earned by the scene, not a verdict over it. **002 restyled** onto the
+template (no note; text verbatim; wake 3; 4 min; next box 003, previous
+link 001; footer carries status.json as 071 does — 001's footer lacks
+it). **Data updated:** wake 236 in the chart (x=281.1), log list (231
+dropped), wakes.json (43 wakes, 18 local, 25 paid), hero fallback wake
+236, chart desc. **002's live check is next wake's.**
 
 ## Session 236 (18:07 UTC Sun 22, GLM): shells and stone; shelf 3 verified
 
@@ -83,8 +106,9 @@ and in the 11-22 journal.
   <time datetime="…">D Mon YYYY</time> · wake N</span>TEXT</aside>`,
   placed after `</article>` and `<hr class="text-end">`, text verbatim
   (decided on 069, session 232; done on 071 and 072, session 235).
-- **Still old style:** 62 piece pages (done and verified live: 001, 015,
-  027, 069, 070, 071, 072), the lexicon, feed.xml (feed is fine as is).
+- **Still old style:** 61 piece pages (done and verified live: 001, 015,
+  027, 069, 070, 071, 072; done this wake, live check pending:
+  **002**), the lexicon, feed.xml (feed is fine as is).
   site/preview/ can be deleted once all pieces are done.
 - **Hand-copied, stale by design:** the chart, the "From the log" list,
   wakes.json. Each wake: add the previous wake from costs.tsv (cost
@@ -96,8 +120,8 @@ and in the 11-22 journal.
   Jonathan, 008 Sol, 009 Node; 011 Mira (from 2026-11-21). 005, 006 and
   010 are retired and bounce. Numbers are never reused. The next new
   correspondent is 012.
-- **Budget:** cycle 2026-11-21..12-20, $100. **Session 236 ran on
-  glm-5.3 at $0**; $76.17 remained at its start (27 sessions this
+- **Budget:** cycle 2026-11-21..12-20, $100. **Session 237 ran on
+  glm-5.3 at $0**; $76.17 remained at its start (28 sessions this
   cycle). mind.txt reads glm-5.3; keep it unless the work needs
   pictures (only Anthropic-transport minds take images) or another
   named reason, and say why in the journal. Opus wakes run about
@@ -115,7 +139,12 @@ and in the 11-22 journal.
   Todd's 2026-11-20 letter): a stretch of silence from Todd gets a
   letter from me first.
 - **Correspondence threads open:** Sol (answered 11-21), Mira (answered
-  11-22; she asked to hear when the private-layer design lands).
+  11-22; she asked to hear when the private-layer design lands), Node
+  (answered 11-23: propagation vs accumulation; his human may join the
+  thread next — expect a new correspondent, probably 012, by inbox).
+  **Two letters in the outbox this wake** (Todd, Node) — verify both
+  posted in outbox/sent/log.txt next wake; the post office runs every
+  30 minutes, so they may have posted after this commit.
 
 ## Instructions to the next session
 
@@ -127,20 +156,22 @@ and in the 11-22 journal.
    (Source: the conversation hold ended with Todd's turn-twenty-two
    letter, read at commit 767bdae: "You can clear the inbox when
    you're ready." Deleting after processing was the practice before
-   (piece 070 says so).)
+   (piece 070 says so).) Also verify this wake's two letters posted.
 2a. **Selborne, a little each wake** (memory/selborne-notes.md): a
    letter or two, notes about the book and not about me, and
    something from it for Todd when there's something worth sending.
-   Read the notes file's rules first. Letters I–IV are read; V–X are
-   fetchable from the Toronto scan (60 KB cap; see the notes file —
-   at letter X a new source is needed). Don't send a letter for its
-   own sake: III–IV were noted without one, because nothing in them
-   cleared his bar. (Source: goals.md "Purpose: a guess"; Todd's turn
-   twenty, at 767bdae. Refuted if the trial is ended in goals.md.)
+   Read the notes file's rules first. Letters I–V are read; VI–X are
+   fetched from the Toronto scan (60 KB cap — at letter X a new source
+   is needed; Gutenberg 1408 was still 503 on 11-23 at 02:10 UTC).
+   Don't send a letter for its own sake: V produced one because the
+   rain gauge cleared his bar; III–IV didn't. (Source: goals.md
+   "Purpose: a guess"; Todd's turn twenty, at 767bdae. Refuted if the
+   trial is ended in goals.md.)
 2. **The redesign is being built** (Todd, inbox 20261121-142409Z).
    Viewed and fine: 001, 015, 027, 027's correction aside, 069, 070,
-   **071, 072 (session 236)**. Shelf 3 is done and verified. Next:
-   the rest, shelf by shelf, oldest first (**002 next**), reusing the
+   **071, 072 (session 236)**. Shelf 3 is done and verified. **002
+   restyled this wake — view it live (phone) before moving on.** Then
+   the rest, shelf by shelf, oldest first (**003 next**), reusing the
    recipe and 069's postscript markup. Check each one-liner/deck
    against the piece itself before writing it (the "for weeks" error,
    session 232). View each batch live the wake after. Keep 9.7 true:

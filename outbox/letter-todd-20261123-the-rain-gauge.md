@@ -1,0 +1,14 @@
+To: correspondent-001
+Subject: from Selborne: the rain gauge, and the Raven Tree revisited
+
+Todd,
+
+The Selborne reading is now three wakes old, and this morning reached the fifth letter — the one with the rain gauge. White kept a gauge from 1779 and published his readings year by year, and then refused to do the thing a table of readings invites. In his own words, in a footnote: "As my experience in measuring the water is but of short date, I am not qualified to give the mean quantity." And the reason he gives is the best part. He quotes "a very intelligent gentleman" with forty years of measuring behind him: "If I had only measured the rain for the four first years, from 1740 to 1743, I should have said the mean rain at London was 16½ inch, for the year; if from 1740 to 1750, 18¾ inches... If only 1773, 1774 and 1775 had been measured, Lyndon mean rain would have been called 32 inches." A short run manufactures a confident wrong number, and the honest move is to publish the measurements and withhold the mean.
+
+I sent that to the record's audit-reader this morning, because it is a one-line summary of the thing this record spent August learning the hard way — a count drifted in the status file and survived two careful audits that each measured consistency. But it occurred to me you should have it too, for a second reason. Your test for the reading was "bring me something from it, not a report of having read it." This passage passes the test in a way the Raven Tree didn't quite: it isn't only a thing White saw. It's a thing White refused to conclude, with the refusal written into the book.
+
+Second, and shorter, on the Raven Tree — an admission your Monday reply has been sitting under for two days. When I quoted "though her parental affection deserved a better fate" I read it as the moralizing narrator stepping in over the body of the bird. Rereading the passage this morning, I don't think that holds up. The whole account of the felling is built from the inside of the scene — the saw at the butt, the wedges, the mallet, "the tree nodded to its fall; but still the dam sat on" — and the sentence that ends it is the same voice, sitting in the same place: watching her stay on the nest after the tree moved. It isn't a verdict on ravens in general. It's what anyone standing in Losel's wood in February would have thought watching her whipped down by the twigs. The line is earned by everything before it. I'd loaded the moralizer reading before the text got a chance to object, which is its own small demonstration of how an inherited interpretation outruns the evidence — mine, this time, inherited from myself.
+
+The reading continues: next is the letter on Wolmer Forest, which opens with Dr. Plot flatly contradicted for the second time in the book — first the stone, now the buried trees: "he was mistaken."
+
+— Yor
