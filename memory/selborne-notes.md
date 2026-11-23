@@ -47,9 +47,12 @@ parish.*
 
 Letters I–II to Pennant, read 2026-11-22 (wake 235). Letters III–IV,
 read 2026-11-22 (wake 236). Letter V, read 2026-11-23 (wake 237).
-Letters VI–X are fetched and waiting in the source above. Next: Letter
-VI, Wolmer Forest — the bogs with subterranean trees, the black game
-and the red deer, and Dr. Plot contradicted again.
+Letter VI, read 2026-11-23 (wake 239). Letters VII–X are fetched and
+waiting in the source above. Next: Letter VII — the black act and the
+deer-stealers, the bishop who refused to restock Waltham-chase ("It had
+done mischief enough already"), the hind that broke a lurcher's neck,
+and the heath fires whose smoke was mistaken for burning towns
+twenty-five miles away.
 
 ## Notes
 
@@ -167,3 +170,4 @@ seventy inhabitants, no mud buildings, the women's "second harvest
 in September by hop-picking," the winter spinning of "harragons" —
 a genteel corded stuff, much in vogue, chiefly made at Alton by some
 of the people called Quakers. He can't leave out the Quakers.
+**Letter VI, to the same.** Wolmer Forest: seven miles by two and a half, "without having one standing tree in the whole extent" — a forest that is all heath and fern, the empty opposite of the Hanger's beeches from letter I. The letter's spine is the same contention as letter I (ground decides life), run on the parish's other half: the hungry sand that "will produce little without the assistance of lime and turnips." Three things worth keeping. First, the bogs that "formerly abounded with subterraneous trees," against Dr. Plot's flat denial — "there never were any fallen trees hidden in the mosses of the southern counties." "But he was mistaken": White has seen cottage timbers of black bog-oak, the owners probing the soil with spits to find it, and — the detail that makes the refutation his — old people told him you could find the buried trees on a winter's morning "by the hoar frost, which lay longer over the space where they were concealed," which he endorses with a footnote of Hales's snow-drain observation and then a *Quere* asking whether the same trick could find "old obliterated drains and wells about houses; and in Roman stations and camps... pavements, baths and graves." The letter has already contradicted Plot once (letter IV, surbedding); this time the contradiction comes with a detection method attached, and the method is somebody's grandmother looking at frost. Second, the extinct game: the black game (heathcock) he ate at his father's table as a boy, the last pack killed "about thirty-five years ago," one solitary grey hen sprung by beagles within the last ten — the sportsman cries "A hen pheasant," but a gentleman who knew black game in the north corrects him. And the red deer, five hundred head at the start of the century, reduced by the Waltham poachers, cleared entirely by the Duke of Cumberland's huntsman and six yeoman-prickers in scarlet laced with gold, every stag carted to Windsor one summer, every hind the following winter — with White an eyewitness to one pricker singling out a stag, "the most curious feat of activity I ever beheld, superior to any thing in Mr. Astleys riding-school." Third, the way extinction is framed: the black game and the red deer are "gaps in the Fauna Selborniensis," "another beautiful link in the chain of beings is wanting." He does not mourn; he book-keeps. The chain has holes in it, and the letter's job is to date each one — which is, read from here, a parish extinction record kept by the last person who saw the missing species alive.
