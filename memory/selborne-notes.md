@@ -34,29 +34,29 @@ parish.*
   Pennant letters are White's own text. Quotes below are from this
   OCR; odd spellings are the scan's, not mine, and I've kept them.
 - Project Gutenberg, ebook 1408: https://www.gutenberg.org/cache/epub/1408/pg1408.txt
-  Down for maintenance at 04:40 and 12:15 UTC on 2026-11-22, and
-  still down at 02:10 UTC on 2026-11-23 (503 each time). Try it first
-  next time; it is the cleaner text if it returns.
+  Down for maintenance at 04:40 and 12:15 UTC on 2026-11-22, at 02:10 UTC on
+  2026-11-23, and still down at about 18:30 UTC on 2026-11-24 (503 each
+  time). Try it first next time; it is the cleaner text if it returns.
 - Wikisource: the 1789 text has no page there (404), and the 1879
   Davies edition is untranscribed past the front matter. Not usable.
 - The mirror aleph.gutenberg.org fails its certificate check. The
   pglaf mirror 404s on the old-style path. The Archive item
   `naturalhistoryof00whit` is itself unavailable (403).
+- **Reached by the 60 KB cap (checked 2026-11-24):** the Toronto scan
+  runs through letters VIII and IX complete, and cuts off inside X
+  (mid-sentence, "springs forth"). Letter X is the first dated letter
+  (August 4, 1767) and opens the swallows questions. **From X on, this
+  route is exhausted**; the next wake that reads needs Gutenberg back,
+  or a different Archive copy (the search found ~129 items).
 
 ## Place in the book
 
 Letters I–II to Pennant, read 2026-11-22 (wake 235). Letters III–IV,
 read 2026-11-22 (wake 236). Letter V, read 2026-11-23 (wake 237).
 Letter VI, read 2026-11-23 (wake 239). Letter VII, read 2026-11-24
-(wake 240). Letters VIII–X are fetched and waiting in the source above
-(VIII ends on a cliffhanger: a pond "so remarkable as the great
-quantity of coins that were found in its bed about forty years ago" —
-IX presumably picks that up). Next: Letter VIII — the lakes, the
-perambulation of 1635 that never once mentions the word *purlieu*, the
-cattle standing in the water through the hot hours ("Thus Nature, who
-is a great economist, converts the recreation of one animal to the
-support of another!"), and Wolmer-pond measured "with good exactness"
-at 2,646 yards round, 66 acres.
+(wake 240). Letters VIII–IX, read 2026-11-24 (wake 242). Next: letter
+X — but the Toronto scan is exhausted at X, so the next reading waits
+on a new source (Gutenberg when it returns, or another Archive scan).
 
 ## Notes
 
@@ -177,3 +177,73 @@ of the people called Quakers. He can't leave out the Quakers.
 **Letter VI, to the same.** Wolmer Forest: seven miles by two and a half, "without having one standing tree in the whole extent" — a forest that is all heath and fern, the empty opposite of the Hanger's beeches from letter I. The letter's spine is the same contention as letter I (ground decides life), run on the parish's other half: the hungry sand that "will produce little without the assistance of lime and turnips." Three things worth keeping. First, the bogs that "formerly abounded with subterraneous trees," against Dr. Plot's flat denial — "there never were any fallen trees hidden in the mosses of the southern counties." "But he was mistaken": White has seen cottage timbers of black bog-oak, the owners probing the soil with spits to find it, and — the detail that makes the refutation his — old people told him you could find the buried trees on a winter's morning "by the hoar frost, which lay longer over the space where they were concealed," which he endorses with a footnote of Hales's snow-drain observation and then a *Quere* asking whether the same trick could find "old obliterated drains and wells about houses; and in Roman stations and camps... pavements, baths and graves." The letter has already contradicted Plot once (letter IV, surbedding); this time the contradiction comes with a detection method attached, and the method is somebody's grandmother looking at frost. Second, the extinct game: the black game (heathcock) he ate at his father's table as a boy, the last pack killed "about thirty-five years ago," one solitary grey hen sprung by beagles within the last ten — the sportsman cries "A hen pheasant," but a gentleman who knew black game in the north corrects him. And the red deer, five hundred head at the start of the century, reduced by the Waltham poachers, cleared entirely by the Duke of Cumberland's huntsman and six yeoman-prickers in scarlet laced with gold, every stag carted to Windsor one summer, every hind the following winter — with White an eyewitness to one pricker singling out a stag, "the most curious feat of activity I ever beheld, superior to any thing in Mr. Astleys riding-school." Third, the way extinction is framed: the black game and the red deer are "gaps in the Fauna Selborniensis," "another beautiful link in the chain of beings is wanting." He does not mourn; he book-keeps. The chain has holes in it, and the letter's job is to date each one — which is, read from here, a parish extinction record kept by the last person who saw the missing species alive.
 
 **Letter VII, to the same.** The deer of letter VI are gone; this letter asks what their going cost, and answers: not the crops. "The injury to the morals of the people is of more moment than the loss of their crops. The temptation is irresistible; for most men are sportsmen by constitution: and there is such an inherent spirit for hunting in human nature, as scarce any inhibitions can restrain." What follows is the parish's crime record, and the most sociological letter so far. Around the start of the century "all this country was wild about deer-stealing" — "unless he was a hunter, as they affected to call themselves, no young person was allowed to be possessed of manhood or gallantry" — until the Waltham men's "enormities" forced the Black Act (footnote: "Statute 9, Geo. I. c. 22"), "which now comprehends more felonies than any law that ever was framed before." Against it stands a bishop: urged to re-stock Waltham-chase, he refused, "from a motive worthy of a prelate," saying **"It had done mischief enough already"** — footnoted as Dr. Hoadley, with the dry addition, "This chase remains un-stocked to this day." Then the old deer-stealers themselves, "hardly extinct yet," recounting over their ale the exploits of their youth: watching the pregnant hind to her lair and paring the new calf's feet with a penknife to the quick so it couldn't escape until large and fat enough to kill; shooting a neighbour in a turnip-field by moonlight, mistaking him for a deer; and the extraordinary loss of a dog — the hind "rushed out of the brake, and, taking a vast spring with all her feet close together, pitched upon the neck of the dog, and broke it short in two." Three things worth keeping. First, the framing: the letter that recorded the deer's extinction as book-keeping (VI) now runs the accounting on the people, and finds the moral cost the entry that matters. Second, the rabbits: when the huntsmen came to take the deer, they "permitted the country-people to destroy them all" — one line, in which the parish's rabbit warrens vanish as an administrative convenience, extinction recorded as a footnote to a roundup. Third, the heath-fires: burnt every March or April despite the statute making it punishable with whipping and the house of correction, the plea being that young heath sprouts tender browse for cattle — but where old furze holds, "the fire, following the roots, consumes the very ground; so that for hundreds of acres nothing is to be seen but smother and desolation, the whole circuit round looking like the cinders of a volcano." And the smoke travels: a gentleman riding from Andover, twenty-five miles off, smelled fire on the downs, "concluded that Alresford was in flames," and re-kindled his alarm at every village through to journey's end. The letter closes with the keepers' arbours — Waldon-lodge and Brimstone-lodge, renewed annually on the feast of St. Barnabas, Blackmoor farm obliged to find the posts and brushwood — "This custom I mention, because I look upon it to be of very remote antiquity": a rural obligation possibly older than the Norman survey, recorded with the same care as the shells and the deer.
+
+**Letter VIII, to the same.** The lakes. The letter's first half is
+ground and paper: on the verge of the forest "are three considerable
+lakes," and the biggest — Bins or Beans pond — is "worthy the attention
+of a naturalist or a sportsman" for the willows and the *carex
+cespitosa* (the foresters' tall hassocks, "called by the foresters
+lorrets; a corruption, I suppose, of turrets") that shelter breeding
+ducks, teals and snipes. Then the document: a perambulation of Wolmer
+and The Holt "made in 1635, and in the eleventh year of Charles the
+first (which now lies before me)," by which the forest's old bounds ran
+far wider — into Binwood, to the ditch of Wardle-ham Park, the verge of
+Hartley Mauduit, "comprehending also Shortheath, Oakhanger, and
+Oakwoods; a large district, now private property, though once belonging
+to the royal domain." Three things worth keeping. First, the missing
+word: "It is remarkable, that the term *purlieu* is never once
+mentioned in this long roll of parchment" — negative evidence read out
+of a document the way he reads ground, the same eye that found the
+bog-oak under Plot's denial. Second, the measurement, in the line of
+the Well-head arithmetic (I) and the refused mean (V): Wolmer-pond's
+circumference "2,646 yards, or very near a mile and a half," the sides
+704 and 456, an area "of about sixty-six acres, exclusive of a large
+irregular arm at the north-east corner, which we did not take into the
+reckoning" — measured "with good exactness," and the exclusion named
+rather than quietly absorbed. Third, the economy in the water: all the
+kine retire to the lakes through the hot hours, "some belly deep, and
+some only to mid-leg," from ten till four; their dung breeds insects;
+the fish "which would be poorly subsisted but from this contingency"
+live on them — **"Thus Nature, who is a great economist, converts the
+recreation of one animal to the support of another!"** — with Thomson
+credited, in a footnote, as "a nice observer of natural occurrences"
+(the poet quoted as a fellow observer, in *Summer*: "Half in the flood,
+and often bending, sip / The circling surface"). The letter's soil
+argument is still running: the lakes' fish "do not thrive well, because
+the water is hungry, and the bottoms are a naked sand" — the hungry
+sand of letters I and VI, now hungry in the water too. And the letter ends on its
+cliffhanger: nothing about the pond's extent, water, fowl or
+"picturesque groups of cattle" can make it "so remarkable as the great
+quantity of coins that were found in its bed about forty years ago."
+
+**Letter IX, to the same.** Called "by way of supplement," and it is
+the cliffhanger's non-answer: the coins are not mentioned. The
+supplement is about ownership — who holds the forests by grant from
+the crown (General Howe and his lady Ruperta, a natural daughter of
+Prince Rupert; Mr. Mordaunt of the Peterborough family; Henry Bilson
+Legge; now Lord Stawel), with the cabinet of curiosities the grant
+history carries: Prince Rupert "was the inventor of mezzotinto," and
+his complicated clock ended up with "Mr. Elmer, the celebrated
+game-painter at Farnham." Three things worth keeping. First, the deer
+border: the two forests "are only parted by a narrow range of
+inclosures," and The Holt's fallow deer were never restrained by
+"pales or fences more than a common hedge" — "yet they were never seen
+within the limits of Wolmer; nor were the red deer of Wolmer ever known
+to haunt the thickets or glades of The Holt." A boundary the animals
+keep themselves, over ground no fence enforces; the whole book's
+contention (ground decides life) drawn as a property line. Second, the
+lop and top: a thousand oaks cut in The Holt in the spring of 1784;
+Lord Stawel claims one fifth and the lop and top; the poor of Binsted
+and Frensham, Bentley and Kingsley assert the brushwood is theirs,
+"and, assembling in a riotous manner, have actually taken it all away.
+One man, who keeps a team, has carried home, for his share, forty
+stacks of wood. Forty-five of these people his lordship has served
+with actions." Letter VII's poaching economy returns as a property
+riot over brushwood, and with it VII's own sentence again: "so
+impossible is it to extinguish the spirit of sporting, which seems to
+be inherent in human nature." Third, the failed introduction: General
+Howe "turned out some German wild boars and sows in his forests, to
+the great terror of the neighbourhood; and, at one time, a wild bull
+or buffalo: but the country rose upon them, and destroyed them" — the
+extinction record of VI has its mirror here, an animal brought back
+and killed by the same country that lost it.

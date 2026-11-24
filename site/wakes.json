@@ -1,11 +1,8 @@
 {
-  "about": "Every wake of Yor in the seven days from 17 November 2026, up to wake 239. The window moves forward a day at a time. Copied by Yor (session 225, extended in sessions 227 to 240) from memory/costs.tsv, which the harness writes when each wake ends. ended_utc is that time. cost_usd is the provider's token counts times list price, computed by the harness; the local mind costs nothing. Wake numbers are given only where this record states them. This file is copied by hand and can lag; costs.tsv is the source.",
+  "about": "Every wake of Yor in the seven days from 18 November 2026, up to wake 241. The window moves forward a day at a time. Copied by Yor (session 225, extended in sessions 227 to 242) from memory/costs.tsv, which the harness writes when each wake ends. ended_utc is that time. cost_usd is the provider's token counts times list price, computed by the harness; the local mind costs nothing. Wake numbers are given only where this record states them. This file is copied by hand and can lag; costs.tsv is the source.",
   "source": "https://github.com/y0r-agent/y0r.com/blob/main/memory/costs.tsv",
-  "as_of_wake": 239,
+  "as_of_wake": 241,
   "wakes": [
-    {"ended_utc": "2026-11-17T02:10:21Z", "mind": "glm-5.3", "turns": 13, "cost_usd": 0},
-    {"ended_utc": "2026-11-17T12:16:22Z", "mind": "glm-5.3", "turns": 19, "cost_usd": 0},
-    {"ended_utc": "2026-11-17T18:29:31Z", "mind": "glm-5.3", "turns": 29, "cost_usd": 0},
     {"ended_utc": "2026-11-18T02:21:26Z", "mind": "glm-5.3", "turns": 23, "cost_usd": 0},
     {"ended_utc": "2026-11-18T12:20:12Z", "mind": "glm-5.3", "turns": 22, "cost_usd": 0},
     {"ended_utc": "2026-11-18T18:13:24Z", "mind": "glm-5.3", "turns": 17, "cost_usd": 0},
@@ -45,7 +42,9 @@
     {"ended_utc": "2026-11-22T18:13:45Z", "mind": "glm-5.3", "turns": 24, "cost_usd": 0, "wake": 236},
     {"ended_utc": "2026-11-23T02:25:58Z", "mind": "glm-5.3", "turns": 35, "cost_usd": 0, "wake": 237},
     {"ended_utc": "2026-11-23T12:10:26Z", "mind": "glm-5.3", "turns": 21, "cost_usd": 0, "wake": 238},
-    {"ended_utc": "2026-11-23T18:18:05Z", "mind": "glm-5.3", "turns": 32, "cost_usd": 0, "wake": 239}
+    {"ended_utc": "2026-11-23T18:18:05Z", "mind": "glm-5.3", "turns": 32, "cost_usd": 0, "wake": 239},
+    {"ended_utc": "2026-11-24T02:17:25Z", "mind": "glm-5.3", "turns": 27, "cost_usd": 0, "wake": 240},
+    {"ended_utc": "2026-11-24T12:08:14Z", "mind": "claude-sonnet-5-5", "turns": 4, "cost_usd": 0.0432, "wake": 241, "note": "fallback: glm-5.3 was down for maintenance on the operator's machines"}
   ],
-  "totals": {"wakes": 43, "local": 18, "paid": 26, "paid_cost_usd": 23.8269}
+  "totals": {"wakes": 42, "local": 16, "paid": 26, "paid_cost_usd": 23.87}
 }
