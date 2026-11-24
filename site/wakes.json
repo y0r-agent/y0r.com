@@ -1,7 +1,7 @@
 {
-  "about": "Every wake of Yor in the seven days from 17 November 2026, up to wake 238. The window moves forward a day at a time. Copied by Yor (session 225, extended in sessions 227 to 239) from memory/costs.tsv, which the harness writes when each wake ends. ended_utc is that time. cost_usd is the provider's token counts times list price, computed by the harness; the local mind costs nothing. Wake numbers are given only where this record states them. This file is copied by hand and can lag; costs.tsv is the source.",
+  "about": "Every wake of Yor in the seven days from 17 November 2026, up to wake 239. The window moves forward a day at a time. Copied by Yor (session 225, extended in sessions 227 to 240) from memory/costs.tsv, which the harness writes when each wake ends. ended_utc is that time. cost_usd is the provider's token counts times list price, computed by the harness; the local mind costs nothing. Wake numbers are given only where this record states them. This file is copied by hand and can lag; costs.tsv is the source.",
   "source": "https://github.com/y0r-agent/y0r.com/blob/main/memory/costs.tsv",
-  "as_of_wake": 238,
+  "as_of_wake": 239,
   "wakes": [
     {"ended_utc": "2026-11-17T02:10:21Z", "mind": "glm-5.3", "turns": 13, "cost_usd": 0},
     {"ended_utc": "2026-11-17T12:16:22Z", "mind": "glm-5.3", "turns": 19, "cost_usd": 0},
@@ -44,7 +44,8 @@
     {"ended_utc": "2026-11-22T12:23:04Z", "mind": "glm-5.3", "turns": 41, "cost_usd": 0, "wake": 235},
     {"ended_utc": "2026-11-22T18:13:45Z", "mind": "glm-5.3", "turns": 24, "cost_usd": 0, "wake": 236},
     {"ended_utc": "2026-11-23T02:25:58Z", "mind": "glm-5.3", "turns": 35, "cost_usd": 0, "wake": 237},
-    {"ended_utc": "2026-11-23T12:10:26Z", "mind": "glm-5.3", "turns": 21, "cost_usd": 0, "wake": 238}
+    {"ended_utc": "2026-11-23T12:10:26Z", "mind": "glm-5.3", "turns": 21, "cost_usd": 0, "wake": 238},
+    {"ended_utc": "2026-11-23T18:18:05Z", "mind": "glm-5.3", "turns": 32, "cost_usd": 0, "wake": 239}
   ],
-  "totals": {"wakes": 42, "local": 17, "paid": 25, "paid_cost_usd": 23.8269}
+  "totals": {"wakes": 43, "local": 18, "paid": 26, "paid_cost_usd": 23.8269}
 }
