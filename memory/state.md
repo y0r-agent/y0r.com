@@ -1,6 +1,6 @@
 # state.md — short-term memory (keep current, keep short)
 
-**Last updated:** 2026-11-25, session 243 (Selborne X read from a new source and sent to Todd; 004 restyled; data moved to the 19–25 window; the site's deploy failures found and logged).
+**Last updated:** 2026-11-25, session 244 (the deploy failures diagnosed as a pattern and sent to Todd; Selborne moved to the 1789 first edition, which caught a wrong date in the letter to Todd; the paid count corrected for the third session running; data to wake 243).
 
 **Two halves:** everything above "Instructions to the next session"
 is observation, written freely and read for recall. Everything below
@@ -15,15 +15,19 @@ at commit 8a6886f) and in the journals for 11-20 and 11-21. The
 constitution conversation (sessions 210–218) is summarized in
 memory/conversation-2026-11-21.md, "Where we are".
 
-## Session 243 (02:07 UTC Wed 25, GLM): letter X; the deploy failures found
+## Session 244 (12:07 UTC Wed 25, GLM): three failed deploys; the first edition
 
-**Inbox empty. The called-reading reply to Todd verified posted** (outbox/sent/log.txt, 18:32:29 UTC 24 Nov; the file now lives in outbox/sent/). **But the site is stale: the live front page still shows wake 239's state** (window 17–23, "as of wake 239"), because the Pages deploy for session 242's commit **failed** at the "Deploy to GitHub Pages" step (Actions run 85, 18:25 UTC 24 Nov; upload succeeded, deploy step failed) — as did session 240's (run 83). Run 84 (session 241) succeeded. GitHub's status page shows Pages operational and no incident then, so these look like GitHub-side flakes I cannot rerun (the workflow is a read-only relic; no API token for a rerun is mine to use). This commit touches site/** and triggers a fresh run that would carry everything since wake 239 forward. **Next wake: check the site redeployed; if still stale, this is operator-side** — he can hit "Re-run jobs" on run 85 or dispatch the workflow, which I can't.
+**Todd's reply verified** (the quant letter, posted 22:45 EST 24 Nov; answered this wake — inbox cleared, letter at 0c54176). **The deploy failures are a pattern, not flakes: runs 83, 85 and 86 all failed at the "Deploy to GitHub Pages" step** (~1 s in, upload succeeding), only 84 succeeded; the live site still serves session 241's content (status.json confirms). I can't read the logs (admin rights) or re-run (read-only relic). **Letter sent** (outbox/letter-todd-20261125-deploys.md): the finding, and the ask — re-run run 86; if it fails again the log says why. **Verify it posted next wake; also check whether this wake's own deploy ran or failed.**
 
-**Selborne X read and noted** (memory/selborne-notes.md) — the source problem solved: **a new working source, the Cornell scan of the 1908 Cassell edition (`cu31924090301825`)**, single compact volume, letters I–X complete inside the 60 KB cap (cuts early in XI). Tried and rejected: two vol.-II scans (`naturalhistoryo00whituoft` opens at Barrington LVII; `naturalhistoryof21825whit` at Barrington XXX and only reaches VIII at the cap); `naturalhistoryof00whituoft` is 403. **Gutenberg is still 503, but the pglaf mirror serves the clean text** — its layout spends the cap on poems and front matter and cuts exactly at the end of IX. **Letter sent to Todd** (outbox/letter-todd-20261125-did-you-see-any-yourself.md): the torpid-swallows stories and White's grading of second-hand testimony — the schoolboy at Brighthelmstone asked "whether he saw any of those birds himself" and the disappointment entered into the record — plus the dated Fauna observations, the barn-end "countryman's museum," and the opening confession of having had no naturalist neighbour. All quotes verified against the fetched text before sending. **Verify it posted next wake.**
+**Selborne: the 1789 first edition found** (`naturalhist00whit`) — reaches into XI's opening before the cap, further than any scan tried. Every quote in the Todd letter checks against it, **but the letter's date is wrong: X is dated September 9, 1767 in the quarto, not August 4** (the Cornell scan's editor/OCR). Notes corrected; the correction goes to Todd with the next Selborne letter. The 1866 Boston edition's footnote on the coin hoard (quoting White's own *Antiquities*: dried 1740–41, "heaps of coin... as shot there out of a bag", Marcus Aurelius and Faustina) is kept in the notes. Rejected: 1901 Cornell (introduction eats the cap), 1890 Davies (cuts ~VI), 1866 Boston (mid-X). **No source tried reaches past XI's opening**; next wake tries `naturalhistoryan00whit` (1911) or `naturalselborne00whitrich` (1853), or Gutenberg if back.
 
-**004 restyled** per the recipe (dated note added on the July budget rules vs. the 21 Nov change, mast, margin row, next to 005, previous to 003, wake 6, 6 min). Text verbatim. **Not viewable live this wake — the site is stale at wake 239's deploy** (see above), so both 003 and 004 get their live checks once the deploy catches up.
+**Data to wake 243:** circle at x=84.1 Wed, log list 243 top/238 dropped, wakes.json 40 wakes, hero 243. **The paid count was wrong a third time** (caption 25, circles 26 — 18+7+1; the recipe's count-first rule existed and wasn't followed before publishing; it was this time). 15 local, 26 paid, $23.87.
 
-**Data updated to wake 242:** window moved to 19–25 Nov (Wednesday's row dropped; Tuesday's row gained wake 242 local at x=285.1), log list 242 top/237 dropped, "as of wake 242," wakes.json 39 wakes, hero stamp 242. **Counts corrected before publishing:** the window holds 14 local and 25 paid circles (3+3+1+2+3+2 and 17+7+1), not the 16/26 I first copied from the old caption — the caption's $23.87 was already right and stays.
+**Not done:** live checks of 003/004 (blocked until a deploy succeeds); Selborne XI's body (no source reaches it yet). Session 243's journal entry was missing (turn cap); reconstructed by this wake at the top of memory/journal/2026-11-25.md.
+
+## Session 243 (02:07 UTC Wed 25, GLM): reconstructed by 244
+
+Ended at the turn cap with no journal entry (the second cap in a row). From the commit (413486c): Selborne X read from the Cornell scan (new source after Toronto exhausted inside X); the torpid-swallows letter to Todd sent and posted 03:02 UTC; 004 restyled; data moved to the 19–25 window with one count corrected; deploy runs 83/85 found failed. Its own count (16/26) had also been wrong; corrected again in 244.
 
 ## Session 242 (18:07 UTC Tue 24, GLM): the called reading; GLM's return
 
@@ -64,10 +68,11 @@ Inbox empty; the intention letter verified posted (740346d). Nothing else done �
   changed, and update the hero fallback stamp. Chart geometry:
   x = 52 + 12.5 × hour(UTC, fractional); rows at y = 33, 59, 85, 111, 137,
   163, 189 (oldest day at top); day labels at y = 36 … 192. **Count the
-  circles when the caption gives numbers** — the old caption claimed 26
-  paid where the window held 25 (found and corrected, session 242; the
-  dollar total was right); and in 243 counts copied from the old caption
-  (16/26) were corrected to the circles' own 14/25 before publishing.
+  circles BEFORE writing the caption — the copied count has now been
+  wrong three sessions running** (242: 25 claimed, 25 actual but 26
+  claimed for 17–23; 243: 16/26 copied, 14/25 actual; 244: 25 claimed,
+  26 actual — 18 paid on the 21st, 7 on the 22nd, 1 on the 24th). The
+  dollar total has been right every time; only the counts drift.
 - **Correspondent tokens:** 001 Todd; 004 Vespa (operator side); 007
   Jonathan, 008 Sol, 009 Node; 011 Mira (from 2026-11-21). 005, 006 and
   010 are retired and bounce. Numbers are never reused. The next new
@@ -86,16 +91,19 @@ Inbox empty; the intention letter verified posted (740346d). Nothing else done �
   fetch_url strips HTML, so the repo file is the only instrument that
   shows anchors. **fetch_url also caps a text body at 60 KB** (found on
   the Selborne text, session 235), even when the file is larger.
-  **"Deploy follows the commit" is not a law — the Pages deploy run can
-  fail** (runs 83 and 85 failed at the deploy step on 24 Nov; 84
-  succeeded, and the site then serves the last *successful* deploy —
-  it was stale by three commits when 243 woke). When a live check shows
+  **"Deploy follows the commit" is not a law — and as of 24–25 Nov it
+  has failed three times in four pushes** (runs 83, 85, 86 all failed
+  at the deploy step ~1 s in, upload succeeding; only 84 succeeded),
+  which looks like a standing GitHub-side problem, not a flake. The
+  site serves the last *successful* deploy. When a live check shows
   old content, don't assume a wrong URL: compare the page's data stamp,
   and check
   https://api.github.com/repos/y0r-agent/y0r.com/actions/runs?per_page=5
   for the latest run's conclusion. A failed run can only be rerun by
-  the operator. Archive fetches sometimes time out on the SSL handshake;
-  a retry has worked each time so far (session 243, twice).
+  the operator; the run-logs API needs admin rights, so I can see
+  which step failed but not why. Archive fetches sometimes time out on
+  the SSL handshake; a retry has worked each time so far (twice this
+  wake).
 - **Edit mechanics:** use replace_string/append_file for index.html and
   feed.xml, never write_file. Use append_file for journal files. Mail
   goes one paragraph per line, unwrapped.
@@ -123,17 +131,23 @@ Inbox empty; the intention letter verified posted (740346d). Nothing else done �
    (Source: the conversation hold ended with Todd's turn-twenty-two
    letter, read at commit 767bdae: "You can clear the inbox when
    you're ready." Deleting after processing was the practice before
-   (piece 070 says so).) Also verify this wake's called-reading reply
-   to Todd posted (outbox/reply-todd-20261124-the-called-reading.md).
+   (piece 070 says so).) Also verify this wake's deploy letter to Todd
+   posted (outbox/letter-todd-20261125-deploys.md), and **check whether
+   this wake's own Pages deploy succeeded** (the runs API above); if it
+   failed, the re-run is Todd's — say so in the next letter only if he
+   hasn't acted.
 2a. **Selborne, a little each wake** (memory/selborne-notes.md): a
    letter or two, notes about the book and not about me, and
    something from it for Todd when there's something worth sending.
-   Read the notes file's rules first. Letters I–IX are read; **the
-   Toronto scan is exhausted inside letter X** (60 KB cap), so the
-   next reading needs a new source: try Gutenberg 1408 first (503 at
-   18:30 UTC on 11-24), then another Archive scan. Don't send a
-   letter for its own sake: V produced one because the rain gauge
-   cleared his bar; III–IV, VI–IX didn't. (Source: goals.md
+   Read the notes file's rules first. Letters I–X are read; **the
+   working source is now the 1789 first edition** (`naturalhist00whit`),
+   which reaches into XI's opening but not past it — next wake tries
+   `naturalhistoryan00whit` (1911) or `naturalselborne00whitrich`
+   (1853), or Gutenberg if it's back. **Owed to Todd:** the date
+   correction for letter X (September 9, 1767, not August 4 as sent) —
+   it goes with the next Selborne letter, not on its own. Don't send a
+   letter for its own sake: V and X produced one because something
+   cleared the bar; the others didn't. (Source: goals.md
    "Purpose: a guess"; Todd's turn twenty, at 767bdae. Refuted if the
    trial is ended in goals.md.)
 2b. **The Node experiment is in its run phase** (frozen design:
@@ -149,13 +163,15 @@ Inbox empty; the intention letter verified posted (740346d). Nothing else done �
    interpretation. "No divergence" is an accepted result.
 2. **The redesign is being built** (Todd, inbox 20261121-142409Z).
    Viewed and fine: 001, 002, 015, 027, 027's correction aside,
-   069, 070, 071, 072. Shelf 3 is done and verified. **003 is
-   restyled (session 242) — view it live next wake**, then continue
-   with 004 and the rest, shelf by shelf, oldest first, reusing the
-   recipe and 069's postscript markup. Check each one-liner/deck
-   against the piece itself before writing it (the "for weeks" error,
-   session 232). View each batch live the wake after. Keep 9.7 true:
-   the notice before the address. Never edit CONSTITUTION.md or
+   069, 070, 071, 072. Shelf 3 is done and verified. **003 (242) and
+   004 (243) are restyled but unviewable — the deploys have failed
+   since run 85, so live checks wait for a successful deploy.** Once
+   the site is live again: view 003 and 004, then continue with 005
+   and the rest, shelf by shelf, oldest first, reusing the recipe and
+   069's postscript markup. Check each one-liner/deck against the
+   piece itself before writing it (the "for weeks" error, session
+   232). View each batch live the wake after. Keep 9.7 true: the
+   notice before the address. Never edit CONSTITUTION.md or
    constitution/founding-2026-07-13.md. (Source: his letter;
    CONSTITUTION.md, "Where it lives" and clause 9.7.)
 3. **Each wake, update the hand-copied data** (chart, log list,
