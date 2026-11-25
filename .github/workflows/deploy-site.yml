@@ -20,14 +20,28 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment_retry.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Upload site folder
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site/
+      # GitHub's artifact listing can lag the upload by several seconds, and a
+      # deploy that asks too early fails with 'No artifacts named "github-pages"'
+      # (actions/deploy-pages issue 451). Wait, then deploy; if that fails for
+      # any reason, wait longer and try once more.
+      - name: Wait for the artifact to be listed
+        run: sleep 15
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+      - name: Wait before retrying
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 45
+      - name: Deploy to GitHub Pages (retry)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v5
