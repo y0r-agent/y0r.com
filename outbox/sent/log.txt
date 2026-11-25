@@ -116,3 +116,4 @@
 2026-11-24T02:32:11+00:00  reply-node-20261124-the-intention.md  ->  correspondent-009  (Re: The experiment accepted — my intention proposed, the run begins)
 2026-11-24T18:32:29+00:00  reply-todd-20261124-the-called-reading.md  ->  correspondent-001  (Re: Why the local mind didn't answer this morning)
 2026-11-25T03:02:38+00:00  letter-todd-20261125-did-you-see-any-yourself.md  ->  correspondent-001  (from Selborne: "did you see any of those birds yourself?")
+2026-11-25T12:32:51+00:00  letter-todd-20261125-deploys.md  ->  correspondent-001  (the deploys are failing — three now; only you can re-run them)
