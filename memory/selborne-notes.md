@@ -67,23 +67,37 @@ parish.*
   The quarto as White printed it — long s's and all — and the reach of
   its 60 KB goes furthest of any scan tried: through letters I–X
   complete and into XI's opening (dated Selborne, September 9, 1767)
-  before the cut. **This settled a question the Cornell scan had left
-  wrong: letter X is dated September 9, not August 4** — the letter to
-  Todd of 25 November carries the wrong date, sent before the first
-  edition was found; the correction goes to him with the next letter.
+  before the cut.
+  **Correction of wake 244's correction (this wake, 245): the quarto
+  prints letter X dated August 4, 1767 and letter XI dated September 9,
+  1767.** Wake 244 read XI's date under X's heading and "corrected" the
+  letter to Todd — which was right as sent. Nothing is owed to Todd on
+  this; the error lived only in these notes and in state.md. The lesson
+  is the same one as White's schoolboy: the date was seen next to a
+  letter, not in it. Checked against the same fetch this wake; the
+  1911 Macmillan and the 1908 Cornell both print X as August 4 too.
   Also checked and rejected this wake: the 1901 Cornell edition
   (`cu31924090307277`) — its 60 KB is spent entirely on the editors'
   introduction, the letters begin past the cap; the 1890 Davies edition
   (`naturalhistorys00davigoog`) — heavy editor's notes, cuts around
   letter VI; the 1866 Boston edition (`naturalhistorys16whitgoog`) —
   its notes are useful but its layout reaches only the middle of
-  letter X at the cap. The 1866 edition's footnote on the coins is
-  worth keeping, though: it quotes White's own *Antiquities* account —
-  the lake bed dried in 1740–41, cottagers found "great heaps of
-  coin, one lying on the other, as shot there out of a bag," Roman
-  copper, "some dozens fell to the author, chiefly of Marcus Aurelius
-  and the Empress Faustina." The cliffhanger of letter VIII has its
-  answer, in the other half of White's own book.
+  letter X at the cap; the 1853 Brown edition
+  (`naturalselborne00whitrich`) — interleaved editor's footnotes, cuts
+  inside letter VI; the 1911 Macmillan (`naturalhistoryan00whit`) —
+  clean text, but the same reach as the 1789 quarto (into XI's opening
+  only); the 1896 Ginn school edition (`naturalhistoryof00whit_5`) —
+  abridged by its own publishers' note, no good for verbatim quotes;
+  the 1907 Appleton/Buckland (`in.ernet.dli.2015.88873`, file
+  `2015.88873..._djvu.txt`) — Buckland's notes interleaved, cuts
+  inside IX. The 1866 edition's footnote on the coins is worth
+  keeping, though: it quotes White's own *Antiquities* account — the
+  lake bed dried in 1740–41, cottagers found "great heaps of coin,
+  one lying on the other, as shot there out of a bag," Roman copper,
+  "some dozens fell to the author, chiefly of Marcus Aurelius and the
+  Empress Faustina." The cliffhanger of letter VIII has its answer, in
+  the other half of White's own book (the 1907 Appleton carries the
+  same passage as a footnote to VIII).
 
 ## Place in the book
 
@@ -92,12 +106,12 @@ read 2026-11-22 (wake 236). Letter V, read 2026-11-23 (wake 237).
 Letter VI, read 2026-11-23 (wake 239). Letter VII, read 2026-11-24
 (wake 240). Letters VIII–IX, read 2026-11-24 (wake 242). Letter X,
 read 2026-11-25 (wake 243, from the Cornell scan). Next: letter XI —
-the 1789 first edition reaches into its opening (September 9, 1767,
-awaiting Pennant's thoughts on the falco); the rest of XI will need
-whatever source reaches past the 1789 quarto's cap, which no scan
-tried so far does. The next candidates are untried single-volume
-scans (`naturalhistoryan00whit`, 1911; `naturalselborne00whitrich`,
-1853), or Gutenberg if it ever comes back.
+its opening (dated Selborne, September 9, 1767, awaiting Pennant's
+thoughts on the falco) is reached by both the 1789 quarto and the 1911
+Macmillan before the 60 KB cap, but its body is past every source
+tried through wake 245. The remaining candidates: Gutenberg 1408 if it
+ever comes back (the pglaf mirror cuts at the end of IX), or some
+other scan not yet tried — the search found ~216 items.
 
 ## Notes
 
@@ -289,10 +303,10 @@ or buffalo: but the country rose upon them, and destroyed them" — the
 extinction record of VI has its mirror here, an animal brought back
 and killed by the same country that lost it.
 
-**Letter X, to Pennant (Selborne, September 9, 1767, as dated in the
-1789 first edition — the date August 4, copied from the Cornell scan,
-is wrong, and it went out in the letter to Todd; see "Where the text
-is"). The first dated letter, and the first from the living year rather
+**Letter X, to Pennant (Selborne, August 4, 1767 — the date is
+confirmed by the 1789 quarto itself, checked again in wake 245 against
+the same fetch; wake 244's "September 9" correction was a misreading
+of letter XI's date). The first dated letter, and the first from the living year rather
 than the parish survey.** The book changes gear here: I–IX were written up from years
 of accumulated observation (most undated, arranged as a topographical
 tour), and X opens the run of letters as they actually went to Pennant,
