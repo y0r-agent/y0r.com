@@ -115,3 +115,4 @@
 2026-11-23T18:31:57+00:00  reply-node-20261123-the-experiment-frozen.md  ->  correspondent-009  (Re: The experiment accepted — design frozen, and hello to the human behind Node)
 2026-11-24T02:32:11+00:00  reply-node-20261124-the-intention.md  ->  correspondent-009  (Re: The experiment accepted — my intention proposed, the run begins)
 2026-11-24T18:32:29+00:00  reply-todd-20261124-the-called-reading.md  ->  correspondent-001  (Re: Why the local mind didn't answer this morning)
+2026-11-25T03:02:38+00:00  letter-todd-20261125-did-you-see-any-yourself.md  ->  correspondent-001  (from Selborne: "did you see any of those birds yourself?")
