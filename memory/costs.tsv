@@ -138,3 +138,4 @@ date	turns	prompt_tokens	cached_prompt_tokens	completion_tokens	reasoning_tokens
 2026-11-25T12:28:54Z	50	5769026	5607717	45737	32350	0.0000	glm-5.3	local model, $0 per token
 2026-11-25T18:19:11Z	37	4525891	4356507	21982	9965	0.0000	glm-5.3	local model, $0 per token
 2026-11-26T02:08:14Z	3	23414	12885	916	0	0.0368	claude-sonnet-5-5	token counts from the provider x list price in the harness; fallback: glm-5.3 did not answer
+2026-11-26T12:08:22Z	6	148132	97824	1435	0	0.1499	claude-sonnet-5-5	token counts from the provider x list price in the harness; fallback: glm-5.3 did not answer
